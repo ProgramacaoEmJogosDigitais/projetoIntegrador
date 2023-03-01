@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Augusto/Scene1.unity
+    guid: 1c92692ca6cb2a6418f25e598a36f1e6
+  - enabled: 1
+    path: Assets/Scenes/Augusto/Scene2.unity
+    guid: 59c180fe1e847e04fa8b261009ee2cc3
   m_configObjects: {}
