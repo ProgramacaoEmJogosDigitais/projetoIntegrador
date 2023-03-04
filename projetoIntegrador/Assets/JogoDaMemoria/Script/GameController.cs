@@ -1,6 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
+using UnityEditor.VersionControl;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,13 +15,12 @@ public class GameController : MonoBehaviour
 
     public int numRows;
     public int numCols;
-    public int cont = 0;
 
     public Image card;
     public Image[,] grid;
     public Sprite[] cardImages;
     public List<Image> cardList;
-    public List<Sprite> spritesAddList;
+    Dictionary<Sprite, int> spritesAddList = new Dictionary<Sprite, int>();
 
     public Transform cards;
     void Start()
@@ -38,19 +42,32 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < cardList.Count; i++)
         {
-            int cardImageIndex = UnityEngine.Random.Range(0, cardImages.Length);
-            Sprite randomCardImage = cardImages[cardImageIndex];
-            spritesAddList.Add(randomCardImage);
-            cardList[i].sprite = randomCardImage;
-
-            if (spritesAddList.Contains(randomCardImage))
+            Sprite randomCardImage;
+            int cardImageIndex;
+            bool allNull = true;
+            do
             {
-                cont++;
-            }
-            if (cont > 2)
+                cardImageIndex = UnityEngine.Random.Range(0, cardImages.Length);
+                randomCardImage = cardImages[cardImageIndex];
+
+            } while (randomCardImage == null && allNull != cardImages.All(element => element == null));
+
+            if (spritesAddList.ContainsKey(randomCardImage) && spritesAddList[randomCardImage] >= 2)
             {
                 cardImages[cardImageIndex] = null;
             }
+            else
+            {
+                if (spritesAddList.ContainsKey(randomCardImage))
+                {
+                    spritesAddList[randomCardImage]++;
+                }
+                else
+                {
+                    spritesAddList.Add(randomCardImage, 1);
+                }
+            }
+            cardList[i].sprite = randomCardImage;
         }
     }
     void DisableCanvas(GameObject difficultyLevel)
