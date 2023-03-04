@@ -10,11 +10,13 @@ public class GameController : MonoBehaviour
 
     public int numRows;
     public int numCols;
+    public int cont = 0;
 
     public Image card;
     public Image[,] grid;
     public Sprite[] cardImages;
     public List<Image> cardList;
+    public List<Sprite> spritesAddList;
 
     public Transform cards;
     void Start()
@@ -33,15 +35,22 @@ public class GameController : MonoBehaviour
                 cardList.Add(newCard);
             }
         }
-        int ca = cardList.Count;
-        Debug.Log("quantidade de cartas: " + ca);
+
         for (int i = 0; i < cardList.Count; i++)
         {
             int cardImageIndex = UnityEngine.Random.Range(0, cardImages.Length);
             Sprite randomCardImage = cardImages[cardImageIndex];
-            cardImages[cardImageIndex] = null;
+            spritesAddList.Add(randomCardImage);
             cardList[i].sprite = randomCardImage;
-            Debug.Log(cardList[i]);
+
+            if (spritesAddList.Contains(randomCardImage))
+            {
+                cont++;
+            }
+            if (cont > 2)
+            {
+                cardImages[cardImageIndex] = null;
+            }
         }
     }
     void DisableCanvas(GameObject difficultyLevel)
