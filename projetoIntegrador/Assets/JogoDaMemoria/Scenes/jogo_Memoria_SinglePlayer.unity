@@ -184,9 +184,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficulty: {fileID: 1262071769}
-  numRows: 4
-  numCols: 4
-  card: {fileID: 6055979985988307590, guid: 4c3aacd2387509441a72668a8277244f, type: 3}
+  numRows: 2
+  numCols: 5
+  card: {fileID: 4041112297164821679, guid: 4c3aacd2387509441a72668a8277244f, type: 3}
+  cardImages:
+  - {fileID: 21300000, guid: db47ae2dd0e93464ea6de02404e3785a, type: 3}
+  - {fileID: 21300000, guid: 49aed063850fec5479bef1c80b6ba818, type: 3}
+  - {fileID: 21300000, guid: f3901d94eb9d8054fa97e0e1102e3037, type: 3}
+  - {fileID: 21300000, guid: fac94f74e95a0b04d9e7a1e7431bef46, type: 3}
+  - {fileID: 21300000, guid: d25970f187c45b14eb68e4867cc398ed, type: 3}
+  - {fileID: 21300000, guid: db47ae2dd0e93464ea6de02404e3785a, type: 3}
+  - {fileID: 21300000, guid: 49aed063850fec5479bef1c80b6ba818, type: 3}
+  - {fileID: 21300000, guid: f3901d94eb9d8054fa97e0e1102e3037, type: 3}
+  - {fileID: 21300000, guid: fac94f74e95a0b04d9e7a1e7431bef46, type: 3}
+  - {fileID: 21300000, guid: d25970f187c45b14eb68e4867cc398ed, type: 3}
+  cardList: []
 --- !u!4 &372446399
 Transform:
   m_ObjectHideFlags: 0
