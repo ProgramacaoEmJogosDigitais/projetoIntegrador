@@ -10,11 +10,13 @@ public class GameController : MonoBehaviour
 
     public int numRows;
     public int numCols;
-    [SerializeField]private Image card;
+
+    public Image card;
     public Image[,] grid;
     public Sprite[] cardImages;
     public List<Image> cardList;
 
+    public Transform cards;
     void Start()
     {
         // inicializa a matriz de objetos
@@ -25,19 +27,21 @@ public class GameController : MonoBehaviour
             for (int col = 0; col < numCols; col++)
             {
                 // calcula a posição de cada prefab com base no índice da matriz
-                Vector3 pos = new Vector3(col - numCols / 2f + 0.5f, row - numRows / 2f + 0.5f, 0) * 1.5f;
-
-                // instancia o prefab na posição calculada e armazena em uma variável local
-                Image newCard = Instantiate(card, pos, Quaternion.identity);
+                Vector3 pos = new Vector3(col - numCols / 2f + 0.5f, row - numRows / 2f + 0.5f, 0) * 65f;
+                Image newCard = Instantiate(card, cards);
+                newCard.transform.localPosition = pos;
                 cardList.Add(newCard);
             }
         }
-        foreach(Image c in cardList)
+        int ca = cardList.Count;
+        Debug.Log("quantidade de cartas: " + ca);
+        for (int i = 0; i < cardList.Count; i++)
         {
             int cardImageIndex = UnityEngine.Random.Range(0, cardImages.Length);
             Sprite randomCardImage = cardImages[cardImageIndex];
             cardImages[cardImageIndex] = null;
-            c.sprite = randomCardImage;
+            cardList[i].sprite = randomCardImage;
+            Debug.Log(cardList[i]);
         }
     }
     void DisableCanvas(GameObject difficultyLevel)
