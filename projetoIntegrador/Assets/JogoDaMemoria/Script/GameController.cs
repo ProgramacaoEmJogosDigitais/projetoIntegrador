@@ -11,20 +11,40 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    private int numRows;
+    private int numCols;
+
+    private Image[,] grid;
+    private List<Image> cardList;
+
     [SerializeField] private GameObject difficulty;
+    [SerializeField] private Image card;
+    [SerializeField] private Sprite[] cardImages;
+    [SerializeField] private Transform cards;
 
-    public int numRows;
-    public int numCols;
-
-    public Image card;
-    public Image[,] grid;
-    public Sprite[] cardImages;
-    public List<Image> cardList;
     Dictionary<Sprite, int> spritesAddList = new Dictionary<Sprite, int>();
 
-    public Transform cards;
-    void Start()
+    void Cards(int size)
     {
+        if(size == 1)
+        {
+            numRows = 2;
+            numCols = 5;
+        }
+        else if(size == 2)
+        {
+            numRows = 4;
+            numCols = 5;
+        }
+        else if(size == 3)
+        {
+            numRows = 5;
+            numCols = 6;
+        }
+        else
+        {
+            Debug.Log("Valor inválido!");
+        }
         // inicializa a matriz de objetos
         grid = new Image[numRows, numCols];
 
@@ -52,7 +72,11 @@ public class GameController : MonoBehaviour
 
             } while (randomCardImage == null && allNull != cardImages.All(element => element == null));
 
-            if (spritesAddList.ContainsKey(randomCardImage) && spritesAddList[randomCardImage] >= 2)
+            if(randomCardImage == null && allNull != cardImages.All(element => element == null)){
+                Debug.Log("NULLLLLLLLL");
+            }
+
+            if (spritesAddList.ContainsKey(randomCardImage) && spritesAddList[randomCardImage] >= 1)
             {
                 cardImages[cardImageIndex] = null;
             }
@@ -70,9 +94,13 @@ public class GameController : MonoBehaviour
             cardList[i].sprite = randomCardImage;
         }
     }
-    void DisableCanvas(GameObject difficultyLevel)
+    public void DisableCanvas(GameObject difficultyLevel)
     {
         difficulty.SetActive(false);
         difficultyLevel.SetActive(true);
+    }
+    public void Size(int size)
+    {
+        Cards(size);
     }
 }
