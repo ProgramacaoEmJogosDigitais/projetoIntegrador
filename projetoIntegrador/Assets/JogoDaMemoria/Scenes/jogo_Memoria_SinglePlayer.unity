@@ -123,37 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &92088428
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 92088429}
-  m_Layer: 0
-  m_Name: DifficultyHard
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &92088429
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92088428}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -92.60139, y: -3.6601338, z: -0.6661456}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &372446397
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,16 +152,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5eadbdf8f9aba246a21a3d3ddd644b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardList: []
+  numRows: 2
+  numCols: 5
   difficulty: {fileID: 1262071769}
-  numRows: 1
-  numCols: 8
   card: {fileID: 926306405555836708, guid: 992cf7aba8c38254e81df1649ebe09a6, type: 3}
   cardImages:
   - {fileID: 21300000, guid: 49aed063850fec5479bef1c80b6ba818, type: 3}
   - {fileID: 21300000, guid: f3901d94eb9d8054fa97e0e1102e3037, type: 3}
   - {fileID: 21300000, guid: fac94f74e95a0b04d9e7a1e7431bef46, type: 3}
   - {fileID: 21300000, guid: d25970f187c45b14eb68e4867cc398ed, type: 3}
-  cardList: []
   cards: {fileID: 1178036994}
 --- !u!4 &372446399
 Transform:
@@ -207,7 +176,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &640419950
 GameObject:
@@ -636,13 +605,13 @@ MonoBehaviour:
         m_MethodName: DisableCanvas
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1594951198}
+          m_ObjectArgument: {fileID: 1159847228}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1038081875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -910,7 +879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1159847229}
   m_Layer: 0
-  m_Name: DifficultySimple
+  m_Name: Difficulty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -927,7 +896,8 @@ Transform:
   m_LocalPosition: {x: -92.60139, y: -3.6601338, z: -0.6661456}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1178036994}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1023,8 +993,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1159847229}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1158,7 +1128,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1548764447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1197,37 +1167,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548764444}
   m_CullTransparentMesh: 1
---- !u!1 &1594951198
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1594951199}
-  m_Layer: 0
-  m_Name: DifficultyMedium
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1594951199
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594951198}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -92.60139, y: -3.6601338, z: -0.6661456}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1880953743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,13 +1256,13 @@ MonoBehaviour:
         m_MethodName: DisableCanvas
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 92088428}
+          m_ObjectArgument: {fileID: 1159847228}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1880953746
 MonoBehaviour:
   m_ObjectHideFlags: 0

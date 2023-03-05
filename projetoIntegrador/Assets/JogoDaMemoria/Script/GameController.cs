@@ -11,40 +11,22 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    private int numRows;
-    private int numCols;
+    public Image[,] grid;
+    public List<Image> cardList;
 
-    private Image[,] grid;
-    private List<Image> cardList;
+    public int numRows;
+    public int numCols;
 
-    [SerializeField] private GameObject difficulty;
-    [SerializeField] private Image card;
-    [SerializeField] private Sprite[] cardImages;
-    [SerializeField] private Transform cards;
+    public GameObject difficulty;
+    public Image card;
+    public Sprite[] cardImages;
+    public Transform cards;
+
 
     Dictionary<Sprite, int> spritesAddList = new Dictionary<Sprite, int>();
 
-    void Cards(int size)
+    private void Start()
     {
-        if(size == 1)
-        {
-            numRows = 2;
-            numCols = 5;
-        }
-        else if(size == 2)
-        {
-            numRows = 4;
-            numCols = 5;
-        }
-        else if(size == 3)
-        {
-            numRows = 5;
-            numCols = 6;
-        }
-        else
-        {
-            Debug.Log("Valor inválido!");
-        }
         // inicializa a matriz de objetos
         grid = new Image[numRows, numCols];
 
@@ -70,9 +52,9 @@ public class GameController : MonoBehaviour
                 cardImageIndex = UnityEngine.Random.Range(0, cardImages.Length);
                 randomCardImage = cardImages[cardImageIndex];
 
-            } while (randomCardImage == null && allNull != cardImages.All(element => element == null));
+            } while (randomCardImage == null);
 
-            if(randomCardImage == null && allNull != cardImages.All(element => element == null)){
+            if(allNull != cardImages.All(element => element == null)){
                 Debug.Log("NULLLLLLLLL");
             }
 
@@ -98,9 +80,5 @@ public class GameController : MonoBehaviour
     {
         difficulty.SetActive(false);
         difficultyLevel.SetActive(true);
-    }
-    public void Size(int size)
-    {
-        Cards(size);
     }
 }
