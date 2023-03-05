@@ -1,58 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
-using UnityEditor.VersionControl;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameController : MonoBehaviour
+public class Simple : MonoBehaviour
 {
-
-    /*public List<Image> cardList;
-    public List<Sprite> imageList;
-    Dictionary<Sprite, int> spritesAddList = new Dictionary<Sprite, int>();
-
-    public void Cards()
-    {
-        for (int i = 0; i < cardList.Count; i++)
-        {
-            Sprite randomCardImage;
-            int cardImageIndex;
-            do
-            {
-                cardImageIndex = UnityEngine.Random.Range(0, imageList.Count);
-                randomCardImage = imageList[cardImageIndex];
-
-                if (randomCardImage == null)
-                {
-                    Debug.Log("NULLLLLLLLL");
-                }
-            } while (randomCardImage == null);
-
-
-            if (spritesAddList.ContainsKey(randomCardImage) && spritesAddList[randomCardImage] >= 1)
-            {
-                imageList[cardImageIndex] = null;
-            }
-            else
-            {
-                if (spritesAddList.ContainsKey(randomCardImage))
-                {
-                    spritesAddList[randomCardImage]++;
-                }
-                else
-                {
-                    spritesAddList.Add(randomCardImage, 1);
-                }
-            }
-            cardList[i].sprite = randomCardImage;
-        }
-    }
-}*/
     public Image[,] grid;
     public List<Image> cardList;
 
@@ -64,7 +17,6 @@ public class GameController : MonoBehaviour
     public Transform cards;
 
     Dictionary<Sprite, int> spritesAddList = new Dictionary<Sprite, int>();
-
     public void Cards()
     {
         grid = new Image[numRows, numCols];
