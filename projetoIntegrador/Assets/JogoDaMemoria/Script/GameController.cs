@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
 
     Dictionary<Sprite, int> spritesAddList = new Dictionary<Sprite, int>();
 
-    private void Start()
+    public void Cards()
     {
         // inicializa a matriz de objetos
         grid = new Image[numRows, numCols];
@@ -54,7 +54,8 @@ public class GameController : MonoBehaviour
 
             } while (randomCardImage == null);
 
-            if(allNull != cardImages.All(element => element == null)){
+            if (allNull != cardImages.All(element => element == null))
+            {
                 Debug.Log("NULLLLLLLLL");
             }
 
@@ -75,10 +76,5 @@ public class GameController : MonoBehaviour
             }
             cardList[i].sprite = randomCardImage;
         }
-    }
-    public void DisableCanvas(GameObject difficultyLevel)
-    {
-        difficulty.SetActive(false);
-        difficultyLevel.SetActive(true);
     }
 }
