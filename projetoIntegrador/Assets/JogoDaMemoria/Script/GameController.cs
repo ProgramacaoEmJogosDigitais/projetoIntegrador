@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
@@ -8,6 +7,8 @@ using UnityEditor.VersionControl;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using UnityEngine.WSA;
 
 public class GameController : MonoBehaviour
 {
@@ -55,16 +56,35 @@ public class GameController : MonoBehaviour
 }*/
     public Image[,] grid;
     public List<Image> cardList;
+    public List<Image> listImageSelected = null;
 
     public int numRows = 0;
     public int numCols = 0;
+    public int[] imageCount;
 
     public Image card;
     public Sprite[] cardImages;
     public Transform cards;
 
-    Dictionary<Sprite, int> spritesAddList = new Dictionary<Sprite, int>();
+    public float duration = 2f;
 
+    Dictionary<Sprite, int> spritesAddList = new Dictionary<Sprite, int>();
+    public Image transparentImage;
+    public Image imageSelected;
+    public void OnClick()
+    {
+        transparentImage.color = new Color(transparentImage.color.r, transparentImage.color.g, transparentImage.color.b, 0);
+        listImageSelected.Add(imageSelected);
+        ListImageSelected();
+    }
+    public void ResetAlpha()
+    {
+        transparentImage.color = new Color(transparentImage.color.r, transparentImage.color.g, transparentImage.color.b, 1);
+    }
+    private void Start()
+    {
+        imageCount = new int[cardImages.Length];
+    }
     public void Cards()
     {
         grid = new Image[numRows, numCols];
@@ -81,6 +101,45 @@ public class GameController : MonoBehaviour
         }
 
         for (int i = 0; i < cardList.Count; i++)
+        {
+            Sprite randomCardImage;
+            int cardImageIndex;
+            do
+            {
+                cardImageIndex = UnityEngine.Random.Range(0, cardImages.Length);
+                randomCardImage = cardImages[cardImageIndex];
+
+            } while (randomCardImage == null || imageCount[cardImageIndex] >= 2);
+
+            // Marque a imagem como usada
+            imageCount[cardImageIndex]++;
+
+            cardList[i].sprite = randomCardImage;
+        }
+    }
+    public void ListImageSelected()
+    {
+        if (listImageSelected.Count >= 1)
+        {
+            if (listImageSelected[0].sprite == listImageSelected[1].sprite)
+            {
+                Debug.Log("Acertou!");
+            }
+            else
+            {
+                Invoke("InvokeTransparent", duration);
+            }
+        }
+        Debug.Log("Clique em outra carta!");
+    }
+    public void InvokeTransparent()
+    {
+        ResetAlpha();
+    }
+}
+
+
+/* for (int i = 0; i < cardList.Count; i++)
         {
             Sprite randomCardImage;
             int cardImageIndex;
@@ -113,6 +172,4 @@ public class GameController : MonoBehaviour
                 }
             }
             cardList[i].sprite = randomCardImage;
-        }
-    }
-}
+        }*/

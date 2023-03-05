@@ -739,7 +739,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 1
       - m_Target: {fileID: 1038081877}
-        m_TargetAssemblyTypeName: Medium, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: Cards
         m_Mode: 1
         m_Arguments:
@@ -797,12 +797,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1038081872}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5453d673ff19b449b9a6aba23f454ae, type: 3}
+  m_Script: {fileID: 11500000, guid: b5eadbdf8f9aba246a21a3d3ddd644b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transparentPanel: {fileID: 0}
   cardList: []
+  listImageSelected: []
   numRows: 1
   numCols: 2
+  imageCount: 
   card: {fileID: 926306405555836708, guid: 992cf7aba8c38254e81df1649ebe09a6, type: 3}
   cardImages:
   - {fileID: 21300000, guid: 49aed063850fec5479bef1c80b6ba818, type: 3}
@@ -810,6 +813,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fac94f74e95a0b04d9e7a1e7431bef46, type: 3}
   - {fileID: 21300000, guid: d25970f187c45b14eb68e4867cc398ed, type: 3}
   cards: {fileID: 1210087799}
+  duration: 2
 --- !u!1 &1121440159
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,7 +1427,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 1
       - m_Target: {fileID: 1548764449}
-        m_TargetAssemblyTypeName: Simple, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: Cards
         m_Mode: 1
         m_Arguments:
@@ -1481,12 +1485,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1548764444}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc664d9902224bf4ba26c3359dff994e, type: 3}
+  m_Script: {fileID: 11500000, guid: b5eadbdf8f9aba246a21a3d3ddd644b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transparentPanel: {fileID: 0}
   cardList: []
-  numRows: 3
-  numCols: 3
+  listImageSelected: []
+  numRows: 2
+  numCols: 2
+  imageCount: 
   card: {fileID: 926306405555836708, guid: 992cf7aba8c38254e81df1649ebe09a6, type: 3}
   cardImages:
   - {fileID: 21300000, guid: 49aed063850fec5479bef1c80b6ba818, type: 3}
@@ -1494,6 +1501,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fac94f74e95a0b04d9e7a1e7431bef46, type: 3}
   - {fileID: 21300000, guid: d25970f187c45b14eb68e4867cc398ed, type: 3}
   cards: {fileID: 1178036994}
+  duration: 2
 --- !u!1 &1880953743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,7 +1600,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 1
       - m_Target: {fileID: 1880953748}
-        m_TargetAssemblyTypeName: Hard, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: Cards
         m_Mode: 1
         m_Arguments:
@@ -1650,12 +1658,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1880953743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a11ad776dd7f1974d850aa12d3f98f87, type: 3}
+  m_Script: {fileID: 11500000, guid: b5eadbdf8f9aba246a21a3d3ddd644b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transparentPanel: {fileID: 0}
   cardList: []
+  listImageSelected: []
   numRows: 2
   numCols: 2
+  imageCount: 
   card: {fileID: 926306405555836708, guid: 992cf7aba8c38254e81df1649ebe09a6, type: 3}
   cardImages:
   - {fileID: 21300000, guid: 49aed063850fec5479bef1c80b6ba818, type: 3}
@@ -1663,6 +1674,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fac94f74e95a0b04d9e7a1e7431bef46, type: 3}
   - {fileID: 21300000, guid: d25970f187c45b14eb68e4867cc398ed, type: 3}
   cards: {fileID: 423759801}
+  duration: 2
 --- !u!1 &2056940522
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Difficulty : MonoBehaviour
-{ 
+{
+    GameController gameController;
     public GameObject selectDifficulty;
     public GameObject simpleDifficulty;
     public GameObject mediumDifficulty;
     public GameObject hardDifficulty;
-
+   
     public void SelectSimpleDifficulty()
     {
         selectDifficulty.SetActive(false);
