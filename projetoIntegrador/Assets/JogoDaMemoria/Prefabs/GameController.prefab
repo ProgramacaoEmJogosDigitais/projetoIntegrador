@@ -46,6 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardList: []
   listImageSelected: []
+  listTransparentPanelSelected: []
+  listButton: []
+  space: 0
   numRows: 0
   numCols: 0
   imageCount: 

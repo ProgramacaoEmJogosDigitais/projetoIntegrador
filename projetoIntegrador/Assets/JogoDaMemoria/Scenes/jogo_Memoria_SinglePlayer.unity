@@ -815,15 +815,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardList: []
   listImageSelected: []
-  numRows: 1
-  numCols: 2
+  listTransparentPanelSelected: []
+  listButton: []
+  space: 60
+  numRows: 4
+  numCols: 5
   imageCount: 
-  card: {fileID: 926306405555836708, guid: 992cf7aba8c38254e81df1649ebe09a6, type: 3}
+  card: {fileID: 926306405555836708, guid: 9850963a1c67cf6499a0ba714ee2e73e, type: 3}
   cardImages:
   - {fileID: 21300000, guid: 49aed063850fec5479bef1c80b6ba818, type: 3}
   - {fileID: 21300000, guid: f3901d94eb9d8054fa97e0e1102e3037, type: 3}
   - {fileID: 21300000, guid: fac94f74e95a0b04d9e7a1e7431bef46, type: 3}
   - {fileID: 21300000, guid: d25970f187c45b14eb68e4867cc398ed, type: 3}
+  - {fileID: 21300000, guid: 75b6dd71738678e43b3b29cbb4a2ba35, type: 3}
   cards: {fileID: 1210087799}
 --- !u!1 &1121440159
 GameObject:
@@ -1501,15 +1505,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardList: []
   listImageSelected: []
+  listTransparentPanelSelected: []
+  listButton: []
+  space: 65
   numRows: 2
-  numCols: 2
+  numCols: 5
   imageCount: 
-  card: {fileID: 926306405555836708, guid: 992cf7aba8c38254e81df1649ebe09a6, type: 3}
+  card: {fileID: 926306405555836708, guid: 89b49926833a7b246a890fc50adfd003, type: 3}
   cardImages:
   - {fileID: 21300000, guid: 49aed063850fec5479bef1c80b6ba818, type: 3}
   - {fileID: 21300000, guid: f3901d94eb9d8054fa97e0e1102e3037, type: 3}
   - {fileID: 21300000, guid: fac94f74e95a0b04d9e7a1e7431bef46, type: 3}
   - {fileID: 21300000, guid: d25970f187c45b14eb68e4867cc398ed, type: 3}
+  - {fileID: 21300000, guid: 75b6dd71738678e43b3b29cbb4a2ba35, type: 3}
   cards: {fileID: 1178036994}
 --- !u!1 &1880953743
 GameObject:
@@ -1549,7 +1557,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -230}
+  m_AnchoredPosition: {x: 0, y: -230.00003}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1880953745
@@ -1672,8 +1680,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardList: []
   listImageSelected: []
-  numRows: 2
-  numCols: 2
+  listTransparentPanelSelected: []
+  listButton: []
+  space: 50
+  numRows: 4
+  numCols: 8
   imageCount: 
   card: {fileID: 926306405555836708, guid: 992cf7aba8c38254e81df1649ebe09a6, type: 3}
   cardImages:
@@ -1681,6 +1692,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f3901d94eb9d8054fa97e0e1102e3037, type: 3}
   - {fileID: 21300000, guid: fac94f74e95a0b04d9e7a1e7431bef46, type: 3}
   - {fileID: 21300000, guid: d25970f187c45b14eb68e4867cc398ed, type: 3}
+  - {fileID: 21300000, guid: 75b6dd71738678e43b3b29cbb4a2ba35, type: 3}
   cards: {fileID: 423759801}
 --- !u!1 &2056940522
 GameObject:
