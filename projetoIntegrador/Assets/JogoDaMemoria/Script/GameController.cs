@@ -66,21 +66,10 @@ public class GameController : MonoBehaviour
     public Sprite[] cardImages;
     public Transform cards;
 
-    public float duration = 2f;
+    CardTransparentPanel cardTransparentPanel;
 
     Dictionary<Sprite, int> spritesAddList = new Dictionary<Sprite, int>();
-    public Image transparentImage;
-    public Image imageSelected;
-    public void OnClick()
-    {
-        transparentImage.color = new Color(transparentImage.color.r, transparentImage.color.g, transparentImage.color.b, 0);
-        listImageSelected.Add(imageSelected);
-        ListImageSelected();
-    }
-    public void ResetAlpha()
-    {
-        transparentImage.color = new Color(transparentImage.color.r, transparentImage.color.g, transparentImage.color.b, 1);
-    }
+    
     private void Start()
     {
         imageCount = new int[cardImages.Length];
@@ -99,47 +88,16 @@ public class GameController : MonoBehaviour
                 cardList.Add(newCard);
             }
         }
+        if (cardList.Count < cardImages.Length)
+        {
+            int a = cardImages.Length - cardList.Count;
+            for (int i = 0; i < a; i++)
+            {
+                cardImages[i] = null;
+            }
+        }
 
         for (int i = 0; i < cardList.Count; i++)
-        {
-            Sprite randomCardImage;
-            int cardImageIndex;
-            do
-            {
-                cardImageIndex = UnityEngine.Random.Range(0, cardImages.Length);
-                randomCardImage = cardImages[cardImageIndex];
-
-            } while (randomCardImage == null || imageCount[cardImageIndex] >= 2);
-
-            // Marque a imagem como usada
-            imageCount[cardImageIndex]++;
-
-            cardList[i].sprite = randomCardImage;
-        }
-    }
-    public void ListImageSelected()
-    {
-        if (listImageSelected.Count >= 1)
-        {
-            if (listImageSelected[0].sprite == listImageSelected[1].sprite)
-            {
-                Debug.Log("Acertou!");
-            }
-            else
-            {
-                Invoke("InvokeTransparent", duration);
-            }
-        }
-        Debug.Log("Clique em outra carta!");
-    }
-    public void InvokeTransparent()
-    {
-        ResetAlpha();
-    }
-}
-
-
-/* for (int i = 0; i < cardList.Count; i++)
         {
             Sprite randomCardImage;
             int cardImageIndex;
@@ -172,4 +130,6 @@ public class GameController : MonoBehaviour
                 }
             }
             cardList[i].sprite = randomCardImage;
-        }*/
+        }
+    }
+}

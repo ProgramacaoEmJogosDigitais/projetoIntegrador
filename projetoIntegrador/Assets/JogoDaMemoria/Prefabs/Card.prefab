@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 8495176981895691720}
   - component: {fileID: 6016059779322947549}
   - component: {fileID: 615198554987216205}
-  - component: {fileID: 346733286815928158}
+  - component: {fileID: 4915971640021280293}
   m_Layer: 5
   m_Name: TransparentPanel
   m_TagString: Untagged
@@ -244,8 +244,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 346733286815928158}
-        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+      - m_Target: {fileID: 4915971640021280293}
+        m_TargetAssemblyTypeName: CardTransparentPanel, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -256,7 +256,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &346733286815928158
+--- !u!114 &4915971640021280293
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,17 +265,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5635956630118170126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5eadbdf8f9aba246a21a3d3ddd644b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e284fe8f9e1abf4e8de7a2713913d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardList: []
-  listImageSelected: []
-  numRows: 0
-  numCols: 0
-  imageCount: 
-  card: {fileID: 0}
-  cardImages: []
-  cards: {fileID: 0}
-  duration: 2
+  a: {fileID: 408149511496432982, guid: c3f9c32d2eb060a469ccf561a01e7fde, type: 3}
   transparentImage: {fileID: 6016059779322947549}
-  imageSelected: {fileID: 926306405555836708}
+  image: {fileID: 926306405555836708}
