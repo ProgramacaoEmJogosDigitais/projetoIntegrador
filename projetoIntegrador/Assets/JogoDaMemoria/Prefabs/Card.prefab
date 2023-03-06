@@ -268,6 +268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e284fe8f9e1abf4e8de7a2713913d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 615198554987216205}
   a: {fileID: 408149511496432982, guid: c3f9c32d2eb060a469ccf561a01e7fde, type: 3}
   transparentImage: {fileID: 6016059779322947549}
   image: {fileID: 926306405555836708}
+  duration: 2

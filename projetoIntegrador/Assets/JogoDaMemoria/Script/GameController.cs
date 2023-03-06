@@ -57,6 +57,7 @@ public class GameController : MonoBehaviour
     public Image[,] grid;
     public List<Image> cardList;
     public List<Image> listImageSelected = null;
+    public List<Image> listTransparentPanelSelected = null;
 
     public int numRows = 0;
     public int numCols = 0;
@@ -88,12 +89,15 @@ public class GameController : MonoBehaviour
                 cardList.Add(newCard);
             }
         }
-        if (cardList.Count < cardImages.Length)
+        int im = cardImages.Length;
+        int ca = cardList.Count;
+        if (im > ca)
         {
-            int a = cardImages.Length - cardList.Count;
-            for (int i = 0; i < a; i++)
+            Debug.Log("menor i: " + im + "c" + ca);
+            int a = im - ca;
+            for (int j = 0; j < a; j++)
             {
-                cardImages[i] = null;
+                cardImages[j] = null;
             }
         }
 

@@ -52,4 +52,3 @@ MonoBehaviour:
   card: {fileID: 0}
   cardImages: []
   cards: {fileID: 0}
-  duration: 2
