@@ -61,8 +61,8 @@ public class GameController : MonoBehaviour
     public List<Button> listButton = null;
 
     public float space;
-    public int numRows = 0;
-    public int numCols = 0;
+    private int numRows = 0;
+    private int numCols = 0;
     public int[] imageCount;
 
     public Image card;
@@ -77,7 +77,7 @@ public class GameController : MonoBehaviour
     {
         imageCount = new int[cardImages.Length];
     }
-    public void Cards()
+    public void Cards(int numRows, int numCols)
     {
         grid = new Image[numRows, numCols];
 
@@ -177,5 +177,23 @@ public class GameController : MonoBehaviour
             }
             cardList[i].sprite = randomCardImage;
         }*/
+    }
+    public void Simple()
+    {
+        numRows = 2;
+        numCols = 5;
+        Cards(numRows, numCols);
+    }    
+    public void Medium()
+    {
+        numRows = 4;
+        numCols = 5;
+        Cards(numRows, numCols);
+    }   
+    public void Hard()
+    {
+        numRows = 5;
+        numCols = 6;
+        Cards(numRows, numCols);
     }
 }

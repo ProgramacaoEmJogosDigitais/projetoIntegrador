@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 372446399}
   - component: {fileID: 372446400}
   - component: {fileID: 372446401}
+  - component: {fileID: 372446402}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -184,6 +185,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42fa90aef444eac4db3ec2345e4ae02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &372446402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372446397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5eadbdf8f9aba246a21a3d3ddd644b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardList: []
+  listImageSelected: []
+  listTransparentPanelSelected: []
+  listButton: []
+  space: 0
+  imageCount: 
+  card: {fileID: 0}
+  cardImages: []
+  cards: {fileID: 0}
 --- !u!1 &423759800
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,7 +688,6 @@ GameObject:
   - component: {fileID: 1038081876}
   - component: {fileID: 1038081875}
   - component: {fileID: 1038081874}
-  - component: {fileID: 1038081877}
   m_Layer: 5
   m_Name: bt_Medium
   m_TagString: Untagged
@@ -751,9 +772,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 1038081877}
+      - m_Target: {fileID: 372446402}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: Cards
+        m_MethodName: Medium
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -801,34 +822,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038081872}
   m_CullTransparentMesh: 1
---- !u!114 &1038081877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038081872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5eadbdf8f9aba246a21a3d3ddd644b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardList: []
-  listImageSelected: []
-  listTransparentPanelSelected: []
-  listButton: []
-  space: 60
-  numRows: 4
-  numCols: 5
-  imageCount: 
-  card: {fileID: 926306405555836708, guid: 9850963a1c67cf6499a0ba714ee2e73e, type: 3}
-  cardImages:
-  - {fileID: 21300000, guid: 49aed063850fec5479bef1c80b6ba818, type: 3}
-  - {fileID: 21300000, guid: f3901d94eb9d8054fa97e0e1102e3037, type: 3}
-  - {fileID: 21300000, guid: fac94f74e95a0b04d9e7a1e7431bef46, type: 3}
-  - {fileID: 21300000, guid: d25970f187c45b14eb68e4867cc398ed, type: 3}
-  - {fileID: 21300000, guid: 75b6dd71738678e43b3b29cbb4a2ba35, type: 3}
-  cards: {fileID: 1210087799}
 --- !u!1 &1121440159
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,7 +1349,6 @@ GameObject:
   - component: {fileID: 1548764448}
   - component: {fileID: 1548764447}
   - component: {fileID: 1548764446}
-  - component: {fileID: 1548764449}
   m_Layer: 5
   m_Name: bt_Simple
   m_TagString: Untagged
@@ -1441,9 +1433,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 1548764449}
+      - m_Target: {fileID: 372446402}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: Cards
+        m_MethodName: Simple
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1491,34 +1483,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548764444}
   m_CullTransparentMesh: 1
---- !u!114 &1548764449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548764444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5eadbdf8f9aba246a21a3d3ddd644b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardList: []
-  listImageSelected: []
-  listTransparentPanelSelected: []
-  listButton: []
-  space: 65
-  numRows: 2
-  numCols: 5
-  imageCount: 
-  card: {fileID: 926306405555836708, guid: 89b49926833a7b246a890fc50adfd003, type: 3}
-  cardImages:
-  - {fileID: 21300000, guid: 49aed063850fec5479bef1c80b6ba818, type: 3}
-  - {fileID: 21300000, guid: f3901d94eb9d8054fa97e0e1102e3037, type: 3}
-  - {fileID: 21300000, guid: fac94f74e95a0b04d9e7a1e7431bef46, type: 3}
-  - {fileID: 21300000, guid: d25970f187c45b14eb68e4867cc398ed, type: 3}
-  - {fileID: 21300000, guid: 75b6dd71738678e43b3b29cbb4a2ba35, type: 3}
-  cards: {fileID: 1178036994}
 --- !u!1 &1880953743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,7 +1495,6 @@ GameObject:
   - component: {fileID: 1880953747}
   - component: {fileID: 1880953746}
   - component: {fileID: 1880953745}
-  - component: {fileID: 1880953748}
   m_Layer: 5
   m_Name: bt_Hard
   m_TagString: Untagged
@@ -1616,9 +1579,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 1880953748}
+      - m_Target: {fileID: 372446402}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: Cards
+        m_MethodName: Hard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1666,34 +1629,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880953743}
   m_CullTransparentMesh: 1
---- !u!114 &1880953748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880953743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5eadbdf8f9aba246a21a3d3ddd644b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardList: []
-  listImageSelected: []
-  listTransparentPanelSelected: []
-  listButton: []
-  space: 50
-  numRows: 4
-  numCols: 8
-  imageCount: 
-  card: {fileID: 926306405555836708, guid: 992cf7aba8c38254e81df1649ebe09a6, type: 3}
-  cardImages:
-  - {fileID: 21300000, guid: 49aed063850fec5479bef1c80b6ba818, type: 3}
-  - {fileID: 21300000, guid: f3901d94eb9d8054fa97e0e1102e3037, type: 3}
-  - {fileID: 21300000, guid: fac94f74e95a0b04d9e7a1e7431bef46, type: 3}
-  - {fileID: 21300000, guid: d25970f187c45b14eb68e4867cc398ed, type: 3}
-  - {fileID: 21300000, guid: 75b6dd71738678e43b3b29cbb4a2ba35, type: 3}
-  cards: {fileID: 423759801}
 --- !u!1 &2056940522
 GameObject:
   m_ObjectHideFlags: 0
