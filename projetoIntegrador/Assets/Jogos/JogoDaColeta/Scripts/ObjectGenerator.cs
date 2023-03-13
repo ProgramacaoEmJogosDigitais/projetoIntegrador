@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class ObjectGenerator : MonoBehaviour
 {
-    public GameObject objeto;
-    public float velocidadeDeQueda = 5f;
+    public GameObject Objects;
+    public float fallingSpeed = 5f;
     public float taxaDeGeracao = 1f;
 
     void Start()
     {
-        InvokeRepeating("GerarObjeto", 0f, taxaDeGeracao);
+        InvokeRepeating("GenerateObject", 0f, fallingSpeed);
     }
 
-    void GerarObjeto()
+    void GenerateObject()
     {
         float x = Random.Range(-8f, 8f);
         float y = 7f;
-        Vector2 posicaoInicial = new Vector2(x, y);
-        Instantiate(objeto, posicaoInicial, Quaternion.identity);
+        Vector2 initialPosition = new Vector2(x, y);
+        Instantiate(Objects, initialPosition, Quaternion.identity);
     }
 }
