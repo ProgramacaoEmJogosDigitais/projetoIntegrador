@@ -13,7 +13,7 @@ public class ObjectsFalling : MonoBehaviour
             Destroy(gameObject);
 
             // Aumentar a pontuação do jogador
-            //PointsCount.IncreaseScore();
+            ScoreCount.IncreaseScore();
         }
     }
 
@@ -25,7 +25,7 @@ public class ObjectsFalling : MonoBehaviour
             Destroy(gameObject);
 
             // Aumente o número de objetos perdidos do jogador
-            //PlayerColeta.MissingObject();
+            PlayerColeta.MissingObject();
         }
     }
 }

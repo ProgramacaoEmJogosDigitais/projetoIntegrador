@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerColeta : MonoBehaviour
 {
     public float velocidade = 5f;
-    int missingObjects = 0; 
+    static int missingObjects = 0; 
 
     void Update()
     {
@@ -17,7 +17,7 @@ public class PlayerColeta : MonoBehaviour
         transform.Translate(movimento * velocidade * Time.deltaTime);
     }
 
-    public void MissingObject()
+    public static void MissingObject()
     {
         missingObjects++;
         if (missingObjects >= GameOver.objetosPerdidosParaGameOver)

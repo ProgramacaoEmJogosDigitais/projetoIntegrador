@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class PointsCount : MonoBehaviour
+public class ScoreCount : MonoBehaviour
 {
     public static int points = 0;
-    //public Text guiPontuacao;
+    public static TextMeshProUGUI scoreCount_txt;
 
-    public static void aumentarPontuacao()
+    public static void IncreaseScore()
 
     {
         points++;
-        // Atualize a GUI de pontuação
-        //guiPontuacao.text = "Pontuação: " + points.ToString();
+        // Atualiza a GUI de pontuação
+        scoreCount_txt.text = "Pontuação: " + points.ToString();
     }
 
 }

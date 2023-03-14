@@ -20,4 +20,4 @@ public class ObjectGenerator : MonoBehaviour
         Vector2 initialPosition = new Vector2(x, y);
         Instantiate(Objects, initialPosition, Quaternion.identity);
     }
-}
+ }
