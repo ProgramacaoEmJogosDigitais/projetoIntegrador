@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class MenuPintura : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject menuPintura, menuSelecaoPintura;
+
+    public void AlnternaMenuPintura()
     {
-        
+        menuPintura.SetActive(false);
+        menuSelecaoPintura.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
