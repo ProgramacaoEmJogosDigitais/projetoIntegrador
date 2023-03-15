@@ -5,12 +5,11 @@ using UnityEngine;
 public class ObjectGenerator : MonoBehaviour
 {
     public GameObject Objects;
-    public float fallingSpeed = 5f;
-    public float taxaDeGeracao = 1f;
+    public float fallingInterval = 5f;
 
     void Start()
     {
-        InvokeRepeating("GenerateObject", 0f, fallingSpeed);
+        InvokeRepeating("GenerateObject", 0f, fallingInterval);
     }
 
     void GenerateObject()

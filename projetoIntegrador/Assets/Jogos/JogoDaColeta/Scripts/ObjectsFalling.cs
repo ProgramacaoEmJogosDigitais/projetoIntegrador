@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ObjectsFalling : MonoBehaviour
 
 {
+    public static int points = 0;
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -13,7 +16,8 @@ public class ObjectsFalling : MonoBehaviour
             Destroy(gameObject);
 
             // Aumentar a pontuação do jogador
-            ScoreCount.IncreaseScore();
+            points++;
+            Debug.Log("pontos:" + points);
         }
     }
 
