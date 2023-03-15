@@ -8,7 +8,7 @@ public class Difficulty : MonoBehaviour
     GameController gameController;
     public GameObject selectDifficulty;
     public GameObject simpleDifficulty;
-    public GameObject mediumDifficulty;
+    public GameObject normalDifficulty;
     public GameObject hardDifficulty;
    
     public void SelectSimpleDifficulty()
@@ -17,10 +17,10 @@ public class Difficulty : MonoBehaviour
         simpleDifficulty.SetActive(true);
     }
 
-    public void SelectMediumDifficulty()
+    public void SelectNormalDifficulty()
     {
         selectDifficulty.SetActive(false);
-        mediumDifficulty.SetActive(true);
+        normalDifficulty.SetActive(true);
     }
 
     public void SelectHardDifficulty()

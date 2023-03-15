@@ -12,62 +12,20 @@ using UnityEngine.WSA;
 
 public class GameController : MonoBehaviour
 {
+    public Image[,] grid; //grade
+    public List<Image> cardList; // lista de cartas
+    public List<Image> listImageSelected = null; //lista de imagens selecionadas
+    public List<Image> listTransparentPanelSelected = null; //lista de paineis transparentes selecionados que esconde as imagens
+    public List<Button> listButton = null; //lista de butões
 
-    /*public List<Image> cardList;
-    public List<Sprite> imageList;
-    Dictionary<Sprite, int> spritesAddList = new Dictionary<Sprite, int>();
+    public float space; //espaço entre as cartas
+    private int numRows = 0; //numero de linhas
+    private int numCols = 0; //numero de colunas
+    public int[] imageCount; //vetor de imagens
 
-    public void Cards()
-    {
-        for (int i = 0; i < cardList.Count; i++)
-        {
-            Sprite randomCardImage;
-            int cardImageIndex;
-            do
-            {
-                cardImageIndex = UnityEngine.Random.Range(0, imageList.Count);
-                randomCardImage = imageList[cardImageIndex];
-
-                if (randomCardImage == null)
-                {
-                    Debug.Log("NULLLLLLLLL");
-                }
-            } while (randomCardImage == null);
-
-
-            if (spritesAddList.ContainsKey(randomCardImage) && spritesAddList[randomCardImage] >= 1)
-            {
-                imageList[cardImageIndex] = null;
-            }
-            else
-            {
-                if (spritesAddList.ContainsKey(randomCardImage))
-                {
-                    spritesAddList[randomCardImage]++;
-                }
-                else
-                {
-                    spritesAddList.Add(randomCardImage, 1);
-                }
-            }
-            cardList[i].sprite = randomCardImage;
-        }
-    }
-}*/
-    public Image[,] grid;
-    public List<Image> cardList;
-    public List<Image> listImageSelected = null;
-    public List<Image> listTransparentPanelSelected = null;
-    public List<Button> listButton = null;
-
-    public float space;
-    private int numRows = 0;
-    private int numCols = 0;
-    public int[] imageCount;
-
-    public Image card;
-    public Sprite[] cardImages;
-    public Transform cards;
+    public Image card; //Imagem da carta
+    public Sprite[] cardImages; //vetor das imagens das cartas
+    public Transform cards; //local(canvas) onde as cartas vão ser instanciadas
 
     CardTransparentPanel cardTransparentPanel;
 
@@ -76,8 +34,9 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         imageCount = new int[cardImages.Length];
+        cardList.Clear();
     }
-    public void Cards(int numRows, int numCols)
+    public void Cards(int numRows, int numCols, Transform cards)
     {
         grid = new Image[numRows, numCols];
 
@@ -142,58 +101,23 @@ public class GameController : MonoBehaviour
                 }
             }
         }
-
-        /*for (int i = 0; i < cardList.Count; i++)
-        {
-            Sprite randomCardImage;
-            int cardImageIndex;
-            bool allNull = true;
-            do
-            {
-                cardImageIndex = UnityEngine.Random.Range(0, cardImages.Length);
-                randomCardImage = cardImages[cardImageIndex];
-
-            } while (randomCardImage == null);
-
-            if (allNull != cardImages.All(element => element == null))
-            {
-                Debug.Log("NULLLLLLLLL");
-            }
-
-            if (spritesAddList.ContainsKey(randomCardImage) && spritesAddList[randomCardImage] >= 1)
-            {
-                cardImages[cardImageIndex] = null;
-            }
-            else
-            {
-                if (spritesAddList.ContainsKey(randomCardImage))
-                {
-                    spritesAddList[randomCardImage]++;
-                }
-                else
-                {
-                    spritesAddList.Add(randomCardImage, 1);
-                }
-            }
-            cardList[i].sprite = randomCardImage;
-        }*/
     }
-    public void Simple()
+    public void Simple(Transform cards)
     {
         numRows = 2;
         numCols = 5;
-        Cards(numRows, numCols);
+        Cards(numRows, numCols, cards);
     }    
-    public void Medium()
+    public void Normal(Transform cards)
     {
         numRows = 4;
         numCols = 5;
-        Cards(numRows, numCols);
+        Cards(numRows, numCols, cards);
     }   
-    public void Hard()
+    public void Hard(Transform cards)
     {
         numRows = 5;
         numCols = 6;
-        Cards(numRows, numCols);
+        Cards(numRows, numCols, cards);
     }
 }

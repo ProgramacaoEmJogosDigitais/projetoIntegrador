@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class CardTransparentPanel : MonoBehaviour
 {
     public Button button;
-    public GameObject a;
+    public GameObject objectGameController; //Objeto game controller
     public Image transparentImage;
     public Image image;
     public float duration;
@@ -18,7 +18,7 @@ public class CardTransparentPanel : MonoBehaviour
     private void Start()
     {
         button.enabled = false;
-        GameController gameController = a.GetComponent<GameController>();
+        GameController gameController = objectGameController.GetComponent<GameController>();
         gameController.listImageSelected.Clear();
         gameController.listTransparentPanelSelected.Clear();
         gameController.listButton.Clear();
@@ -32,9 +32,8 @@ public class CardTransparentPanel : MonoBehaviour
     }
     public void OnClick()
     {
-
+        button.enabled = false;
         GameController gameController = a.GetComponent<GameController>();
-
         transparentImage.color = new Color(transparentImage.color.r, transparentImage.color.g, transparentImage.color.b, 0);
         gameController.listImageSelected.Add(image);
         gameController.listTransparentPanelSelected.Add(transparentImage);
@@ -51,10 +50,6 @@ public class CardTransparentPanel : MonoBehaviour
 
             if (sprite1.name == sprite2.name)
             {
-                Button b1 = gameController.listButton[0];
-                Button b2 = gameController.listButton[1];
-                b1.enabled = false;
-                b2.enabled = false;
                 Debug.Log("Acertou!");
                 im1.color = new Color(im1.color.r, im1.color.g, im1.color.b, 0.5f);
                 im2.color = new Color(im2.color.r, im2.color.g, im2.color.b, 0.5f);
@@ -66,18 +61,21 @@ public class CardTransparentPanel : MonoBehaviour
             {
                 Debug.Log("Errou!");
                 gameController.listImageSelected.Clear();
-                gameController.listButton.Clear();
                 Invoke("ResetAlpha", duration);
+
             }
         }
     }
     public void ResetAlpha()
     {
         GameController gameController = a.GetComponent<GameController>();
-
+        Button b1 = gameController.listButton[0];
+        b1.enabled = true;
+        button.enabled = true;
         Image transparent1 = gameController.listTransparentPanelSelected[0];
         transparent1.color = new Color(transparent1.color.r, transparent1.color.g, transparent1.color.b, 1);
         transparentImage.color = new Color(transparentImage.color.r, transparentImage.color.g, transparentImage.color.b, 1);
         gameController.listTransparentPanelSelected.Clear();
+        gameController.listButton.Clear();
     }
 }

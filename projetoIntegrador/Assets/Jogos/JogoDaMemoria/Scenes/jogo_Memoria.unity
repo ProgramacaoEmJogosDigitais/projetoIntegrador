@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectDifficulty: {fileID: 1262071769}
   simpleDifficulty: {fileID: 1159847228}
-  mediumDifficulty: {fileID: 875090056}
+  normalDifficulty: {fileID: 875090056}
   hardDifficulty: {fileID: 1448499519}
 --- !u!114 &372446401
 MonoBehaviour:
@@ -201,10 +201,15 @@ MonoBehaviour:
   listImageSelected: []
   listTransparentPanelSelected: []
   listButton: []
-  space: 0
+  space: 68
   imageCount: 
-  card: {fileID: 0}
-  cardImages: []
+  card: {fileID: 926306405555836708, guid: 89b49926833a7b246a890fc50adfd003, type: 3}
+  cardImages:
+  - {fileID: 21300000, guid: 49aed063850fec5479bef1c80b6ba818, type: 3}
+  - {fileID: 21300000, guid: f3901d94eb9d8054fa97e0e1102e3037, type: 3}
+  - {fileID: 21300000, guid: fac94f74e95a0b04d9e7a1e7431bef46, type: 3}
+  - {fileID: 21300000, guid: d25970f187c45b14eb68e4867cc398ed, type: 3}
+  - {fileID: 21300000, guid: 75b6dd71738678e43b3b29cbb4a2ba35, type: 3}
   cards: {fileID: 0}
 --- !u!1 &423759800
 GameObject:
@@ -519,7 +524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 875090057}
   m_Layer: 0
-  m_Name: DifficultyMedium
+  m_Name: DifficultyNormal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -541,6 +546,107 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &973463584
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4915971640021280293, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: a
+      value: 
+      objectReference: {fileID: 372446397}
+    - target: {fileID: 5213318818280238861, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_Name
+      value: Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927427257617393070, guid: 632fa1d972313a14491c657faa00393a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 632fa1d972313a14491c657faa00393a, type: 3}
 --- !u!1 &991881357
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +705,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "M\xE9dio"
+  m_text: 'Normal
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -689,7 +797,7 @@ GameObject:
   - component: {fileID: 1038081875}
   - component: {fileID: 1038081874}
   m_Layer: 5
-  m_Name: bt_Medium
+  m_Name: bt_Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -762,7 +870,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 372446400}
         m_TargetAssemblyTypeName: Difficulty, Assembly-CSharp
-        m_MethodName: SelectMediumDifficulty
+        m_MethodName: SelectNormalDifficulty
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -774,11 +882,11 @@ MonoBehaviour:
         m_CallState: 1
       - m_Target: {fileID: 372446402}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: Medium
-        m_Mode: 1
+        m_MethodName: Normal
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1210087799}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1436,10 +1544,10 @@ MonoBehaviour:
       - m_Target: {fileID: 372446402}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: Simple
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1178036994}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1582,10 +1690,10 @@ MonoBehaviour:
       - m_Target: {fileID: 372446402}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: Hard
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 423759801}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
