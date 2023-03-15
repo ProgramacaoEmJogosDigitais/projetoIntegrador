@@ -78,7 +78,7 @@ public class CardTransparentPanel : MonoBehaviour
     {
         GameController gameController = objectGameController.GetComponent<GameController>();
 
-        if (gameController.listTransparentPanelSelected.Count >= 2 && gameController.listButton.Count >= 2)
+        if (gameController.listTransparentPanelSelected.Count >= 2)
         {
             Image transparent0 = gameController.listTransparentPanelSelected[0];
             transparent0.color = new Color(transparent0.color.r, transparent0.color.g, transparent0.color.b, 1);
@@ -92,10 +92,6 @@ public class CardTransparentPanel : MonoBehaviour
             gameController.listButton.Clear();
             gameController.listImageSelected.Clear();
             gameController.listTransparentPanelSelected.Clear();
-        }
-        else
-        {
-            Debug.LogWarning("Não há elementos suficientes nas listas para fazer a combinação");
         }
     }
 }
