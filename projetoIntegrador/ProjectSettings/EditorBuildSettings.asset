@@ -18,9 +18,9 @@ EditorBuildSettings:
     path: Assets/Jogos/JogoDaMemoria/Scenes/menu_Memoria.unity
     guid: 1b35da18a2e7d3e45b9b215b68f543e1
   - enabled: 1
-    path: Assets/Jogos/JogoDaPintura/Scenes/qq.unity
-    guid: 5b33e453bd05484448c230151e3b5cf7
-  - enabled: 1
     path: Assets/Jogos/JogoDaPintura/Scenes/MenuJogoDaPintura.unity
     guid: 1cebe8fb9d2660946b01996874b36a1e
+  - enabled: 1
+    path: Assets/Jogos/JogoDaPintura/Scenes/PinturaClassico.unity
+    guid: 46d8baf7309f1fa47ac95792e8fdcbd3
   m_configObjects: {}
