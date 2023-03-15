@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
         imageCount = new int[cardImages.Length];
         cardList.Clear();
     }
-    public void Cards(int numRows, int numCols, Transform cards)
+    public void Cards(int numRows, int numCols)
     {
         grid = new Image[numRows, numCols];
 
@@ -102,22 +102,22 @@ public class GameController : MonoBehaviour
             }
         }
     }
-    public void Simple(Transform cards)
+    public void Simple()
     {
         numRows = 2;
         numCols = 5;
-        Cards(numRows, numCols, cards);
+        Cards(numRows, numCols);
     }    
-    public void Normal(Transform cards)
+    public void Normal()
     {
         numRows = 4;
         numCols = 5;
-        Cards(numRows, numCols, cards);
+        Cards(numRows, numCols);
     }   
-    public void Hard(Transform cards)
+    public void Hard()
     {
         numRows = 5;
         numCols = 6;
-        Cards(numRows, numCols, cards);
+        Cards(numRows, numCols);
     }
 }

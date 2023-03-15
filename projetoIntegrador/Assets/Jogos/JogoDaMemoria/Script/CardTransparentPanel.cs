@@ -19,9 +19,9 @@ public class CardTransparentPanel : MonoBehaviour
     {
         button.enabled = false;
         GameController gameController = objectGameController.GetComponent<GameController>();
+        gameController.listButton.Clear();
         gameController.listImageSelected.Clear();
         gameController.listTransparentPanelSelected.Clear();
-        gameController.listButton.Clear();
         transparentImage.color = new Color(transparentImage.color.r, transparentImage.color.g, transparentImage.color.b, 0);
         Invoke("Cards", duration);
     }
@@ -32,12 +32,20 @@ public class CardTransparentPanel : MonoBehaviour
     }
     public void OnClick()
     {
-        button.enabled = false;
-        GameController gameController = a.GetComponent<GameController>();
-        transparentImage.color = new Color(transparentImage.color.r, transparentImage.color.g, transparentImage.color.b, 0);
-        gameController.listImageSelected.Add(image);
-        gameController.listTransparentPanelSelected.Add(transparentImage);
-        gameController.listButton.Add(button);
+        GameController gameController = objectGameController.GetComponent<GameController>();
+        if (gameController.listImageSelected.Count < 2)
+        {
+            gameController.listImageSelected.Add(image);
+            gameController.listTransparentPanelSelected.Add(transparentImage);
+            gameController.listButton.Add(button);
+            transparentImage.color = new Color(transparentImage.color.r, transparentImage.color.g, transparentImage.color.b, 0);
+            button.enabled = false;
+        }
+        else
+        {
+            Debug.Log("Lista ultrapassa limite ");
+
+        }
 
         Debug.Log("Lista: " + gameController.listImageSelected.Count);
 
@@ -53,6 +61,7 @@ public class CardTransparentPanel : MonoBehaviour
                 Debug.Log("Acertou!");
                 im1.color = new Color(im1.color.r, im1.color.g, im1.color.b, 0.5f);
                 im2.color = new Color(im2.color.r, im2.color.g, im2.color.b, 0.5f);
+
                 gameController.listImageSelected.Clear();
                 gameController.listTransparentPanelSelected.Clear();
                 gameController.listButton.Clear();
@@ -60,22 +69,33 @@ public class CardTransparentPanel : MonoBehaviour
             else
             {
                 Debug.Log("Errou!");
-                gameController.listImageSelected.Clear();
                 Invoke("ResetAlpha", duration);
-
             }
         }
     }
+
     public void ResetAlpha()
     {
-        GameController gameController = a.GetComponent<GameController>();
-        Button b1 = gameController.listButton[0];
-        b1.enabled = true;
-        button.enabled = true;
-        Image transparent1 = gameController.listTransparentPanelSelected[0];
-        transparent1.color = new Color(transparent1.color.r, transparent1.color.g, transparent1.color.b, 1);
-        transparentImage.color = new Color(transparentImage.color.r, transparentImage.color.g, transparentImage.color.b, 1);
-        gameController.listTransparentPanelSelected.Clear();
-        gameController.listButton.Clear();
+        GameController gameController = objectGameController.GetComponent<GameController>();
+
+        if (gameController.listTransparentPanelSelected.Count >= 2 && gameController.listButton.Count >= 2)
+        {
+            Image transparent0 = gameController.listTransparentPanelSelected[0];
+            transparent0.color = new Color(transparent0.color.r, transparent0.color.g, transparent0.color.b, 1);
+            transparentImage.color = new Color(transparentImage.color.r, transparentImage.color.g, transparentImage.color.b, 1);
+
+            Button b0 = gameController.listButton[0];
+            Button b1 = gameController.listButton[1];
+            b0.enabled = true;
+            b1.enabled = true;
+
+            gameController.listButton.Clear();
+            gameController.listImageSelected.Clear();
+            gameController.listTransparentPanelSelected.Clear();
+        }
+        else
+        {
+            Debug.LogWarning("Não há elementos suficientes nas listas para fazer a combinação");
+        }
     }
 }
