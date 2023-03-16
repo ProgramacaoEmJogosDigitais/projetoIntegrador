@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class ObjectGenerator : MonoBehaviour
+public class GameControllerJC : MonoBehaviour
 {
     public GameObject Objects;
+    public static int objetosPerdidosParaGameOver = 3;
+    public TextMeshProUGUI score_txt;
+    PlayerColeta playerColeta;
 
     void Start()
     {
         StartCoroutine(GenerateObject());
+        Score();
     }
 
     IEnumerator GenerateObject()
@@ -22,4 +28,13 @@ public class ObjectGenerator : MonoBehaviour
             yield return new WaitForSeconds(2.5f);
         }
     }
- }
+    public void Score()
+    {
+        score_txt.text = "Pontuação:" + playerColeta.points.ToString();
+    }
+    public static void GameOver()
+    {
+        // Exibir a tela de game over
+        SceneManager.LoadScene("GameOver");
+    }
+}

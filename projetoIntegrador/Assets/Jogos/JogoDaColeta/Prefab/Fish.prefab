@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 1452010173509438018}
   - component: {fileID: 7325555158644418515}
   m_Layer: 0
-  m_Name: FallingObject
-  m_TagString: Untagged
+  m_Name: Fish
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,8 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa15128d638fe34489b23020a91aa125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score_txt: {fileID: 5549462675168341364, guid: d041787b5f871f747bacbf7b08390612, type: 3}
-  points: 0
 --- !u!50 &7325555158644418515
 Rigidbody2D:
   serializedVersion: 4
