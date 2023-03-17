@@ -1,11 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class ObjectsFalling : MonoBehaviour
-
 {
+    public int points = 0;
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // Destruir o objeto que caiu
+            Destroy(gameObject);
+
+            // Aumentar a pontuação do jogador
+            points++;
+        }
+    }
+
     void Update()
     {
         if (transform.position.y < -6f)

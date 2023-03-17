@@ -9,7 +9,6 @@ public class GameControllerJC : MonoBehaviour
     public GameObject Objects;
     public static int objetosPerdidosParaGameOver = 3;
     public TextMeshProUGUI score_txt;
-    PlayerColeta playerColeta;
 
     void Start()
     {
@@ -30,7 +29,7 @@ public class GameControllerJC : MonoBehaviour
     }
     public void Score()
     {
-        score_txt.text = "Pontuação:" + playerColeta.points.ToString();
+        //score_txt.text = "Pontuação:" + ObjectsFalling.points.ToString();
     }
     public static void GameOver()
     {

@@ -8,7 +8,7 @@ public class PlayerColeta : MonoBehaviour
 {
     public float velocidade = 5f;
     static int missingObjects = 0;
-    public int points = 0;
+    private int points = 0;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -29,7 +29,7 @@ public class PlayerColeta : MonoBehaviour
 
         Vector2 movimento = new Vector2(movimentoHorizontal, movimentoVertical);
 
-        transform.Translate(movimento * velocidade * Time.deltaTime);
+        transform.Translate(Time.deltaTime * velocidade * movimento);
     }
 
     public static void MissingObject()
