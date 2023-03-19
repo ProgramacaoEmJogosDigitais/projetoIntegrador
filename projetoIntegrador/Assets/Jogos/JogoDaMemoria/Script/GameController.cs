@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
     public List<Image> listImageSelected = null; //lista de imagens selecionadas
     public List<Image> listTransparentPanelSelected = null; //lista de paineis transparentes selecionados que esconde as imagens
     public List<Button> listButton = null; //lista de butões
+    public bool s = true;
+
 
     public float space; //espaço entre as cartas
     private int numRows = 0; //numero de linhas
