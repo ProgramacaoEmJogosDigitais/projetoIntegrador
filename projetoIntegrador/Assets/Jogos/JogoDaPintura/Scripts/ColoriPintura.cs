@@ -11,6 +11,7 @@ public class ColoriPintura : MonoBehaviour
     public int numeroPinturaCompetitivo,tempoFigura;
     public Material semCorPinturaCompetitivo;
     public TextMeshProUGUI txtContador;
+    public bool stopContagePicture;
 
     public Material[] materiaisPinturaCompetitivo, materiaisFilhosPinturaCompetitivo;
     void Start()
@@ -23,6 +24,7 @@ public class ColoriPintura : MonoBehaviour
         PintaFigura();
         ContadorFigura();
         ResetaPinturaCompetitivo();
+
     }
 
     // Update is called once per frame
@@ -69,15 +71,8 @@ public class ColoriPintura : MonoBehaviour
 
 
     }
-    void ContadorFigura()
-    {
-        for (int i = 0; i < tempoFigura; i++)
-        {
-            txtContador.text = i.ToString();
-         
-          
-
-        }
-        ResetaPinturaCompetitivo();
-    }
+   
+   
 }
+
+
