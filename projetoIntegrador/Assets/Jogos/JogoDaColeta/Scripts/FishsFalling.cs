@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectsFalling : MonoBehaviour
+public class FishsFalling : MonoBehaviour
 {
     public float minFallSpeed = 1f;
     public float maxFallSpeed = 1f;
+    public static int points = 0;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,9 +15,9 @@ public class ObjectsFalling : MonoBehaviour
             // Destruir o objeto que caiu
             Destroy(gameObject);
 
-            // Aumentar os erros
-            PlayerColeta.MissingObject();
-            Debug.Log("pontos:" + PlayerColeta.missingObjects);
+            // Aumentar a pontuação do jogador
+            points++;
+            Debug.Log("pontos:" + points);
         }
     }
 
@@ -31,6 +32,9 @@ public class ObjectsFalling : MonoBehaviour
         {
             // Destrua o objeto que caiu
             Destroy(gameObject);
+
+            // Aumente o número de objetos perdidos do jogador
+            PlayerColeta.MissingObject();
         }
     }
 

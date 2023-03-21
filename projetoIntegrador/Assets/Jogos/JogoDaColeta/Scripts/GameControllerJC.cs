@@ -37,7 +37,7 @@ public class GameControllerJC : MonoBehaviour
     public void Score()
     {
         missScore_txt.text = "peixes caídos: " + PlayerColeta.missingObjects.ToString();
-        score_txt.text = "Pontuação: " + ObjectsFalling.points.ToString();
+        score_txt.text = "Pontuação: " + FishsFalling.points.ToString();
     }
     public static void GameOver()
     {

@@ -591,6 +591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabFishs:
   - {fileID: 3703434978984473748, guid: 303cca60a38801140b54773ce464f9eb, type: 3}
+  - {fileID: 6671178226500550639, guid: a13b24d46f77e0649ac9ae5c5e832c9d, type: 3}
   score_txt: {fileID: 13735168}
   missScore_txt: {fileID: 204986685}
   time: 0
