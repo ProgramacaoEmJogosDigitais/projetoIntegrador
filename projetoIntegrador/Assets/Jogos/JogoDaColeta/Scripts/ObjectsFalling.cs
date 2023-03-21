@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectsFalling : MonoBehaviour
 {
-    public int points = 0;
+    public static int points = 0;
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -14,6 +14,8 @@ public class ObjectsFalling : MonoBehaviour
 
             // Aumentar a pontuação do jogador
             points++;
+            DataFish.fishPoints = points;
+            Debug.Log("pontos:" + points);
         }
     }
 

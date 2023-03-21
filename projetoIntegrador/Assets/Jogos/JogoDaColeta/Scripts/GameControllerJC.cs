@@ -9,11 +9,18 @@ public class GameControllerJC : MonoBehaviour
     public GameObject Objects;
     public static int objetosPerdidosParaGameOver = 3;
     public TextMeshProUGUI score_txt;
+    public ObjectsFalling fishcounter2;
+
+
+    private void Update()
+    {
+        Score();
+    }
 
     void Start()
     {
         StartCoroutine(GenerateObject());
-        Score();
+       
     }
 
     IEnumerator GenerateObject()
@@ -29,7 +36,7 @@ public class GameControllerJC : MonoBehaviour
     }
     public void Score()
     {
-        //score_txt.text = "Pontuação:" + ObjectsFalling.points.ToString();
+        score_txt.text = "Pontuação:" + DataFish.fishPoints.ToString();
     }
     public static void GameOver()
     {
