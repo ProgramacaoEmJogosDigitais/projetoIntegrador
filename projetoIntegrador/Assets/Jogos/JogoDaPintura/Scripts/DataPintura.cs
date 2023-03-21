@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DataPintura 
 {
-    public static int numeroCorSelecionada;
-    public static int[] vetorComparacaoPintura;
+    public static int numeroCorSelecionada,contageFigureResete;
+    public static int[] vetorComparacaoPintura,vectorCollorSelect;
 
    
 }

@@ -6,6 +6,7 @@ public class ReceptorDeCor : MonoBehaviour
 {
     public Material[] coresPossiveis; 
     public Material corDoObjeto;
+    public int vectorCollorIndice;
     // Start is called before the first frame update
     void OnMouseOver()
     {
@@ -17,7 +18,8 @@ public class ReceptorDeCor : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
 
-           corDoObjeto.color = coresPossiveis[DataPintura.numeroCorSelecionada].color;
+            corDoObjeto.color = coresPossiveis[DataPintura.numeroCorSelecionada].color;
+            DataPintura.vectorCollorSelect[vectorCollorIndice] = DataPintura.numeroCorSelecionada;
 
 
         }

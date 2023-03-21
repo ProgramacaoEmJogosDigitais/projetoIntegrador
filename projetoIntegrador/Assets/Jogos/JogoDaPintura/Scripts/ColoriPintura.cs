@@ -11,26 +11,32 @@ public class ColoriPintura : MonoBehaviour
     public int numeroPinturaCompetitivo,tempoFigura;
     public Material semCorPinturaCompetitivo;
     public TextMeshProUGUI txtContador;
-    public bool stopContagePicture;
+    public bool stopContagePicture,comperePictures;
+   
 
     public Material[] materiaisPinturaCompetitivo, materiaisFilhosPinturaCompetitivo;
     void Start()
     {
         ApagaPinturaClassico();
         DataPintura.vetorComparacaoPintura=new int[materiaisFilhosPinturaCompetitivo.Length];
+        DataPintura.vectorCollorSelect = new int[materiaisFilhosPinturaCompetitivo.Length];
         numeroPinturaCompetitivo = Random.Range(0, pinturasCompetitivo.Length);
         pinturasCompetitivo[numeroPinturaCompetitivo].SetActive(true);
         GeradorDeCoresPintura();
         PintaFigura();
-        ContadorFigura();
-        ResetaPinturaCompetitivo();
+       
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (DataPintura.contageFigureResete >= 10)
+        {
+            ResetaPinturaCompetitivo();
+
+
+        }
     }
     void GeradorDeCoresPintura()
     {
@@ -71,6 +77,22 @@ public class ColoriPintura : MonoBehaviour
 
 
     }
+    public void CompareFiguresCollor()
+    {
+        for (int i = 0; i < materiaisFilhosPinturaCompetitivo.Length; i++)
+        {
+            if (DataPintura.vectorCollorSelect[i] != DataPintura.vetorComparacaoPintura[i])
+            {
+                comperePictures = false;
+            }
+            if(!comperePictures)
+            {
+                Debug.Log("ganhou");
+            }
+        }       
+                
+    }
+
    
    
 }
