@@ -11,7 +11,7 @@ public class ObjectsFalling : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Destruir o objeto que caiu
+            // Destruir o objeto pego
             Destroy(gameObject);
 
             // Aumentar os erros
@@ -29,7 +29,7 @@ public class ObjectsFalling : MonoBehaviour
 
         if (transform.position.y < -4.5f)
         {
-            // Destrua o objeto que caiu
+            // Destrua o objeto que caiu no chão
             Destroy(gameObject);
         }
     }

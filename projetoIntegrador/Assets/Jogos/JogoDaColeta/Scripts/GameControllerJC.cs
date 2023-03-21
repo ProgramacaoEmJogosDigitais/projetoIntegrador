@@ -27,7 +27,7 @@ public class GameControllerJC : MonoBehaviour
     {
         while (true)
         {
-            float x = Random.Range(-8f, 8f);
+            float x = Random.Range(-11f, 11f); 
             float y = 7f;
             Vector2 spawnPosition = new Vector2(x, y);
             Instantiate(prefabFishs[Random.Range(0, prefabFishs.Length)], spawnPosition, Quaternion.identity);
@@ -37,6 +37,7 @@ public class GameControllerJC : MonoBehaviour
     }
     public void Score()
     {
+        //texts que aparecem no game
         missScore_txt.text = "peixes caídos: " + PlayerColeta.missingObjects.ToString();
         score_txt.text = "Pontuação: " + FishsFalling.points.ToString();
     }

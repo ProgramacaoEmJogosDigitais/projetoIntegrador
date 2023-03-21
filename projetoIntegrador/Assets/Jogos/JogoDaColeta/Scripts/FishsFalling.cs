@@ -12,11 +12,11 @@ public class FishsFalling : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Destruir o objeto que caiu
+            // Destruir o objeto pego
             Destroy(gameObject);
 
             // Aumentar a pontuação do jogador
-            points++;
+            points ++;
             Debug.Log("pontos:" + points);
         }
     }
@@ -33,7 +33,7 @@ public class FishsFalling : MonoBehaviour
             // Destrua o objeto que caiu
             Destroy(gameObject);
 
-            // Aumente o número de objetos perdidos do jogador
+            // Aumentar o número de objetos perdidos do jogador
             PlayerColeta.MissingObject();
         }
     }
