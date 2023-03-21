@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 926306405555836708}
   - component: {fileID: 7624366609971457796}
   m_Layer: 5
-  m_Name: CardHard
+  m_Name: Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 5213318818280238861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8115727920920409144}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 8495176981895691720}
   - component: {fileID: 6016059779322947549}
   - component: {fileID: 615198554987216205}
-  - component: {fileID: 4915971640021280293}
+  - component: {fileID: 8867991292089317753}
   m_Layer: 5
   m_Name: TransparentPanel
   m_TagString: Untagged
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4915971640021280293}
+      - m_Target: {fileID: 8867991292089317753}
         m_TargetAssemblyTypeName: CardTransparentPanel, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -256,7 +256,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &4915971640021280293
+--- !u!114 &8867991292089317753
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 615198554987216205}
-  a: {fileID: 408149511496432982, guid: c3f9c32d2eb060a469ccf561a01e7fde, type: 3}
+  objectGameController: {fileID: 0}
   transparentImage: {fileID: 6016059779322947549}
   image: {fileID: 926306405555836708}
   duration: 2
