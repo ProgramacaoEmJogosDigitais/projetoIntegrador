@@ -7,9 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class GameControllerJC : MonoBehaviour
 {
-    public GameObject Objects;
-    public static int objetosPerdidosParaGameOver = 3;
+    public GameObject[] prefabFishs;
+    public static int lostObjectsForGameOver = 3;
     public TextMeshProUGUI score_txt;
+    public TextMeshProUGUI missScore_txt;
+    public float time;
 
     void Start()
     {
@@ -26,14 +28,16 @@ public class GameControllerJC : MonoBehaviour
         {
             float x = Random.Range(-8f, 8f);
             float y = 7f;
-            Vector2 initialPosition = new Vector2(x, y);
-            Instantiate(Objects, initialPosition, Quaternion.identity);
-            yield return new WaitForSeconds(2.5f);
+            Vector2 spawnPosition = new Vector2(x, y);
+            Instantiate(prefabFishs[Random.Range(0, prefabFishs.Length)], spawnPosition, Quaternion.identity);
+            time = Random.Range(2, 4);
+            yield return new WaitForSeconds(time);
         }
     }
     public void Score()
     {
-        score_txt.text = "Pontuação:" + ObjectsFalling.points.ToString();
+        missScore_txt.text = "peixes caídos: " + PlayerColeta.missingObjects.ToString();
+        score_txt.text = "Pontuação: " + ObjectsFalling.points.ToString();
     }
     public static void GameOver()
     {

@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class PlayerColeta : MonoBehaviour
 {
     public float velocidade = 5f;
-    static int missingObjects = 0;
+    public static int missingObjects = 0;
 
     void Update()
     {
@@ -22,7 +22,7 @@ public class PlayerColeta : MonoBehaviour
     public static void MissingObject()
     {
         missingObjects++;
-        if (missingObjects >= GameControllerJC.objetosPerdidosParaGameOver)
+        if (missingObjects >= GameControllerJC.lostObjectsForGameOver)
         {
             // Game over!
             GameControllerJC.GameOver();
