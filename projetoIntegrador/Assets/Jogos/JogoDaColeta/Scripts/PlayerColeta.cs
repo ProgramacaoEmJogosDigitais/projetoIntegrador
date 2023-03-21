@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -12,10 +11,7 @@ public class PlayerColeta : MonoBehaviour
     void Update()
     {
         float movimentoHorizontal = Input.GetAxis("Horizontal");
-        
-
         Vector2 movimento = new Vector2(movimentoHorizontal, 0);
-
         transform.Translate(Time.deltaTime * velocidade * movimento);
     }
 

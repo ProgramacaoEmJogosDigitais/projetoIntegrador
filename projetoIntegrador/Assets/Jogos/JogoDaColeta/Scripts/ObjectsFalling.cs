@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ObjectsFalling : MonoBehaviour
 {
-    public float minFallSpeed = 1f;
-    public float maxFallSpeed = 1f;
+    public float fallSpeed = 1f;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,20 +15,17 @@ public class ObjectsFalling : MonoBehaviour
 
             // Aumentar os erros
             PlayerColeta.MissingObject();
-            Debug.Log("pontos:" + PlayerColeta.missingObjects);
         }
     }
 
     void Update()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        float fallSpeed = Random.Range(minFallSpeed, maxFallSpeed);
         rb.velocity = new Vector2(0f, -fallSpeed);
-        Debug.Log("velocidade q ta caindo" + fallSpeed);
 
         if (transform.position.y < -4.5f)
         {
-            // Destrua o objeto que caiu no chão
+            // Destruir o objeto que caiu no chão
             Destroy(gameObject);
         }
     }

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,14 +19,14 @@ public class GameControllerJC : MonoBehaviour
 
     public void Update()
     {
-        Score();   
+        Score();
     }
 
     IEnumerator GenerateObject()
     {
         while (true)
         {
-            float x = Random.Range(-11f, 11f); 
+            float x = Random.Range(-11f, 11f);
             float y = 7f;
             Vector2 spawnPosition = new Vector2(x, y);
             Instantiate(prefabFishs[Random.Range(0, prefabFishs.Length)], spawnPosition, Quaternion.identity);
@@ -35,12 +34,14 @@ public class GameControllerJC : MonoBehaviour
             yield return new WaitForSeconds(time);
         }
     }
+
     public void Score()
     {
         //texts que aparecem no game
         missScore_txt.text = "peixes caídos: " + PlayerColeta.missingObjects.ToString();
         score_txt.text = "Pontuação: " + FishsFalling.points.ToString();
     }
+
     public static void GameOver()
     {
         // Exibir a tela de game over
