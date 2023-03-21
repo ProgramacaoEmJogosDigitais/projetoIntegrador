@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabFishs:
-  - {fileID: 3703434978984473748, guid: 303cca60a38801140b54773ce464f9eb, type: 3}
+  - {fileID: 8985508272817061620, guid: a699edc246391aa47be0a537500cf349, type: 3}
   - {fileID: 6671178226500550639, guid: a13b24d46f77e0649ac9ae5c5e832c9d, type: 3}
   score_txt: {fileID: 13735168}
   missScore_txt: {fileID: 204986685}
@@ -776,7 +776,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910350882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.3, z: 0}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

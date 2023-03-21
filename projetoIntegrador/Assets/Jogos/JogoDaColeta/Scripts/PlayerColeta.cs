@@ -12,9 +12,9 @@ public class PlayerColeta : MonoBehaviour
     void Update()
     {
         float movimentoHorizontal = Input.GetAxis("Horizontal");
-        float movimentoVertical = Input.GetAxis("Vertical");
+        
 
-        Vector2 movimento = new Vector2(movimentoHorizontal, movimentoVertical);
+        Vector2 movimento = new Vector2(movimentoHorizontal, 0);
 
         transform.Translate(Time.deltaTime * velocidade * movimento);
     }

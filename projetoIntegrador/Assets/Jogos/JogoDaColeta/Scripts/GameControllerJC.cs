@@ -17,9 +17,10 @@ public class GameControllerJC : MonoBehaviour
     {
         StartCoroutine(GenerateObject());
     }
+
     public void Update()
     {
-        Score();
+        Score();   
     }
 
     IEnumerator GenerateObject()

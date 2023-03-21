@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4206561634656008231}
   - component: {fileID: -488122782922835132}
   m_Layer: 0
-  m_Name: Lata
+  m_Name: Can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
