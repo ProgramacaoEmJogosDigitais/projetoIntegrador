@@ -14,7 +14,6 @@ public class ObjectsFalling : MonoBehaviour
 
             // Aumentar a pontuação do jogador
             points++;
-            DataFish.fishPoints = points;
             Debug.Log("pontos:" + points);
         }
     }
