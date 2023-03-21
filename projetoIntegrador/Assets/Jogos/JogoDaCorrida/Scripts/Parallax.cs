@@ -25,17 +25,12 @@ public class Parallax : MonoBehaviour
     private void MoveBackground()
     {
         // Movimentação da imagem
-        transform.position = new Vector3(transform.position.x - speed * Time.deltaTime * Input.GetAxis("Horizontal"), 0, 0);
-        
+        transform.Translate(- speed * Time.deltaTime, 0, 0);
+
         // Se a imagem já saiu da tela, troca de posição pro lado contrário
-        if (transform.localPosition.x >= width)
-        {
-            transform.localPosition = new Vector3(transform.localPosition.x - width * 2, 0, 0);
-        }
-        else if (transform.localPosition.x <= -width)
+        if (transform.localPosition.x <= -width)
         {
             transform.localPosition = new Vector3(transform.localPosition.x + width * 2, 0, 0);
         }
-        
     }
 }
