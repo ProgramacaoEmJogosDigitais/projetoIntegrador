@@ -19,15 +19,21 @@ public class TimeConterPicture : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        timeFigure += Time.fixedDeltaTime;
-        timeFigureint=(int)timeFigure;
-            
-        DataPintura.contageFigureResete = timeFigureint;
-        txtContageFigure.text=timeFigureint.ToString();
+        if(timeFigure <11)
+        {
+            timeFigure += Time.fixedDeltaTime;
+            timeFigureint = (int)timeFigure;
+
+            DataPintura.contageFigureResete = timeFigureint;
+            txtContageFigure.text = timeFigureint.ToString();
+            contageTxt.SetActive(true);
+        }
+       
         if(timeFigureint==10)
         {
             contageTxt.SetActive(false);
         }
+       
     }
    
 }

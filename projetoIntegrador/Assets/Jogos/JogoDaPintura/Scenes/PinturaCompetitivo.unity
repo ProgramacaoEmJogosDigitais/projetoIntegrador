@@ -471,7 +471,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 92ca7c6ba88f84343967de3e4f75cbd4, type: 2}
   - {fileID: 2100000, guid: 9c4372c21a7e73d48b0c91740b56c2b4, type: 2}
   corDoObjeto: {fileID: 2100000, guid: 5a5ffa5c3c5000c408def84b5a946afd, type: 2}
-  vectorCollorIndice: 0
+  vectorCollorIndice: 4
 --- !u!60 &200554052
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1569,7 +1569,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 92ca7c6ba88f84343967de3e4f75cbd4, type: 2}
   - {fileID: 2100000, guid: 9c4372c21a7e73d48b0c91740b56c2b4, type: 2}
   corDoObjeto: {fileID: 2100000, guid: 5b46d285153f72a45b28a486b77a18e8, type: 2}
-  vectorCollorIndice: 0
+  vectorCollorIndice: 5
 --- !u!60 &413309321
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1723,7 +1723,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 92ca7c6ba88f84343967de3e4f75cbd4, type: 2}
   - {fileID: 2100000, guid: 9c4372c21a7e73d48b0c91740b56c2b4, type: 2}
   corDoObjeto: {fileID: 2100000, guid: 094d7d1626ed2924eb6ed4c515033a6c, type: 2}
-  vectorCollorIndice: 0
+  vectorCollorIndice: 1
 --- !u!60 &466075812
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2870,7 +2870,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 92ca7c6ba88f84343967de3e4f75cbd4, type: 2}
   - {fileID: 2100000, guid: 9c4372c21a7e73d48b0c91740b56c2b4, type: 2}
   corDoObjeto: {fileID: 2100000, guid: 094d7d1626ed2924eb6ed4c515033a6c, type: 2}
-  vectorCollorIndice: 0
+  vectorCollorIndice: 1
 --- !u!60 &865071777
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3024,7 +3024,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 92ca7c6ba88f84343967de3e4f75cbd4, type: 2}
   - {fileID: 2100000, guid: 9c4372c21a7e73d48b0c91740b56c2b4, type: 2}
   corDoObjeto: {fileID: 2100000, guid: b7051e912e9caec44bdfba4abec93a60, type: 2}
-  vectorCollorIndice: 0
+  vectorCollorIndice: 2
 --- !u!60 &931139502
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3297,7 +3297,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 92ca7c6ba88f84343967de3e4f75cbd4, type: 2}
   - {fileID: 2100000, guid: 9c4372c21a7e73d48b0c91740b56c2b4, type: 2}
   corDoObjeto: {fileID: 2100000, guid: 5a5ffa5c3c5000c408def84b5a946afd, type: 2}
-  vectorCollorIndice: 0
+  vectorCollorIndice: 4
 --- !u!60 &1027969278
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3437,7 +3437,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 92ca7c6ba88f84343967de3e4f75cbd4, type: 2}
   - {fileID: 2100000, guid: 9c4372c21a7e73d48b0c91740b56c2b4, type: 2}
   corDoObjeto: {fileID: 2100000, guid: b7051e912e9caec44bdfba4abec93a60, type: 2}
-  vectorCollorIndice: 0
+  vectorCollorIndice: 2
 --- !u!60 &1072509519
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4162,7 +4162,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 92ca7c6ba88f84343967de3e4f75cbd4, type: 2}
   - {fileID: 2100000, guid: 9c4372c21a7e73d48b0c91740b56c2b4, type: 2}
   corDoObjeto: {fileID: 2100000, guid: cd49ea03dc25c93488882be92c737be8, type: 2}
-  vectorCollorIndice: 0
+  vectorCollorIndice: 3
 --- !u!60 &1365207681
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5222,7 +5222,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 92ca7c6ba88f84343967de3e4f75cbd4, type: 2}
   - {fileID: 2100000, guid: 9c4372c21a7e73d48b0c91740b56c2b4, type: 2}
   corDoObjeto: {fileID: 2100000, guid: cd49ea03dc25c93488882be92c737be8, type: 2}
-  vectorCollorIndice: 0
+  vectorCollorIndice: 3
 --- !u!60 &1626326613
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5493,7 +5493,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 92ca7c6ba88f84343967de3e4f75cbd4, type: 2}
   - {fileID: 2100000, guid: 9c4372c21a7e73d48b0c91740b56c2b4, type: 2}
   corDoObjeto: {fileID: 2100000, guid: 5b46d285153f72a45b28a486b77a18e8, type: 2}
-  vectorCollorIndice: 0
+  vectorCollorIndice: 5
 --- !u!60 &1736008283
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5870,10 +5870,10 @@ MonoBehaviour:
   - {fileID: 1452291353}
   numeroPinturaCompetitivo: 4
   tempoFigura: 10
+  comperePictures: 0
   semCorPinturaCompetitivo: {fileID: 2100000, guid: c0e05b8de510ca34098ed2df117e2334, type: 2}
   txtContador: {fileID: 1168132357}
   stopContagePicture: 0
-  comperePictures: 0
   materiaisPinturaCompetitivo:
   - {fileID: 2100000, guid: 36286a2a10631144986c410bd67c9993, type: 2}
   - {fileID: 2100000, guid: aae2781a923fe9d44bbcea390b9a75a5, type: 2}

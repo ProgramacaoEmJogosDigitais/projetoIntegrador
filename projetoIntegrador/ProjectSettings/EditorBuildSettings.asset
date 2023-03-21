@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Jogos/JogoDaPintura/Scenes/PinturaClassico.unity
     guid: 46d8baf7309f1fa47ac95792e8fdcbd3
+  - enabled: 1
+    path: Assets/Jogos/JogoDaPintura/Scenes/PinturaCompetitivo.unity
+    guid: e1046be1cdee08e459ff66d4b5bbbf17
   m_configObjects: {}

@@ -2,21 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
 
 public class ColoriPintura : MonoBehaviour
 {
   
     // Start is called before the first frame update
     public GameObject[] pinturasCompetitivo;
-    public int numeroPinturaCompetitivo,tempoFigura;
+    public int numeroPinturaCompetitivo,tempoFigura, comperePictures;
     public Material semCorPinturaCompetitivo;
     public TextMeshProUGUI txtContador;
-    public bool stopContagePicture,comperePictures;
-   
-
+    public bool stopContagePicture;
     public Material[] materiaisPinturaCompetitivo, materiaisFilhosPinturaCompetitivo;
+
+
+
+
+
+
     void Start()
     {
+        comperePictures = 0;
         ApagaPinturaClassico();
         DataPintura.vetorComparacaoPintura=new int[materiaisFilhosPinturaCompetitivo.Length];
         DataPintura.vectorCollorSelect = new int[materiaisFilhosPinturaCompetitivo.Length];
@@ -31,7 +39,7 @@ public class ColoriPintura : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DataPintura.contageFigureResete >= 10)
+        if (DataPintura.contageFigureResete == 10)
         {
             ResetaPinturaCompetitivo();
 
@@ -83,14 +91,24 @@ public class ColoriPintura : MonoBehaviour
         {
             if (DataPintura.vectorCollorSelect[i] != DataPintura.vetorComparacaoPintura[i])
             {
-                comperePictures = false;
+                comperePictures ++;
             }
-            if(!comperePictures)
-            {
-                Debug.Log("ganhou");
-            }
-        }       
-                
+           
+        }
+        if (comperePictures == 0)
+        {
+            Debug.Log("ganhou");
+
+            SceneManager.LoadScene("MenuJogoDaPintura");
+        }
+        else
+        {
+            Debug.Log("perdeu");
+            SceneManager.LoadScene("MenuJogoDaPintura");
+
+
+        }
+
     }
 
    
