@@ -5,14 +5,14 @@ using UnityEngine.UIElements;
 
 public class PlayerColeta : MonoBehaviour
 {
-    public float velocidade = 5f;
+    public float playerSpeed = 5f;
     public static int missingObjects = 0;
 
     void Update()
     {
         float movimentoHorizontal = Input.GetAxis("Horizontal");
         Vector2 movimento = new Vector2(movimentoHorizontal, 0);
-        transform.Translate(Time.deltaTime * velocidade * movimento);
+        transform.Translate(Time.deltaTime * playerSpeed * movimento);
     }
 
     public static void MissingObject()
