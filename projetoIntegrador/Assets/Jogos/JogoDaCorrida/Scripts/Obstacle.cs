@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField] private float speed;
-
-    // Start is called before the first frame update
-    void Start()
+    float velocity;
+    private void OnEnable()
     {
-
+        velocity = Random.Range(2, 5);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Move();
+        transform.Translate(-velocity * Time.deltaTime, 0, 0);
     }
-
-    private void Move()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        transform.Translate(-speed * Time.deltaTime, 0, 0);
+        if (other.gameObject.CompareTag("DestroyObstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
 

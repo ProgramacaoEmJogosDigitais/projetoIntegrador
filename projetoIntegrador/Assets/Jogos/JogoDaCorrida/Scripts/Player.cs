@@ -5,12 +5,11 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    public float jumpForce;
-    public bool jump;
-    public bool isGrounded;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private bool jump;
+    [SerializeField] private bool isGrounded;
 
     private Rigidbody2D rb;
-
     private PlayerInput playerInput;
 
     private void Awake()
@@ -22,7 +21,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
     }
     public void DisableInput()
     {
@@ -38,7 +36,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("ground"))
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
         }
