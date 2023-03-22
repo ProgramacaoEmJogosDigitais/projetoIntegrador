@@ -10,12 +10,13 @@ public class ColoriPintura : MonoBehaviour
 {
   
     // Start is called before the first frame update
-    public GameObject[] pinturasCompetitivo;
-    public int numeroPinturaCompetitivo,tempoFigura, comperePictures;
-    public Material semCorPinturaCompetitivo;
-    public TextMeshProUGUI txtContador;
-    public bool stopContagePicture;
-    public Material[] materiaisPinturaCompetitivo, materiaisFilhosPinturaCompetitivo;
+    public GameObject[] competitivePicture;
+    public int competitivePictureNumber, comparePictures;
+    public Material noCollorPictureCompetitive;
+    public float percetageVictory;
+   
+   
+    public Material[] materialPictureCompetitive, matirialFigureCompetitive;
 
 
 
@@ -24,62 +25,71 @@ public class ColoriPintura : MonoBehaviour
 
     void Start()
     {
-        comperePictures = 0;
-        ApagaPinturaClassico();
-        DataPintura.vetorComparacaoPintura=new int[materiaisFilhosPinturaCompetitivo.Length];
-        DataPintura.vectorCollorSelect = new int[materiaisFilhosPinturaCompetitivo.Length];
-        numeroPinturaCompetitivo = Random.Range(0, pinturasCompetitivo.Length);
-        pinturasCompetitivo[numeroPinturaCompetitivo].SetActive(true);
-        GeradorDeCoresPintura();
-        PintaFigura();
-       
+        ErasePictureCompetitive();
+        DataPintura.startGamePicture = false;
+        DataPintura.vetorComparacaoPintura=new int[matirialFigureCompetitive.Length];
+        DataPintura.vectorCollorSelect = new int[matirialFigureCompetitive.Length];
+        competitivePictureNumber = Random.Range(0, competitivePicture.Length);
+        competitivePicture[competitivePictureNumber].SetActive(true);
+        ResetPictureCompetitive();
 
+
+    }
+    public void StartGamePicture()
+    {
+        DataPintura.startGamePicture = true;
+        comparePictures = 0;
+
+
+        GeratorDeCollorPicture();
+        PaintFigure();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (DataPintura.contageFigureResete == 10)
+        if (DataPintura.contageFigureResete == DataPintura.numberTimeFigureData)
         {
-            ResetaPinturaCompetitivo();
+            ResetPictureCompetitive();
+            DataPintura.contageFigureResete++;
 
 
         }
     }
-    void GeradorDeCoresPintura()
+    void GeratorDeCollorPicture()
     {
-        for (int i = 0; i < (materiaisFilhosPinturaCompetitivo.Length); i++)
+        for (int i = 0; i < (matirialFigureCompetitive.Length); i++)
         {
-            DataPintura.vetorComparacaoPintura[i] = Random.Range(0, materiaisFilhosPinturaCompetitivo.Length);
+            DataPintura.vetorComparacaoPintura[i] = Random.Range(0, matirialFigureCompetitive.Length);
         }
       
 
     }
-    void PintaFigura()
+    void PaintFigure()
     {
-        for (int i = 0; i <materiaisFilhosPinturaCompetitivo.Length ; i++)
+        for (int i = 0; i <matirialFigureCompetitive.Length ; i++)
         {
-            materiaisFilhosPinturaCompetitivo[i].color = materiaisPinturaCompetitivo[DataPintura.vetorComparacaoPintura[i]].color;
+            matirialFigureCompetitive[i].color = materialPictureCompetitive[DataPintura.vetorComparacaoPintura[i]].color;
 
 
         }
     }
-    void ApagaPinturaClassico()
+    void ErasePictureCompetitive()
     {
  
-        for (int i = 0; i < pinturasCompetitivo.Length; i++)
+        for (int i = 0; i < competitivePicture.Length; i++)
         {
-            pinturasCompetitivo[i].SetActive(false);
+            competitivePicture[i].SetActive(false);
         }
     }
-    void ResetaPinturaCompetitivo()
+    void ResetPictureCompetitive()
     {
        
 
 
-        for (int i = 0; i < materiaisFilhosPinturaCompetitivo.Length; i++)
+        for (int i = 0; i < matirialFigureCompetitive.Length; i++)
         {
-            materiaisFilhosPinturaCompetitivo[i].color = semCorPinturaCompetitivo.color;
+            matirialFigureCompetitive[i].color = noCollorPictureCompetitive.color;
 
         }
 
@@ -87,27 +97,34 @@ public class ColoriPintura : MonoBehaviour
     }
     public void CompareFiguresCollor()
     {
-        for (int i = 0; i < materiaisFilhosPinturaCompetitivo.Length; i++)
+        if(DataPintura.enablePicture)
         {
-            if (DataPintura.vectorCollorSelect[i] != DataPintura.vetorComparacaoPintura[i])
+            for (int i = 0; i < matirialFigureCompetitive.Length; i++)
             {
-                comperePictures ++;
+                if (DataPintura.vectorCollorSelect[i] == DataPintura.vetorComparacaoPintura[i])
+                {
+                    comparePictures++;
+                }
+
             }
-           
-        }
-        if (comperePictures == 0)
-        {
-            Debug.Log("ganhou");
+            Debug.Log((float)materialPictureCompetitive.Length * 0.7f);
+            percetageVictory = (float)materialPictureCompetitive.Length * 0.7f;
+            if (comparePictures >= (int)percetageVictory)
+            {
+                Debug.Log("ganhou acertou " + ((float)comparePictures / (float)materialPictureCompetitive.Length) * 100);
+                comparePictures = 0;
+                DataPintura.startGamePicture = false;
 
-            SceneManager.LoadScene("MenuJogoDaPintura");
-        }
-        else
-        {
-            Debug.Log("perdeu");
-            SceneManager.LoadScene("MenuJogoDaPintura");
+            }
+            else
+            {
+                Debug.Log("perdeu");
 
-
+                DataPintura.startGamePicture = false;
+                comparePictures = 0;
+            }
         }
+       
 
     }
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ReceptorDeCor : MonoBehaviour
 {
-    public Material[] coresPossiveis; 
-    public Material corDoObjeto;
+    public Material[] possibleCollor; 
+    public Material ObjectCollor;
     public int vectorCollorIndice;
     // Start is called before the first frame update
     void OnMouseOver()
@@ -15,10 +15,10 @@ public class ReceptorDeCor : MonoBehaviour
 
 
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && DataPintura.enablePicture)
         {
 
-            corDoObjeto.color = coresPossiveis[DataPintura.numeroCorSelecionada].color;
+            ObjectCollor.color = possibleCollor[DataPintura.numeroCorSelecionada].color;
             DataPintura.vectorCollorSelect[vectorCollorIndice] = DataPintura.numeroCorSelecionada;
 
 
