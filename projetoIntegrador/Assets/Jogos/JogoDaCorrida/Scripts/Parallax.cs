@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Parallax : MonoBehaviour
 {
     [SerializeField] private Image background;
-    [SerializeField] private float speed;
+    public float speed;
 
     private float width = 1920;
 

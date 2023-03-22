@@ -7,13 +7,15 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     public float score = 0f; // pontuação do jogador
-    public TextMeshPro scoreText; // referência ao componente Text que exibe a pontuação
+    public TextMeshProUGUI scoreText; // referência ao componente Text que exibe a pontuação
     [SerializeField] private float jumpForce;
     [SerializeField] private bool jump;
     [SerializeField] private bool isGrounded;
-
+    private float baseSpeed; // pontuação do jogador
+    private float speed; // pontuação do jogador
     private Rigidbody2D rb;
     private PlayerInput playerInput;
+    private Parallax parallax;
 
     private void Awake()
     {
@@ -23,7 +25,6 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        scoreText = GetComponent<TextMeshPro>();
         score = 0f;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -31,6 +32,9 @@ public class Player : MonoBehaviour
     {
         score += Time.deltaTime; // incrementa a pontuação com base no tempo decorrido
         scoreText.text = score.ToString("0"); // atualiza o componente Text com a nova pontuação
+
+        float newSpeed = baseSpeed + (score * speedIncrease);
+        parallax.speed = newSpeed;
     }
     public void DisableInput()
     {
