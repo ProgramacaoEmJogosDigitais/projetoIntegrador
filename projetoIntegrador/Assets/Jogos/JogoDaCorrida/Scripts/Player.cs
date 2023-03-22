@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    public float score = 0f; // pontuação do jogador
+    public TextMeshPro scoreText; // referência ao componente Text que exibe a pontuação
     [SerializeField] private float jumpForce;
     [SerializeField] private bool jump;
     [SerializeField] private bool isGrounded;
@@ -20,7 +23,14 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        scoreText = GetComponent<TextMeshPro>();
+        score = 0f;
         rb = GetComponent<Rigidbody2D>();
+    }
+    private void Update()
+    {
+        score += Time.deltaTime; // incrementa a pontuação com base no tempo decorrido
+        scoreText.text = score.ToString("0"); // atualiza o componente Text com a nova pontuação
     }
     public void DisableInput()
     {
@@ -41,13 +51,14 @@ public class Player : MonoBehaviour
             isGrounded = true;
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("Voce perdeu!!!");
+            Debug.Log("Você perdeu!!!");
         }
     }
+
 
     private void FixedUpdate()
     {

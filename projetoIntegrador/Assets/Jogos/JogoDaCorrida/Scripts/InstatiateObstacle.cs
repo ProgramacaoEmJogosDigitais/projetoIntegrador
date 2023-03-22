@@ -16,7 +16,6 @@ public class InstatiateObstacle : MonoBehaviour
     {
         while (stop)
         {
-            time = Random.Range(0, 3);
             yield return new WaitForSeconds(time);
             Instantiate(prefabObstacle, transform.position, Quaternion.identity);
         }

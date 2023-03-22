@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    float velocity;
-    private void OnEnable()
-    {
-        velocity = Random.Range(2, 5);
-    }
+    public float velocity;
 
     void Update()
     {
