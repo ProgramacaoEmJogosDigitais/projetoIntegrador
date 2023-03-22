@@ -18,7 +18,6 @@ public class FishsFalling : MonoBehaviour
             points ++;
         }
     }
-
     void Update()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
