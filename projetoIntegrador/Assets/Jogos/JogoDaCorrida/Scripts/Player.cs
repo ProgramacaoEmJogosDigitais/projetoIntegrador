@@ -41,6 +41,13 @@ public class Player : MonoBehaviour
             isGrounded = true;
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("Voce perdeu!!!");
+        }
+    }
 
     private void FixedUpdate()
     {
