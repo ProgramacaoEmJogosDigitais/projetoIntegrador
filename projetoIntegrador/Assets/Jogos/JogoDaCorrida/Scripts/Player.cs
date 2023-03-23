@@ -12,7 +12,8 @@ public class Player : MonoBehaviour
     [SerializeField] private bool jump;
     [SerializeField] private bool isGrounded;
     private float baseSpeed; // pontuação do jogador
-    private float speed; // pontuação do jogador
+    private float speedIncrease; // pontuação do jogador
+    private float record; // pontuação do jogador
     private Rigidbody2D rb;
     private PlayerInput playerInput;
     private Parallax parallax;
@@ -33,8 +34,8 @@ public class Player : MonoBehaviour
         score += Time.deltaTime; // incrementa a pontuação com base no tempo decorrido
         scoreText.text = score.ToString("0"); // atualiza o componente Text com a nova pontuação
 
-        float newSpeed = baseSpeed + (score * speedIncrease);
-        parallax.speed = newSpeed;
+        //float newSpeed = baseSpeed + (score * speedIncrease);
+       // parallax.speed = newSpeed;
     }
     public void DisableInput()
     {
@@ -60,6 +61,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("Você perdeu!!!");
+            score = 0f;
+            scoreText.text = score + "/" + record;
         }
     }
 
