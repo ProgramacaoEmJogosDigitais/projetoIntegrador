@@ -6,17 +6,18 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    public float score = 0f; // pontuação do jogador
+    public float score; // pontuação do jogador
     public TextMeshProUGUI scoreText; // referência ao componente Text que exibe a pontuação
+    //public float newSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private bool jump;
     [SerializeField] private bool isGrounded;
-    private float baseSpeed; // pontuação do jogador
-    private float speedIncrease; // pontuação do jogador
+    //[SerializeField] private float baseSpeed; // pontuação do jogador
+    //[SerializeField] private float speedIncrease; // pontuação do jogador
+   
     private float record; // pontuação do jogador
     private Rigidbody2D rb;
     private PlayerInput playerInput;
-    private Parallax parallax;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        record = PlayerPrefs.GetFloat("HighScore");
         score = 0f;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -34,8 +36,7 @@ public class Player : MonoBehaviour
         score += Time.deltaTime; // incrementa a pontuação com base no tempo decorrido
         scoreText.text = score.ToString("0"); // atualiza o componente Text com a nova pontuação
 
-        //float newSpeed = baseSpeed + (score * speedIncrease);
-       // parallax.speed = newSpeed;
+        //newSpeed = baseSpeed + (score * speedIncrease);
     }
     public void DisableInput()
     {
@@ -61,8 +62,9 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("Você perdeu!!!");
-            score = 0f;
-            scoreText.text = score + "/" + record;
+            PlayerPrefs.SetFloat("HighScore", score);
+            scoreText.text = "Score: " + score;
+            //scoreText.text = score + "/" + record;
         }
     }
 
