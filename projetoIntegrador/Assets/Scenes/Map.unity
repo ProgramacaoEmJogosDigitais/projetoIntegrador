@@ -237,10 +237,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3532d90b729a2a4099a4665ed18a99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  w2: {fileID: 1516355456}
-  a2: {fileID: 1585339462}
-  s2: {fileID: 1048286202}
-  d2: {fileID: 1391228504}
+  w2: []
+  a2: []
+  s2: []
+  d2: []
+  w3: []
+  a3: []
+  s3: []
+  d3: []
   car: {fileID: 692523892}
   popposition: {fileID: 261358774}
   popup: {fileID: 1921007855}
@@ -551,7 +555,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.075882
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -717,6 +721,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 613327436}
   m_CullTransparentMesh: 1
+--- !u!1 &672665925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 672665926}
+  m_Layer: 0
+  m_Name: Wpoint3
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &672665926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672665925}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: 0.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &692523889
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,7 +845,7 @@ Transform:
   m_GameObject: {fileID: 692523889}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -13.55, y: -1.76, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.3410115, y: 0.5462564, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -950,6 +985,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699657574}
   m_CullTransparentMesh: 1
+--- !u!1 &725223186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 725223187}
+  m_Layer: 0
+  m_Name: Wpoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &725223187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725223186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.61, y: 3.27, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1026084548
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,10 +1180,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3532d90b729a2a4099a4665ed18a99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  w2: {fileID: 0}
-  a2: {fileID: 1585339462}
-  s2: {fileID: 0}
-  d2: {fileID: 0}
+  w2: []
+  a2: []
+  s2: []
+  d2: []
+  w3: []
+  a3: []
+  s3: []
+  d3: []
   car: {fileID: 692523892}
   popposition: {fileID: 1048286202}
   popup: {fileID: 1921007855}
@@ -1218,10 +1288,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3532d90b729a2a4099a4665ed18a99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  w2: {fileID: 0}
-  a2: {fileID: 1585339462}
-  s2: {fileID: 0}
-  d2: {fileID: 0}
+  w2: []
+  a2: []
+  s2: []
+  d2: []
+  w3: []
+  a3: []
+  s3: []
+  d3: []
   car: {fileID: 692523892}
   popposition: {fileID: 1391228504}
   popup: {fileID: 1921007855}
@@ -1457,10 +1531,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3532d90b729a2a4099a4665ed18a99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  w2: {fileID: 0}
-  a2: {fileID: 1585339462}
-  s2: {fileID: 0}
-  d2: {fileID: 0}
+  w2: []
+  a2: []
+  s2: []
+  d2: []
+  w3: []
+  a3: []
+  s3: []
+  d3: []
   car: {fileID: 692523892}
   popposition: {fileID: 1516355456}
   popup: {fileID: 1921007855}
@@ -1561,10 +1639,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3532d90b729a2a4099a4665ed18a99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  w2: {fileID: 0}
-  a2: {fileID: 1585339462}
-  s2: {fileID: 0}
-  d2: {fileID: 0}
+  w2: []
+  a2: []
+  s2: []
+  d2: []
+  w3: []
+  a3: []
+  s3: []
+  d3: []
   car: {fileID: 692523892}
   popposition: {fileID: 1530755411}
   popup: {fileID: 1921007855}
@@ -1815,10 +1897,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3532d90b729a2a4099a4665ed18a99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  w2: {fileID: 2128228725}
-  a2: {fileID: 0}
-  s2: {fileID: 0}
-  d2: {fileID: 261358774}
+  w2:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  a2:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  s2:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  d2:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  w3:
+  - {fileID: 1944020516}
+  - {fileID: 725223187}
+  - {fileID: 672665926}
+  - {fileID: 1742577142}
+  a3:
+  - {fileID: 1944020516}
+  - {fileID: 725223187}
+  - {fileID: 672665926}
+  - {fileID: 1742577142}
+  s3:
+  - {fileID: 1944020516}
+  - {fileID: 725223187}
+  - {fileID: 672665926}
+  - {fileID: 1742577142}
+  d3:
+  - {fileID: 1944020516}
+  - {fileID: 725223187}
+  - {fileID: 672665926}
+  - {fileID: 1742577142}
   car: {fileID: 692523892}
   popposition: {fileID: 1585339462}
   popup: {fileID: 1921007855}
@@ -1874,6 +1992,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1742577141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1742577142}
+  m_Layer: 0
+  m_Name: Wpoint4
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1742577142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742577141}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.78, y: -1.78, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1776494290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,6 +2136,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1944020515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1944020516}
+  m_Layer: 0
+  m_Name: Wpoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1944020516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944020515}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.08, y: 3.58, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1978806671
 GameObject:
   m_ObjectHideFlags: 0
@@ -2017,10 +2197,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3532d90b729a2a4099a4665ed18a99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  w2: {fileID: 0}
-  a2: {fileID: 1585339462}
-  s2: {fileID: 0}
-  d2: {fileID: 0}
+  w2: []
+  a2: []
+  s2: []
+  d2: []
+  w3: []
+  a3: []
+  s3: []
+  d3: []
   car: {fileID: 692523892}
   popposition: {fileID: 1978806674}
   popup: {fileID: 1921007855}
@@ -2136,10 +2320,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3532d90b729a2a4099a4665ed18a99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  w2: {fileID: 0}
-  a2: {fileID: 1585339462}
-  s2: {fileID: 261358774}
-  d2: {fileID: 1516355456}
+  w2: []
+  a2: []
+  s2: []
+  d2: []
+  w3: []
+  a3: []
+  s3: []
+  d3: []
   car: {fileID: 692523892}
   popposition: {fileID: 2128228725}
   popup: {fileID: 1921007855}
