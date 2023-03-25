@@ -5,7 +5,9 @@ using UnityEngine;
 public class LinkTarget : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Transform w2, a2, s2, d2, car, popposition;
+    public Vector3 [] w2, a2, s2, d2;
+    public Transform [] w3, a3, s3, d3;
+    public Transform  car, popposition;
     public GameObject popup;
     ImputManeger controler;
 
@@ -15,6 +17,14 @@ public class LinkTarget : MonoBehaviour
     private void Awake()
     {
         controler = new ImputManeger();
+        for (int i = 0; i < w3.Length; i++)
+        {
+            w2[i] = w3[i].position;
+            a2[i] = a3[i].position;
+            s2[i] = s3[i].position;
+            d2[i] = d3[i].position;
+        }
+
     }
     private void OnEnable()
     {

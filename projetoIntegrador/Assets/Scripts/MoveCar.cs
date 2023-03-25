@@ -7,9 +7,10 @@ using System.Linq;
 
 public class MoveCar : MonoBehaviour
 {
-   // public Transform[] pontos;
+   // public Transform[] wpoints;
     public Transform car;
     ImputManeger controler;
+
   
     
     public float timeToArrive;
@@ -55,7 +56,7 @@ public class MoveCar : MonoBehaviour
             
             if(TargetMap.w!=null)
             {
-                car.transform.DOMove(TargetMap.w.position, timeToArrive).OnComplete(() =>
+                car.transform.DOPath(TargetMap.w, timeToArrive,PathType.CatmullRom,PathMode.TopDown2D).SetEase(Ease.Linear).SetOptions(false).SetLookAt(0).OnComplete(() =>
                 {
                     TargetMap.stoped = true;
 
@@ -76,10 +77,9 @@ public class MoveCar : MonoBehaviour
 
             if(TargetMap.s!= null)
             {
-                car.transform.DOMove(TargetMap.s.position, timeToArrive).OnComplete(() =>
+                car.transform.DOPath(TargetMap.s, timeToArrive, PathType.CatmullRom, PathMode.TopDown2D).SetEase(Ease.Linear).OnComplete(() =>
                 {
                     TargetMap.stoped = true;
-
 
                 });
 
@@ -96,7 +96,7 @@ public class MoveCar : MonoBehaviour
 
           if(TargetMap.a!=null) 
           {
-                car.transform.DOMove(TargetMap.a.position, timeToArrive).OnComplete(() =>
+                car.transform.DOPath(TargetMap.a, timeToArrive, PathType.CatmullRom, PathMode.TopDown2D).SetEase(Ease.Linear).OnComplete(() =>
                 {
                     TargetMap.stoped = true;
 
@@ -104,7 +104,7 @@ public class MoveCar : MonoBehaviour
 
                 TargetMap.stoped = false;
 
-          }
+            }
             
 
         }
@@ -114,12 +114,9 @@ public class MoveCar : MonoBehaviour
 
             if(TargetMap.d!=null)
             {
-                car.transform.DOMove(TargetMap.d.position, timeToArrive).OnComplete(() =>
+                car.transform.DOPath(TargetMap.d, timeToArrive, PathType.CatmullRom, PathMode.TopDown2D).SetEase(Ease.Linear).OnComplete(() =>
                 {
                     TargetMap.stoped = true;
-
-
-
 
                 });
 
