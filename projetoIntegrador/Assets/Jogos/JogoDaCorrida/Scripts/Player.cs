@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private bool jump;
     [SerializeField] private bool isGrounded;
+    public Controller controller;
 
    
     //private float record; // pontuação do jogador
@@ -51,8 +52,8 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("Você perdeu!!!");
 
+            Debug.Log("Você perdeu!!!");
         }
     }
 
