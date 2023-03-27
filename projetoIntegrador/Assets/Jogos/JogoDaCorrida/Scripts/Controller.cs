@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    public GameObject obstacle;
+    public Obstacle obstacle;
     public Parallax cloud;
     public Parallax cloud1;
     public Parallax mountains;
@@ -24,26 +24,31 @@ public class Controller : MonoBehaviour
     public float currentParallaxSpeedMountains;
     public float currentParallaxSpeedFlorest;
     public float currentParallaxSpeedTree;
-    private int score = 0;
+    public int score = 0;
     public TextMeshProUGUI scoreText;
+    public bool stop = false;
 
     void Start()
     {
-        currentObstacleSpeed = obstacle.GetComponent<Obstacle>().velocity;
+        stop = false;
+        currentObstacleSpeed = obstacle.velocity;
         currentParallaxSpeedCloud = cloud.speed;
         currentParallaxSpeedMountains = mountains.speed;
-        currentParallaxSpeedFlorest= florest.speed;
-        currentParallaxSpeedTree= tree.speed;
+        currentParallaxSpeedFlorest = florest.speed;
+        currentParallaxSpeedTree = tree.speed;
 
     }
 
     void Update()
     {
-        currentTime += Time.deltaTime;
-        currentDifficultyTime += Time.deltaTime;
+        if (!stop)
+        {
+            currentTime += Time.deltaTime;
+            currentDifficultyTime += Time.deltaTime;
 
-        UpdateScore();
-        IncreaseDifficulty();
+            UpdateScore();
+            IncreaseDifficulty();
+        }
     }
 
     void UpdateScore()
@@ -73,5 +78,15 @@ public class Controller : MonoBehaviour
             tree.GetComponent<Parallax>().speed = currentParallaxSpeedTree;
             tree1.GetComponent<Parallax>().speed = currentParallaxSpeedTree;
         }
+    }
+    public void Clean()
+    {
+        stop = true;
+        scoreText.text = "Score: 0";
+        currentObstacleSpeed = 0;
+        currentParallaxSpeedCloud = 0;
+        currentParallaxSpeedMountains = 0;
+        currentParallaxSpeedFlorest = 0;
+        currentParallaxSpeedTree = 0;
     }
 }

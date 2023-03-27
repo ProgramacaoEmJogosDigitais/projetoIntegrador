@@ -9,12 +9,15 @@ public class Parallax : MonoBehaviour
 {
     [SerializeField] private Image background;
     public float speed;
-
+    public bool stopParallax = false;
     private float width = 1920;
-    public bool aa = true;
+    private void Start()
+    {
+        stopParallax = false;
+    }
     private void Update()
     {
-        if (aa)
+        if (!stopParallax)
         {
             MoveBackground();
         }

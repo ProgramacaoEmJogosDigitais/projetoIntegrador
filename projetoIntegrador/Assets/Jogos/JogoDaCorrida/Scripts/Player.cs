@@ -10,9 +10,21 @@ public class Player : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private bool jump;
     [SerializeField] private bool isGrounded;
-    public Controller controller;
 
-   
+    public Controller controller;
+    public InstatiateObstacle position;
+    public Obstacle obstacle;
+    public Parallax cloud;
+    public Parallax cloud1;
+    public Parallax mountains;
+    public Parallax mountains1;
+    public Parallax florest;
+    public Parallax florest1;
+    public Parallax tree;
+    public Parallax tree1;
+    public GameObject gameOver;
+
+
     //private float record; // pontuação do jogador
     private Rigidbody2D rb;
     private PlayerInput playerInput;
@@ -25,7 +37,6 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-
         rb = GetComponent<Rigidbody2D>();
     }
   
@@ -52,8 +63,19 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-
             Debug.Log("Você perdeu!!!");
+            controller.Clean();
+            position.stopInstatiateObstacle = true;
+            obstacle.stopObstacle = true;
+            cloud.stopParallax = true;
+            cloud1.stopParallax = true;
+            mountains.stopParallax = true;
+            mountains1.stopParallax = true;
+            florest.stopParallax = true;
+            florest1.stopParallax = true;
+            tree.stopParallax = true;
+            tree1.stopParallax = true;
+            gameOver.SetActive(true);
         }
     }
 
