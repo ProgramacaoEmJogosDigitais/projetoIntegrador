@@ -56,7 +56,7 @@ public class MoveCar : MonoBehaviour
             
             if(TargetMap.w!=null)
             {
-                car.transform.DOPath(TargetMap.w, timeToArrive,PathType.CatmullRom,PathMode.TopDown2D).SetEase(Ease.Linear).SetOptions(false).SetLookAt(0).OnComplete(() =>
+                car.transform.DOPath(TargetMap.w, timeToArrive,PathType.CatmullRom,PathMode.TopDown2D).SetEase(Ease.Linear).SetLookAt(1).OnComplete(() =>
                 {
                     TargetMap.stoped = true;
 
