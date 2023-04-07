@@ -13,7 +13,7 @@ public class GameControllerJC : MonoBehaviour
     public TextMeshProUGUI waveInfoText;
     public int maxEnemiesPerWave = 10;
     public float initialSpawnDelay = 3f;
-    public float spawnInterval = 3f;
+    public float spawnInterval = 2f;
     public float spawnRateIncrease = 0.2f;
 
     private int currentWave = 1;
