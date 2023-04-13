@@ -43,13 +43,7 @@ public class MoveCar : MonoBehaviour
     void Update()
     {
         Caminho();
-        Debug.Log(car.rotation.y + "  " + car.rotation.z);
-        if (car.rotation.z>=0.90f)
-        {
-           car.Rotate(1800,0,0,0);
-           
-            // car.rotation.x= -car.rotation.z;
-        }
+      
     }
    
 
@@ -64,7 +58,7 @@ void Caminho()
             
             if(TargetMap.w!=null)
             {
-                car.transform.DOPath(TargetMap.w, timeToArrive,PathType.CatmullRom,PathMode.TopDown2D).SetEase(Ease.Linear).SetLookAt(0).OnComplete(() =>
+                car.transform.DOPath(TargetMap.w, timeToArrive,PathType.CatmullRom,PathMode.Sidescroller2D).SetEase(Ease.Linear).SetLookAt(0).OnComplete(() =>
                 {
                     TargetMap.stoped = true;
 
@@ -85,7 +79,7 @@ void Caminho()
 
             if(TargetMap.s!= null)
             {
-                car.transform.DOPath(TargetMap.s, timeToArrive, PathType.CatmullRom, PathMode.TopDown2D).SetEase(Ease.Linear).SetLookAt(0).OnComplete(() =>
+                car.transform.DOPath(TargetMap.s, timeToArrive, PathType.CatmullRom, PathMode.Sidescroller2D).SetEase(Ease.Linear).SetLookAt(0).OnComplete(() =>
                 {
                     TargetMap.stoped = true;
 
@@ -104,7 +98,7 @@ void Caminho()
 
           if(TargetMap.a!=null) 
           {
-                car.transform.DOPath(TargetMap.a, timeToArrive, PathType.CatmullRom, PathMode.TopDown2D).SetEase(Ease.Linear).SetLookAt(2).OnComplete(() =>
+                car.transform.DOPath(TargetMap.a, timeToArrive, PathType.CatmullRom, PathMode.Sidescroller2D).SetEase(Ease.Linear).SetLookAt(2).OnComplete(() =>
                 {
                     TargetMap.stoped = true;
 
@@ -122,7 +116,7 @@ void Caminho()
 
             if(TargetMap.d!=null)
             {
-                car.transform.DOPath(TargetMap.d, timeToArrive, PathType.CatmullRom, PathMode.TopDown2D).SetEase(Ease.Linear).SetLookAt(0).OnComplete(() =>
+                car.transform.DOPath(TargetMap.d, timeToArrive, PathType.CatmullRom, PathMode.Sidescroller2D).SetEase(Ease.Linear).SetLookAt(0).OnComplete(() =>
                 {
                     TargetMap.stoped = true;
 
