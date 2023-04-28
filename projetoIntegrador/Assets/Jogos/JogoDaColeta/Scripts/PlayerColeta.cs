@@ -41,6 +41,15 @@ public class PlayerColeta : MonoBehaviour
         {
             pAnimator.Play("PlayerRun");
         }
+
+        if (transform.position.x > 9.74f) 
+        {
+            transform.position = new Vector2(9.73f, transform.position.y);
+        }
+        else if (transform.position.x < -9.74f)
+        {
+            transform.position = new Vector2(-9.73f, transform.position.y);
+        }
     }
 
     public static void MissingObject()
