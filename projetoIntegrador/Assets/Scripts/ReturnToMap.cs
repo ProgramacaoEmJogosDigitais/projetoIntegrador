@@ -5,21 +5,15 @@ using UnityEngine;
 public class ReturnToMap : MonoBehaviour
 {
     
-       GameObject popup2;
+      public GameObject popup;
    
   
-    void Awake()
-    {
-        popup2 = GameObject.FindGameObjectWithTag("Popup");
-      
-  
-    }
    
 
     public void BackToMap()
     {
         TargetMap.stoped= true;
-        popup2.gameObject.SetActive(false);
+        popup.gameObject.SetActive(false);
 
     }
    

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TargetMap
 {
-    public static Transform w, a, s, d;
+    public static Vector3[] w, a, s, d;
     public static bool stoped;
     public static int nPage;
 
