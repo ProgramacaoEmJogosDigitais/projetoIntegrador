@@ -10,10 +10,7 @@ public class MoveCar : MonoBehaviour
    // public Transform[] wpoints;
     public Transform car;
     ImputManeger controler;
-    public Sprite VanLeft,VanRight;
-
-  
-    
+ 
     public float timeToArrive;
 
     private void Awake()
@@ -50,7 +47,10 @@ public class MoveCar : MonoBehaviour
 
 void Caminho()
     {
-       
+       /*
+        
+        
+        */
 
 
         if (controler.Imputs.Up.triggered && TargetMap.stoped)
