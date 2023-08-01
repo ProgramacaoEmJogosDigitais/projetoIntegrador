@@ -2350,8 +2350,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   car: {fileID: 692523892}
-  VanLeft: {fileID: 0}
-  VanRight: {fileID: 0}
   timeToArrive: 1
 --- !u!212 &692523891
 SpriteRenderer:
@@ -4492,7 +4490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.79999924, y: -0.45}
+  m_AnchoredPosition: {x: -0.79999924, y: -0.4499998}
   m_SizeDelta: {x: 1.6, y: 3.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1506035593
@@ -6524,7 +6522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1921007856
 Transform:
   m_ObjectHideFlags: 0
