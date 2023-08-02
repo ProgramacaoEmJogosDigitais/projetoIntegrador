@@ -12,9 +12,7 @@ public class LinkTarget : MonoBehaviour
     ImputManeger controler;
     public int numberWpoints;
     public bool enableUp, enableDown, enableRight, enableLeft;
-
-
-   
+    public bool atPoint = false;
 
     private void Awake()
     {
@@ -59,9 +57,10 @@ public class LinkTarget : MonoBehaviour
     }
     void Chegou()
     {
-       
+       atPoint = true;
         if (this.transform.position==car.transform.position)
         {
+            
             if (!enableLeft)
             {
                 a3 = null;
