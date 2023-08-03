@@ -12,7 +12,7 @@ public class LinkTarget : MonoBehaviour
     ImputManeger controler;
     public int numberWpoints;
     public bool enableUp, enableDown, enableRight, enableLeft;
-    public bool atPoint = false;
+    public bool atPoint;
 
     private void Awake()
     {
@@ -43,8 +43,9 @@ public class LinkTarget : MonoBehaviour
     void Start()
     {
         TargetMap.stoped = true;
-        
-        
+        atPoint = false;
+
+
 
     }
 
@@ -57,10 +58,10 @@ public class LinkTarget : MonoBehaviour
     }
     void Chegou()
     {
-       atPoint = true;
-        if (this.transform.position==car.transform.position)
+        
+        if (this.transform.position==car.transform.position) //se a posiçao do carro é a mesma do ponto turistico
         {
-            
+            atPoint = true;
             if (!enableLeft)
             {
                 a3 = null;
@@ -166,5 +167,11 @@ public class LinkTarget : MonoBehaviour
                 
             TargetMap.stoped=false;
         }
+
+        else if(this.transform.position != car.transform.position)
+        {
+            atPoint = false;
+        }
     }
+
 }

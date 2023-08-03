@@ -1211,6 +1211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 261358774}
   - component: {fileID: 261358772}
+  - component: {fileID: 261358775}
   m_Layer: 0
   m_Name: PontoTuristico3
   m_TagString: Untagged
@@ -1263,6 +1264,7 @@ MonoBehaviour:
   enableDown: 1
   enableRight: 1
   enableLeft: 1
+  atPoint: 0
 --- !u!4 &261358774
 Transform:
   m_ObjectHideFlags: 0
@@ -1283,6 +1285,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &261358775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261358771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680ec6e34401a2940823c79c266bda2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &263234635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2021,7 +2035,7 @@ Transform:
   m_GameObject: {fileID: 475723722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.38894, y: 1.5173999, z: 0}
-  m_LocalScale: {x: 0.3787435, y: 0.32580087, z: 0.32580087}
+  m_LocalScale: {x: 0.40006, y: 0.40006, z: 0.40006}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1516355456}
@@ -2571,7 +2585,7 @@ Transform:
   m_GameObject: {fileID: 632152718}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.2377, y: 1.7254, z: 0}
-  m_LocalScale: {x: 0.4460269, y: 0.4460269, z: 0.4460269}
+  m_LocalScale: {x: 0.40006, y: 0.40006, z: 0.40006}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 634472896}
@@ -2670,6 +2684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 634472896}
   - component: {fileID: 634472895}
+  - component: {fileID: 634472897}
   m_Layer: 0
   m_Name: PontoTuristico9
   m_TagString: Untagged
@@ -2715,6 +2730,7 @@ MonoBehaviour:
   enableDown: 0
   enableRight: 1
   enableLeft: 1
+  atPoint: 0
 --- !u!4 &634472896
 Transform:
   m_ObjectHideFlags: 0
@@ -2734,6 +2750,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &634472897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634472894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680ec6e34401a2940823c79c266bda2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &645442088
 GameObject:
   m_ObjectHideFlags: 0
@@ -4142,6 +4170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1048286202}
   - component: {fileID: 1048286200}
+  - component: {fileID: 1048286203}
   m_Layer: 0
   m_Name: PontoTuristico4
   m_TagString: Untagged
@@ -4194,6 +4223,7 @@ MonoBehaviour:
   enableDown: 0
   enableRight: 1
   enableLeft: 1
+  atPoint: 0
 --- !u!4 &1048286202
 Transform:
   m_ObjectHideFlags: 0
@@ -4214,6 +4244,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1048286203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048286199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680ec6e34401a2940823c79c266bda2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1051473783
 GameObject:
   m_ObjectHideFlags: 0
@@ -4746,7 +4788,7 @@ Transform:
   m_GameObject: {fileID: 1309685879}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.027955, y: 1.2941, z: 0}
-  m_LocalScale: {x: 0.55916387, y: 0.55916387, z: 0.55916387}
+  m_LocalScale: {x: 0.40006, y: 0.40006, z: 0.40006}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1978806674}
@@ -5190,6 +5232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1391228504}
   - component: {fileID: 1391228502}
+  - component: {fileID: 1391228505}
   m_Layer: 0
   m_Name: PontoTuristico7
   m_TagString: Untagged
@@ -5235,6 +5278,7 @@ MonoBehaviour:
   enableDown: 0
   enableRight: 1
   enableLeft: 1
+  atPoint: 0
 --- !u!4 &1391228504
 Transform:
   m_ObjectHideFlags: 0
@@ -5254,6 +5298,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1391228505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391228501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680ec6e34401a2940823c79c266bda2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1401451114
 GameObject:
   m_ObjectHideFlags: 0
@@ -5815,6 +5871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1516355456}
   - component: {fileID: 1516355454}
+  - component: {fileID: 1516355457}
   m_Layer: 0
   m_Name: PontoTuristico5
   m_TagString: Untagged
@@ -5874,6 +5931,7 @@ MonoBehaviour:
   enableDown: 1
   enableRight: 1
   enableLeft: 1
+  atPoint: 0
 --- !u!4 &1516355456
 Transform:
   m_ObjectHideFlags: 0
@@ -5895,6 +5953,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1516355457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516355453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680ec6e34401a2940823c79c266bda2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1525005204
 GameObject:
   m_ObjectHideFlags: 0
@@ -6020,6 +6090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1530755411}
   - component: {fileID: 1530755409}
+  - component: {fileID: 1530755412}
   m_Layer: 0
   m_Name: PontoTuristico6
   m_TagString: Untagged
@@ -6072,6 +6143,7 @@ MonoBehaviour:
   enableDown: 1
   enableRight: 0
   enableLeft: 1
+  atPoint: 0
 --- !u!4 &1530755411
 Transform:
   m_ObjectHideFlags: 0
@@ -6092,6 +6164,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1530755412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530755408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680ec6e34401a2940823c79c266bda2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1535453218
 GameObject:
   m_ObjectHideFlags: 0
@@ -6570,6 +6654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1585339462}
   - component: {fileID: 1585339463}
+  - component: {fileID: 1585339464}
   m_Layer: 0
   m_Name: PontoTuristico1
   m_TagString: Untagged
@@ -6642,6 +6727,19 @@ MonoBehaviour:
   enableDown: 1
   enableRight: 1
   enableLeft: 0
+  atPoint: 0
+--- !u!114 &1585339464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585339461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680ec6e34401a2940823c79c266bda2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1597508105
 GameObject:
   m_ObjectHideFlags: 0
@@ -8207,6 +8305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978806674}
   - component: {fileID: 1978806672}
+  - component: {fileID: 1978806675}
   m_Layer: 0
   m_Name: PontoTuristico8
   m_TagString: Untagged
@@ -8259,6 +8358,7 @@ MonoBehaviour:
   enableDown: 0
   enableRight: 1
   enableLeft: 1
+  atPoint: 0
 --- !u!4 &1978806674
 Transform:
   m_ObjectHideFlags: 0
@@ -8279,6 +8379,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1978806675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978806671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680ec6e34401a2940823c79c266bda2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1982202517
 GameObject:
   m_ObjectHideFlags: 0
@@ -8614,6 +8726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2128228725}
   - component: {fileID: 2128228726}
+  - component: {fileID: 2128228727}
   m_Layer: 0
   m_Name: PontoTuristico2
   m_TagString: Untagged
@@ -8686,6 +8799,19 @@ MonoBehaviour:
   enableDown: 1
   enableRight: 1
   enableLeft: 1
+  atPoint: 0
+--- !u!114 &2128228727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128228724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680ec6e34401a2940823c79c266bda2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2145855951
 GameObject:
   m_ObjectHideFlags: 0
