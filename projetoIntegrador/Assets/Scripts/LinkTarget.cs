@@ -12,6 +12,7 @@ public class LinkTarget : MonoBehaviour
     ImputManeger controler;
     public int numberWpoints;
     public bool enableUp, enableDown, enableRight, enableLeft;
+    //public ArrivedAtPoint arrivedAtPoint;
 
     private void Awake()
     {
@@ -42,7 +43,7 @@ public class LinkTarget : MonoBehaviour
     void Start()
     {
         TargetMap.stoped = true;
-       
+        //arrivedAtPoint = GetComponent<ArrivedAtPoint>();
 
     }
 
@@ -58,6 +59,7 @@ public class LinkTarget : MonoBehaviour
 
         if (this.transform.position == car.transform.position) //se a posiçao do carro é a mesma do ponto turistico
         {
+            //arrivedAtPoint.IntantiatePopUp();
 
             if (!enableLeft)
             {
