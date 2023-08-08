@@ -9,23 +9,13 @@ public class ArrivedAtPoint : MonoBehaviour
     public GameObject spritePoint;
     public GameObject backSprite;
     public GameObject popUp;
-    //public Transform transformPosition;
-
-
-    void Start()
-    {
-        //linkTarget = GetComponent<LinkTarget>();
-        //targetMap = GetComponent<TargetMap>();
-    }
     
-    void Update ()
+    void FixedUpdate ()
     {
         if (point.transform.position == player.transform.position)//se o carro esta no ponto turistico, aumenta a escala dele
         {
             Debug.Log("entrouuuu");
-            //Vector2 vector2 = new Vector2(point.transform.position.x, point.transform.position.y + 2.0f);  
-            //GameObject ob = Instantiate(popUp, vector2,Quaternion.identity);
-            spritePoint.transform.localScale = new Vector3(0.4f, 0.4f, 1);
+            spritePoint.transform.localScale = new Vector3(0.4f, 0.4f, 1); 
             backSprite.SetActive(true);
             
         }
@@ -37,14 +27,15 @@ public class ArrivedAtPoint : MonoBehaviour
 
         }
     }
+    
     /*
     public void IntantiatePopUp()
     {
         if (point.transform.position == player.transform.position)//se o carro esta no ponto turistico, aumenta a escala dele
         {
             Debug.Log("entrouuuu");
-            Vector2 vector2 = new Vector2(point.transform.position.x, point.transform.position.y + 2.0f);
-            GameObject ob = Instantiate(popUp, vector2, Quaternion.identity);
+            //Vector2 vector2 = new Vector2(point.transform.position.x, point.transform.position.y + 2.0f);
+            //GameObject ob = Instantiate(popUp, vector2, Quaternion.identity);
             spritePoint.transform.localScale = new Vector3(0.4f, 0.4f, 1);
             backSprite.SetActive(true);
 
