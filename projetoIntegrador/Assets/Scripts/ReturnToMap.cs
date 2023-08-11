@@ -29,6 +29,9 @@ public class ReturnToMap : MonoBehaviour
             bBackPage.SetActive(false);
             bBackGame.SetActive(true);
             bGame.SetActive(false);
+            bBackGame.transform.localPosition = new Vector3(102, 108, 0);
+            bNextPage.transform.localPosition= new Vector3(102, -8, 0);
+
 
         }
         else if(nPages>0 && nPages<maxPage)
@@ -40,6 +43,8 @@ public class ReturnToMap : MonoBehaviour
             bBackPage.SetActive(true);
             bBackGame.SetActive(true);
             bGame.SetActive(false);
+            bBackGame.transform.localPosition = new Vector3(270, 108, 0);
+            bNextPage.transform.localPosition = new Vector3(270, -8, 0);
         }
         else if(nPages==maxPage)
         {
@@ -49,6 +54,8 @@ public class ReturnToMap : MonoBehaviour
             bBackPage.SetActive(true);
             bBackGame.SetActive(true);
             bGame.SetActive(true);
+            bBackGame.transform.localPosition = new Vector3(270, 108, 0);
+            bNextPage.transform.localPosition = new Vector3(270, -8, 0);
         }
         
     }
