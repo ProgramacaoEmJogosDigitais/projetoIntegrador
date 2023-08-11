@@ -52,7 +52,14 @@ public class LinkTarget : MonoBehaviour
 
         if (this.transform.position == car.transform.position) //se a posiçao do carro é a mesma do ponto turistico
         {
+            if (controler.Imputs.Enter.triggered && TargetMap.stoped)
+            {
+                //Instantiate(popup,popposition.transform.position,Quaternion.identity);
+                popup.SetActive(true);
 
+
+                TargetMap.stoped = false;
+            }
             if (!enableLeft)
             {
                 a3 = null;
@@ -128,14 +135,7 @@ public class LinkTarget : MonoBehaviour
             TargetMap.s = s2;
         }
 
-        if (controler.Imputs.Enter.triggered && TargetMap.stoped)
-        {
-            //Instantiate(popup,popposition.transform.position,Quaternion.identity);
-            popup.SetActive(true);
-
-
-            TargetMap.stoped = false;
-        }
+       
 
     }
 
