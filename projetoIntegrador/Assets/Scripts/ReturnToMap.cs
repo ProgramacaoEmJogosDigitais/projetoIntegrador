@@ -9,7 +9,7 @@ public class ReturnToMap : MonoBehaviour
       public GameObject popup,bNextPage,bBackPage,bGame,bBackGame;
       public int nPages,maxPage;
       public Sprite []pages;
-      public GameObject cover;
+      public GameObject cover,nextP1,nextP2,backMP1,backMP2;
       public SpriteRenderer render;
       
 
@@ -29,8 +29,8 @@ public class ReturnToMap : MonoBehaviour
             bBackPage.SetActive(false);
             bBackGame.SetActive(true);
             bGame.SetActive(false);
-            bBackGame.transform.localPosition = new Vector3(102, 108, 0);
-            bNextPage.transform.localPosition= new Vector3(102, -8, 0);
+            bBackGame.transform.position = nextP1.transform.position;
+            bNextPage.transform.position=backMP1.transform.position;
 
 
         }
@@ -43,8 +43,8 @@ public class ReturnToMap : MonoBehaviour
             bBackPage.SetActive(true);
             bBackGame.SetActive(true);
             bGame.SetActive(false);
-            bBackGame.transform.localPosition = new Vector3(270, 108, 0);
-            bNextPage.transform.localPosition = new Vector3(270, -8, 0);
+            bBackGame.transform.position = nextP2.transform.position;
+            bNextPage.transform.position = backMP2.transform.position;
         }
         else if(nPages==maxPage)
         {
@@ -54,8 +54,8 @@ public class ReturnToMap : MonoBehaviour
             bBackPage.SetActive(true);
             bBackGame.SetActive(true);
             bGame.SetActive(true);
-            bBackGame.transform.localPosition = new Vector3(270, 108, 0);
-            bNextPage.transform.localPosition = new Vector3(270, -8, 0);
+            bBackGame.transform.position = nextP2.transform.position;
+            bNextPage.transform.position = backMP2.transform.position;
         }
         
     }
