@@ -8,8 +8,7 @@ public class ArrivedAtPoint : MonoBehaviour
     public GameObject player;
     public GameObject spritePoint;
     public GameObject backSprite;
-    public GameObject popUp;
-    
+  
     void FixedUpdate ()
     {
         if (point.transform.position == player.transform.position)//se o carro esta no ponto turistico, aumenta a escala dele

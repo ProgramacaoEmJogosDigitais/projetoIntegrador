@@ -1215,7 +1215,6 @@ MonoBehaviour:
   player: {fileID: 692523889}
   spritePoint: {fileID: 305804199}
   backSprite: {fileID: 1562799092}
-  popUp: {fileID: 5598586705502065301, guid: 7df40538c58bc1b4a97e0a5df84db519, type: 3}
 --- !u!1 &254925762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,7 +1301,6 @@ MonoBehaviour:
   player: {fileID: 692523889}
   spritePoint: {fileID: 632152718}
   backSprite: {fileID: 1837359394}
-  popUp: {fileID: 5598586705502065301, guid: 7df40538c58bc1b4a97e0a5df84db519, type: 3}
 --- !u!1 &261358771
 GameObject:
   m_ObjectHideFlags: 0
@@ -2447,7 +2445,6 @@ MonoBehaviour:
   player: {fileID: 692523889}
   spritePoint: {fileID: 1480040907}
   backSprite: {fileID: 54246150}
-  popUp: {fileID: 5598586705502065301, guid: 7df40538c58bc1b4a97e0a5df84db519, type: 3}
 --- !u!1 &594727407
 GameObject:
   m_ObjectHideFlags: 0
@@ -3625,7 +3622,6 @@ MonoBehaviour:
   player: {fileID: 692523889}
   spritePoint: {fileID: 1309685879}
   backSprite: {fileID: 1330050737}
-  popUp: {fileID: 5598586705502065301, guid: 7df40538c58bc1b4a97e0a5df84db519, type: 3}
 --- !u!1 &779976476
 GameObject:
   m_ObjectHideFlags: 0
@@ -4071,7 +4067,6 @@ MonoBehaviour:
   player: {fileID: 692523889}
   spritePoint: {fileID: 177951434}
   backSprite: {fileID: 1367646983}
-  popUp: {fileID: 5598586705502065301, guid: 7df40538c58bc1b4a97e0a5df84db519, type: 3}
 --- !u!1 &904406687
 GameObject:
   m_ObjectHideFlags: 0
@@ -6122,7 +6117,6 @@ MonoBehaviour:
   player: {fileID: 692523889}
   spritePoint: {fileID: 1529086599}
   backSprite: {fileID: 203106618}
-  popUp: {fileID: 5598586705502065301, guid: 7df40538c58bc1b4a97e0a5df84db519, type: 3}
 --- !u!1 &1508535815
 GameObject:
   m_ObjectHideFlags: 0
@@ -6386,7 +6380,6 @@ MonoBehaviour:
   player: {fileID: 692523889}
   spritePoint: {fileID: 475723722}
   backSprite: {fileID: 1569154235}
-  popUp: {fileID: 5598586705502065301, guid: 7df40538c58bc1b4a97e0a5df84db519, type: 3}
 --- !u!4 &1518209899
 Transform:
   m_ObjectHideFlags: 0
@@ -7913,7 +7906,6 @@ MonoBehaviour:
   player: {fileID: 692523889}
   spritePoint: {fileID: 1367809279}
   backSprite: {fileID: 806444041}
-  popUp: {fileID: 5598586705502065301, guid: 7df40538c58bc1b4a97e0a5df84db519, type: 3}
 --- !u!1 &1770161839
 GameObject:
   m_ObjectHideFlags: 0
@@ -9147,6 +9139,56 @@ Transform:
   m_Father: {fileID: 930980356}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2074433792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2074433794}
+  - component: {fileID: 2074433793}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2074433793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074433792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f77436acba048409e3b0ad1261c435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  airplanePrefab: {fileID: 7425621500495221882, guid: 3e7ef3e51d3184f4fa37dcdbf5d1d010, type: 3}
+  minY: -4
+  maxY: 4
+  speed: 5
+  spawnInterval: 1
+  spawn: 1
+--- !u!4 &2074433794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074433792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.559386, y: 2.8562083, z: -1.4307224}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2074481949
 GameObject:
   m_ObjectHideFlags: 0
@@ -9512,7 +9554,6 @@ MonoBehaviour:
   player: {fileID: 692523889}
   spritePoint: {fileID: 707882295}
   backSprite: {fileID: 1623349811}
-  popUp: {fileID: 5598586705502065301, guid: 7df40538c58bc1b4a97e0a5df84db519, type: 3}
 --- !u!1 &2145855951
 GameObject:
   m_ObjectHideFlags: 0
