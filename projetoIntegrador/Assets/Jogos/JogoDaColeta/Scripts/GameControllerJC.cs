@@ -38,7 +38,7 @@ public class GameControllerJC : MonoBehaviour
         {
             if (Time.time >= nextSpawnTime && enemiesSpawned < maxEnemiesPerWave)
             {
-                float x = Random.Range(-9f, 9f);
+                float x = Random.Range(-8.7f, 8.7f);
                 float y = 7f;
                 Vector2 spawnPosition = new Vector2(x, y);
                 Instantiate(prefabFishs[Random.Range(0, prefabFishs.Length)], spawnPosition, Quaternion.identity);
@@ -61,7 +61,7 @@ public class GameControllerJC : MonoBehaviour
     public void Score()
     {
         //texts que aparecem no game
-        missScore_txt.text = "peixes caídos: " + PlayerColeta.missingObjects.ToString();
+        missScore_txt.text = "Peixes caídos: " + PlayerColeta.missingObjects.ToString();
         score_txt.text = "Pontuação: " + FishsFalling.points.ToString();
     }
 
