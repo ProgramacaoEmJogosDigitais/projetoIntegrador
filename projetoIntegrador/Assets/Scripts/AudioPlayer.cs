@@ -8,12 +8,7 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] private AudioSource bgmAudio;
     [SerializeField] private AudioSource sfxAudio;
 
-    [SerializeField] private AudioMixer masterMixer;
-
-    [SerializeField] private Slider bgmSlider;
-    [SerializeField] private Slider sfxSlider;
-
-    public static AudioPlayer Instance { get; private set; }
+    public static AudioPlayer Instance { get; set; }
 
     private Dictionary<string, LevelAudioData> levelAudioData = new Dictionary<string, LevelAudioData>();
 
@@ -87,40 +82,8 @@ public class AudioPlayer : MonoBehaviour
         }
     }
 }
-public class LevelAudioData
+public class LevelAudioData: MonoBehaviour
 {
     public AudioClip bgm;
     public AudioClip[] sfxList;
-}
-
-public class VolumeControl : MonoBehaviour
-{
-    private void Start()
-    {
-        VolumeBGM();
-        VolumeSFX();
-    }
-
-    public void VolumeBGM()
-    {
-        masterMixer.SetFloat("BGM", bgmSlider.value);
-    }
-
-    public void VolumeSFX()
-    {
-        masterMixer.SetFloat("SFX", sfxSlider.value);
-    }
-}
-
-public class LevelManager : MonoBehaviour
-{
-    public string levelName; // Nome da fase
-    public AudioClip levelBGM;
-    public AudioClip[] levelSFXList;
-
-    private void Start()
-    {
-        AudioPlayer.Instance.SetLevelAudioData(levelName, levelBGM, levelSFXList);
-        AudioPlayer.Instance.PlayBGMForLevel(levelName);
-    }
 }
