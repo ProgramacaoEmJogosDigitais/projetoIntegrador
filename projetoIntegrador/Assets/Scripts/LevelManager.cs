@@ -9,10 +9,17 @@ public class LevelManager: MonoBehaviour
     public string levelName; // Nome da fase
     public AudioClip levelBGM;
     public AudioClip[] levelSFXList;
+    public AudioClip[] menuBGMList;
+    public AudioClip[] mapBGMList;
+    public AudioClip[] atualList;
 
     private void Start()
     {
-        AudioPlayer.Instance.SetLevelAudioData(levelName, levelBGM, levelSFXList);
-        AudioPlayer.Instance.PlayBGMForLevel(levelName);
+            int indexmusic = Random.Range(0, menuBGMList.Length);
+            AudioPlayer.Instance.SetLevelAudioData(levelName, menuBGMList[indexmusic], levelSFXList);
+            Debug.Log(indexmusic);
+            AudioPlayer.Instance.PlayBGMForLevel(levelName);
     }
+
+
 }

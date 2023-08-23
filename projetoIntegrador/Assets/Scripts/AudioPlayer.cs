@@ -74,7 +74,7 @@ public class AudioPlayer : MonoBehaviour
         };
     }
 
-    public void PlayBGMForLevel(string levelName)
+    public void PlayBGMForLevel(string levelName) 
     {
         if (levelAudioData.TryGetValue(levelName, out LevelAudioData audioData))
         {

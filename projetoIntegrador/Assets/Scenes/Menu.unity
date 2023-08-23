@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 228126678}
   - component: {fileID: 228126681}
   - component: {fileID: 228126680}
+  - component: {fileID: 228126682}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -190,7 +191,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4243126401934006056, guid: 168a88f0597963e45b0bf1991118dcce, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b8c8002eb138bb9438920c85d7d1dfa2, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -409,7 +410,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228126673}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e962fe72add5c7142a60e3eaff596ee8, type: 3}
   m_Name: 
@@ -417,6 +418,28 @@ MonoBehaviour:
   levelName: Menu
   levelBGM: {fileID: 8300000, guid: b8c8002eb138bb9438920c85d7d1dfa2, type: 3}
   levelSFXList: []
+  menuBGMList:
+  - {fileID: 8300000, guid: b8c8002eb138bb9438920c85d7d1dfa2, type: 3}
+  - {fileID: 8300000, guid: b8c8002eb138bb9438920c85d7d1dfa2, type: 3}
+  - {fileID: 8300000, guid: b8c8002eb138bb9438920c85d7d1dfa2, type: 3}
+  - {fileID: 8300000, guid: b8c8002eb138bb9438920c85d7d1dfa2, type: 3}
+  mapBGMList: []
+  inMenu: 0
+  inMap: 0
+--- !u!114 &228126682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228126673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65fde4bd143ba8d43af92e65043953ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmAudio: {fileID: 228126674}
+  sfxAudio: {fileID: 228126678}
 --- !u!1 &262974775
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ public class MenuManager : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene(menuSceneName);
+        //Deixa o inMenu = false
+        //Deixa o inMap = true
     }
 
     public void OpenOptions()
