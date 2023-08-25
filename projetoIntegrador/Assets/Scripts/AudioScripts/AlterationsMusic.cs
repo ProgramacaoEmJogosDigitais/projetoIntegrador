@@ -12,8 +12,8 @@ public class AlterationsMusic : MonoBehaviour
         AudioSource audio = GetComponent<AudioSource>();
 
         audio.Play();
-        yield return new WaitForSeconds(audio.clip.length);
         audio.clip = music;
+        yield return new WaitForSeconds(audio.clip.length);
         audio.Play();
     }
     /*
