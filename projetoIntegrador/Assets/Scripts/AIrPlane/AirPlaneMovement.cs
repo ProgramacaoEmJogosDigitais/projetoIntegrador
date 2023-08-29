@@ -18,7 +18,6 @@ public class AirPlaneMovement : MonoBehaviour
         if(direction.x > 0.5f)
         {
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
-
         }
         transform.Translate(direction * speed * Time.deltaTime);
 
