@@ -9,7 +9,7 @@ public class AirPlaneSpawner : MonoBehaviour
     public float maxY = 4.0f;
     public float speed = 5.0f;
     public float spawnInterval = 5.0f;
-    public bool spawn ;
+    public bool spawn;
 
     private void OnEnable()
     {
@@ -51,7 +51,3 @@ public class AirPlaneSpawner : MonoBehaviour
         }
     }
 }
-
-
-
-

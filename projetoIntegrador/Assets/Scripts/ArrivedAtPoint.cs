@@ -13,14 +13,12 @@ public class ArrivedAtPoint : MonoBehaviour
     {
         if (point.transform.position == player.transform.position)//se o carro esta no ponto turistico, aumenta a escala dele
         {
-            Debug.Log("entrouuuu");
             spritePoint.transform.localScale = new Vector3(0.4f, 0.4f, 1); 
             backSprite.SetActive(true);
             
         }
         if (point.transform.position != player.transform.position)
         {
-            Debug.Log("ELSEEEEEE");
             spritePoint.transform.localScale = new Vector3(0.35f, 0.35f, 1);
             backSprite.SetActive(false);
 
