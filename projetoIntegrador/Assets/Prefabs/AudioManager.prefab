@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1090789390}
   - component: {fileID: 1090789389}
   m_Layer: 0
-  m_Name: Musica3
+  m_Name: music 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 1394597207}
   - component: {fileID: 1394597206}
   m_Layer: 0
-  m_Name: Musica1
+  m_Name: music 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 2026567995}
   - component: {fileID: 2026567994}
   m_Layer: 0
-  m_Name: Musica2
+  m_Name: music 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 6893742706479829579}
   - component: {fileID: 6893742706479829684}
   m_Layer: 0
-  m_Name: AudioManager
+  m_Name: audioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -435,4 +435,5 @@ MonoBehaviour:
   - {fileID: 1394597206}
   - {fileID: 2026567994}
   - {fileID: 1090789389}
+  volume2: 0
   musicVolume: {fileID: 0}

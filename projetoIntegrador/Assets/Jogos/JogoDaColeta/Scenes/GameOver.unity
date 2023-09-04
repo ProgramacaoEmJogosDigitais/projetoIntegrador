@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 1039785364}
   - component: {fileID: 1039785363}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: canv_gameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 1800064629}
   - component: {fileID: 1800064628}
   m_Layer: 5
-  m_Name: Button
+  m_Name: bt_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -801,7 +801,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4599195238900654029, guid: ea0db4f36dd8d8c46a8f1b266b2a48b4, type: 3}
       propertyPath: m_Name
-      value: Btn_Function
+      value: bt_function
       objectReference: {fileID: 0}
     - target: {fileID: 4599195238900654031, guid: ea0db4f36dd8d8c46a8f1b266b2a48b4, type: 3}
       propertyPath: m_RootOrder

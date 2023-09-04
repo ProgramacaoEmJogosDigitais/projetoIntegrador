@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 13735169}
   - component: {fileID: 13735168}
   m_Layer: 5
-  m_Name: score_txt
+  m_Name: txt_score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 204986686}
   - component: {fileID: 204986685}
   m_Layer: 5
-  m_Name: missScore_txt
+  m_Name: txt_missScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -459,7 +459,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &279415294
 GameObject:
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 279415297}
   - component: {fileID: 279415296}
   m_Layer: 5
-  m_Name: waveInfo_txt
+  m_Name: txt_waveInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 1447280004}
   - component: {fileID: 1447280003}
   m_Layer: 5
-  m_Name: Background
+  m_Name: img_background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 1503362172}
   - component: {fileID: 1503362173}
   m_Layer: 0
-  m_Name: GameControllerJC
+  m_Name: gameControllerJC
   m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -940,7 +940,7 @@ GameObject:
   - component: {fileID: 1910350886}
   - component: {fileID: 1910350887}
   m_Layer: 0
-  m_Name: Player
+  m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1011,7 +1011,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1910350885
 MonoBehaviour:

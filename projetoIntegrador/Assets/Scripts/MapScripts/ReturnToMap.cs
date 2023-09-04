@@ -4,16 +4,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class ReturnToMap : MonoBehaviour
-{
-    
+{  
       public GameObject popup,bNextPage,bBackPage,bGame,bBackGame;
       public int nPages,maxPage;
       public Sprite []pages;
       public GameObject cover,nextP1,nextP2,backMP1,backMP2;
       public SpriteRenderer render;
       
-
-
     public void Awake()
     {
         nPages = 0;
@@ -31,8 +28,6 @@ public class ReturnToMap : MonoBehaviour
             bGame.SetActive(false);
             bBackGame.transform.position = nextP1.transform.position;
             bNextPage.transform.position=backMP1.transform.position;
-
-
         }
         else if(nPages>0 && nPages<maxPage)
         {
@@ -56,11 +51,8 @@ public class ReturnToMap : MonoBehaviour
             bGame.SetActive(true);
             bBackGame.transform.position = nextP2.transform.position;
             bNextPage.transform.position = backMP2.transform.position;
-        }
-        
+        }  
     }
-
-
     public void BackToMap()
     {
         TargetMap.stoped= true;

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 5587292}
   - component: {fileID: 5587293}
   m_Layer: 0
-  m_Name: "Heitor_bra\xE7o1"
+  m_Name: arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 93990689}
   - component: {fileID: 93990688}
   m_Layer: 5
-  m_Name: MenuManager
+  m_Name: menuManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 226095367}
   - component: {fileID: 226095366}
   m_Layer: 0
-  m_Name: poste 3
+  m_Name: lightPole 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -420,7 +420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 246436348}
   m_Layer: 0
-  m_Name: DestineCal
+  m_Name: destineSidewalk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 344703290}
   - component: {fileID: 344703291}
   m_Layer: 0
-  m_Name: "Ronil\xE7o_cabe\xE7a1"
+  m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -593,7 +593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 413823510}
   m_Layer: 5
-  m_Name: Luka
+  m_Name: luka
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -710,7 +710,7 @@ GameObject:
   - component: {fileID: 503051946}
   - component: {fileID: 503051947}
   m_Layer: 0
-  m_Name: rua1
+  m_Name: road 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -877,7 +877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 535898929}
   m_Layer: 5
-  m_Name: "Cal\xE7ada"
+  m_Name: sidewalk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -923,7 +923,7 @@ GameObject:
   - component: {fileID: 537572731}
   - component: {fileID: 537572730}
   m_Layer: 0
-  m_Name: Marca Branca da RuaSP
+  m_Name: whiteBrandOfRoadSP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1101,7 +1101,7 @@ GameObject:
   - component: {fileID: 564361829}
   - component: {fileID: 564361828}
   m_Layer: 0
-  m_Name: RodaSII (1)
+  m_Name: rodaSII (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1198,7 +1198,7 @@ GameObject:
   - component: {fileID: 654930470}
   - component: {fileID: 654930471}
   m_Layer: 0
-  m_Name: "Neto_cabe\xE7a1"
+  m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1292,7 +1292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 678785491}
   m_Layer: 0
-  m_Name: DestineSky
+  m_Name: destineSky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1324,7 +1324,7 @@ GameObject:
   - component: {fileID: 687796247}
   - component: {fileID: 687796248}
   m_Layer: 0
-  m_Name: Heitor_corpo1
+  m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1407,7 +1407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 696597839}
   m_Layer: 5
-  m_Name: Gramado
+  m_Name: lawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1549,7 +1549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 733127074}
   m_Layer: 5
-  m_Name: Marca Branca
+  m_Name: whiteMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1588,7 +1588,7 @@ GameObject:
   - component: {fileID: 797115603}
   - component: {fileID: 797115602}
   m_Layer: 5
-  m_Name: "Bot\xE3oConfig"
+  m_Name: img_configurations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1663,7 +1663,7 @@ GameObject:
   m_Component:
   - component: {fileID: 858838822}
   m_Layer: 5
-  m_Name: Van
+  m_Name: van
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1702,7 +1702,7 @@ GameObject:
   m_Component:
   - component: {fileID: 863915746}
   m_Layer: 5
-  m_Name: SkyLine
+  m_Name: skyLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1742,7 +1742,7 @@ GameObject:
   - component: {fileID: 888944688}
   - component: {fileID: 888944687}
   m_Layer: 0
-  m_Name: gramado1
+  m_Name: lawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1828,7 +1828,7 @@ GameObject:
   - component: {fileID: 895225553}
   - component: {fileID: 895225552}
   m_Layer: 5
-  m_Name: "Bot\xE3oPlay"
+  m_Name: bt_play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1960,7 +1960,7 @@ GameObject:
   - component: {fileID: 926082429}
   - component: {fileID: 926082428}
   m_Layer: 0
-  m_Name: StartCal
+  m_Name: startSidewalk
   m_TagString: Menu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2021,7 +2021,7 @@ GameObject:
   - component: {fileID: 944410341}
   - component: {fileID: 944410340}
   m_Layer: 0
-  m_Name: "Cal\xE7ada 3"
+  m_Name: sidewalk 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2166,7 +2166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 979841369}
   m_Layer: 5
-  m_Name: "Bot\xF5esMenu"
+  m_Name: menuButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2343,7 +2343,7 @@ GameObject:
   - component: {fileID: 1014966583}
   - component: {fileID: 1014966582}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: canv_menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2448,7 +2448,7 @@ GameObject:
   - component: {fileID: 1026948703}
   - component: {fileID: 1026948702}
   m_Layer: 0
-  m_Name: poste 1
+  m_Name: lightPole 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2594,7 +2594,7 @@ GameObject:
   - component: {fileID: 1056834923}
   - component: {fileID: 1056834924}
   m_Layer: 0
-  m_Name: "Ronil\xE7o_bra\xE7o"
+  m_Name: arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2678,7 +2678,7 @@ GameObject:
   - component: {fileID: 1093099754}
   - component: {fileID: 1093099755}
   m_Layer: 0
-  m_Name: StartSky
+  m_Name: startSky
   m_TagString: Menu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2735,7 +2735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1099386894}
   m_Layer: 5
-  m_Name: Rua
+  m_Name: road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2773,7 +2773,7 @@ GameObject:
   - component: {fileID: 1204258640}
   - component: {fileID: 1204258641}
   m_Layer: 0
-  m_Name: Manu_corpo1
+  m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2853,9 +2853,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3227827264420815290, guid: 3ac340cd2cf214a47ad770a5fd9a4a13, type: 3}
+      propertyPath: m_Name
+      value: img_fadeInOut
+      objectReference: {fileID: 0}
     - target: {fileID: 3227827265422531509, guid: 3ac340cd2cf214a47ad770a5fd9a4a13, type: 3}
       propertyPath: m_Name
-      value: CanvasTransition
+      value: canv_Transition
       objectReference: {fileID: 0}
     - target: {fileID: 3227827265422531513, guid: 3ac340cd2cf214a47ad770a5fd9a4a13, type: 3}
       propertyPath: m_Pivot.x
@@ -2967,7 +2971,7 @@ GameObject:
   - component: {fileID: 1268849494}
   - component: {fileID: 1268849493}
   m_Layer: 0
-  m_Name: "Cal\xE7ada 1"
+  m_Name: sidewalk 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3113,7 +3117,7 @@ GameObject:
   - component: {fileID: 1269495323}
   - component: {fileID: 1269495324}
   m_Layer: 0
-  m_Name: "Ronil\xE7o_corpo1"
+  m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3200,7 +3204,7 @@ GameObject:
   - component: {fileID: 1311688543}
   - component: {fileID: 1311688542}
   m_Layer: 0
-  m_Name: Sky 3
+  m_Name: sky 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3349,7 +3353,7 @@ GameObject:
   - component: {fileID: 1329014277}
   - component: {fileID: 1329014276}
   m_Layer: 0
-  m_Name: Sky 2
+  m_Name: sky 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3498,7 +3502,7 @@ GameObject:
   - component: {fileID: 1375253992}
   - component: {fileID: 1375253991}
   m_Layer: 0
-  m_Name: "Cal\xE7ada 2"
+  m_Name: sidewalk 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3643,7 +3647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1401121606}
   m_Layer: 0
-  m_Name: TeleportMarca
+  m_Name: teleportMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3676,7 +3680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1476940451}
   m_Layer: 5
-  m_Name: "Cen\xE1rio"
+  m_Name: scenario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3721,7 +3725,7 @@ GameObject:
   - component: {fileID: 1509102650}
   - component: {fileID: 1509102649}
   m_Layer: 0
-  m_Name: poste 2
+  m_Name: lightPole 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3866,7 +3870,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1544516725}
   m_Layer: 5
-  m_Name: Neto
+  m_Name: neto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3904,7 +3908,7 @@ GameObject:
   - component: {fileID: 1558128116}
   - component: {fileID: 1558128117}
   m_Layer: 0
-  m_Name: Luka_corpo1
+  m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3987,7 +3991,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1579604345}
   m_Layer: 5
-  m_Name: "Ronil\xE7o"
+  m_Name: "ronil\xE7o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4038,7 +4042,7 @@ GameObject:
   - component: {fileID: 1645400826}
   - component: {fileID: 1645400827}
   m_Layer: 0
-  m_Name: "Manu_cabe\xE7a1"
+  m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4121,7 +4125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1648211870}
   m_Layer: 5
-  m_Name: Montagem
+  m_Name: scenarioComponents
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4167,7 +4171,7 @@ GameObject:
   - component: {fileID: 1742544163}
   - component: {fileID: 1742544162}
   m_Layer: 5
-  m_Name: "Bot\xE3oConfig"
+  m_Name: bt_config
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4299,7 +4303,7 @@ GameObject:
   - component: {fileID: 1784669025}
   - component: {fileID: 1784669026}
   m_Layer: 0
-  m_Name: RodaSII
+  m_Name: rodaSII
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4395,7 +4399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1822528303}
   m_Layer: 5
-  m_Name: Heitor
+  m_Name: heitor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4433,7 +4437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1828228982}
   m_Layer: 5
-  m_Name: Manu
+  m_Name: manu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4475,7 +4479,7 @@ GameObject:
   - component: {fileID: 1879548790}
   - component: {fileID: 1879548789}
   m_Layer: 0
-  m_Name: Sky 1
+  m_Name: sky 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4621,7 +4625,7 @@ GameObject:
   - component: {fileID: 1896873324}
   - component: {fileID: 1896873325}
   m_Layer: 0
-  m_Name: "Luka_cabe\xE7a1"
+  m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4704,7 +4708,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1995144241}
   m_Layer: 0
-  m_Name: "TeleportCal\xE7"
+  m_Name: teleportSidewalk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4740,7 +4744,7 @@ GameObject:
   - component: {fileID: 2115924322}
   - component: {fileID: 2115924321}
   m_Layer: 5
-  m_Name: "Bot\xE3oExit"
+  m_Name: bt_exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4858,7 +4862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2127680198}
   m_Layer: 0
-  m_Name: TeleportSky
+  m_Name: teleportSky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4900,6 +4904,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5577688379789809723, guid: 6279a81842de61048bf7dac53e58a95d, type: 3}
+      propertyPath: m_Name
+      value: slider_soundEffect
+      objectReference: {fileID: 0}
     - target: {fileID: 5577688380065153116, guid: 6279a81842de61048bf7dac53e58a95d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -4908,13 +4916,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5577688380806031165, guid: 6279a81842de61048bf7dac53e58a95d, type: 3}
+      propertyPath: m_Name
+      value: slider_music
+      objectReference: {fileID: 0}
     - target: {fileID: 5577688380852908723, guid: 6279a81842de61048bf7dac53e58a95d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5577688381009351104, guid: 6279a81842de61048bf7dac53e58a95d, type: 3}
       propertyPath: m_Name
-      value: Options
+      value: canv_options
       objectReference: {fileID: 0}
     - target: {fileID: 5577688381009351104, guid: 6279a81842de61048bf7dac53e58a95d, type: 3}
       propertyPath: m_IsActive
@@ -5004,6 +5016,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5577688381505218779, guid: 6279a81842de61048bf7dac53e58a95d, type: 3}
+      propertyPath: m_Name
+      value: text_options
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6279a81842de61048bf7dac53e58a95d, type: 3}
 --- !u!1001 &6893742708140837941
@@ -5015,7 +5031,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6893742706479829576, guid: 9b0ef85f574cf3d428c05a7cf76333a1, type: 3}
       propertyPath: m_Name
-      value: AudioManager
+      value: audioManager
       objectReference: {fileID: 0}
     - target: {fileID: 6893742706479829579, guid: 9b0ef85f574cf3d428c05a7cf76333a1, type: 3}
       propertyPath: m_RootOrder

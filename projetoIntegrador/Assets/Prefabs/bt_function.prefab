@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4599195238900654031}
   - component: {fileID: 4599195238900654028}
   m_Layer: 0
-  m_Name: Btn_Function
+  m_Name: bt_function
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

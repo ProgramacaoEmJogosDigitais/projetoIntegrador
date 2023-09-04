@@ -13,7 +13,6 @@ public class ParallaxMenu : MonoBehaviour
     void Update()
     {
         Parallax();
-
     }
 
     public void Parallax()
