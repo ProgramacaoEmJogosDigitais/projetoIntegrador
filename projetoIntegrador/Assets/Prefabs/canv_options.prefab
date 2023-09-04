@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5577688379595047741}
   - component: {fileID: 5577688379595047742}
   m_Layer: 5
-  m_Name: Btn_QuitOptions
+  m_Name: btn_quitOptions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 5577688379789809722}
   - component: {fileID: 5577688379789809721}
   m_Layer: 5
-  m_Name: "Bot\xE3oDefeitoSonoros"
+  m_Name: slider_soundEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -885,7 +885,7 @@ GameObject:
   - component: {fileID: 5577688380806031164}
   - component: {fileID: 5577688380806031163}
   m_Layer: 5
-  m_Name: "Bot\xE3oDeSom"
+  m_Name: slider_music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1091,7 +1091,7 @@ GameObject:
   - component: {fileID: 5577688381009351117}
   - component: {fileID: 5577688381009351118}
   m_Layer: 5
-  m_Name: Options
+  m_Name: canv_options
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1343,7 +1343,7 @@ GameObject:
   - component: {fileID: 5577688381505218776}
   - component: {fileID: 5577688381505218777}
   m_Layer: 5
-  m_Name: "TextoOp\xE7\xF5es"
+  m_Name: text_options
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
