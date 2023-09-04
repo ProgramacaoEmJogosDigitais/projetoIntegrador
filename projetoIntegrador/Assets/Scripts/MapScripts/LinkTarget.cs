@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class LinkTarget : MonoBehaviour
 {
-    // Start is called before the first frame update
     Vector3[] w2, a2, s2, d2;
     public Transform[] w3, a3, s3, d3;
     public Transform car, popposition;
     public GameObject popup;
-    ImputManeger controler;
     public int numberWpoints;
     public bool enableUp, enableDown, enableRight, enableLeft;
+    ImputManeger controler;
+
     private void Awake()
     {
         controler = new ImputManeger();
@@ -19,13 +19,10 @@ public class LinkTarget : MonoBehaviour
         a2 = new Vector3[numberWpoints];
         s2 = new Vector3[numberWpoints];
         d2 = new Vector3[numberWpoints];
-
-
-
-
-
-
-
+    }    
+    void Start()
+    {
+        TargetMap.stoped = true;
     }
     private void OnEnable()
     {
@@ -35,19 +32,11 @@ public class LinkTarget : MonoBehaviour
     {
         controler.Disable();
     }
-
-    void Start()
-    {
-        TargetMap.stoped = true;
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        Chegou();
+        Arrived();
     }
-    void Chegou()
+    void Arrived()
     {
 
         if (this.transform.position == car.transform.position) //se a posiçao do carro é a mesma do ponto turistico
@@ -134,9 +123,5 @@ public class LinkTarget : MonoBehaviour
             TargetMap.w = w2;
             TargetMap.s = s2;
         }
-
-       
-
     }
-
 }
