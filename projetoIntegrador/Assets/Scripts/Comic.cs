@@ -17,18 +17,27 @@ public class Comic : MonoBehaviour
     [SerializeField] private GameObject forwardButton;
     private int index = -1;
     private bool rotate = false;
+    private float angle1;
 
     private void Start()
     {
         comic.transform.position = posComicOnePage.position;
         backButton.SetActive(false);
 
-        for (int i = 0; i < pagesSprite.Count; i++)
+        int cont1 = 0;
+        int cont2 = 0;
+        for (int i = 0; i < (pagesImage1.Count + pagesImage2.Count); i++)
         {
-            if (index % 2 == 0)
-                pagesImage1[i].sprite = pagesSprite[i];
+            if (i % 2 == 0)
+            {
+                pagesImage1[cont1].sprite = pagesSprite[i];
+                cont1++;
+            }
             else
-                pagesImage2[i].sprite = pagesSprite[i];
+            {
+                pagesImage2[cont2].sprite = pagesSprite[i];
+                cont2++;
+            }
         }
     }
     public void RotateForward()
@@ -104,7 +113,7 @@ public class Comic : MonoBehaviour
             Quaternion targetRotation = Quaternion.Euler(0f, angle, 0f);
             value += Time.deltaTime * pageSpeed;
             pagesGameObject[index].transform.rotation = Quaternion.Slerp(pagesGameObject[index].transform.rotation, targetRotation, value);
-            float angle1 = Quaternion.Angle(pagesGameObject[index].transform.rotation, targetRotation);
+            angle1 = Quaternion.Angle(pagesGameObject[index].transform.rotation, targetRotation);
 
             if (angle1 < 0.1f)
             {
@@ -117,7 +126,19 @@ public class Comic : MonoBehaviour
             }
             yield return null;
         }
-    }/*
+    }
+    private void FixedUpdate()
+    {
+        if (pagesGameObject[index].transform.rotation.y == 90)
+        {
+            pagesImage2[index].transform.SetAsLastSibling();
+        }
+        if (pagesGameObject[index].transform.rotation.y == - 90)
+        {
+            pagesImage1[index].transform.SetAsLastSibling();
+        }
+    }
+    /*
     IEnumerator Rotate(float angle, bool forward)
     {
         float value = 0f;
@@ -135,8 +156,7 @@ public class Comic : MonoBehaviour
             if (angle1 >= 90 && !spriteChanged)
             {
                 spriteChanged = true;
-                // Alterar o sprite da página para pagesSprite[index]
-                pagesImage[index].sprite = pagesSprite[index];
+                pagesImage2[index].transform.SetAsLastSibling();
             }
 
             if (angle1 < 0.1f)
