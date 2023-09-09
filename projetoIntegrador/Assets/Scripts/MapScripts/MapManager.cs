@@ -7,19 +7,25 @@ using UnityEngine.UIElements;
 public class MapManager : MonoBehaviour
 {
     public Canvas scrollViewInstructions;
+
     void Start()
     {
-        StartCoroutine(Spawinstructions());   
+        // Verifica se as instruções já foram exibidas antes de iniciá-las.
+        if (!PlayerPrefs.HasKey("InstructionsShown") || PlayerPrefs.GetInt("InstructionsShown") == 0)
+        {
+            StartCoroutine(SpawnInstructions());
+        }
     }
 
-    public IEnumerator Spawinstructions()
+    public IEnumerator SpawnInstructions()
     {
-            yield return new WaitForSeconds(1);
-            scrollViewInstructions.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        scrollViewInstructions.gameObject.SetActive(true);
+        PlayerPrefs.SetInt("InstructionsShown", 1); // Instruções exibidas.
     }
 
     public void GoMap()
     {
-        Destroy(scrollViewInstructions.gameObject);
+        scrollViewInstructions.gameObject.SetActive(false);
     }
 }
