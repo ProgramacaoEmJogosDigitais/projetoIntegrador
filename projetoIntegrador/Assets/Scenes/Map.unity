@@ -13820,7 +13820,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431875555}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.14330293}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18418,17 +18418,16 @@ MonoBehaviour:
   - {fileID: 1431875555}
   - {fileID: 216665900}
   pagesImage1:
-  - {fileID: 483098341}
   - {fileID: 1951460903}
+  - {fileID: 483098341}
   pagesImage2:
-  - {fileID: 1072279952}
   - {fileID: 806483819}
+  - {fileID: 1072279952}
   pagesSprite:
-  - {fileID: 21300000, guid: f853bf1538d7f1747998539ec819b2cf, type: 3}
-  - {fileID: 21300000, guid: 490143fb30de76048b4eb440e13364dd, type: 3}
   - {fileID: 21300000, guid: c11494c86ed479b4797171e49cdc4d85, type: 3}
-  - {fileID: 21300000, guid: 148f5055aa9bfc247bb561efd4c3365e, type: 3}
-  - {fileID: 21300000, guid: 148f5055aa9bfc247bb561efd4c3365e, type: 3}
+  - {fileID: 21300000, guid: 93ad993db43a8864eb28a84dbf7d8098, type: 3}
+  - {fileID: 21300000, guid: 490143fb30de76048b4eb440e13364dd, type: 3}
+  - {fileID: 21300000, guid: 51dd5b48d02412546b8ed374ab840a1a, type: 3}
   backButton: {fileID: 1295055389}
   forwardButton: {fileID: 660886076}
 --- !u!4 &1785323058
@@ -20099,7 +20098,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951460901}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.017393148, y: 0.017393148, z: 0.017393148}
   m_ConstrainProportionsScale: 0

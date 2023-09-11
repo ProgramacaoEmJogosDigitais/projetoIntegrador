@@ -13,6 +13,7 @@ public class Comic : MonoBehaviour
     [SerializeField] private List<Image> pagesImage1;
     [SerializeField] private List<Image> pagesImage2;
     [SerializeField] private List<Sprite> pagesSprite;
+    //[SerializeField] private List<Sprite> pagesSprite2;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject forwardButton;
     private int index = -1;
@@ -39,14 +40,16 @@ public class Comic : MonoBehaviour
                 cont2++;
             }
         }
+        pagesImage1.ForEach(image => image.gameObject.SetActive(true));
+        
     }
     public void RotateForward()
     {
         if (rotate == true) { return; }
         index++;
-        float angle = 180;
-        ForwardButtonActions();
+        float angle = -180;
         pagesGameObject[index].transform.SetAsLastSibling();
+        ForwardButtonActions();
         StartCoroutine(Rotate(angle, true));
         comic.transform.position = posComicTwoPages.position;
     }
@@ -57,21 +60,11 @@ public class Comic : MonoBehaviour
             comic.transform.position = posComicTwoPages.position;
             backButton.SetActive(true);
         }
-
-        /*if (index == 0) //Primeira página
-        {
-            pagesImage[index].sprite = pagesSprite[index];
-        }*/
-        if (index == pagesGameObject.Count - 1) //Última página
+        if (index + 1 == pagesGameObject.Count) //Última página
         {
             comic.transform.position = posComicOnePage.position;
             forwardButton.SetActive(false);
         }
-        /*else
-        {
-            pagesImage[index - 1].sprite = pagesSprite[index];
-            pagesImage[index].sprite = pagesSprite[index + 1];
-        }*/
     }
     public void RotateBack()
     {
@@ -92,21 +85,12 @@ public class Comic : MonoBehaviour
             comic.transform.position = posComicOnePage.position;
             backButton.SetActive(false);
         }
-        /*else if (index == 0) // Primeira página
-        {
-            pagesImage[index].sprite = pagesSprite[index];
-        }
-        else
-        {
-            pagesImage[index + 1].sprite = pagesSprite[index];
-            pagesImage[index].sprite = pagesSprite[index - 1];
-        }
-        Debug.Log(index);
-        */
+     
     }
     IEnumerator Rotate(float angle, bool forward)
     {
         float value = 0f;
+
         while (true)
         {
             rotate = true;
@@ -114,49 +98,17 @@ public class Comic : MonoBehaviour
             value += Time.deltaTime * pageSpeed;
             pagesGameObject[index].transform.rotation = Quaternion.Slerp(pagesGameObject[index].transform.rotation, targetRotation, value);
             angle1 = Quaternion.Angle(pagesGameObject[index].transform.rotation, targetRotation);
-
-            if (angle1 < 0.1f)
+            Debug.Log(angle1);
+            if (angle1 <= 90f && forward && index > 0)
             {
-                if (forward == false)
-                {
-                    index--;
-                }
-                rotate = false;
-                break;
+                pagesImage1[index-1].gameObject.SetActive(false); // Desativa a imagem da página 1
+                pagesImage2[index-1].gameObject.SetActive(true); 
             }
-            yield return null;
-        }
-    }
-    private void FixedUpdate()
-    {
-        if (pagesGameObject[index].transform.rotation.y == 90)
-        {
-            pagesImage2[index].transform.SetAsLastSibling();
-        }
-        if (pagesGameObject[index].transform.rotation.y == - 90)
-        {
-            pagesImage1[index].transform.SetAsLastSibling();
-        }
-    }
-    /*
-    IEnumerator Rotate(float angle, bool forward)
-    {
-        float value = 0f;
-        bool spriteChanged = false; // Variável para rastrear se o sprite foi alterado
-
-        while (true)
-        {
-            rotate = true;
-            Quaternion targetRotation = Quaternion.Euler(0f, angle, 0f);
-            value += Time.deltaTime * pageSpeed;
-            pagesGameObject[index].transform.rotation = Quaternion.Slerp(pagesGameObject[index].transform.rotation, targetRotation, value);
-            float angle1 = Quaternion.Angle(pagesGameObject[index].transform.rotation, targetRotation);
-
-            // Verificar se a rotação atingiu 90 graus e o sprite ainda não foi alterado
-            if (angle1 >= 90 && !spriteChanged)
+            else if (angle1 <= 90f && !forward && index >0 && index < pagesGameObject.Count)
             {
-                spriteChanged = true;
-                pagesImage2[index].transform.SetAsLastSibling();
+                pagesImage1[index-1].gameObject.SetActive(true);   // Ativa a imagem da página 1
+                pagesImage2[index - 1].gameObject.SetActive(false);
+
             }
 
             if (angle1 < 0.1f)
@@ -172,14 +124,5 @@ public class Comic : MonoBehaviour
         }
     }
 
-    /* 0 = 0
-     * -----
-     * 0 = 1
-     * 1 = 2
-     * 1 = 3
-     * 2 = 4
-     *------
-     *
-     */
 
 }
