@@ -11,7 +11,6 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject panelOptions;
     //public FadeInOut fadeInOut;
     public Image componentImage;
-    public Canvas canvas;
 
     public void Play()
     {

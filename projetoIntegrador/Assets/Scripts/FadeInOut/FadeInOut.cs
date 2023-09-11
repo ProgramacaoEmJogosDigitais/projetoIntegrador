@@ -19,5 +19,6 @@ public class FadeInOut : MonoBehaviour
         componentImage.gameObject.SetActive(true);
         componentImage.GetComponent<Animator>().SetTrigger("Out");
         yield return new WaitForSeconds(3);
+        componentImage.gameObject.SetActive(false);
     }
 }
