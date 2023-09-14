@@ -55,7 +55,6 @@ public class ReturnToMap : MonoBehaviour
     }
     public void BackToMap()
     {
-        TargetMap.stoped= true;
         popup.gameObject.SetActive(false);
         nPages = 0;
 
