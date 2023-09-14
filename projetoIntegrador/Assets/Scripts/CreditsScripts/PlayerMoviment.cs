@@ -21,10 +21,6 @@ public class PlayerMoviment : MonoBehaviour
 
     private void Start()
     {
-        // Define a posição inicial da câmera
-        Vector3 initialPosition = new Vector3(4f, -2.3f, transform.position.z);
-        transform.position = initialPosition;
-
     }
 
     // OnEnable é chamado quando o script é habilitado
