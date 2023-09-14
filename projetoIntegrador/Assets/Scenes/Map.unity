@@ -15705,7 +15705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f77436acba048409e3b0ad1261c435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  airplanePrefab: {fileID: 7425621500495221882, guid: 3e7ef3e51d3184f4fa37dcdbf5d1d010, type: 3}
+  airplanePrefab: {fileID: 2484440202757524334, guid: ae07bf12ef43e704290b10c832d8a0e9, type: 3}
   ExitRightPositions:
   - {fileID: 126514301}
   - {fileID: 160857420}
