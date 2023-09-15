@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 96921987}
   - component: {fileID: 96921986}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 163330359}
   - component: {fileID: 163330358}
   m_Layer: 5
-  m_Name: Competitivo
+  m_Name: bt_competitive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 325441482}
   - component: {fileID: 325441481}
   m_Layer: 5
-  m_Name: SairPintura
+  m_Name: bt_exitPicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -513,7 +513,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &393583344
 MonoBehaviour:
@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 635240906}
   - component: {fileID: 635240905}
   m_Layer: 5
-  m_Name: MenuPinturta
+  m_Name: canv_menuPicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -776,7 +776,7 @@ RectTransform:
   - {fileID: 1709312572}
   - {fileID: 325441480}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -929,7 +929,7 @@ GameObject:
   - component: {fileID: 759132012}
   - component: {fileID: 759132013}
   m_Layer: 0
-  m_Name: Figua1
+  m_Name: figure1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1015,7 +1015,7 @@ GameObject:
   - component: {fileID: 892903838}
   - component: {fileID: 892903837}
   m_Layer: 5
-  m_Name: MenuCelecaoPinturta
+  m_Name: canv_menuPictureCollection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1100,7 +1100,7 @@ RectTransform:
   - {fileID: 1367688188}
   - {fileID: 163330357}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1118,7 +1118,7 @@ GameObject:
   - component: {fileID: 1159895907}
   - component: {fileID: 1159895908}
   m_Layer: 0
-  m_Name: Figura 2
+  m_Name: figure2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1339,7 +1339,7 @@ GameObject:
   - component: {fileID: 1367688190}
   - component: {fileID: 1367688189}
   m_Layer: 5
-  m_Name: Classico
+  m_Name: bt_classic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1472,7 +1472,7 @@ GameObject:
   - component: {fileID: 1569296058}
   - component: {fileID: 1569296057}
   m_Layer: 0
-  m_Name: 'MainCameraPintura '
+  m_Name: MainCameraPicture
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1557,7 +1557,7 @@ GameObject:
   - component: {fileID: 1709312574}
   - component: {fileID: 1709312573}
   m_Layer: 5
-  m_Name: JogarPinrtura
+  m_Name: bt_playPicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1689,7 +1689,7 @@ GameObject:
   - component: {fileID: 1967685292}
   - component: {fileID: 1967685291}
   m_Layer: 0
-  m_Name: FunctionMenuPintura
+  m_Name: functionMenuPicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1707,8 +1707,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9210f0f58ccda9442b6775e9b9e6d155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuPintura: {fileID: 635240904}
-  menuSelecaoPintura: {fileID: 892903836}
+  paintMenu: {fileID: 0}
+  paintMenuSelection: {fileID: 0}
 --- !u!4 &1967685292
 Transform:
   m_ObjectHideFlags: 0
@@ -1722,7 +1722,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2034086360
 GameObject:
@@ -1873,7 +1873,7 @@ GameObject:
   - component: {fileID: 2124937307}
   - component: {fileID: 2124937306}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

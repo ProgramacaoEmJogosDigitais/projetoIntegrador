@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class DataPintura 
 {
-    public static int numeroCorSelecionada,contageFigureResete,numberTimeFigureData;
-    public static int[] vetorComparacaoPintura,vectorCollorSelect;
+    public static int selectedColorNumber, contageFigureResete,numberTimeFigureData;
+    public static int[] vectorComparisonPainting, vectorCollorSelect;
     public static bool enablePicture,startGamePicture;
 
-   
+    /* MUDANCAS:
+    selectedColorNumber = numeroCorSelecionada
+    vetorComparacaoPintura = vectorComparisonPainting
+    */
+
 }
