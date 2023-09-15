@@ -18,13 +18,16 @@ public class ArrivedCharacter : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                Debug.Log("Apertou enter");//TODO
-                popUpInformations.gameObject.SetActive(true);
+        {            
+            popUpInformations.gameObject.SetActive(true);
 
-            }
+            Debug.Log("Entrou");//TODO
+            //if (Input.GetKeyDown(KeyCode.A))
+            //{
+            //    Debug.Log("Apertou enter");//TODO
+            //    popUpInformations.gameObject.SetActive(true);
+
+            //}
         }
     }
 
