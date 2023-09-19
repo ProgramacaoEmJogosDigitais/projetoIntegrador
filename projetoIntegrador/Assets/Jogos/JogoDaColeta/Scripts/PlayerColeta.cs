@@ -42,13 +42,13 @@ public class PlayerColeta : MonoBehaviour
             pAnimator.Play("PlayerRun");
         }
 
-        if (transform.position.x > 9.74f) 
+        if (transform.position.x > 8f) 
         {
-            transform.position = new Vector2(9.73f, transform.position.y);
+            transform.position = new Vector2(8f, transform.position.y);
         }
-        else if (transform.position.x < -9.74f)
+        else if (transform.position.x < -8f)
         {
-            transform.position = new Vector2(-9.73f, transform.position.y);
+            transform.position = new Vector2(-8f, transform.position.y);
         }
     }
 

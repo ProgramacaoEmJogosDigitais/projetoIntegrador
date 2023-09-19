@@ -38,7 +38,7 @@ public class GameControllerJC : MonoBehaviour
         {
             if (Time.time >= nextSpawnTime && enemiesSpawned < maxEnemiesPerWave)
             {
-                float x = Random.Range(-9f, 9f);
+                float x = Random.Range(-8f, 8f);
                 float y = 7f;
                 Vector2 spawnPosition = new Vector2(x, y);
                 Instantiate(prefabFishs[Random.Range(0, prefabFishs.Length)], spawnPosition, Quaternion.identity);
