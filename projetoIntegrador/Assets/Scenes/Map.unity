@@ -207,8 +207,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &39369669
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -288,8 +292,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &47055750
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -485,8 +493,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &82256936
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -829,8 +841,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &138697758
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1356,7 +1372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267971351}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07, y: -6.19, z: 0}
+  m_LocalPosition: {x: 0.18, y: -6.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1383,8 +1399,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 0
+  boolDown: 0
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &267971354
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1650,7 +1670,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284882845}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.84, y: -6.57, z: 0}
+  m_LocalPosition: {x: 11.627, y: -6.0900006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1677,8 +1697,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 0
+  boolRight: 0
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &284882848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1842,8 +1866,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &338127459
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1896,7 +1924,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343992663}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.85, y: -6.11, z: 0}
+  m_LocalPosition: {x: 0.43, y: -6.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1923,8 +1951,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 0
+  boolDown: 0
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &343992666
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2761,7 +2793,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594212255}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.06, y: -3.14, z: 0}
+  m_LocalPosition: {x: 32.31, y: -3.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2788,8 +2820,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 0
+  boolDown: 0
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &594212258
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3178,8 +3214,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &677525848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4042,7 +4082,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879598605}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.52, y: 4.45, z: 0.21180433}
+  m_LocalPosition: {x: -16.34, y: 4.45, z: 0.21180433}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4069,8 +4109,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 0
+  boolDown: 0
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &879598608
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4123,7 +4167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881310713}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 26.77, y: -6.58, z: 0}
+  m_LocalPosition: {x: 26.275, y: -6.1000004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4150,8 +4194,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 0
+  boolRight: 0
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &881310716
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4351,7 +4399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954238292}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.17, y: -2.97, z: 0}
+  m_LocalPosition: {x: 32.42, y: -3.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4378,8 +4426,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 0
+  boolDown: 0
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &954238295
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4853,7 +4905,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150667962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.05, y: -6.55, z: 0}
+  m_LocalPosition: {x: 18.705, y: -6.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4880,8 +4932,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 0
+  boolRight: 0
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1150667965
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4992,8 +5048,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1181175514
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5195,8 +5255,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1220140908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5358,8 +5422,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1240051411
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5424,8 +5492,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 0
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1267486849
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5493,7 +5565,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267675733}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.71, y: 0.99, z: 0.21180433}
+  m_LocalPosition: {x: -16.34, y: 0.99, z: 0.21180433}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5520,8 +5592,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 0
+  boolDown: 0
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1267675736
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5860,6 +5936,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbfc7e9b307e79b4fb3a1bd6f4b2f7b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 0
+  moveVector: {x: 0, y: 0}
+  spriteVanUp: {fileID: 0}
+  spriteVanDown: {fileID: 0}
+  spriteVanRight: {fileID: 0}
+  spriteVanLeft: {fileID: 0}
   posInitial: {fileID: 343992664}
   isMoving: 0
 --- !u!1 &1285711619
@@ -5915,8 +5997,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1285711622
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6591,8 +6677,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1397108552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6975,8 +7065,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 0
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1488356595
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7339,8 +7433,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1557194702
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7874,8 +7972,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 0
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1678161116
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7943,7 +8045,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687314029}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03, y: -6.55, z: 0}
+  m_LocalPosition: {x: 0.078, y: -6.0700006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7970,8 +8072,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 0
+  boolRight: 0
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1687314032
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8082,8 +8188,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1699056057
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8363,8 +8473,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 0
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 0
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1788419695
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8526,8 +8640,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 0
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1800557811
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8580,7 +8698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833134159}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.79, y: -6.56, z: 0}
+  m_LocalPosition: {x: 5.72, y: -6.0800004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8607,8 +8725,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 0
+  boolRight: 0
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1833134162
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9213,8 +9335,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 0
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1989942374
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9294,8 +9420,12 @@ MonoBehaviour:
   spriteDown: {fileID: 21300000, guid: 54223fc49257d2842973152fc3165503, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
+  boolUp: 1
+  boolDown: 1
+  boolLeft: 1
+  boolRight: 1
   player: {fileID: 1278933568}
-  transitionDuration: 0.5
+  transitionDuration: 0.7
 --- !u!61 &1994317009
 BoxCollider2D:
   m_ObjectHideFlags: 0

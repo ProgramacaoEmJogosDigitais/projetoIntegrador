@@ -15,6 +15,12 @@ public class Point : MonoBehaviour
     public Sprite spriteLeft;
     public Sprite spriteRight;
 
+    [Header("Booleanas")]
+    public bool boolUp = false;
+    public bool boolDown = false;
+    public bool boolLeft = false;
+    public bool boolRight = false;
+
     public GameObject player;
     public float transitionDuration = 0.5f;
 
@@ -45,22 +51,22 @@ public class Point : MonoBehaviour
     {
         if (isColliding && !vanMoviment.isMoving)
         {
-            if (Input.GetKey(KeyCode.W))
+            if (vanMoviment.moveVector.x == 0 && vanMoviment.moveVector.y > 0 && boolUp)
             {
                 player.GetComponent<SpriteRenderer>().sprite = spriteUp; // Troca o sprite instantaneamente
                 MoveTo(pointUp);
             }
-            else if (Input.GetKey(KeyCode.S))
+            else if (vanMoviment.moveVector.x == 0 && vanMoviment.moveVector.y < 0 && boolDown)
             {
                 player.GetComponent<SpriteRenderer>().sprite = spriteDown;
                 MoveTo(pointDown);
             }
-            else if (Input.GetKey(KeyCode.A))
+            else if (vanMoviment.moveVector.x < 0 && vanMoviment.moveVector.y == 0 && boolLeft)
             {
                 player.GetComponent<SpriteRenderer>().sprite = spriteLeft;
                 MoveTo(pointLeft);
             }
-            else if (Input.GetKey(KeyCode.D))
+            else if (vanMoviment.moveVector.x > 0 && vanMoviment.moveVector.y == 0 && boolRight)
             {
                 player.GetComponent<SpriteRenderer>().sprite = spriteRight;
                 MoveTo(pointRight);
