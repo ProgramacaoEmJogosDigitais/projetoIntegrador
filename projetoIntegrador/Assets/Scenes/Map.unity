@@ -656,12 +656,12 @@ MonoBehaviour:
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
   lateralPointInitial: 1
-  boolUp: 0
+  boolUp: 1
   boolLeft: 0
   boolRight: 0
   player: {fileID: 1278933568}
-  pointPositionDestiny: {fileID: 0}
-  pointPositionMap: {fileID: 0}
+  pointPositionDestiny: {fileID: 764531203}
+  pointPositionMap: {fileID: 881310714}
   transitionDuration: 0.5
 --- !u!1 &126514300
 GameObject:
@@ -769,12 +769,12 @@ MonoBehaviour:
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
   lateralPointInitial: 1
-  boolUp: 0
+  boolUp: 1
   boolLeft: 0
   boolRight: 0
   player: {fileID: 1278933568}
-  pointPositionDestiny: {fileID: 0}
-  pointPositionMap: {fileID: 0}
+  pointPositionDestiny: {fileID: 764531203}
+  pointPositionMap: {fileID: 1687314030}
   transitionDuration: 0.5
 --- !u!1 &138697755
 GameObject:
@@ -2548,12 +2548,12 @@ MonoBehaviour:
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
   lateralPointInitial: 1
-  boolUp: 0
+  boolUp: 1
   boolLeft: 0
   boolRight: 0
   player: {fileID: 1278933568}
-  pointPositionDestiny: {fileID: 0}
-  pointPositionMap: {fileID: 0}
+  pointPositionDestiny: {fileID: 764531203}
+  pointPositionMap: {fileID: 284882846}
   transitionDuration: 0.5
 --- !u!1 &562133970
 GameObject:
@@ -3826,12 +3826,12 @@ MonoBehaviour:
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
   lateralPointInitial: 1
-  boolUp: 0
+  boolUp: 1
   boolLeft: 0
   boolRight: 0
   player: {fileID: 1278933568}
-  pointPositionDestiny: {fileID: 0}
-  pointPositionMap: {fileID: 0}
+  pointPositionDestiny: {fileID: 764531203}
+  pointPositionMap: {fileID: 1833134160}
   transitionDuration: 0.5
 --- !u!1 &841916542
 GameObject:
@@ -4317,13 +4317,13 @@ MonoBehaviour:
   spriteUp: {fileID: 21300000, guid: 98eeb07df6dfdea489d614064531b17c, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
-  lateralPointInitial: 0
+  lateralPointInitial: 1
   boolUp: 0
   boolLeft: 0
-  boolRight: 0
+  boolRight: 1
   player: {fileID: 1278933568}
-  pointPositionDestiny: {fileID: 0}
-  pointPositionMap: {fileID: 0}
+  pointPositionDestiny: {fileID: 764531203}
+  pointPositionMap: {fileID: 1267675734}
   transitionDuration: 0.5
 --- !u!1 &954238292
 GameObject:
@@ -9006,12 +9006,12 @@ MonoBehaviour:
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
   lateralPointInitial: 1
-  boolUp: 0
+  boolUp: 1
   boolLeft: 0
   boolRight: 0
   player: {fileID: 1278933568}
-  pointPositionDestiny: {fileID: 0}
-  pointPositionMap: {fileID: 0}
+  pointPositionDestiny: {fileID: 764531203}
+  pointPositionMap: {fileID: 1150667963}
   transitionDuration: 0.5
 --- !u!1 &1922923995
 GameObject:
@@ -9462,13 +9462,13 @@ MonoBehaviour:
   spriteUp: {fileID: 21300000, guid: 98eeb07df6dfdea489d614064531b17c, type: 3}
   spriteLeft: {fileID: 21300000, guid: 26b141a6d0fd42c4d9f1b170a7bd85b2, type: 3}
   spriteRight: {fileID: 21300000, guid: dd17f19be0c54c8489c9dede64c1d82d, type: 3}
-  lateralPointInitial: 0
+  lateralPointInitial: 1
   boolUp: 0
   boolLeft: 0
-  boolRight: 0
+  boolRight: 1
   player: {fileID: 1278933568}
-  pointPositionDestiny: {fileID: 0}
-  pointPositionMap: {fileID: 0}
+  pointPositionDestiny: {fileID: 764531203}
+  pointPositionMap: {fileID: 879598606}
   transitionDuration: 0.5
 --- !u!1 &2071577919
 GameObject:
