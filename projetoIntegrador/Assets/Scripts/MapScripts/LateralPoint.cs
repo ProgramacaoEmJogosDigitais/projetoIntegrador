@@ -25,12 +25,13 @@ public class LateralPoint : MonoBehaviour
     public Transform pointPositionMap;
     public float transitionDuration = 0.5f;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             if (lateralPointInitial)
-            {               pointPositionDestiny.GetComponent<LateralPoint>().lateralPointInitial = false;
+            {          
+                pointPositionDestiny.GetComponent<LateralPoint>().lateralPointInitial = false;
                 player.transform.position = pointPositionDestiny.transform.position;
             }
             else
@@ -92,8 +93,8 @@ public class LateralPoint : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        lateralPointInitial = true;
         player.transform.position = targetPosition;
+        lateralPointInitial = true;
     }
 
 }
