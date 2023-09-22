@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -6,12 +7,6 @@ using UnityEngine.Experimental.GlobalIllumination;
 
 public class LateralPoint : MonoBehaviour
 {
-
-    [Header("Sprites")]
-    public Sprite spriteUp;
-    public Sprite spriteLeft;
-    public Sprite spriteRight;
-
     [Header("Booleanas")]
     public bool lateralPointInitial = true;
     public bool boolUp;
@@ -24,6 +19,7 @@ public class LateralPoint : MonoBehaviour
     public GameObject pointPositionDestiny;
     public Transform pointPositionMap;
     public float transitionDuration = 0.5f;
+    private AnimationWhell[] wheels;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -38,24 +34,30 @@ public class LateralPoint : MonoBehaviour
             {
                 if (boolUp && !boolLeft && !boolRight)
                 {
-                    player.GetComponent<SpriteRenderer>().sprite = spriteUp; // Troca o sprite instantaneamente
-                    MoveTo(pointPositionMap);
+                    player.GetComponent<SpriteRenderer>().sprite = player.GetComponent<VanMoviment>().spriteVanUpAndDown;
+                    player.GetComponent<VanMoviment>().wheelRight.SetActive(false);
+                    player.GetComponent<VanMoviment>().wheelLeft.SetActive(false);
+                    MoveTo(pointPositionMap, 0);
                 }
                 else if (!boolUp && boolLeft && !boolRight)
                 {
-                    player.GetComponent<SpriteRenderer>().sprite = spriteLeft;
-                    MoveTo(pointPositionMap);
+                    player.GetComponent<SpriteRenderer>().sprite = player.GetComponent<VanMoviment>().spriteVanLeft;
+                    player.GetComponent<VanMoviment>().wheelRight.SetActive(false);
+                    player.GetComponent<VanMoviment>().wheelLeft.SetActive(true);
+                    MoveTo(pointPositionMap, 80);
                 }
                 else if (!boolUp && !boolLeft && boolRight)
                 {
-                    player.GetComponent<SpriteRenderer>().sprite = spriteRight;
-                    MoveTo(pointPositionMap);
+                    player.GetComponent<SpriteRenderer>().sprite = player.GetComponent<VanMoviment>().spriteVanRight;
+                    player.GetComponent<VanMoviment>().wheelRight.SetActive(true);
+                    player.GetComponent<VanMoviment>().wheelLeft.SetActive(false);
+                    MoveTo(pointPositionMap,-80);
                 }
             }
         }
     }
 
-    void MoveTo(Transform target)
+    void MoveTo(Transform target, int value)
     {
         if (target != null)
         {
@@ -70,12 +72,18 @@ public class LateralPoint : MonoBehaviour
             // Rotaciona a van/player ligeiramente na direção do movimento
             player.transform.rotation = Quaternion.Euler(0, 0, targetAngle);
 
-            StartCoroutine(TransitionPlayer(targetPosition));
+            StartCoroutine(TransitionPlayer(targetPosition, value));
         }
     }
 
-    IEnumerator TransitionPlayer(Vector3 targetPosition)
+    IEnumerator TransitionPlayer(Vector3 targetPosition, int value)
     {
+        wheels = FindObjectsOfType<AnimationWhell>();
+
+        for (int i = 0; i < wheels.Length; i++)
+        {
+            wheels[i].speedRotation = value;
+        }
         Vector3 startingPos = player.transform.position;
 
         float elapsedTime = 0;
@@ -95,6 +103,10 @@ public class LateralPoint : MonoBehaviour
         }
         player.transform.position = targetPosition;
         lateralPointInitial = true;
+        for (int i = 0; i < wheels.Length; i++)
+        {
+            wheels[i].speedRotation = 0;
+        }
     }
 
 }
