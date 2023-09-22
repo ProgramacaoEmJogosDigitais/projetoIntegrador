@@ -9,10 +9,12 @@ public class VanMoviment : MonoBehaviour
     public CustomImput input = null; // Variável para receber o input do jogador
     public float moveSpeed;
     public Vector2 moveVector = Vector2.zero;
-    public Sprite spriteVanUp;
-    public Sprite spriteVanDown;
+    public Sprite spriteVanUpAndDown;
     public Sprite spriteVanRight;
     public Sprite spriteVanLeft;
+
+    public GameObject wheelLeft;
+    public GameObject wheelRight;
 
     public Transform posInitial;
     public bool isMoving = false;
