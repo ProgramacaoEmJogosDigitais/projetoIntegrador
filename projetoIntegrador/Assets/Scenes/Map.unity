@@ -6155,8 +6155,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.888, y: 1.284}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2.864, y: 1.192}
+    newSize: {x: 7.16, y: 2.98}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -6256,12 +6256,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 035f375303d29c94496dd822765392d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b416c127fc34f404f9b167afaec59d7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 7.16, y: 2.98}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -6299,8 +6299,8 @@ MonoBehaviour:
   moveSpeed: 0
   moveVector: {x: 0, y: 0}
   spriteVanUpAndDown: {fileID: 21300000, guid: 2c0c8c154faf5434a8ace0b5d80f50fd, type: 3}
-  spriteVanRight: {fileID: 21300000, guid: 035f375303d29c94496dd822765392d2, type: 3}
-  spriteVanLeft: {fileID: 21300000, guid: 9dd2a5bb9880fa14fbc8246e669ed142, type: 3}
+  spriteVanRight: {fileID: 21300000, guid: b416c127fc34f404f9b167afaec59d7e, type: 3}
+  spriteVanLeft: {fileID: 21300000, guid: a09d1fce23c24e340b0616545abdcdc3, type: 3}
   wheelLeft: {fileID: 211361643}
   wheelRight: {fileID: 803948807}
   posInitial: {fileID: 343992664}
