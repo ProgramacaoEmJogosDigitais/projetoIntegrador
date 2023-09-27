@@ -2428,6 +2428,8 @@ RectTransform:
   - {fileID: 2127680198}
   - {fileID: 1995144241}
   - {fileID: 1401121606}
+  - {fileID: 1745060636}
+  - {fileID: 1167796838}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2764,6 +2766,92 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1167796837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1167796838}
+  - component: {fileID: 1167796840}
+  - component: {fileID: 1167796839}
+  m_Layer: 5
+  m_Name: DestroyMonument
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1167796838
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167796837}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1463, y: 261, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1014966585}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1167796839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167796837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb51b8f61b33e04d90036b39d2460c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monuments:
+  - {fileID: 9118708251299343689, guid: 8d43f9bf31b37c54c997c567cb05dbdd, type: 3}
+  - {fileID: 65709873576105201, guid: 3ee01f9f80002644fb29d2911d0bfbbd, type: 3}
+  - {fileID: 8081664501602443907, guid: 8cfe0535086c1f24f87b6df160568c86, type: 3}
+  - {fileID: 6539304328594004313, guid: eb7fb9d1315f6f64e8bcad26ae39e98b, type: 3}
+  - {fileID: 1675205068019234071, guid: e9cd5afd8b86eef42911bc57a491f02e, type: 3}
+  - {fileID: 390508820500190702, guid: fea1edd0a3e796e428e1cf9022a7abe8, type: 3}
+  - {fileID: 4534935450435389833, guid: 15bbe8804c4565445999aa6d7b81c7ac, type: 3}
+  - {fileID: 8944007951198938691, guid: f2808ee7ddac80e4783f81809ccc667f, type: 3}
+  - {fileID: 7122481640116982238, guid: 2409d4788e968bf45a30c04f36b267fe, type: 3}
+  monumentToDestroy: {fileID: 0}
+  finalPoint: {fileID: 1167796840}
+  initialPont: {fileID: 1745060636}
+  vel: 2
+  index: 0
+--- !u!61 &1167796840
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167796837}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1204258639
 GameObject:
   m_ObjectHideFlags: 0
@@ -4293,6 +4381,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742544160}
   m_CullTransparentMesh: 1
+--- !u!1 &1745060633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1745060636}
+  m_Layer: 5
+  m_Name: SpamMonument
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1745060636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745060633}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1187, y: 283, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1014966585}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1784669023
 GameObject:
   m_ObjectHideFlags: 0
