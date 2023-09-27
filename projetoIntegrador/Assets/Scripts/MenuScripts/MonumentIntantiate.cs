@@ -6,18 +6,12 @@ public class MonumentIntantiate : MonoBehaviour
 {
     public List<GameObject> monuments;
     public GameObject monumentToDestroy;
-    public Collider2D finalPoint;
+    public Transform finalPoint;
     public Transform initialPont;
     public float vel;
     public int index;
     bool isDetroy;
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.transform.tag == "Monument")
-        {
-            DestroiMonumenst();
-        }
-    }
+  
   
     // Start is called before the first frame update
     void Start()
@@ -29,7 +23,8 @@ public class MonumentIntantiate : MonoBehaviour
     {
 
         SpamMonument();
-
+            DestroiMonumenst();
+        
 
     }
     // Update is called once per frame
@@ -51,13 +46,14 @@ public class MonumentIntantiate : MonoBehaviour
     }
     void DestroiMonumenst()
     {
-        monumentToDestroy = GameObject.FindGameObjectWithTag("Monument");
-        if (monumentToDestroy.transform.position.x < finalPoint.transform.position.x )
+        monumentToDestroy = initialPont.GetChild(0).gameObject;
+        if (monumentToDestroy.transform.position.x < finalPoint.position.x )
         {
-            Destroy(monuments[index]);
+            
+            Destroy(initialPont.GetChild(0).gameObject);
             isDetroy = true;
             index++;
-            if(index > monuments.Count)
+            if(index == monuments.Count)
             {
                 index=0;
             }

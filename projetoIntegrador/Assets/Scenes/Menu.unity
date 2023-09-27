@@ -2775,7 +2775,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1167796838}
-  - component: {fileID: 1167796840}
   - component: {fileID: 1167796839}
   m_Layer: 5
   m_Name: DestroyMonument
@@ -2822,36 +2821,10 @@ MonoBehaviour:
   - {fileID: 8944007951198938691, guid: f2808ee7ddac80e4783f81809ccc667f, type: 3}
   - {fileID: 7122481640116982238, guid: 2409d4788e968bf45a30c04f36b267fe, type: 3}
   monumentToDestroy: {fileID: 0}
-  finalPoint: {fileID: 1167796840}
+  finalPoint: {fileID: 1167796838}
   initialPont: {fileID: 1745060636}
   vel: 2
   index: 0
---- !u!61 &1167796840
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167796837}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1204258639
 GameObject:
   m_ObjectHideFlags: 0
@@ -3606,7 +3579,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375253989}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1913, y: 2.48, z: -9720}
+  m_LocalPosition: {x: 1510, y: 2.48, z: -9719.999}
   m_LocalScale: {x: 135, y: 106.92, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
