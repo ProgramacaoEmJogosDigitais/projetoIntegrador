@@ -32,7 +32,7 @@ public class Attractions : MonoBehaviour
     {
         if (isColliding)
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.KeypadEnter) || (Input.GetKeyDown(KeyCode.Return)))
             {
                 canvasDialogue.gameObject.SetActive(true);
                 backSprite.GetComponent<SpriteRenderer>().enabled = true;

@@ -28,8 +28,8 @@ public class Dialogue : MonoBehaviour
     public int currentCharIndex = 0;
     public int currentIndex = 0; //�ndice atual
 
-    private int cont = 0 ;
-
+    private int cont = 0;
+    public bool completedText = false;
     void Awake()
     {
         imageComponent.sprite = images[currentIndex];
@@ -38,39 +38,35 @@ public class Dialogue : MonoBehaviour
     void Update()
     {
         cont++;
-        if(cont == 1)
+        if (cont == 1)
         {
             player.GetComponent<VanMoviment>().enabled = false;
         }
         PositionsImage();
         timer += Time.deltaTime;// Incremento do temporizador
 
-        //Se o tempo decorrido for maior ou igual ao tempo de exibi��o da imagem atual
-        if (timer >= timeImage)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            timer = 0.0f;    //Reinicia o temporizador do texto
-            currentCharIndex = 0;
-            currentIndex++;    //Avan�a para a pr�xima imagem na lista de imagens
+            currentIndex++;
 
             LastImage();
+            PositionsImage();
+
+            //Reseta os valores do texto
+            currentCharIndex = 0;
+            textComponent.text = "";
+            currentAlpha = 1.0f;
+            cont = 0;
+            imageComponent.sprite = images[currentIndex]; //Atualiza a imagem atual
         }
         imageComponent.sprite = images[currentIndex]; //Atualiza a imagem atual
-        //Calcula o alfa (transpar�ncia) da imagem e do texto com base no tempo decorrido desde o in�cio da exibi��o da imagem atual
-        if (timer <= alphaSpeed)
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            currentAlpha = timer / alphaSpeed; //Define o valor da transpar�ncia atual com base na divis�o do tempo atual pelo tempo de dura��o do fade-in(desapari��o)
+            completedText = true;
+            textComponent.text = texts[currentIndex];
         }
-        else if (timer >= timeImage - alphaSpeed)
-        {
-            currentAlpha = (timeImage - timer) / alphaSpeed; //Define o valor da transpar�ncia atual com base na divis�o do tempo restante pelo tempo de dura��o do fade-out(apari��o)
-        }
-
-        //Configura o alfa da imagem e do texto
-        imageComponent.color = new Color(1.0f, 1.0f, 1.0f, currentAlpha);
-        imageText.color = new Color(imageText.color.r, imageText.color.g, imageText.color.b, currentAlpha);
-
-
-        if (texts.Count != 0)
+        if (texts.Count != 0 && !completedText)
         {
             //Se ainda houver caracteres do texto para serem exibidos
             if (currentCharIndex < texts[currentIndex].Length)
@@ -84,6 +80,12 @@ public class Dialogue : MonoBehaviour
                     textComponent.text = texts[currentIndex].Substring(0, currentCharIndex); //Exibe o texto a partir do primeiro caractere at� o caractere atual
                 }
             }
+        }
+        else
+        {
+            textTimer = 0.0f; //Reinicia o temporizador
+            currentCharIndex++;    //Incrementa o �ndice do caractere atual
+            completedText = false;
         }
     }
     private void PositionsImage() //Altera��o de posi��o e alfa da imagem e texto atual
@@ -109,23 +111,9 @@ public class Dialogue : MonoBehaviour
                 currentCharIndex = 0;
                 currentIndex = 0;
                 cont = 0;
+                completedText = false;
                 player.GetComponent<VanMoviment>().enabled = true;
             }
         }
-    }
-    public void NextImage()
-    {
-        currentIndex++;
-        Debug.Log(currentIndex);
-
-        LastImage();
-        PositionsImage();
-
-        //Reseta os valores do texto
-        currentCharIndex = 0;
-        textComponent.text = "";
-        currentAlpha = 1.0f;
-        cont = 0;
-        imageComponent.sprite = images[currentIndex]; //Atualiza a imagem atual
     }
 }
