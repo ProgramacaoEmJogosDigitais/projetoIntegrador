@@ -6,6 +6,7 @@ using TMPro;
 
 using System.Timers;
 using UnityEngine.InputSystem;
+using UnityEngine.Networking.PlayerConnection;
 
 public class Dialogue : MonoBehaviour
 {
@@ -27,14 +28,20 @@ public class Dialogue : MonoBehaviour
     public int currentCharIndex = 0;
     public int currentIndex = 0; //�ndice atual
 
+    private int cont = 0 ;
+
     void Awake()
     {
-        player.GetComponent<VanMoviment>().input.Disable();
         imageComponent.sprite = images[currentIndex];
     }
 
     void Update()
     {
+        cont++;
+        if(cont == 1)
+        {
+            player.GetComponent<VanMoviment>().enabled = false;
+        }
         PositionsImage();
         timer += Time.deltaTime;// Incremento do temporizador
 
@@ -96,12 +103,13 @@ public class Dialogue : MonoBehaviour
                 currentIndex = images.Count - 1; //Volta um �ndice, ou seja, fica na ultima imagem da lista
                 currentAlpha = 0.0f;
 
-                player.GetComponent<VanMoviment>().input.Enable();
 
                 //Configura a imagem, o but�o e o texto como invis�veis
                 canvas.gameObject.SetActive(false);
                 currentCharIndex = 0;
                 currentIndex = 0;
+                cont = 0;
+                player.GetComponent<VanMoviment>().enabled = true;
             }
         }
     }
@@ -117,7 +125,7 @@ public class Dialogue : MonoBehaviour
         currentCharIndex = 0;
         textComponent.text = "";
         currentAlpha = 1.0f;
-
+        cont = 0;
         imageComponent.sprite = images[currentIndex]; //Atualiza a imagem atual
     }
 }
