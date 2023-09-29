@@ -8364,7 +8364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeImage: 4
-  textSpeed: 0.1
+  textSpeed: 1
   player: {fileID: 1278933568}
   canvas: {fileID: 1110403529}
   imageText: {fileID: 540149781}
@@ -8378,6 +8378,7 @@ MonoBehaviour:
   textComponent: {fileID: 1844041778}
   currentCharIndex: 0
   currentIndex: 0
+  completedText: 0
 --- !u!114 &1489073316
 MonoBehaviour:
   m_ObjectHideFlags: 0
