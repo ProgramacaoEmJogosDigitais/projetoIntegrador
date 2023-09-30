@@ -8363,8 +8363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccae3942d97bec41bc591cfcf652e6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeImage: 4
-  textSpeed: 1
+  textSpeed: 0.05
   player: {fileID: 1278933568}
   canvas: {fileID: 1110403529}
   imageText: {fileID: 540149781}
@@ -8373,8 +8372,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2c0c8c154faf5434a8ace0b5d80f50fd, type: 3}
   - {fileID: 21300000, guid: b423c88c02e48b741ae96d9bcdce13cc, type: 3}
   texts:
-  - sdfkmsfmdf
-  - aaaaasaaaa
+  - sdfkmsfmdfdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  - aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   textComponent: {fileID: 1844041778}
   currentCharIndex: 0
   currentIndex: 0

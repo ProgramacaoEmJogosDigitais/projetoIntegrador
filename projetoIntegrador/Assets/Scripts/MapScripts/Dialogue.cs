@@ -10,13 +10,9 @@ using UnityEngine.Networking.PlayerConnection;
 
 public class Dialogue : MonoBehaviour
 {
-    [SerializeField] private float timeImage = 4.0f; //Tempo da imagem
     [SerializeField] private float textSpeed = 0.1f; //Velocidade de digita��o do texto
 
     private float textTimer = 0.0f; //Temporizador para a velocidade de digita��o
-    private float currentAlpha = 1.0f; //Alfa atual
-    private float alphaSpeed = 0.5f; //Velocidade do alfa
-    private float timer = 0.0f; //Tempo
 
     public GameObject player;
     public Canvas canvas;
@@ -42,26 +38,28 @@ public class Dialogue : MonoBehaviour
         {
             player.GetComponent<VanMoviment>().enabled = false;
         }
+
         PositionsImage();
-        timer += Time.deltaTime;// Incremento do temporizador
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            currentIndex++;
-
-            LastImage();
-            PositionsImage();
-
-            //Reseta os valores do texto
-            currentCharIndex = 0;
-            textComponent.text = "";
-            currentAlpha = 1.0f;
-            cont = 0;
-            imageComponent.sprite = images[currentIndex]; //Atualiza a imagem atual
-        }
         imageComponent.sprite = images[currentIndex]; //Atualiza a imagem atual
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (textComponent.text == texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
+        {
+            currentCharIndex = 0;
+            currentIndex++;
+            textTimer = 0.0f; //Reinicia o temporizador
+            completedText = false;
+            if (currentIndex >= images.Count)
+            {
+                //Configura a imagem, o but�o e o texto como invis�veis
+                canvas.gameObject.SetActive(false);
+                currentCharIndex = 0;
+                currentIndex = 0;
+                cont = 0;
+                completedText = false;
+                player.GetComponent<VanMoviment>().enabled = true;
+            }
+        }
+        else if (textComponent.text != texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
         {
             completedText = true;
             textComponent.text = texts[currentIndex];
@@ -81,12 +79,6 @@ public class Dialogue : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            textTimer = 0.0f; //Reinicia o temporizador
-            currentCharIndex++;    //Incrementa o �ndice do caractere atual
-            completedText = false;
-        }
     }
     private void PositionsImage() //Altera��o de posi��o e alfa da imagem e texto atual
     {
@@ -94,26 +86,5 @@ public class Dialogue : MonoBehaviour
         float xPositionText = currentIndex % 2 == 0 ? 49 : -163;
         imageComponent.rectTransform.anchoredPosition = new Vector2(xPositionImage, imageComponent.rectTransform.anchoredPosition.y);
         textComponent.rectTransform.anchoredPosition = new Vector2(xPositionText, textComponent.rectTransform.anchoredPosition.y);
-    }
-    private void LastImage()
-    {
-        //Se o �ndice atual for maior ou igual ao n�mero de imagens na lista
-        if (currentIndex >= images.Count)
-        {
-            if (Time.time > 2.0f)
-            {
-                currentIndex = images.Count - 1; //Volta um �ndice, ou seja, fica na ultima imagem da lista
-                currentAlpha = 0.0f;
-
-
-                //Configura a imagem, o but�o e o texto como invis�veis
-                canvas.gameObject.SetActive(false);
-                currentCharIndex = 0;
-                currentIndex = 0;
-                cont = 0;
-                completedText = false;
-                player.GetComponent<VanMoviment>().enabled = true;
-            }
-        }
     }
 }
