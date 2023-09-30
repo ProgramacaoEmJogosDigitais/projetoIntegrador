@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1408250506135645392}
   - component: {fileID: 3017298063531159338}
   m_Layer: 0
-  m_Name: AirPlane_Range
+  m_Name: airPlaneRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
