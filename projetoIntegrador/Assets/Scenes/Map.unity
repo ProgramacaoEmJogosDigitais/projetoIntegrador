@@ -1392,7 +1392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 1122153083}
-  backSprite: {fileID: 806444042}
+  attraction: {fileID: 1367809279}
 --- !u!1 &211361643
 GameObject:
   m_ObjectHideFlags: 0
@@ -4227,7 +4227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 1263029321}
-  backSprite: {fileID: 1421304433}
+  attraction: {fileID: 130804175}
 --- !u!1 &707882295
 GameObject:
   m_ObjectHideFlags: 0
@@ -5320,7 +5320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 247791241}
-  backSprite: {fileID: 1330050739}
+  attraction: {fileID: 1309685879}
 --- !u!1 &896724138
 GameObject:
   m_ObjectHideFlags: 0
@@ -6188,7 +6188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 1170006836}
-  backSprite: {fileID: 1623349813}
+  attraction: {fileID: 707882295}
 --- !u!1 &1049127300
 GameObject:
   m_ObjectHideFlags: 0
@@ -8064,7 +8064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 1607875480}
-  backSprite: {fileID: 203106620}
+  attraction: {fileID: 1529086599}
 --- !u!1 &1330050737
 GameObject:
   m_ObjectHideFlags: 0
@@ -8980,7 +8980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 582017340}
-  backSprite: {fileID: 54246152}
+  attraction: {fileID: 1480040907}
 --- !u!1 &1480040907
 GameObject:
   m_ObjectHideFlags: 0
@@ -9275,7 +9275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 1766818673}
-  backSprite: {fileID: 1837359396}
+  attraction: {fileID: 177951434}
 --- !u!1 &1518209897
 GameObject:
   m_ObjectHideFlags: 0
@@ -10515,7 +10515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 303757940}
-  backSprite: {fileID: 1367646985}
+  attraction: {fileID: 177951434}
 --- !u!1 &1687314029
 GameObject:
   m_ObjectHideFlags: 0
@@ -11004,7 +11004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 370897735}
-  backSprite: {fileID: 1569154237}
+  attraction: {fileID: 475723722}
 --- !u!1 &1762741209
 GameObject:
   m_ObjectHideFlags: 0
@@ -11715,7 +11715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 1621123984}
-  backSprite: {fileID: 1562799094}
+  attraction: {fileID: 305804199}
 --- !u!1 &1849864234
 GameObject:
   m_ObjectHideFlags: 0
