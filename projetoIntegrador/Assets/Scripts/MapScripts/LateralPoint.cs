@@ -85,7 +85,6 @@ public class LateralPoint : MonoBehaviour
             wheels[i].speedRotation = value;
         }
         Vector3 startingPos = player.transform.position;
-
         float elapsedTime = 0;
 
         while (elapsedTime < transitionDuration)
@@ -102,11 +101,12 @@ public class LateralPoint : MonoBehaviour
             yield return null;
         }
         player.transform.position = targetPosition;
-        lateralPointInitial = true;
         for (int i = 0; i < wheels.Length; i++)
         {
             wheels[i].speedRotation = 0;
         }
+        yield return new WaitForSeconds(1);
+        lateralPointInitial = true;
     }
 
 }

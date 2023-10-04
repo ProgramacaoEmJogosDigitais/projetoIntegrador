@@ -23,7 +23,7 @@ public class Attractions : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             canvasDialogue.gameObject.SetActive(false);
-            backSprite.GetComponent<SpriteRenderer>().enabled = false;
+            backSprite.gameObject.SetActive(false);
             isColliding = false;
         }
     }
@@ -32,10 +32,10 @@ public class Attractions : MonoBehaviour
     {
         if (isColliding)
         {
+            backSprite.gameObject.SetActive(true);
             if (Input.GetKeyDown(KeyCode.KeypadEnter) || (Input.GetKeyDown(KeyCode.Return)))
             {
                 canvasDialogue.gameObject.SetActive(true);
-                backSprite.GetComponent<SpriteRenderer>().enabled = true;
             }
         }
     }
