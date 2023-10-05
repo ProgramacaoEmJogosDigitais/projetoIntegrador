@@ -60,11 +60,13 @@ public class DragEndDrop : MonoBehaviour
     {
         if(arrast)
         {
+            this.transform.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 4;
             rb.MovePosition(cam.ScreenToWorldPoint(Input.mousePosition));
         }
         else
         {
-            if(Vector2.Distance(rb.transform.position,originalPosition.position)<=distance)
+            this.transform.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 3;
+            if (Vector2.Distance(rb.transform.position,originalPosition.position)<=distance)
             {
                 rb.transform.position = originalPosition.position;
             }
