@@ -8,6 +8,8 @@ public class DragEndDrop : MonoBehaviour
    
     public Rigidbody2D rb;
     bool inPart,arrast;
+    public Transform originalPosition;
+    public float distance;
 
     void OnMouseEnter()
     {
@@ -48,6 +50,13 @@ public class DragEndDrop : MonoBehaviour
         if(arrast)
         {
             rb.MovePosition(cam.ScreenToWorldPoint(Input.mousePosition));
+        }
+        else
+        {
+            if(Vector2.Distance(rb.transform.position,originalPosition.position)<=distance)
+            {
+                rb.transform.position = originalPosition.position;
+            }
         }
        
     }
