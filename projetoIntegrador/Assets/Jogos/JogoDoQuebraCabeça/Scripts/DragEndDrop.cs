@@ -29,19 +29,30 @@ public class DragEndDrop : MonoBehaviour
 
         
     }
+    private void OnMouseDown()
+    {
+        if (inPart)
+            arrast = true;
+        
+    }
+    private void OnMouseUp()
+    {
+        if(inPart)
+            arrast = false;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if(inPart)
-        {
-            if(Input.GetMouseButtonDown(0))
-            {
-                arrast=(arrast) ? false : true;
-                Debug.Log(arrast);
+        //if(inPart)
+        //{
+        //    if(Input.GetMouseButtonDown(0))
+        //    {
+        //        arrast=(arrast) ? false : true;
+        //        Debug.Log(arrast);
 
-            }
-        }
+        //    }
+        //}
         ArrastPart();
     }
 
