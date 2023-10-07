@@ -9,17 +9,17 @@ using UnityEngine.UIElements;
 public class Attractions : MonoBehaviour
 {
     public Canvas canvasDialogue;
-    public GameObject attraction;
+    public GameObject attraction0;
+    public GameObject attraction1;
+    public GameObject attraction2;
     private bool isColliding = false;
 
-    private void Start()
-    {
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            attraction.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            attraction0.gameObject.SetActive(true);
+            attraction1.gameObject.SetActive(false);
             isColliding = true;
         }
     }
@@ -28,7 +28,8 @@ public class Attractions : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             canvasDialogue.gameObject.SetActive(false);
-            attraction.transform.localScale = new Vector3(1, 1, 1);
+            attraction0.gameObject.SetActive(false);
+            attraction1.gameObject.SetActive(true);
             isColliding = false;
         }
     }
