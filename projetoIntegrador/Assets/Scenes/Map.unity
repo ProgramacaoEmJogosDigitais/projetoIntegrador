@@ -4548,7 +4548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 1263029321}
-  attraction0: {fileID: 0}
+  attraction0: {fileID: 130804175}
   attraction1: {fileID: 0}
   attraction2: {fileID: 0}
 --- !u!1 &707882295
@@ -5643,7 +5643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 247791241}
-  attraction0: {fileID: 0}
+  attraction0: {fileID: 1309685879}
   attraction1: {fileID: 0}
   attraction2: {fileID: 0}
 --- !u!1 &896724138
@@ -6547,7 +6547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 1170006836}
-  attraction0: {fileID: 0}
+  attraction0: {fileID: 707882295}
   attraction1: {fileID: 0}
   attraction2: {fileID: 0}
 --- !u!1 &1049127300
@@ -8425,7 +8425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 1607875480}
-  attraction0: {fileID: 0}
+  attraction0: {fileID: 1529086599}
   attraction1: {fileID: 0}
   attraction2: {fileID: 0}
 --- !u!1 &1330050737
@@ -9724,7 +9724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 1766818673}
-  attraction0: {fileID: 0}
+  attraction0: {fileID: 632152718}
   attraction1: {fileID: 0}
   attraction2: {fileID: 0}
 --- !u!1 &1518209897
@@ -11744,8 +11744,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 370897735}
   attraction0: {fileID: 354230132}
-  attraction1: {fileID: 1551369675}
-  attraction2: {fileID: 475723722}
+  attraction1: {fileID: 475723722}
+  attraction2: {fileID: 1551369675}
 --- !u!1 &1762741209
 GameObject:
   m_ObjectHideFlags: 0
@@ -12457,7 +12457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasDialogue: {fileID: 1621123984}
-  attraction0: {fileID: 0}
+  attraction0: {fileID: 305804199}
   attraction1: {fileID: 0}
   attraction2: {fileID: 0}
 --- !u!1 &1849864234
@@ -12809,7 +12809,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935761489}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.1049995, y: -2.28, z: -0.021362305}
+  m_LocalPosition: {x: -6.77, y: -1.36, z: -0.021362305}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []

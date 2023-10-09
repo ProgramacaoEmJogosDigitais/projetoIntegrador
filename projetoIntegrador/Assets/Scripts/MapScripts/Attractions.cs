@@ -18,8 +18,15 @@ public class Attractions : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            attraction0.gameObject.SetActive(true);
-            attraction1.gameObject.SetActive(false);
+            if (attraction1 != null)
+            {
+                attraction0.gameObject.SetActive(true);
+                attraction1.gameObject.SetActive(false);
+            }
+            else
+            {
+                attraction0.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            }
             isColliding = true;
         }
     }
@@ -28,8 +35,15 @@ public class Attractions : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             canvasDialogue.gameObject.SetActive(false);
-            attraction0.gameObject.SetActive(false);
-            attraction1.gameObject.SetActive(true);
+            if (attraction1 != null)
+            {
+                attraction0.gameObject.SetActive(false);
+                attraction1.gameObject.SetActive(true);
+            }
+            else
+            {
+                attraction0.transform.localScale = new Vector3(1, 1, 1);
+            }
             isColliding = false;
         }
     }
