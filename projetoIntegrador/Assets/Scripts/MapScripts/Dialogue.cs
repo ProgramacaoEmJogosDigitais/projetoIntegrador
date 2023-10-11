@@ -39,7 +39,6 @@ public class Dialogue : MonoBehaviour
             player.GetComponent<VanMoviment>().enabled = false;
         }
 
-        PositionsImage();
         imageComponent.sprite = images[currentIndex]; //Atualiza a imagem atual
 
         if (textComponent.text == texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
@@ -80,11 +79,11 @@ public class Dialogue : MonoBehaviour
             }
         }
     }
-    private void PositionsImage() //Altera��o de posi��o e alfa da imagem e texto atual
+    /*private void PositionsImage() //Altera��o de posi��o e alfa da imagem e texto atual
     {
         float xPositionImage = currentIndex % 2 == 0 ? -614.42f : 550;
         float xPositionText = currentIndex % 2 == 0 ? 49 : -163;
         imageComponent.rectTransform.anchoredPosition = new Vector2(xPositionImage, imageComponent.rectTransform.anchoredPosition.y);
         textComponent.rectTransform.anchoredPosition = new Vector2(xPositionText, textComponent.rectTransform.anchoredPosition.y);
-    }
+    }*/
 }
