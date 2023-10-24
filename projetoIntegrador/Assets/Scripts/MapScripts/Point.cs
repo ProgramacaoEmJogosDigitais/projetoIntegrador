@@ -9,12 +9,6 @@ public class Point : MonoBehaviour
     public Transform pointLeft;
     public Transform pointRight;
 
-    [Header("Sprites")]
-    public Sprite spriteUp;
-    public Sprite spriteDown;
-    public Sprite spriteLeft;
-    public Sprite spriteRight;
-
     [Header("Booleanas")]
     public bool boolUp = false;
     public bool boolDown = false;
@@ -24,6 +18,7 @@ public class Point : MonoBehaviour
     public GameObject player;
     public float transitionDuration = 0.5f;
 
+    private AnimationWhell[] wheels;
     private VanMoviment vanMoviment;
     private bool isColliding = false;
 
@@ -53,28 +48,36 @@ public class Point : MonoBehaviour
         {
             if (vanMoviment.moveVector.x == 0 && vanMoviment.moveVector.y > 0 && boolUp)
             {
-                player.GetComponent<SpriteRenderer>().sprite = spriteUp; // Troca o sprite instantaneamente
-                MoveTo(pointUp);
+                player.GetComponent<SpriteRenderer>().sprite = player.GetComponent<VanMoviment>().spriteVanUpAndDown;
+                player.GetComponent<VanMoviment>().wheelRight.SetActive(false);
+                player.GetComponent<VanMoviment>().wheelLeft.SetActive(false);
+                MoveTo(pointUp, 0);
             }
             else if (vanMoviment.moveVector.x == 0 && vanMoviment.moveVector.y < 0 && boolDown)
             {
-                player.GetComponent<SpriteRenderer>().sprite = spriteDown;
-                MoveTo(pointDown);
+                player.GetComponent<SpriteRenderer>().sprite = player.GetComponent<VanMoviment>().spriteVanUpAndDown;
+                player.GetComponent<VanMoviment>().wheelRight.SetActive(false);
+                player.GetComponent<VanMoviment>().wheelLeft.SetActive(false);
+                MoveTo(pointDown,0);
             }
             else if (vanMoviment.moveVector.x < 0 && vanMoviment.moveVector.y == 0 && boolLeft)
             {
-                player.GetComponent<SpriteRenderer>().sprite = spriteLeft;
-                MoveTo(pointLeft);
+                player.GetComponent<SpriteRenderer>().sprite = player.GetComponent<VanMoviment>().spriteVanLeft;
+                player.GetComponent<VanMoviment>().wheelRight.SetActive(false);
+                player.GetComponent<VanMoviment>().wheelLeft.SetActive(true);
+                MoveTo(pointLeft, 80);
             }
             else if (vanMoviment.moveVector.x > 0 && vanMoviment.moveVector.y == 0 && boolRight)
             {
-                player.GetComponent<SpriteRenderer>().sprite = spriteRight;
-                MoveTo(pointRight);
+                player.GetComponent<SpriteRenderer>().sprite = player.GetComponent<VanMoviment>().spriteVanRight;
+                player.GetComponent<VanMoviment>().wheelRight.SetActive(true);
+                player.GetComponent<VanMoviment>().wheelLeft.SetActive(false);
+                MoveTo(pointRight, -80);
             }
         }
     }
 
-    void MoveTo(Transform target)
+    void MoveTo(Transform target, int value)
     {
         if (target != null)
         {
@@ -89,12 +92,18 @@ public class Point : MonoBehaviour
             // Rotaciona a van/player ligeiramente na direção do movimento
             player.transform.rotation = Quaternion.Euler(0, 0, targetAngle);
 
-            StartCoroutine(TransitionPlayer(targetPosition));
+            StartCoroutine(TransitionPlayer(targetPosition, value));
         }
     }
 
-    IEnumerator TransitionPlayer(Vector3 targetPosition)
+    IEnumerator TransitionPlayer(Vector3 targetPosition, int value)
     {
+        wheels = FindObjectsOfType<AnimationWhell>();
+
+        for (int i = 0; i < wheels.Length; i++)
+        {
+            wheels[i].speedRotation = value;
+        }
         vanMoviment.isMoving = true;
         Vector3 startingPos = player.transform.position;
 
@@ -117,6 +126,11 @@ public class Point : MonoBehaviour
         player.transform.position = targetPosition;
 
         vanMoviment.isMoving = false;
+        
+        for (int i = 0; i < wheels.Length; i++)
+        {
+            wheels[i].speedRotation = 0;
+        }
     }
 
 }
