@@ -3788,7 +3788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monuments:
-  - {fileID: 4452810772317171805, guid: 481ef0eb5d58ae24b934bda2c42b3b45, type: 3}
+  - {fileID: 645060188646921124, guid: 1172a4c6aa0b30e40b39340b1df2b852, type: 3}
   - {fileID: 6090850460695110236, guid: 4b40ca26b4c33a549ab78e63d8d4b0d2, type: 3}
   - {fileID: 3338086136198918280, guid: c25234070b982354a9c23f9337dcd71f, type: 3}
   - {fileID: 4848393415670638775, guid: 8fac820bb13f8e64c98d06b6056500ca, type: 3}
@@ -5619,7 +5619,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745060633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1187, y: 308, z: 0}
+  m_LocalPosition: {x: 1187, y: 340, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
