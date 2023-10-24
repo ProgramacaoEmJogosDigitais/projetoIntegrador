@@ -5,30 +5,35 @@ using UnityEngine;
 public class RandonPositions : MonoBehaviour
 {
     public Transform []randonPositions;
-    public Transform receptacle;
+    public Vector3[] vectorPositions; 
+     private Vector3 receptacle;
     public  int randonIndice,len;
     public List<int> randonIndiceList;
+    int index;
     
     public bool repet;
     // Start is called before the first frame update
     void Start()
     {
+       //receptacle = new Transform();
         len = randonPositions.Length - 1;
         repet = false;
-        randonIndiceList = new List<int>(); 
+        receptacle = new Vector3();
+        for (int j = 0; j < 24; j++)
+        {
+            vectorPositions[j] = randonPositions[randonIndiceList[j]].position;
+        }
+        
+       
       
         Debug.Log("1");
         for (int i = 0; i < randonPositions.Length; i++)
         {
-            receptacle.position = randonPositions[Random.Range(0,randonPositions.Length)].position;
-            Debug.Log(i +" "+" "+ (len-i));
+           
 
 
-
-            randonPositions[i].position = randonPositions[len-i].position;
-
-            randonPositions[len - i].position = receptacle.position;
-
+            randonPositions[i].position = vectorPositions[i];
+          //  randonPositions[randonIndiceList[i]].position = receptacle;
 
         }
        
@@ -62,6 +67,32 @@ public class RandonPositions : MonoBehaviour
         }
        
 
+    }
+    void RandonList()
+    {
+       
+       
+
+        for (int i = 0; i < 25; i++)
+        {
+            index = Random.Range(0, 25);
+            if (randonIndiceList.Count > 0)
+            {
+                randonIndiceList.Add(index);
+            }
+            else
+            {
+                do
+                {
+                    index = Random.Range(0, 25);
+
+                } while(NoRepeat(index));
+                index = Random.Range(0, 25);
+
+            }
+                
+
+        }
     }
 
     // Update is called once per frame
