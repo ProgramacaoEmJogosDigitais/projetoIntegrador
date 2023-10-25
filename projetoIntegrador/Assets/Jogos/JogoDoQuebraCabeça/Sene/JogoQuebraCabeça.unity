@@ -2720,11 +2720,13 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
+  guideText: {fileID: 2023488021}
+  timeConter: {fileID: 1203634707}
   randonIndice: 0
   len: 0
   randonIndiceList: 0c00000016000000170000000e0000000d000000080000000500000004000000060000000a0000000900000013000000120000000b000000110000000f0000000000000001000000030000000200000007000000100000001400000015000000
   spriteRenderer: {fileID: 1115264856}
-  spritePiece1:
+  spritePieces1:
   - {fileID: 21300000, guid: 87cde943f3706084e8edcb26fe4ec935, type: 3}
   - {fileID: 21300000, guid: 36bdd15aa592bc848afc1028b4a0ea9a, type: 3}
   - {fileID: 21300000, guid: e286e08c844f1c046968ce4c81b0c793, type: 3}
@@ -2749,7 +2751,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: db308ad9892403c4cbfc71977feb3d87, type: 3}
   - {fileID: 21300000, guid: 40571bdf258e5cc4fa3ef42847a56a44, type: 3}
   - {fileID: 21300000, guid: 3d49df82da6374344ad06f4106c637e4, type: 3}
-  spritePices2:
+  spritePieces2:
   - {fileID: 21300000, guid: d7825cdf504af0a42a0e85a2a07b93c4, type: 3}
   - {fileID: 21300000, guid: d0d13d82ccc07dd459efe61f9891ee7e, type: 3}
   - {fileID: 21300000, guid: 4771ebdfdcd5b1d4cb5a9e8b043e86c4, type: 3}
@@ -2774,7 +2776,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c5d0e194c09020e4fbc2fafc7089e2fc, type: 3}
   - {fileID: 21300000, guid: 2c5d6c8c37ba99a428071a73b4a4e459, type: 3}
   - {fileID: 21300000, guid: f74df0a379f80af4bb9090233e32965a, type: 3}
-  spritePices3:
+  spritePieces3:
   - {fileID: 21300000, guid: 06b17c7f25db0c44bbe0b6fe89b19ea5, type: 3}
   - {fileID: 21300000, guid: f24f3cd718f8c3a4685508e0f4596c8f, type: 3}
   - {fileID: 21300000, guid: eaece953979893a49befc21a4afc769c, type: 3}
@@ -2803,6 +2805,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 16b4f4dc4d1d77b469ea5794214852f2, type: 3}
   - {fileID: 21300000, guid: 07746a8414f834f40b6902513237675c, type: 3}
   - {fileID: 21300000, guid: 22efff3f09178ca44939b5f2c6c46f8a, type: 3}
+  time: 0
   repet: 0
 --- !u!4 &996645503
 Transform:
@@ -3999,7 +4002,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 16b4f4dc4d1d77b469ea5794214852f2, type: 3}
-  m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 0.31764707}
+  m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4160,7 +4163,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -1,21 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class RandonPositions : MonoBehaviour
 {
     public Transform []randonPositions;
-    public Vector3[] vectorPositions; 
+    public Vector3[] vectorPositions;
+    public TextMeshProUGUI guideText,timeConter;
 
     
     public  int randonIndice,len;
     public List<int> randonIndiceList;
     public SpriteRenderer spriteRenderer;
-    public Sprite[] spritePiece1,spritePices2,spritePices3, spriteFull;
+    public Sprite[] spritePieces1,spritePieces2,spritePieces3, spriteFull;
   
     int index;
-    float time;
-    bool startGame,randomSprite;
+    public float time;
+    bool startGame,randomSprite,transprent;
   
     
     public bool repet;
@@ -31,10 +33,12 @@ public class RandonPositions : MonoBehaviour
     void Start()
     {
         randomSprite = true;
+        transprent = true;
+
+
+
 
         StartCoroutine(RandomSprite());
-
-
 
 
 
@@ -69,7 +73,22 @@ public class RandonPositions : MonoBehaviour
     }
     void ContTime()
     {
+        int timeInt;
         time += Time.deltaTime;
+        timeInt = Mathf.FloorToInt(time);
+        timeConter.text = timeInt.ToString();
+        if (timeInt == 5&& transprent)
+        {
+            ShowSprite();
+        }
+
+
+    }
+    void ShowSprite()
+    {
+        transprent = false;
+        spriteRenderer.color = spriteRenderer.color - new Color(0, 0, 0, 0.7f);
+        time = 0;
 
 
     }
@@ -82,6 +101,30 @@ public class RandonPositions : MonoBehaviour
     public void RandSpriteButton()
     {
         randomSprite = false;
+    }
+    void ChangePices(int selectPiece)
+    {
+        for (int i = 0; i <randonPositions.Length ; i++)
+        {
+            if(selectPiece==1)
+            {
+                randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces1[i];
+            }
+            if (selectPiece == 2)
+            {
+                randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces2[i];
+            }
+            if (selectPiece == 0)
+            {
+                randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces3[i];
+
+            }
+        }
+        startGame = true;
+        RandonPiece();
+
+
+
     }
     private IEnumerator RandomSprite()
     {
@@ -96,6 +139,7 @@ public class RandonPositions : MonoBehaviour
             }
 
         }
+       ChangePices(index);
            
            
     }
