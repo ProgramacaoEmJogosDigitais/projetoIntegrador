@@ -5,25 +5,30 @@ using UnityEngine;
 
 public class RandonPositions : MonoBehaviour
 {
-    public Transform []randonPositions;
+    public Transform []randonPositions,originalPosition;
     public Vector3[] vectorPositions;
-    public TextMeshProUGUI guideText,timeConter;
+    public TextMeshProUGUI guideText,timeConter,minTimeCont,gameOverText,winGameText;
 
-    
+    int min;
     public  int randonIndice,len;
     public List<int> randonIndiceList;
     public SpriteRenderer spriteRenderer;
     public Sprite[] spritePieces1,spritePieces2,spritePieces3, spriteFull;
-  
-    int index;
+    public static int okPieces;
+    int index,pauseTime;
     public float time;
-    bool startGame,randomSprite,transprent;
+    bool startGame,randomSprite,transprent,gameOver;
+    public GameObject buttonRestart, buttonSelect;
   
     
     public bool repet;
     // Start is called before the first frame update
     private void FixedUpdate()
     {
+        if(okPieces>=24)
+        {
+            WinGame();
+        }
        if(startGame)
         {
             ContTime();
@@ -32,8 +37,13 @@ public class RandonPositions : MonoBehaviour
     }
     void Start()
     {
+        okPieces = 0;
         randomSprite = true;
         transprent = true;
+        winGameText.enabled = false;
+        gameOverText.enabled = false;
+        pauseTime = 1;
+        
 
 
 
@@ -74,12 +84,35 @@ public class RandonPositions : MonoBehaviour
     void ContTime()
     {
         int timeInt;
-        time += Time.deltaTime;
+       
+        time += Time.deltaTime*pauseTime;
         timeInt = Mathf.FloorToInt(time);
         timeConter.text = timeInt.ToString();
+      
+        if (timeInt < 5 && transprent)
+        {
+            StopPiece();
+
+        }
         if (timeInt == 5&& transprent)
         {
+            StartpPiece();
             ShowSprite();
+            guideText.enabled = false;
+
+        }
+        if(timeInt>=60)
+        {
+            time = 0;
+            min++;
+            minTimeCont.text=min.ToString();
+
+
+        }
+        if(min>=5)
+        {
+            StopPiece();
+           
         }
 
 
@@ -92,11 +125,25 @@ public class RandonPositions : MonoBehaviour
 
 
     }
+    public void StopPiece()
+    {
+        for (int i = 0; i < randonPositions.Length; i++)
+        {
+            randonPositions[i].gameObject.GetComponent<DragEndDrop>().blockMove = false;
+        }
+    }
+    public void StartpPiece()
+    {
+        for (int i = 0; i < randonPositions.Length; i++)
+        {
+            randonPositions[i].gameObject.GetComponent<DragEndDrop>().blockMove = true; ;
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+     
     }
     public void RandSpriteButton()
     {
@@ -142,6 +189,32 @@ public class RandonPositions : MonoBehaviour
        ChangePices(index);
            
            
+    }
+    void GameOver()
+    {
+        gameOverText.enabled = true;
+        pauseTime = 0;
+        buttonRestart.SetActive(true);
+        buttonSelect.SetActive(false);
+
+    }
+    void WinGame()
+    {
+        winGameText.enabled=true;
+        pauseTime = 0;
+        buttonRestart.SetActive(true);
+        buttonSelect.SetActive(false);
+    }
+    public void Restart()
+    {
+        time = 0;
+        pauseTime = 1;
+        StartCoroutine(RandomSprite());
+        for (int i = 0; i < randonPositions.Length; i++)
+        {
+            randonPositions[i].position = originalPosition[i].position;
+        }
+
     }
 
 }

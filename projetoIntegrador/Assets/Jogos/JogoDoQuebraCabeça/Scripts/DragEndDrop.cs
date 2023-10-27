@@ -7,9 +7,16 @@ public class DragEndDrop : MonoBehaviour
     public Camera cam;
    
     public Rigidbody2D rb;
-    bool inPart,arrast;
+    public bool inPart,arrast ,blockMove;
     public Transform originalPosition;
     public float distance;
+    public static DragEndDrop Instance;
+
+    private void Awake()
+    {
+        Instance = this;    
+        blockMove = true;
+    }
 
     void OnMouseEnter()
     {
@@ -53,7 +60,11 @@ public class DragEndDrop : MonoBehaviour
 
         //    }
         //}
-        ArrastPart();
+        if(blockMove)
+        {
+            ArrastPart();
+        }
+       
     }
 
     public void ArrastPart()
@@ -69,6 +80,8 @@ public class DragEndDrop : MonoBehaviour
             if (Vector2.Distance(rb.transform.position,originalPosition.position)<=distance)
             {
                 rb.transform.position = originalPosition.position;
+                RandonPositions.okPieces++;
+                blockMove = false;
             }
         }
        
