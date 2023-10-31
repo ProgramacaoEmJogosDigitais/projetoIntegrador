@@ -19,6 +19,7 @@ public class RandonPositions : MonoBehaviour
     public float time;
     bool startGame,randomSprite,transprent,gameOver;
     public GameObject buttonRestart, buttonSelect;
+    bool sp1, sp2, sp3;
   
     
     public bool repet;
@@ -43,6 +44,9 @@ public class RandonPositions : MonoBehaviour
         winGameText.enabled = false;
         gameOverText.enabled = false;
         pauseTime = 1;
+        sp1 = false;
+        sp2 = false;
+        sp3 = false;
         
 
 
@@ -101,7 +105,7 @@ public class RandonPositions : MonoBehaviour
             guideText.enabled = false;
 
         }
-        if(timeInt>=60)
+        if(timeInt>=6)
         {
             time = 0;
             min++;
@@ -109,10 +113,12 @@ public class RandonPositions : MonoBehaviour
 
 
         }
-        if(min>=5)
+        if(min>=1)
         {
             StopPiece();
-           
+            GameOver();
+
+
         }
 
 
@@ -180,13 +186,44 @@ public class RandonPositions : MonoBehaviour
             spriteRenderer.sprite = spriteFull[index];
             yield return new WaitForSeconds(0.1f);
             index++;
-            if(index == spriteFull.Length)
+           
+
+            if (sp1 && index ==0)
+            {
+                index++;
+            }
+            else if (sp2&& index == 1)
+            {
+                index++;
+            }
+            else if (sp3 && index == 2)
+            {
+                index++;
+            }
+            if (index == spriteFull.Length)
             {
                 index = 0;
             }
 
         }
-       ChangePices(index);
+        if(index==0)
+        {
+            sp1 = true;
+        }
+        if (index == 1)
+        {
+            sp2 = true;
+        }
+        if (index == 2)
+        {
+            sp3 = true;
+        }
+
+
+
+       
+
+        ChangePices(index);
            
            
     }
@@ -207,8 +244,19 @@ public class RandonPositions : MonoBehaviour
     }
     public void Restart()
     {
+        min = 0;
+        minTimeCont.text = min.ToString();
+        okPieces = 0;
+        randomSprite = true;
+        transprent = true;
+        winGameText.enabled = false;
+        gameOverText.enabled = false;
+        pauseTime = 1;
         time = 0;
         pauseTime = 1;
+        okPieces = 0;
+        
+        spriteRenderer.color = spriteRenderer.color  +new Color(0, 0, 0, 1);
         StartCoroutine(RandomSprite());
         for (int i = 0; i < randonPositions.Length; i++)
         {
