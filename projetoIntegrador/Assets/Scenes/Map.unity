@@ -1711,24 +1711,76 @@ PrefabInstance:
       objectReference: {fileID: 1278933568}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.size
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.size
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[0]
-      value: "Informa\xE7\xE3o do pontoooooooooooooooo."
+      value: "Uau, Guerreirinho! O Camel\xF3dromo \xE9 de fato gigante. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[1]
+      value: "Sim! Voc\xEA sabia que seu nome oficial \xE9 Centro Comercial Popular
+        Marcelo Barbosa da Fonseca, mas \xE9 popularmente conhecido como Camel\xF3dromo?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[2]
+      value: "N\xE3o sabia, minha amiga Anahi me disse que foi inaugurado no dia
+        05 de Dezembro de 1998. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[3]
+      value: "Sim, ela est\xE1 certa! O com\xE9rcio informal nas ruas centrais de
+        Campo Grande j\xE1 foi um problema para a cidade. E para resolver, em 1998
+        a Prefeitura criou o Camel\xF3dromo."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[4]
+      value: "Que massa! Outro fato interessante que me contaram foi que o Camel\xF3dromo
+        ganhou o projeto de uso eficiente de energia el\xE9trica."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[5]
+      value: "Isso eu n\xE3o sabia. Muito bem, Luka! O Camel\xF3dromo \xE9 onde est\xE3o
+        distribu\xEDdas lojas padronizadas para a comercializa\xE7\xE3o dos mais
+        diversos tipos de produtos."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[6]
+      value: "O camel\xF3dromo \xE9 realmente bacana. Depois vou passar l\xE1 para
+        comprar acess\xF3rios. "
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 2294667970b274f449bef0430f4d6027, type: 3}
+      objectReference: {fileID: 21300000, guid: df1df8c958123574a8ad0651fc3cd59a, type: 3}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: c5a2745960973b742840fd9b239b9e24, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: df1df8c958123574a8ad0651fc3cd59a, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: c5a2745960973b742840fd9b239b9e24, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: df1df8c958123574a8ad0651fc3cd59a, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: c5a2745960973b742840fd9b239b9e24, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: df1df8c958123574a8ad0651fc3cd59a, type: 3}
     - target: {fileID: 3435468172440170231, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: m_Name
       value: canv_dialogue
@@ -2476,24 +2528,73 @@ PrefabInstance:
       objectReference: {fileID: 1278933568}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.size
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.size
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[0]
-      value: "Informa\xE7\xE3o do pontoooooooooooooooo."
+      value: "Essa \xE9 a Morada dos Ba\xEDs. \xC9 um pr\xE9dio antigo e fica no
+        centro de Campo Grande, em Mato Grosso do Sul. Muitas coisas legais acontecem
+        aqui."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[1]
+      value: "A Anahi me falou que as pessoas podem assistir a shows de m\xFAsica,
+        ver exposi\xE7\xF5es de arte e at\xE9 comer em restaurantes l\xE1."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[2]
+      value: "Isso mesmo! Al\xE9m disso, eles t\xEAm um jardim muito bonito ao redor
+        do pr\xE9dio. \xC9 um lugar perfeito para passear e aproveitar o ar livre."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[3]
+      value: "Que bacana! \xC9 realmente incr\xEDvel!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[4]
+      value: "Sim! E a Morada do Ba\xEDs \xE9 chamada assim porque homenageia o m\xFAsico
+        Manoel Martins Ba\xEDs, que foi muito importante na hist\xF3ria da m\xFAsica
+        em Campo Grande. Ele era conhecido por tocar viol\xE3o e cantar lindas can\xE7\xF5es."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[5]
+      value: "Uau, que legal! Manoel Martins Ba\xEDs deve ter sido uma pessoa especial,
+        assim como esse ponto tur\xEDstico. Vou visitar mais vezes."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[6]
+      value: "Essa \xE9 a Morada dos Ba\xEDs. \xC9 um pr\xE9dio antigo e fica no
+        centro de Campo Grande, em Mato Grosso do Sul. Muitas coisas legais acontecem
+        aqui."
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 2294667970b274f449bef0430f4d6027, type: 3}
+      objectReference: {fileID: 21300000, guid: 67b8aef22d649c8498faf2e881d63bb5, type: 3}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: c2df19816b248d04c81dac1cf58b4ff5, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 67b8aef22d649c8498faf2e881d63bb5, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: c2df19816b248d04c81dac1cf58b4ff5, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 67b8aef22d649c8498faf2e881d63bb5, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: c2df19816b248d04c81dac1cf58b4ff5, type: 3}
     - target: {fileID: 3435468172440170231, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: m_Name
       value: canv_dialogue
@@ -2937,30 +3038,93 @@ PrefabInstance:
       objectReference: {fileID: 1278933568}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.size
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.size
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[0]
-      value: "Guerreirinho, o que \xE9 aquele grande monumento ali?"
+      value: "Olha s\xF3, a Casa do Artes\xE3o! \xC9 um lugar onde eles vendem um
+        monte de coisas legais feitas aqui em Mato Grosso do Sul."
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[1]
-      value: " Isso \xE9 o Obelisco, querido. Foi constru\xEDdo em 1933 para celebrar
-        o anivers\xE1rio da nossa cidade, Campo Grande, e homenagear seus fundadores,
-        especialmente Jos\xE9 Ant\xF4nio Pereira."
+      value: "\xC9 verdade, Neto! As pessoas de todo o mundo v\xEAm aqui para ver
+        as coisas incr\xEDveis que os artes\xE3os da nossa regi\xE3o fazem. \xC9
+        muito legal mesmo!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[2]
+      value: "E sabia que eles vendem coisas feitas por v\xE1rios trabalhadores e
+        artes\xE3os, sendo um local de venda importante?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[3]
+      value: "Isso mesmo, Neto! E essa Casa do Artes\xE3o \xE9 bem antiga. Ela foi
+        constru\xEDda l\xE1 atr\xE1s, entre 1918 e 1923, por Francisco Cetraro e
+        Pasquele C\xE2ndida, com a ajuda do engenheiro Camilo Boni."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[4]
+      value: "E quando ela virou a Casa do Artes\xE3o?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[5]
+      value: "Isso aconteceu em 1\xBA de setembro de 1975, Neto. Foi quando resolveram
+        transformar o lugar e fazer dele a Casa do Artes\xE3o."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[6]
+      value: E depois, o que mais aconteceu?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[7]
+      value: "Depois, fizeram uma reforma em 1990 e outra recentemente em mar\xE7o
+        de 2023, deixando o lugar ainda mais bonito. E sabia que a Casa do Artes\xE3o
+        \xE9 considerada um lugar super importante pro nosso estado?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[8]
+      value: "Nossa, Guerreirinho, a Casa do Artes\xE3o \xE9 mesmo incr\xEDvel!"
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 34f02756e406b77499ed91e42921373f, type: 3}
+      objectReference: {fileID: 21300000, guid: faf0d61bb893ab34da0cd6d2808f3691, type: 3}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: d1e5a28ca4047394e858f894b02e4e18, type: 3}
+      objectReference: {fileID: 21300000, guid: 15c964e458da5254cbfc2a0ae949dd8e, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: faf0d61bb893ab34da0cd6d2808f3691, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 15c964e458da5254cbfc2a0ae949dd8e, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: faf0d61bb893ab34da0cd6d2808f3691, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 15c964e458da5254cbfc2a0ae949dd8e, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: faf0d61bb893ab34da0cd6d2808f3691, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 15c964e458da5254cbfc2a0ae949dd8e, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: faf0d61bb893ab34da0cd6d2808f3691, type: 3}
     - target: {fileID: 3435468172440170231, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: m_Name
       value: canv_dialogue
@@ -4144,24 +4308,93 @@ PrefabInstance:
       objectReference: {fileID: 1278933568}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.size
-      value: 1
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.size
-      value: 1
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[0]
-      value: "Informa\xE7\xE3o do pontoooooooooooooooo."
+      value: "Guerreirinho, o que \xE9 aquele grande monumento ali?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[1]
+      value: "Ah! Esse \xE9 o Obelisco. Ele foi constru\xEDdo em mem\xF3ria aos fundadores
+        da cidade e inaugurado no dia 26 de agosto de 1933, anivers\xE1rio da cidade
+        de Campo Grande."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[2]
+      value: Que legal! Ele fica aqui, em uma das principais avenidas da cidade.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[3]
+      value: "Isso mesmo, Anahi! E teve a gest\xE3o do prefeito Sr. Itrio Correa
+        da Costa e idealizado pelo general Newton Cavalcante, Comandante da Circunscri\xE7\xE3o
+        Militar, dados que podemos ver inscritos no monumento."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[4]
+      value: "Uau, que interessante! O meu amigo Neto me falou que ele \xE9 um ponto
+        de refer\xEAncia para a cidade."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[5]
+      value: "Muito bem! Isso ajuda as pessoas a se orientarem e tamb\xE9m \xE9 um
+        s\xEDmbolo de orgulho para os moradores."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[6]
+      value: "Neto me informou que o Obelisco foi erguido para celebrar o anivers\xE1rio
+        da cidade e preparar a 1\xAA Feira de Amostras, enfatizando seu papel como
+        polo econ\xF4mico agro pastoril."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[7]
+      value: "Exatamente, Anahi! Percebemos que o Obelisco \xE9 um lugar muito importante
+        para a cidade."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[8]
+      value: "Sim! O Obelisco \xE9 realmente especial!"
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 2294667970b274f449bef0430f4d6027, type: 3}
+      objectReference: {fileID: 21300000, guid: 811acfab5ab3c434b9647e3db5a70030, type: 3}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 97d8f1ebaf35959459b84197500345f6, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 811acfab5ab3c434b9647e3db5a70030, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 97d8f1ebaf35959459b84197500345f6, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 811acfab5ab3c434b9647e3db5a70030, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 97d8f1ebaf35959459b84197500345f6, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 811acfab5ab3c434b9647e3db5a70030, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 97d8f1ebaf35959459b84197500345f6, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: 811acfab5ab3c434b9647e3db5a70030, type: 3}
     - target: {fileID: 3435468172440170231, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: m_Name
       value: canv_dialogue
@@ -7546,24 +7779,93 @@ PrefabInstance:
       objectReference: {fileID: 1278933568}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.size
-      value: 1
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.size
-      value: 1
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[0]
-      value: "Informa\xE7\xE3o do pontoooooooooooooooo."
+      value: "Uau, olha s\xF3 o Carro de Boi!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[1]
+      value: "Sim! As pessoas o chamam como \u2018Carro de Boi\u2019, mas seu nome
+        oficial \xE9 Monumento aos Desbravadores."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[2]
+      value: "Ent\xE3o\u2026eu s\xF3 o conhecia como Carro de Boi mesmo. Me disseram
+        que ele promove um registro hist\xF3rico do in\xEDcio da ocupa\xE7\xE3o urbana
+        de Campo Grande, por volta de 1872."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[3]
+      value: "Muito bem, Heitor! Esse ponto tur\xEDstico homenageia o fundador da
+        cidade, Jos\xE9 Ant\xF4nio Pereira, que veio de carro de boi com sua fam\xEDlia
+        e iniciou a forma\xE7\xE3o do povoado."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[4]
+      value: "Outro fato interessante,\xE9 que ele foi inaugurado em 1996, na Pra\xE7a
+        Nelly Martins, junto com a implanta\xE7\xE3o do Parque Florestal Ant\xF4nio
+        de Albuquerque. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[5]
+      value: "Exatamente! O monumento representa o marco zero de Campo Grande, onde
+        houve o in\xEDcio do povoamento."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[6]
+      value: Show! Outro dia quero vir com meus pais tirar algumas fotos.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[7]
+      value: "Eu comprei um quebra-cabe\xE7a com a tem\xE1tica de pontos tur\xEDsticos
+        de Campo Grande. Voc\xEA quer me ajudar a mont\xE1-lo, Heitor?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[8]
+      value: Sim, eu quero! Vai ser divertido.
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 2294667970b274f449bef0430f4d6027, type: 3}
+      objectReference: {fileID: 21300000, guid: c3c45d121559fae478cf212f1afc98cf, type: 3}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 184c3b93e49376c419319f2d7c9666da, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: c3c45d121559fae478cf212f1afc98cf, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 184c3b93e49376c419319f2d7c9666da, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: c3c45d121559fae478cf212f1afc98cf, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 184c3b93e49376c419319f2d7c9666da, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: c3c45d121559fae478cf212f1afc98cf, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 184c3b93e49376c419319f2d7c9666da, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: c3c45d121559fae478cf212f1afc98cf, type: 3}
     - target: {fileID: 3435468172440170231, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: m_Name
       value: canv_dialogue
@@ -7826,24 +8128,94 @@ PrefabInstance:
       objectReference: {fileID: 1278933568}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.size
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.size
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[0]
-      value: "Informa\xE7\xE3o do pontoooooooooooooooo."
+      value: "Olha, Guerreirinho! O monumento ao \xEDndio \xE9 um verdadeiro marco
+        cultural aqui em Campo Grande. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[1]
+      value: "Sim, Neto! Essa torre foi constru\xEDda em homenagem aos povos ind\xEDgenas
+        que t\xEAm uma presen\xE7a t\xE3o importante na hist\xF3ria e na cultura
+        do nosso estado. Ela representa a conex\xE3o profunda com as ra\xEDzes ind\xEDgenas."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[2]
+      value: "\xC9 realmente incr\xEDvel como a cultura ind\xEDgena \xE9 valorizada
+        aqui. E essa vista panor\xE2mica deve proporcionar uma experi\xEAncia \xFAnica,
+        n\xE3o \xE9?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[3]
+      value: "Sem d\xFAvida, Neto! Do alto da torre, voc\xEA tem uma vis\xE3o deslumbrante
+        do Parque das Na\xE7\xF5es e dos arredores. \xC9 poss\xEDvel apreciar a beleza
+        natural, al\xE9m de ter uma perspectiva \xFAnica da cidade. Muitos visitantes
+        se encantam com a sensa\xE7\xE3o de estar em contato direto com a natureza. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[4]
+      value: "Fant\xE1stico! E esse monumento tem alguma caracter\xEDstica especial
+        no seu design e constru\xE7\xE3o que seja interessante?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[5]
+      value: "Sim, Neto! A Torre Ind\xEDgena foi constru\xEDda com uma arquitetura
+        que apresenta elementos da cultura ind\xEDgena, como a madeira e a palha.
+        Isso n\xE3o apenas a torna visualmente impressionante, mas tamb\xE9m refor\xE7a
+        o respeito e a admira\xE7\xE3o pela tradi\xE7\xE3o dos povos ind\xEDgenas."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[6]
+      value: "Que cuidado e respeito s\xE3o admir\xE1veis. \xC9 muito interessante
+        ver como a cultura ind\xEDgena \xE9 celebrada e compartilhada aqui. Imagino
+        que essa torre seja um ponto de encontro para a comunidade local e para os
+        turistas tamb\xE9m."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[7]
+      value: "Com certeza, Neto! Muitos moradores locais v\xEAm aqui para apreciar
+        a vista e se reconectar com a natureza. E os turistas, claro, t\xEAm a oportunidade
+        de vivenciar essa parte t\xE3o importante da nossa cultura. \xC9 um lugar
+        verdadeiramente especial para todos."
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 2294667970b274f449bef0430f4d6027, type: 3}
+      objectReference: {fileID: 21300000, guid: 7b832ac8d1bbe8b4ab2a124ee500cd62, type: 3}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: e4df9a40065c6944fbf8d1e509fd605b, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b832ac8d1bbe8b4ab2a124ee500cd62, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: e4df9a40065c6944fbf8d1e509fd605b, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b832ac8d1bbe8b4ab2a124ee500cd62, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: e4df9a40065c6944fbf8d1e509fd605b, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b832ac8d1bbe8b4ab2a124ee500cd62, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: e4df9a40065c6944fbf8d1e509fd605b, type: 3}
     - target: {fileID: 3435468172440170231, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: m_Name
       value: canv_dialogue
@@ -11858,28 +12230,114 @@ PrefabInstance:
       objectReference: {fileID: 1278933568}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.size
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.size
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[0]
-      value: "Informa\xE7\xE3o do pontoooooooooooooooo."
+      value: "Neto, aqui estamos diante do Monumento da Feira Central, um lugar repleto
+        de mem\xF3rias afetivas para os campo-grandenses."
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[1]
-      value: "Informa\xE7\xE3o do pontoooooooooooooooo."
+      value: "Uau, que interessante! Parece que este lugar \xE9 muito especial para
+        a comunidade local. O que torna a Feira Central t\xE3o querida por todos?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[2]
+      value: "Todo campo-grandense tem no fundo uma mem\xF3ria afetiva com esse lugar.
+        Desde os passeios na feira de rua quando crian\xE7a at\xE9 os encontros noturnos
+        da juventude. E n\xE3o podemos esquecer do \"fim de festa\" com um delicioso
+        Sob\xE1 ou espetinho nas madrugadas."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[3]
+      value: "Que incr\xEDvel! Minha m\xE3e j\xE1 comeu esse famoso Sob\xE1 ai, ela
+        disse que \xE9 um prato t\xEDpico muito apreciado. Ele tem suas ra\xEDzes
+        na culin\xE1ria de Okinawa, Jap\xE3o, e foi adaptado de forma \xFAnica aqui
+        em Campo Grande."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[4]
+      value: "Exatamente! Al\xE9m dos sabores \xFAnicos, mem\xF3rias afetivas e tradi\xE7\xF5es,
+        a Feira Central \xE9 um lugar que tem uma import\xE2ncia econ\xF4mica significativa
+        para a cidade. Muitos feirantes dependem deste espa\xE7o para sustentar suas
+        fam\xEDlias e manter viva a cultura local."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[5]
+      value: Show! Anahi me contou que a Feira tem uma arquitetura que mistura elementos
+        tradicionais com toques modernos. As barracas coloridas e os toldos lembram
+        as feiras de rua de antigamente, enquanto as estruturas mais modernas oferecem
+        conforto e comodidade para os visitantes.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[6]
+      value: "Sim! E uma parte interessante \xE9 que os feirantes passam por um processo
+        de sele\xE7\xE3o, que leva em conta a autenticidade e a qualidade dos produtos
+        que oferecem. Isso ajuda a manter a identidade da Feira e garantir que os
+        visitantes tenham acesso a produtos de alta qualidade."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[7]
+      value: "Incr\xEDvel! E existe alguma curiosidade hist\xF3rica sobre a Feira
+        Central?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[8]
+      value: "Claro, Neto! A Feira Central foi inaugurada em 1975 e desde ent\xE3o
+        se tornou um s\xEDmbolo da cultura campo-grandense. Ela foi constru\xEDda
+        no mesmo local onde antigamente havia um mercado ao ar livre, o que refor\xE7a
+        ainda mais a liga\xE7\xE3o do local com a hist\xF3ria da cidade."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[9]
+      value: "Que legal, Guerreirinho! \xC9 realmente um lugar cheio de hist\xF3ria
+        e significado para a comunidade."
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 244eb89c66699ad469f9b39012a58c8d, type: 3}
+      objectReference: {fileID: 21300000, guid: cac01addcba39534b9284e59f49c8a4d, type: 3}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 64688ede9b93d5244876266bef26ce0f, type: 3}
+      objectReference: {fileID: 21300000, guid: 10e222a805f6598459daee6282f17e85, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: cac01addcba39534b9284e59f49c8a4d, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 10e222a805f6598459daee6282f17e85, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: cac01addcba39534b9284e59f49c8a4d, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 10e222a805f6598459daee6282f17e85, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: cac01addcba39534b9284e59f49c8a4d, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 10e222a805f6598459daee6282f17e85, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: cac01addcba39534b9284e59f49c8a4d, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 10e222a805f6598459daee6282f17e85, type: 3}
     - target: {fileID: 3435468172440170231, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: m_Name
       value: canv_dialogue
@@ -12069,24 +12527,112 @@ PrefabInstance:
       objectReference: {fileID: 1278933568}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.size
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.size
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[0]
-      value: "Informa\xE7\xE3o do pontoooooooooooooooo."
+      value: "Manu, esse aqui \xE9 o Aqu\xE1rio do Pantanal, e estou animado para
+        te mostrar este lugar incr\xEDvel! "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[1]
+      value: "Sim, eu vi umas fotos e parece ser um lugar muito atrativo. Mas o Aqu\xE1rio
+        do Pantanal n\xE3o \xE9 apenas um lugar para ver animais e plantas maravilhosas?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[2]
+      value: "N\xE3o, o Aqu\xE1rio do Pantanal vai al\xE9m de ser uma atra\xE7\xE3o
+        tur\xEDstica. \xC9 um centro essencial para a educa\xE7\xE3o, conserva\xE7\xE3o
+        e avalia\xE7\xE3o da biodiversidade do Pantanal, promovendo a conscientiza\xE7\xE3o
+        ambiental."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[3]
+      value: "Nossa! Eu n\xE3o sabia que ele tinha um papel t\xE3o fundamental na
+        preserva\xE7\xE3o do ecossistema."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[4]
+      value: "Ele tamb\xE9m \xE9 um centro educacional que ensina sobre a preserva\xE7\xE3o
+        ambiental e conserva\xE7\xE3o da natureza. Possui uma se\xE7\xE3o interativa
+        para explorar o Pantanal de maneira divertida e educativa."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[5]
+      value: "No Aqu\xE1rio do Pantanal, as pessoas podem interagir com animais,
+        aprender sobre a natureza e contribuir para a conserva\xE7\xE3o. Tamb\xE9m
+        descobrem como pequenas a\xE7\xF5es di\xE1rias ajudam o meio ambiente. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[6]
+      value: "Excelente! Voc\xEA realmente tem um bom conhecimento sobre o local.
+        Outro fato interessante \xE9 que o Aqu\xE1rio do Pantanal abriga uma grande
+        diversidade de peixinhos(cicl\xEDdeos), com pelo menos 300 esp\xE9cies, 98%
+        deles sendo dif\xEDceis de se encontrar(end\xEAmicas). "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[7]
+      value: "E o Bioparque Pantanal, o maior complexo de \xE1gua doce do mundo,
+        foi inaugurado em Mato Grosso do Sul, com quase 5 milh\xF5es de litros de
+        \xE1gua."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[8]
+      value: "Isso mesmo! O Aqu\xE1rio do Pantanal \xE9 crucial para conscientizar
+        sobre a prote\xE7\xE3o do Pantanal, um dos ecossistemas mais amea\xE7ados
+        do planeta, vital para a sa\xFAde do nosso planeta."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[9]
+      value: "\xC9 uma \xF3tima maneira de aprender enquanto se diverte e voc\xEA
+        est\xE1 ficando um expert no Aqu\xE1rio do Pantanal. Agora que tal jogarmos
+        um jogo no qual voc\xEA deve coletar os peixes que fugiram do aqu\xE1rio,
+        vamos jogar? "
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 2294667970b274f449bef0430f4d6027, type: 3}
+      objectReference: {fileID: 21300000, guid: 4f7be8a278ed0b44fad5903656f695ea, type: 3}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 6e30ea51bff5ec048b9e01f947df05a4, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f7be8a278ed0b44fad5903656f695ea, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e30ea51bff5ec048b9e01f947df05a4, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f7be8a278ed0b44fad5903656f695ea, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e30ea51bff5ec048b9e01f947df05a4, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f7be8a278ed0b44fad5903656f695ea, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e30ea51bff5ec048b9e01f947df05a4, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f7be8a278ed0b44fad5903656f695ea, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f7be8a278ed0b44fad5903656f695ea, type: 3}
     - target: {fileID: 3435468172440170231, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: m_Name
       value: canv_dialogue
