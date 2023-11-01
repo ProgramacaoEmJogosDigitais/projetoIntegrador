@@ -22,6 +22,7 @@ public class Attractions : MonoBehaviour
             {
                 attraction0.gameObject.SetActive(true);
                 attraction1.gameObject.SetActive(false);
+                attraction2.gameObject.SetActive(false);
             }
             else
             {
@@ -39,6 +40,7 @@ public class Attractions : MonoBehaviour
             {
                 attraction0.gameObject.SetActive(false);
                 attraction1.gameObject.SetActive(true);
+                attraction2.gameObject.SetActive(true);
             }
             else
             {
