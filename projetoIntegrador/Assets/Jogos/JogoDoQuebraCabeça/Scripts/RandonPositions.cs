@@ -20,8 +20,9 @@ public class RandonPositions : MonoBehaviour
     bool startGame,randomSprite,transprent,gameOver;
     public GameObject buttonRestart, buttonSelect;
     bool sp1, sp2, sp3;
-  
-    
+    int timeInt;
+
+
     public bool repet;
     // Start is called before the first frame update
     private void FixedUpdate()
@@ -87,7 +88,7 @@ public class RandonPositions : MonoBehaviour
     }
     void ContTime()
     {
-        int timeInt;
+      
        
         time += Time.deltaTime*pauseTime;
         timeInt = Mathf.FloorToInt(time);
@@ -223,6 +224,7 @@ public class RandonPositions : MonoBehaviour
     {
         min = 0;
         minTimeCont.text = min.ToString();
+        timeConter.text = timeInt.ToString();
         okPieces = 0;
         randomSprite = true;
         transprent = true;
@@ -232,6 +234,7 @@ public class RandonPositions : MonoBehaviour
         time = 0;
         pauseTime = 1;
         okPieces = 0;
+        startGame = false;
         
         spriteRenderer.color = spriteRenderer.color  +new Color(0, 0, 0, 1);
         StartCoroutine(RandomSprite());
