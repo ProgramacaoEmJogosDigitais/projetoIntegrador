@@ -105,7 +105,7 @@ public class RandonPositions : MonoBehaviour
             guideText.enabled = false;
 
         }
-        if(timeInt>=6)
+        if(timeInt>=60)
         {
             time = 0;
             min++;
@@ -113,7 +113,7 @@ public class RandonPositions : MonoBehaviour
 
 
         }
-        if(min>=1)
+        if(min>=5)
         {
             StopPiece();
             GameOver();
@@ -188,36 +188,13 @@ public class RandonPositions : MonoBehaviour
             index++;
            
 
-            if (sp1 && index ==0)
-            {
-                index++;
-            }
-            else if (sp2&& index == 1)
-            {
-                index++;
-            }
-            else if (sp3 && index == 2)
-            {
-                index++;
-            }
             if (index == spriteFull.Length)
             {
                 index = 0;
             }
 
         }
-        if(index==0)
-        {
-            sp1 = true;
-        }
-        if (index == 1)
-        {
-            sp2 = true;
-        }
-        if (index == 2)
-        {
-            sp3 = true;
-        }
+       
 
 
 
