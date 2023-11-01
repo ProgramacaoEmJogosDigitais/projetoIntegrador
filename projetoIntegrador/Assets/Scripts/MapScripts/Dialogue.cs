@@ -23,6 +23,7 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI textComponent; //Componente de texto
     public int currentCharIndex = 0;
     public int currentIndex = 0; //�ndice atual
+    public GameObject button;
 
     private int cont = 0;
     public bool completedText = false;
@@ -40,7 +41,10 @@ public class Dialogue : MonoBehaviour
         }
 
         imageComponent.sprite = images[currentIndex]; //Atualiza a imagem atual
-
+        if (currentIndex >= images.Count - 1 && button != null)
+        {
+            button.SetActive(true); 
+        }
         if (textComponent.text == texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
         {
             currentCharIndex = 0;
@@ -56,6 +60,10 @@ public class Dialogue : MonoBehaviour
                 cont = 0;
                 completedText = false;
                 player.GetComponent<VanMoviment>().enabled = true;
+                if (button != null)
+                {
+                    button.SetActive(false);
+                }
             }
         }
         else if (textComponent.text != texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
