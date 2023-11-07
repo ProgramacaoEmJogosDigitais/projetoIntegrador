@@ -736,7 +736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -58.1, y: 25}
+  m_AnchoredPosition: {x: -60.4, y: 26.8}
   m_SizeDelta: {x: 64.7, y: 54.125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &262974777
@@ -929,7 +929,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -83, y: 27}
+  m_AnchoredPosition: {x: -83, y: 28.8}
   m_SizeDelta: {x: 64.7, y: 54.125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &344477098
@@ -1178,7 +1178,7 @@ RectTransform:
   m_GameObject: {fileID: 372769447}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1326, y: 1.1326, z: 1.1326}
+  m_LocalScale: {x: 0.97242767, y: 0.97242767, z: 0.97242767}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1246531672}
@@ -2019,7 +2019,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654930469}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28, y: -69, z: -9720}
+  m_LocalPosition: {x: -28, y: -60.5, z: -9720}
   m_LocalScale: {x: 88.86433, y: 88.86433, z: 88.86433}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4568,7 +4568,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dbdf18ea7fb90354389a74b01c01fff7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5d499f490f09f494c88e6e9668d8518a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -6494,7 +6494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896873323}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -274.00003, y: -36, z: -9720}
+  m_LocalPosition: {x: -274, y: -35.4, z: -9720}
   m_LocalScale: {x: 108, y: 108, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6541,7 +6541,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: c1332f83473e1514e899333aec3b5f92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
