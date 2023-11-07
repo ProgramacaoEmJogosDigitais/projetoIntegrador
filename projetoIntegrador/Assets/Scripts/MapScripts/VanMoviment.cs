@@ -18,13 +18,21 @@ public class VanMoviment : MonoBehaviour
 
     public Transform posInitial;
     public bool isMoving = false;
+
+    private float idleTime = 0f;
+    private bool isArrowDisplayed = false;
+    public GameObject arrowPrefab;
+    private GameObject arrowObject;
+
     private void Awake()
     {
         input = new CustomImput();
     }
+
     private void Start()
     {
         transform.position = posInitial.position;
+        DisplayArrow();
     }
 
     // OnEnable é chamado quando o script é habilitado
@@ -47,5 +55,43 @@ public class VanMoviment : MonoBehaviour
     public void SetMovement(InputAction.CallbackContext context)
     {
         moveVector = context.ReadValue<Vector2>();
+    }
+
+    void Update()
+    {
+        if (isMoving)
+        {
+            idleTime = 0f;
+            if (isArrowDisplayed)
+            {
+                DestroyArrow();
+            }
+        }
+        else
+        {
+            idleTime += Time.deltaTime;
+            if (idleTime >= 2.5f && !isArrowDisplayed)
+            {
+                DisplayArrow();
+            }
+        }
+    }
+
+    private void DisplayArrow()
+    {
+        if (arrowPrefab != null)
+        {
+            arrowObject = Instantiate(arrowPrefab, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+            isArrowDisplayed = true;
+        }
+    }
+
+    private void DestroyArrow()
+    {
+        if (arrowObject != null)
+        {
+            Destroy(arrowObject);
+            isArrowDisplayed = false;
+        }
     }
 }
