@@ -23,12 +23,22 @@ public class GameControllerJC : MonoBehaviour
     private int enemiesSpawned = 0;
     private float nextSpawnTime = 0f;
 
+    public Canvas scrollViewInstructions;
+
 
     void Start()
     {
         gameOverObject.SetActive(false);
         PlayerColeta.missingObjects = 0;
         StartCoroutine(SpawnObjects());
+        FishsFalling.points = 0;
+
+        // Verifica se as instruções já foram exibidas antes de iniciá-las.
+        /*if (!PlayerPrefs.HasKey("InstructionsShown") || PlayerPrefs.GetInt("InstructionsShown") == 0)
+        {
+            StartCoroutine(SpawnInstructions());
+        }*/
+
     }
 
     public void Update()
@@ -82,10 +92,24 @@ public class GameControllerJC : MonoBehaviour
 
     public void GameOver()
     {
+        int resetScore = 0;
         if (PlayerColeta.missingObjects >= 3)
         {
             score.text = score_txt.text;
             gameOverObject.SetActive(true);
+            score_txt.text = resetScore.ToString();
         }
     }
+
+    /*public IEnumerator SpawnInstructions()
+    {
+        yield return new WaitForSeconds(1);
+        scrollViewInstructions.gameObject.SetActive(true);
+        PlayerPrefs.SetInt("InstructionsShown", 1); // Instruções exibidas.
+    }
+
+    public void GoGame()
+    {
+        scrollViewInstructions.gameObject.SetActive(false);
+    }*/
 }
