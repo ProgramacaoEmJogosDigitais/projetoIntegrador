@@ -32,6 +32,7 @@ public class VanMoviment : MonoBehaviour
     private void Start()
     {
         transform.position = posInitial.position;
+        DisplayArrow();
     }
 
     // OnEnable é chamado quando o script é habilitado

@@ -5951,6 +5951,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CloseOptions
       objectReference: {fileID: 0}
+    - target: {fileID: 3504890324343235685, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -87.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504890324343235685, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 29.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3504890324481880765, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.584
@@ -5958,6 +5966,14 @@ PrefabInstance:
     - target: {fileID: 3504890324481880765, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504890324693173492, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -62.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504890324693173492, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 26.3
       objectReference: {fileID: 0}
     - target: {fileID: 3504890325498761489, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6051,9 +6067,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3504890325731277205, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d499f490f09f494c88e6e9668d8518a, type: 3}
     - target: {fileID: 3504890325731277211, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
       propertyPath: m_Name
       value: canv_options 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504890325731277211, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
