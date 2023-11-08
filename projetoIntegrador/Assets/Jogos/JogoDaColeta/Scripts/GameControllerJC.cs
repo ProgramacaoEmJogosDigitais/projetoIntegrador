@@ -61,7 +61,7 @@ public class GameControllerJC : MonoBehaviour
     public void Score()
     {
         //texts que aparecem no game
-        missScore_txt.text = "Erros: " + PlayerColeta.missingObjects.ToString();
+        missScore_txt.text = "X" + PlayerColeta.missingObjects.ToString();
         score_txt.text = "X" + FishsFalling.points.ToString();
      
     }
