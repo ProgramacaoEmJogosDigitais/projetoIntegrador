@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cefc3534189986f40a4b8727bd3444a9
+guid: 5fa7c05851552f4458d34476244afdfb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -114,7 +114,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Oficina de carro_0
+      name: PredioVerde sem chao_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 456
-        width: 730
-        height: 249
+        y: 0
+        width: 64
+        height: 97
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c28d80c5a28386d48a77484287ee5d03
-      internalID: -440882874
+      spriteID: d45c11a54a9441643ab45987480a04f3
+      internalID: -1570336954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oficina de carro_1
+      name: PredioVerde sem chao_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 64
         y: 0
-        width: 730
-        height: 456
+        width: 149
+        height: 358
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,8 +164,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52aa9e1dc6008034bb3962bb6f41032a
-      internalID: -861956452
+      spriteID: ac5db3f4903535f479c1320066bb6c66
+      internalID: 660919454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PredioVerde sem chao_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 97
+        width: 64
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7785ccca3100c484494056c338290a7c
+      internalID: -1913387585
       vertices: []
       indices: 
       edges: []
@@ -181,8 +202,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Oficina de carro_0: -440882874
-      Oficina de carro_1: -861956452
+      PredioVerde sem chao_2: -1913387585
+      PredioVerde sem chao_1: 660919454
+      PredioVerde sem chao_0: -1570336954
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
