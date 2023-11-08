@@ -26,11 +26,13 @@ public class PlayerColeta : MonoBehaviour
 
         if (horizontalInput > 0)
         {
+            CircleCollider2D.offset.x = 0.79;
             playerFlip.flipX = false;
         }
 
         else if (horizontalInput < 0)
         {
+            CircleCollider2D.offset.x = -0.79;
             playerFlip.flipX = true;
         }
         if (horizontalInput == 0)
