@@ -8261,7 +8261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[1]
-      value: "Sim, Neto! Essa torre foi constru\xEDda em homenagem aos povos ind\xEDgenas
+      value: "Sim, Anahi! Essa torre foi constru\xEDda em homenagem aos povos ind\xEDgenas
         que t\xEAm uma presen\xE7a t\xE3o importante na hist\xF3ria e na cultura
         do nosso estado. Ela representa a conex\xE3o profunda com as ra\xEDzes ind\xEDgenas."
       objectReference: {fileID: 0}
@@ -8273,7 +8273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[3]
-      value: "Sem d\xFAvida, Neto! Do alto da torre, voc\xEA tem uma vis\xE3o deslumbrante
+      value: "Sem d\xFAvida, Anahi! Do alto da torre, voc\xEA tem uma vis\xE3o deslumbrante
         do Parque das Na\xE7\xF5es e dos arredores. \xC9 poss\xEDvel apreciar a beleza
         natural, al\xE9m de ter uma perspectiva \xFAnica da cidade. Muitos visitantes
         se encantam com a sensa\xE7\xE3o de estar em contato direto com a natureza. "
@@ -8285,7 +8285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[5]
-      value: "Sim, Neto! A Torre Ind\xEDgena foi constru\xEDda com uma arquitetura
+      value: "Sim, Anahi! A Torre Ind\xEDgena foi constru\xEDda com uma arquitetura
         que apresenta elementos da cultura ind\xEDgena, como a madeira e a palha.
         Isso n\xE3o apenas a torna visualmente impressionante, mas tamb\xE9m refor\xE7a
         o respeito e a admira\xE7\xE3o pela tradi\xE7\xE3o dos povos ind\xEDgenas."
@@ -8816,7 +8816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[1]
-      value: Com certeza, Anahi! Esse museu foi idealizado pela Inspetoria Salesiana
+      value: Com certeza, Manu! Esse museu foi idealizado pela Inspetoria Salesiana
         de Mato Grosso e foi inaugurado em 1951 por padres salesianos.
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
@@ -8844,8 +8844,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[6]
-      value: "Sim, \xE9 um local fant\xE1stico! Anahi, agora vamos jogar um quiz
-        sobre os pontos tur\xEDsticos de Campo Grande. Se voc\xEA ainda n\xE3o visitou
+      value: "Sim, \xE9 um local fant\xE1stico! Manu, agora vamos jogar um quiz sobre
+        os pontos tur\xEDsticos de Campo Grande. Se voc\xEA ainda n\xE3o visitou
         todos, vai l\xE1! Porque precisar\xE1."
       objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
@@ -8855,7 +8855,7 @@ PrefabInstance:
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 84c63102402f82045a6fed534f56f8f8, type: 3}
+      objectReference: {fileID: 21300000, guid: 048f86bbecc1f254da6475168238db71, type: 3}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[2]
       value: 
@@ -8863,11 +8863,11 @@ PrefabInstance:
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[3]
       value: 
-      objectReference: {fileID: 21300000, guid: 84c63102402f82045a6fed534f56f8f8, type: 3}
+      objectReference: {fileID: 21300000, guid: 048f86bbecc1f254da6475168238db71, type: 3}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[4]
       value: 
-      objectReference: {fileID: 21300000, guid: 84c63102402f82045a6fed534f56f8f8, type: 3}
+      objectReference: {fileID: 21300000, guid: 048f86bbecc1f254da6475168238db71, type: 3}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[5]
       value: 
@@ -8875,7 +8875,7 @@ PrefabInstance:
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[6]
       value: 
-      objectReference: {fileID: 21300000, guid: 84c63102402f82045a6fed534f56f8f8, type: 3}
+      objectReference: {fileID: 21300000, guid: 048f86bbecc1f254da6475168238db71, type: 3}
     - target: {fileID: 3435468172440170231, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: m_Name
       value: canv_dialogue
