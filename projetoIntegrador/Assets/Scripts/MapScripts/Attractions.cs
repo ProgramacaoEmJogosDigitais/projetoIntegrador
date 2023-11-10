@@ -13,7 +13,12 @@ public class Attractions : MonoBehaviour
     public GameObject attraction1;
     public GameObject attraction2;
     private bool isColliding = false;
+    private VanMoviment player;
 
+    private void Start()
+    {
+        player = FindObjectOfType<VanMoviment>();   
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -54,7 +59,7 @@ public class Attractions : MonoBehaviour
     {
         if (isColliding)
         {
-            if (Input.GetKeyDown(KeyCode.KeypadEnter) || (Input.GetKeyDown(KeyCode.Return)))
+            if (Input.GetKeyDown(KeyCode.Space) && !player.isMoving)
             {
                 canvasDialogue.gameObject.SetActive(true);
             }
