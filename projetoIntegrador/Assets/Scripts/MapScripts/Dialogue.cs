@@ -24,9 +24,9 @@ public class Dialogue : MonoBehaviour
     public int currentCharIndex = 0;
     public int currentIndex = 0; //�ndice atual
     public GameObject button;
-
-    private int cont = 0;
     public bool completedText = false;
+    public Image panel;
+    private int cont = 0;
     void Awake()
     {
         imageComponent.sprite = images[currentIndex];
@@ -60,6 +60,7 @@ public class Dialogue : MonoBehaviour
                 cont = 0;
                 completedText = false;
                 player.GetComponent<VanMoviment>().enabled = true;
+                panel.gameObject.SetActive(false);
                 if (button != null)
                 {
                     button.SetActive(false);
