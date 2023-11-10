@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RandonPositions : MonoBehaviour
 {
@@ -18,9 +19,12 @@ public class RandonPositions : MonoBehaviour
     int index,pauseTime;
     public float time;
     bool startGame,randomSprite,transprent,gameOver;
-    public GameObject buttonRestart, buttonSelect;
+    public GameObject buttonRestart, buttonSelect,bookPointsAnim;
     bool sp1, sp2, sp3;
-    int timeInt;
+    int timeInt, randSprit;
+    public Image bookScore;
+    public ParticleSystem particle;
+
 
 
     public bool repet;
@@ -29,7 +33,23 @@ public class RandonPositions : MonoBehaviour
     {
         if(okPieces>=24)
         {
+            if( index==0)
+            {
+                sp1 = true;
+            }
+            else if(index==1)
+            {
+                sp2 = true;
+            }
+            else if(index==3)
+            {
+                sp3 = true;
+            }
+
+
+
             WinGame();
+
         }
        if(startGame)
         {
@@ -48,7 +68,9 @@ public class RandonPositions : MonoBehaviour
         sp1 = false;
         sp2 = false;
         sp3 = false;
-        
+       
+        BooksPonts.pJigsaw =0 ;
+
 
 
 
@@ -72,7 +94,7 @@ public class RandonPositions : MonoBehaviour
 
 
 
-        Debug.Log("1");
+      
         for (int i = 0; i < randonPositions.Length; i++)
         {
 
@@ -192,6 +214,50 @@ public class RandonPositions : MonoBehaviour
             if (index == spriteFull.Length)
             {
                 index = 0;
+               
+            }
+            if (sp1 && index == 0)
+            {
+                index = 1;
+                spriteRenderer.sprite = spriteFull[index];
+
+
+            }
+            else if (sp2 && index == 1)
+            {
+                index = 2;
+                spriteRenderer.sprite = spriteFull[index];
+
+            }
+            else if (sp2 && index == 2)
+            {
+                index = 0;
+                spriteRenderer.sprite = spriteFull[index];
+
+            }
+            else if ((sp1 && sp2))
+            {
+                index = 2;
+                spriteRenderer.sprite = spriteFull[index];
+
+            }
+            else if (sp1 && sp3)
+            {
+                index = 1;
+                spriteRenderer.sprite = spriteFull[index];
+
+            }
+            else if (sp2 && sp3)
+            {
+                index = 0;
+                spriteRenderer.sprite = spriteFull[index];
+
+            }
+            else if (sp1 && sp2 && sp3)
+            {
+                sp1 = false;
+                sp2 = false;
+                sp3 = false;
             }
 
         }
@@ -215,10 +281,55 @@ public class RandonPositions : MonoBehaviour
     }
     void WinGame()
     {
+        if(sp1 && BooksPonts.pJigsaw == 0)
+        {
+            StartCoroutine(BooksPoints());
+            BooksPonts.pJigsaw = 1;
+          
+        }
+        else if (sp2 && BooksPonts.pJigsaw == 0)
+        {
+            StartCoroutine(BooksPoints());
+            BooksPonts.pJigsaw = 1;
+
+        }
+        else if (sp2 && BooksPonts.pJigsaw == 0)
+        {
+            StartCoroutine(BooksPoints());
+            BooksPonts.pJigsaw = 1;
+
+        }
+        else if((sp1&&sp2 || sp1&&sp3 || sp2&&sp3)&&  BooksPonts.pJigsaw == 1)
+        {
+            BooksPonts.pJigsaw = 2;
+            StartCoroutine(BooksPoints());
+
+        }
+        else if(sp1&&sp2&&sp3&& BooksPonts.pJigsaw == 2)
+        {
+            BooksPonts.pJigsaw = 4;
+            StartCoroutine(BooksPoints());
+
+            particle.Play();
+        }
+
         winGameText.enabled=true;
+
         pauseTime = 0;
         buttonRestart.SetActive(true);
         buttonSelect.SetActive(false);
+    }
+    private IEnumerator BooksPoints()
+    {
+        bookPointsAnim.SetActive(true);
+        
+        yield return new WaitForSeconds(0.48f);
+
+        bookPointsAnim.SetActive(false);
+        bookScore.fillAmount += 0.4f;
+
+
+
     }
     public void Restart()
     {
@@ -232,6 +343,7 @@ public class RandonPositions : MonoBehaviour
         gameOverText.enabled = false;
         pauseTime = 1;
         time = 0;
+        timeInt = 0;
         pauseTime = 1;
         okPieces = 0;
         startGame = false;
