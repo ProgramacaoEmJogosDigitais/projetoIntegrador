@@ -39,7 +39,7 @@ public class Dialogue : MonoBehaviour
         {
             player.GetComponent<VanMoviment>().enabled = false;
         }
-
+        panel.gameObject.SetActive(true);
         imageComponent.sprite = images[currentIndex]; //Atualiza a imagem atual
         if (currentIndex >= images.Count - 1 && button != null)
         {
@@ -54,7 +54,6 @@ public class Dialogue : MonoBehaviour
             if (currentIndex >= images.Count)
             {
                 //Configura a imagem, o but�o e o texto como invis�veis
-                canvas.gameObject.SetActive(false);
                 currentCharIndex = 0;
                 currentIndex = 0;
                 cont = 0;
@@ -65,6 +64,7 @@ public class Dialogue : MonoBehaviour
                 {
                     button.SetActive(false);
                 }
+                canvas.gameObject.SetActive(false);
             }
         }
         else if (textComponent.text != texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
@@ -97,15 +97,16 @@ public class Dialogue : MonoBehaviour
     }*/
     public void CloseDialogue()
     {
-        canvas.gameObject.SetActive(false);
         currentCharIndex = 0;
         currentIndex = 0;
         cont = 0;
         completedText = false;
         player.GetComponent<VanMoviment>().enabled = true;
+        panel.gameObject.SetActive(false);
         if (button != null)
         {
             button.SetActive(false);
         }
+        canvas.gameObject.SetActive(false);
     }
 }
