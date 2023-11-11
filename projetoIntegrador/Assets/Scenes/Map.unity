@@ -1643,7 +1643,6 @@ MonoBehaviour:
   attraction0: {fileID: 1935761489}
   attraction1: {fileID: 1367809279}
   attraction2: {fileID: 553541531}
-  panel: {fileID: 1247362328}
 --- !u!1 &209936839
 GameObject:
   m_ObjectHideFlags: 0
@@ -5108,7 +5107,6 @@ MonoBehaviour:
   attraction0: {fileID: 130804175}
   attraction1: {fileID: 293401221}
   attraction2: {fileID: 2099283322}
-  panel: {fileID: 1247362328}
 --- !u!1 &707882295
 GameObject:
   m_ObjectHideFlags: 0
@@ -6535,7 +6533,6 @@ MonoBehaviour:
   attraction0: {fileID: 1309685879}
   attraction1: {fileID: 0}
   attraction2: {fileID: 0}
-  panel: {fileID: 1247362328}
 --- !u!1 &896724138
 GameObject:
   m_ObjectHideFlags: 0
@@ -7533,7 +7530,6 @@ MonoBehaviour:
   attraction0: {fileID: 707882295}
   attraction1: {fileID: 0}
   attraction2: {fileID: 0}
-  panel: {fileID: 1247362328}
 --- !u!1 &1049127300
 GameObject:
   m_ObjectHideFlags: 0
@@ -9275,7 +9271,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278933568}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -9436,6 +9432,7 @@ MonoBehaviour:
   posInitial: {fileID: 1685598606}
   isMoving: 0
   arrowPrefab: {fileID: 3381990964555348432, guid: e9abf0dfe860e404e8061be246174fee, type: 3}
+  mapManager: {fileID: 1456585747}
 --- !u!1 &1285711619
 GameObject:
   m_ObjectHideFlags: 0
@@ -9915,7 +9912,6 @@ MonoBehaviour:
   attraction0: {fileID: 1529086599}
   attraction1: {fileID: 0}
   attraction2: {fileID: 0}
-  panel: {fileID: 1247362328}
 --- !u!1 &1330050737
 GameObject:
   m_ObjectHideFlags: 0
@@ -11134,6 +11130,7 @@ MonoBehaviour:
   scrollViewInstructions: {fileID: 581535290}
   panel: {fileID: 1247362328}
   player: {fileID: 1278933568}
+  instructions: 0
 --- !u!1 &1478636759
 GameObject:
   m_ObjectHideFlags: 0
@@ -11233,7 +11230,6 @@ MonoBehaviour:
   attraction0: {fileID: 1654505287}
   attraction1: {fileID: 1480040907}
   attraction2: {fileID: 1412535074}
-  panel: {fileID: 1247362328}
 --- !u!1 &1480040907
 GameObject:
   m_ObjectHideFlags: 0
@@ -11615,7 +11611,6 @@ MonoBehaviour:
   attraction0: {fileID: 632152718}
   attraction1: {fileID: 1360884820}
   attraction2: {fileID: 1056726329}
-  panel: {fileID: 1247362328}
 --- !u!1 &1518209897
 GameObject:
   m_ObjectHideFlags: 0
@@ -12714,6 +12709,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1837572752}
     m_Modifications:
+    - target: {fileID: 235176354373461517, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389547263575961367, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: panel
       value: 
@@ -12834,6 +12837,10 @@ PrefabInstance:
       propertyPath: images.Array.data[9]
       value: 
       objectReference: {fileID: 21300000, guid: d3e433158a6fdaa42a11d2bf29f42995, type: 3}
+    - target: {fileID: 3435468172274889619, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3435468172274889621, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -12929,6 +12936,18 @@ PrefabInstance:
     - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172997844736, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696709299683642034, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8724867089765880104, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
@@ -13422,7 +13441,6 @@ MonoBehaviour:
   attraction0: {fileID: 1674745203}
   attraction1: {fileID: 177951434}
   attraction2: {fileID: 490860369}
-  panel: {fileID: 1247362328}
 --- !u!114 &1686959991 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3504890325528006496, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
@@ -14031,7 +14049,6 @@ MonoBehaviour:
   attraction0: {fileID: 354230132}
   attraction1: {fileID: 475723722}
   attraction2: {fileID: 1551369675}
-  panel: {fileID: 1247362328}
 --- !u!1 &1762741209
 GameObject:
   m_ObjectHideFlags: 0
@@ -15139,7 +15156,6 @@ MonoBehaviour:
   attraction0: {fileID: 305804199}
   attraction1: {fileID: 0}
   attraction2: {fileID: 0}
-  panel: {fileID: 1247362328}
 --- !u!1 &1849864234
 GameObject:
   m_ObjectHideFlags: 0

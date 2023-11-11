@@ -11,7 +11,6 @@ public class Attractions : MonoBehaviour
     public GameObject attraction0;
     public GameObject attraction1;
     public GameObject attraction2;
-    public Image panel; 
     private bool isColliding = false;
     private VanMoviment player;
 
@@ -61,7 +60,6 @@ public class Attractions : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) && !player.isMoving)
             {
-                panel.gameObject.SetActive(true);
                 canvasDialogue.gameObject.SetActive(true);
             }
         }
