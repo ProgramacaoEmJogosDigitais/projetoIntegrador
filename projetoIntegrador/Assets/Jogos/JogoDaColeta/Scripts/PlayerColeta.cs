@@ -1,23 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerColeta : MonoBehaviour
 {
     public float playerSpeed = 5f;
     public static int missingObjects = 0;
-    
+    public bool playerTrash;
 
     SpriteRenderer playerFlip;
     private Animator pAnimator;
-    private CircleCollider2D playerCollider;
+    private BoxCollider2D playerCollider;
+    private int playerRunState;
+    private int playerIdleState;
+    private int idleLixoState;
+    private int runLixoState;
 
     private void Awake()
     {
         playerFlip = GetComponent<SpriteRenderer>();
         pAnimator = GetComponent<Animator>();
-        playerCollider = GetComponent<CircleCollider2D>();
+        playerCollider = GetComponent<BoxCollider2D>();
+
+        playerRunState = Animator.StringToHash("PlayerRun");
+        playerIdleState = Animator.StringToHash("PlayerIdle");
+        idleLixoState = Animator.StringToHash("IdleLixo");
+        runLixoState = Animator.StringToHash("RunLixo");
     }
 
     void Update()
@@ -36,13 +44,18 @@ public class PlayerColeta : MonoBehaviour
             playerFlip.flipX = true;
             playerCollider.offset = new Vector2(-3.88f, 2.34f);
         }
+
         if (horizontalInput == 0)
         {
-            pAnimator.Play("PlayerIdle");
+            pAnimator.Play(playerIdleState);
+            if (playerTrash)
+                pAnimator.Play(idleLixoState);
         }
         else if (horizontalInput != 0)
         {
-            pAnimator.Play("PlayerRun");
+            pAnimator.Play(playerRunState);
+            if (playerTrash)
+                pAnimator.Play(runLixoState);
         }
 
         if (transform.position.x > 8f)
@@ -58,6 +71,38 @@ public class PlayerColeta : MonoBehaviour
     public static void MissingObject()
     {
         missingObjects++;
-      
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Fish") && playerTrash)
+        {
+            Debug.Log("colidiu no player.");
+            // Destruir o objeto pego
+            Destroy(other.gameObject);
+
+            // Aumentar os erros
+            PlayerColeta.MissingObject();
+        }
+
+        if (other.CompareTag("lixo") && playerTrash)
+        {
+            Debug.Log("colidiu no player.");
+            // Destruir o objeto pego
+            Destroy(other.gameObject);
+
+            // Aumentar os erros
+            FishsFalling.points++;
+        }
+
+        if (other.CompareTag("lixo") && !playerTrash)
+        {
+            Debug.Log("colidiu no player.");
+            // Destruir o objeto pego
+            Destroy(other.gameObject);
+
+            // Aumentar os erros
+            PlayerColeta.MissingObject();
+        }
     }
 }
