@@ -25,6 +25,9 @@ public class GameControllerJC : MonoBehaviour
 
     public Canvas scrollViewInstructions;
 
+    private bool isOptionsMenuActive = false;
+    public GameObject optionsMenu; // Arraste o prefab do menu de opções para este campo no Inspector
+
 
     void Start()
     {
@@ -45,7 +48,12 @@ public class GameControllerJC : MonoBehaviour
     {
         Score();
 
-        GameOver();
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PauseGame();
+        }
+
+            GameOver();
         // Check if the game over condition is met
         if (PlayerColeta.missingObjects >= lostObjectsForGameOver)
         {
@@ -53,7 +61,32 @@ public class GameControllerJC : MonoBehaviour
             nextSpawnTime = float.MaxValue;
         }
     }
+        void PauseGame()
+        {
+            {
+                if (Time.timeScale == 0)
+                {
+                    Time.timeScale = 1;
+                }
+                else if (Time.timeScale == 1)
+                {
+                    Time.timeScale = 0;
+                }
 
+                if (isOptionsMenuActive)
+                {
+                    // Se o menu de opções estiver ativo, desative-o
+                    optionsMenu.SetActive(false);
+                    isOptionsMenuActive = false;
+                }
+                else
+                {
+                    // Se o menu de opções estiver inativo, ative-o
+                    optionsMenu.SetActive(true);
+                    isOptionsMenuActive = true;
+                }
+            }
+        }
     IEnumerator SpawnObjects()
     {
         yield return new WaitForSeconds(initialSpawnDelay);

@@ -27,6 +27,9 @@ public class ObjectsFalling : MonoBehaviour
         {
             // Destruir o objeto que caiu no chão
             Destroy(gameObject);
+
+            // Aumentar o número de objetos perdidos do jogador
+            PlayerColeta.MissingObject();
         }
     }
 
