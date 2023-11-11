@@ -45,6 +45,7 @@ public class RandonPositions : MonoBehaviour
             {
                 sp3 = true;
             }
+           
 
 
 
@@ -149,7 +150,7 @@ public class RandonPositions : MonoBehaviour
     void ShowSprite()
     {
         transprent = false;
-        spriteRenderer.color = spriteRenderer.color - new Color(0, 0, 0, 0.7f);
+        spriteRenderer.color =  new Color(1, 1, 1, 0.3f);
         time = 0;
 
 
@@ -177,20 +178,23 @@ public class RandonPositions : MonoBehaviour
     public void RandSpriteButton()
     {
         randomSprite = false;
+        time = 0;
+        timeInt = 0;    
+        
     }
     void ChangePices(int selectPiece)
     {
         for (int i = 0; i <randonPositions.Length ; i++)
         {
-            if(selectPiece==1)
+            if(selectPiece==0)
             {
                 randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces1[i];
             }
-            if (selectPiece == 2)
+            if (selectPiece == 1)
             {
                 randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces2[i];
             }
-            if (selectPiece == 0)
+            if (selectPiece == 2)
             {
                 randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces3[i];
 
@@ -206,66 +210,70 @@ public class RandonPositions : MonoBehaviour
     {
        while(randomSprite)
         {
-            spriteRenderer.sprite = spriteFull[index];
-            yield return new WaitForSeconds(0.1f);
             index++;
-           
+
 
             if (index == spriteFull.Length)
             {
                 index = 0;
-               
-            }
-            if (sp1 && index == 0)
-            {
-                index = 1;
-                spriteRenderer.sprite = spriteFull[index];
-
 
             }
-            else if (sp2 && index == 1)
-            {
-                index = 2;
-                spriteRenderer.sprite = spriteFull[index];
+            spriteRenderer.sprite = spriteFull[index];
+            yield return new WaitForSeconds(0.1f);
+          
+           
 
-            }
-            else if (sp2 && index == 2)
-            {
-                index = 0;
-                spriteRenderer.sprite = spriteFull[index];
-
-            }
-            else if ((sp1 && sp2))
-            {
-                index = 2;
-                spriteRenderer.sprite = spriteFull[index];
-
-            }
-            else if (sp1 && sp3)
-            {
-                index = 1;
-                spriteRenderer.sprite = spriteFull[index];
-
-            }
-            else if (sp2 && sp3)
-            {
-                index = 0;
-                spriteRenderer.sprite = spriteFull[index];
-
-            }
-            else if (sp1 && sp2 && sp3)
-            {
-                sp1 = false;
-                sp2 = false;
-                sp3 = false;
-            }
+            
 
         }
-       
+        if (sp1 && index == 0)
+        {
+            index = 1;
+            spriteRenderer.sprite = spriteFull[index];
+
+
+        }
+         if (sp2 && index == 1)
+        {
+            index = 2;
+            spriteRenderer.sprite = spriteFull[index];
+
+        }
+         if (sp2 && index == 2)
+        {
+            index = 0;
+            spriteRenderer.sprite = spriteFull[index];
+
+        }
+         if ((sp1 && sp2))
+        {
+            index = 2;
+            spriteRenderer.sprite = spriteFull[index];
+
+        }
+         if (sp1 && sp3)
+        {
+            index = 1;
+            spriteRenderer.sprite = spriteFull[index];
+
+        }
+         if (sp2 && sp3)
+        {
+            index = 0;
+            spriteRenderer.sprite = spriteFull[index];
+
+        }
+         if (sp1 && sp2 && sp3)
+        {
+            sp1 = false;
+            sp2 = false;
+            sp3 = false;
+        }
 
 
 
-       
+
+
 
         ChangePices(index);
            
@@ -287,25 +295,25 @@ public class RandonPositions : MonoBehaviour
             BooksPonts.pJigsaw = 1;
           
         }
-        else if (sp2 && BooksPonts.pJigsaw == 0)
+         if (sp2 && BooksPonts.pJigsaw == 0)
         {
             StartCoroutine(BooksPoints());
             BooksPonts.pJigsaw = 1;
 
         }
-        else if (sp2 && BooksPonts.pJigsaw == 0)
+        if (sp2 && BooksPonts.pJigsaw == 0)
         {
             StartCoroutine(BooksPoints());
             BooksPonts.pJigsaw = 1;
 
         }
-        else if((sp1&&sp2 || sp1&&sp3 || sp2&&sp3)&&  BooksPonts.pJigsaw == 1)
+         if((sp1&&sp2 || sp1&&sp3 || sp2&&sp3)&&  BooksPonts.pJigsaw == 1)
         {
             BooksPonts.pJigsaw = 2;
             StartCoroutine(BooksPoints());
 
         }
-        else if(sp1&&sp2&&sp3&& BooksPonts.pJigsaw == 2)
+         if(sp1&&sp2&&sp3&& BooksPonts.pJigsaw == 2)
         {
             BooksPonts.pJigsaw = 4;
             StartCoroutine(BooksPoints());
