@@ -7,6 +7,8 @@ TagManager:
   - Fish
   - Menu
   - Monument
+  - PlayerLixo
+  - lixo
   layers:
   - Default
   - TransparentFX

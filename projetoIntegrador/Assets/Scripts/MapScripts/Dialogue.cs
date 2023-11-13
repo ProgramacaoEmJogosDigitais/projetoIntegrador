@@ -24,9 +24,9 @@ public class Dialogue : MonoBehaviour
     public int currentCharIndex = 0;
     public int currentIndex = 0; //�ndice atual
     public GameObject button;
-
-    private int cont = 0;
     public bool completedText = false;
+    public Image panel;
+    private int cont = 0;
     void Awake()
     {
         imageComponent.sprite = images[currentIndex];
@@ -39,7 +39,7 @@ public class Dialogue : MonoBehaviour
         {
             player.GetComponent<VanMoviment>().enabled = false;
         }
-
+        panel.gameObject.SetActive(true);
         imageComponent.sprite = images[currentIndex]; //Atualiza a imagem atual
         if (currentIndex >= images.Count - 1 && button != null)
         {
@@ -54,16 +54,17 @@ public class Dialogue : MonoBehaviour
             if (currentIndex >= images.Count)
             {
                 //Configura a imagem, o but�o e o texto como invis�veis
-                canvas.gameObject.SetActive(false);
                 currentCharIndex = 0;
                 currentIndex = 0;
                 cont = 0;
                 completedText = false;
                 player.GetComponent<VanMoviment>().enabled = true;
+                panel.gameObject.SetActive(false);
                 if (button != null)
                 {
                     button.SetActive(false);
                 }
+                canvas.gameObject.SetActive(false);
             }
         }
         else if (textComponent.text != texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
@@ -94,4 +95,18 @@ public class Dialogue : MonoBehaviour
         imageComponent.rectTransform.anchoredPosition = new Vector2(xPositionImage, imageComponent.rectTransform.anchoredPosition.y);
         textComponent.rectTransform.anchoredPosition = new Vector2(xPositionText, textComponent.rectTransform.anchoredPosition.y);
     }*/
+    public void CloseDialogue()
+    {
+        currentCharIndex = 0;
+        currentIndex = 0;
+        cont = 0;
+        completedText = false;
+        player.GetComponent<VanMoviment>().enabled = true;
+        panel.gameObject.SetActive(false);
+        if (button != null)
+        {
+            button.SetActive(false);
+        }
+        canvas.gameObject.SetActive(false);
+    }
 }
