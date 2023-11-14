@@ -6,21 +6,21 @@ using UnityEngine.UI;
 
 public class RandonPositions : MonoBehaviour
 {
-    public Transform []randonPositions,originalPosition;
+    public Transform[] randonPositions, originalPosition;
     public Vector3[] vectorPositions;
-    public TextMeshProUGUI guideText,timeConter,minTimeCont,gameOverText,winGameText;
+    public TextMeshProUGUI guideText, timeConter, minTimeCont, gameOverText, winGameText;
 
     int min;
-    public  int randonIndice,len;
+    public int randonIndice, len;
     public List<int> randonIndiceList;
     public SpriteRenderer spriteRenderer;
-    public Sprite[] spritePieces1,spritePieces2,spritePieces3, spriteFull;
+    public Sprite[] spritePieces1, spritePieces2, spritePieces3, spriteFull;
     public static int okPieces;
-    int index,pauseTime;
+    int index, pauseTime;
     public float time;
-    bool startGame,randomSprite,transprent,gameOver;
-    public GameObject buttonRestart, buttonSelect,bookPointsAnim;
-    bool sp1, sp2, sp3;
+    bool startGame, randomSprite, transprent, gameOver;
+    public GameObject buttonRestart, buttonSelect, bookPointsAnim;
+    bool sp1, sp2, sp3, goToMapOk;
     int timeInt, randSprit;
     public Image bookScore;
     public ParticleSystem particle;
@@ -31,35 +31,25 @@ public class RandonPositions : MonoBehaviour
     // Start is called before the first frame update
     private void FixedUpdate()
     {
-        if(okPieces>=24)
+        if (okPieces >= 24)
         {
-            if( index==0)
-            {
-                sp1 = true;
-            }
-            else if(index==1)
-            {
-                sp2 = true;
-            }
-            else if(index==3)
-            {
-                sp3 = true;
-            }
-           
+
+
 
 
 
             WinGame();
 
         }
-       if(startGame)
+        if (startGame)
         {
             ContTime();
         }
-       
+
     }
     void Start()
     {
+        goToMapOk = true;
         okPieces = 0;
         randomSprite = true;
         transprent = true;
@@ -69,8 +59,8 @@ public class RandonPositions : MonoBehaviour
         sp1 = false;
         sp2 = false;
         sp3 = false;
-       
-        BooksPonts.pJigsaw =0 ;
+
+        BooksPonts.pJigsaw = 0;
 
 
 
@@ -84,8 +74,8 @@ public class RandonPositions : MonoBehaviour
 
 
     }
-  
-   public  void RandonPiece()
+
+    public void RandonPiece()
     {
 
         for (int j = 0; j < randonPositions.Length; j++)
@@ -95,7 +85,7 @@ public class RandonPositions : MonoBehaviour
 
 
 
-      
+
         for (int i = 0; i < randonPositions.Length; i++)
         {
 
@@ -111,33 +101,33 @@ public class RandonPositions : MonoBehaviour
     }
     void ContTime()
     {
-      
-       
-        time += Time.deltaTime*pauseTime;
+
+
+        time += Time.deltaTime * pauseTime;
         timeInt = Mathf.FloorToInt(time);
         timeConter.text = timeInt.ToString();
-      
+
         if (timeInt < 5 && transprent)
         {
             StopPiece();
 
         }
-        if (timeInt == 5&& transprent)
+        if (timeInt == 5 && transprent)
         {
             StartpPiece();
             ShowSprite();
             guideText.enabled = false;
 
         }
-        if(timeInt>=60)
+        if (timeInt >= 60)
         {
             time = 0;
             min++;
-            minTimeCont.text=min.ToString();
+            minTimeCont.text = min.ToString();
 
 
         }
-        if(min>=5)
+        if (min >= 5)
         {
             StopPiece();
             GameOver();
@@ -150,7 +140,7 @@ public class RandonPositions : MonoBehaviour
     void ShowSprite()
     {
         transprent = false;
-        spriteRenderer.color =  new Color(1, 1, 1, 0.3f);
+        spriteRenderer.color = new Color(1, 1, 1, 0.3f);
         time = 0;
 
 
@@ -173,20 +163,26 @@ public class RandonPositions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+        if (BooksPonts.pJigsaw == 4 && goToMapOk)
+        {
+           goToMapOk = false;
+            StartCoroutine(UpDown());
+
+
+        }
     }
     public void RandSpriteButton()
     {
         randomSprite = false;
         time = 0;
-        timeInt = 0;    
-        
+        timeInt = 0;
+
     }
     void ChangePices(int selectPiece)
     {
-        for (int i = 0; i <randonPositions.Length ; i++)
+        for (int i = 0; i < randonPositions.Length; i++)
         {
-            if(selectPiece==0)
+            if (selectPiece == 0)
             {
                 randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces1[i];
             }
@@ -208,7 +204,7 @@ public class RandonPositions : MonoBehaviour
     }
     private IEnumerator RandomSprite()
     {
-       while(randomSprite)
+        while (randomSprite)
         {
             index++;
 
@@ -220,10 +216,10 @@ public class RandonPositions : MonoBehaviour
             }
             spriteRenderer.sprite = spriteFull[index];
             yield return new WaitForSeconds(0.1f);
-          
-           
 
-            
+
+
+
 
         }
         if (sp1 && index == 0)
@@ -233,42 +229,42 @@ public class RandonPositions : MonoBehaviour
 
 
         }
-         if (sp2 && index == 1)
+        if (sp2 && index == 1)
         {
             index = 2;
             spriteRenderer.sprite = spriteFull[index];
 
         }
-         if (sp2 && index == 2)
+        if (sp2 && index == 2)
         {
             index = 0;
             spriteRenderer.sprite = spriteFull[index];
 
         }
-         if ((sp1 && sp2))
+        if ((sp1 && sp2))
         {
             index = 2;
             spriteRenderer.sprite = spriteFull[index];
 
         }
-         if (sp1 && sp3)
+        if (sp1 && sp3)
         {
             index = 1;
             spriteRenderer.sprite = spriteFull[index];
 
         }
-         if (sp2 && sp3)
+        if (sp2 && sp3)
         {
             index = 0;
             spriteRenderer.sprite = spriteFull[index];
 
         }
-         if (sp1 && sp2 && sp3)
-        {
-            sp1 = false;
-            sp2 = false;
-            sp3 = false;
-        }
+        // if (sp1 && sp2 && sp3)
+        //{
+        //    sp1 = false;
+        //    sp2 = false;
+        //    sp3 = false;
+        //}
 
 
 
@@ -276,8 +272,8 @@ public class RandonPositions : MonoBehaviour
 
 
         ChangePices(index);
-           
-           
+
+
     }
     void GameOver()
     {
@@ -289,13 +285,26 @@ public class RandonPositions : MonoBehaviour
     }
     void WinGame()
     {
-        if(sp1 && BooksPonts.pJigsaw == 0)
+        if (index == 0)
+        {
+            sp1 = true;
+        }
+        else if (index == 1)
+        {
+            sp2 = true;
+        }
+        else if (index == 2)
+        {
+            sp3 = true;
+        }
+        if (sp1 && BooksPonts.pJigsaw == 0)
         {
             StartCoroutine(BooksPoints());
             BooksPonts.pJigsaw = 1;
-          
+
+
         }
-         if (sp2 && BooksPonts.pJigsaw == 0)
+        if (sp2 && BooksPonts.pJigsaw == 0)
         {
             StartCoroutine(BooksPoints());
             BooksPonts.pJigsaw = 1;
@@ -307,21 +316,22 @@ public class RandonPositions : MonoBehaviour
             BooksPonts.pJigsaw = 1;
 
         }
-         if((sp1&&sp2 || sp1&&sp3 || sp2&&sp3)&&  BooksPonts.pJigsaw == 1)
+        if ((sp1 && sp2 || sp1 && sp3 || sp2 && sp3) && BooksPonts.pJigsaw == 1)
         {
             BooksPonts.pJigsaw = 2;
             StartCoroutine(BooksPoints());
 
         }
-         if(sp1&&sp2&&sp3&& BooksPonts.pJigsaw == 2)
+        if (sp1 && sp2 && sp3 && BooksPonts.pJigsaw == 2)
         {
             BooksPonts.pJigsaw = 4;
             StartCoroutine(BooksPoints());
 
             particle.Play();
         }
+        Debug.Log(BooksPonts.pJigsaw);
 
-        winGameText.enabled=true;
+        winGameText.enabled = true;
 
         pauseTime = 0;
         buttonRestart.SetActive(true);
@@ -330,7 +340,7 @@ public class RandonPositions : MonoBehaviour
     private IEnumerator BooksPoints()
     {
         bookPointsAnim.SetActive(true);
-        
+
         yield return new WaitForSeconds(0.48f);
 
         bookPointsAnim.SetActive(false);
@@ -355,8 +365,8 @@ public class RandonPositions : MonoBehaviour
         pauseTime = 1;
         okPieces = 0;
         startGame = false;
-        
-        spriteRenderer.color = spriteRenderer.color  +new Color(0, 0, 0, 1);
+
+        spriteRenderer.color = spriteRenderer.color + new Color(0, 0, 0, 1);
         StartCoroutine(RandomSprite());
         for (int i = 0; i < randonPositions.Length; i++)
         {
@@ -364,5 +374,17 @@ public class RandonPositions : MonoBehaviour
         }
 
     }
+    private IEnumerator UpDown()
+    {
+        while (true)
+        {
+            bookScore.transform.localScale = bookScore.transform.localScale * 1.2f;
+            yield return new WaitForSeconds(1);
+            bookScore.transform.localScale = bookScore.transform.localScale / 1.2f;
 
+
+
+
+        }
+    }
 }
