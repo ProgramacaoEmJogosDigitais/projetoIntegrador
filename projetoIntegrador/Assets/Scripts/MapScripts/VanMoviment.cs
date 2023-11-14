@@ -18,10 +18,11 @@ public class VanMoviment : MonoBehaviour
 
     public Transform posInitial;
     public bool isMoving = false;
+    public GameObject arrowPrefab;
+    public MapManager mapManager;
 
     private float idleTime = 0f;
     private bool isArrowDisplayed = false;
-    public GameObject arrowPrefab;
     private GameObject arrowObject;
 
     private void Awake()
@@ -33,8 +34,16 @@ public class VanMoviment : MonoBehaviour
     {
         transform.position = posInitial.position;
         DisplayArrow();
+        if (!mapManager.instructions)
+        {
+            StartCoroutine(Collider());
+        }
     }
-
+    public IEnumerator Collider()
+    {
+        yield return new WaitForSeconds(1.2f);
+        GetComponent<BoxCollider2D>().enabled = true;
+    }
     // OnEnable é chamado quando o script é habilitado
     private void OnEnable()
     {
