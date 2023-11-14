@@ -701,15 +701,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3504890324317039461, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3504890324317039461, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11500000, guid: acf309301beac8843a2945e96f9e484c, type: 3}
+      objectReference: {fileID: 1503362173}
     - target: {fileID: 3504890324317039461, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: PauseGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504890324317039461, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameControllerJC, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504890324317039461, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3504890324481880765, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2097,10 +2105,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 302535543}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1503362173}
+        m_TargetAssemblyTypeName: GameControllerJC, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

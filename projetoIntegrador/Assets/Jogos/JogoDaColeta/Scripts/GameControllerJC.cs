@@ -61,7 +61,7 @@ public class GameControllerJC : MonoBehaviour
             nextSpawnTime = float.MaxValue;
         }
     }
-        void PauseGame()
+        public void PauseGame()
         {
             {
                 if (Time.timeScale == 0)
