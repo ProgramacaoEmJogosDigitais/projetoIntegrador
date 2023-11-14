@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class VanMoviment : MonoBehaviour
 {
-    public CustomImput input = null; // Variável para receber o input do jogador
+    public CustomImput input = null;
     public float moveSpeed;
     public Vector2 moveVector = Vector2.zero;
     public Sprite spriteVanUpAndDown;
@@ -21,8 +20,13 @@ public class VanMoviment : MonoBehaviour
 
     private float idleTime = 0f;
     private bool isArrowDisplayed = false;
+    private bool isObjectSpawned = false;
+
     public GameObject arrowPrefab;
     private GameObject arrowObject;
+
+    public List<GameObject> randomObjects;
+    private GameObject currentRandomObject;
 
     private void Awake()
     {
@@ -33,9 +37,9 @@ public class VanMoviment : MonoBehaviour
     {
         transform.position = posInitial.position;
         DisplayArrow();
+        StartCoroutine(RandomObjectSpawner());
     }
 
-    // OnEnable é chamado quando o script é habilitado
     private void OnEnable()
     {
         input.Enable();
@@ -43,7 +47,6 @@ public class VanMoviment : MonoBehaviour
         input.Player.Moviment.canceled += SetMovement;
     }
 
-    // OnDisable é chamado quando o script é desabilitado
     private void OnDisable()
     {
         input.Disable();
@@ -51,30 +54,38 @@ public class VanMoviment : MonoBehaviour
         input.Player.Moviment.canceled -= SetMovement;
     }
 
-    //Lê o movimento realizado pelo jogador; Armazena a horizontal e vertical e define o movimento do jogador
     public void SetMovement(InputAction.CallbackContext context)
     {
         moveVector = context.ReadValue<Vector2>();
     }
 
-    void Update()
+    private void Update()
     {
         if (isMoving)
         {
             idleTime = 0f;
+
             if (isArrowDisplayed)
             {
                 DestroyArrow();
+            }
+
+            if (!isObjectSpawned)
+            {
+                SpawnRandomObject();
             }
         }
         else
         {
             idleTime += Time.deltaTime;
+
             if (idleTime >= 2.5f && !isArrowDisplayed)
             {
                 DisplayArrow();
             }
         }
+
+        MoveVan();
     }
 
     private void DisplayArrow()
@@ -92,6 +103,46 @@ public class VanMoviment : MonoBehaviour
         {
             Destroy(arrowObject);
             isArrowDisplayed = false;
+        }
+    }
+
+    private void MoveVan()
+    {
+        
+        transform.Translate(new Vector3(moveVector.x, moveVector.y, 0) * moveSpeed * Time.deltaTime);
+    }
+
+    private void SpawnRandomObject()
+    {
+        if (randomObjects.Count > 0)
+        {
+            GameObject randomPrefab = randomObjects[Random.Range(0, randomObjects.Count)];
+
+            
+            Vector3 spawnPosition = transform.position + new Vector3(0, 2, 0);
+
+           
+            currentRandomObject = Instantiate(randomPrefab, spawnPosition, Quaternion.identity);
+            isObjectSpawned = true;
+            currentRandomObject.transform.parent = transform;
+            currentRandomObject.transform.rotation = Quaternion.identity;
+
+            
+            Destroy(currentRandomObject, 5f);
+        }
+    }
+
+
+    private IEnumerator RandomObjectSpawner()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+
+            if (isObjectSpawned && currentRandomObject == null)
+            {
+                isObjectSpawned = false;
+            }
         }
     }
 }
