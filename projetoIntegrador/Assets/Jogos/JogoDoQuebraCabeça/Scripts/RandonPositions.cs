@@ -352,8 +352,7 @@ public class RandonPositions : MonoBehaviour
     public void Restart()
     {
         min = 0;
-        minTimeCont.text = min.ToString();
-        timeConter.text = timeInt.ToString();
+        
         okPieces = 0;
         randomSprite = true;
         transprent = true;
@@ -365,6 +364,8 @@ public class RandonPositions : MonoBehaviour
         pauseTime = 1;
         okPieces = 0;
         startGame = false;
+        minTimeCont.text = min.ToString();
+        timeConter.text = timeInt.ToString();
 
         spriteRenderer.color = spriteRenderer.color + new Color(0, 0, 0, 1);
         StartCoroutine(RandomSprite());
