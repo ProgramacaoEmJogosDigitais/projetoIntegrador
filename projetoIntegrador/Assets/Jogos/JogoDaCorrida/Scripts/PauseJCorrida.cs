@@ -8,6 +8,8 @@ public class PauseJCorrida : MonoBehaviour
     public GameObject panelPause;
     public bool gamePaused;
     public Button bt_pause;
+    public Text time_txt;
+    private float timeLeval;
 
     private void Start()
     {
@@ -33,12 +35,20 @@ public class PauseJCorrida : MonoBehaviour
         bt_pause.gameObject.SetActive(false);
 
     }
+    
     public void NoPause() //tira do pause
     {
-        Time.timeScale = 1f;
         gamePaused = false;
         panelPause.gameObject.SetActive(false);
         bt_pause.gameObject.SetActive(true);
+        Time.timeScale = 1f;
+        for(int i = 0; i < 10; i++)
+        {
 
+        }
+        /*Time.timeScale = 1f;
+        gamePaused = false;
+        panelPause.gameObject.SetActive(false);
+        bt_pause.gameObject.SetActive(true);*/           
     }
 }
