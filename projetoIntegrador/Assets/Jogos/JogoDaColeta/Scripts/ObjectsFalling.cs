@@ -6,17 +6,17 @@ public class ObjectsFalling : MonoBehaviour
 {
     public float fallSpeed = 1f;
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            // Destruir o objeto pego
-            Destroy(gameObject);
+    //void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        Destruir o objeto pego
+    //        Destroy(gameObject);
 
-            // Aumentar os erros
-            PlayerColeta.MissingObject();
-        }
-    }
+    //        Aumentar os erros
+    //        PlayerColeta.MissingObject();
+    //    }
+    //}
 
     void Update()
     {
