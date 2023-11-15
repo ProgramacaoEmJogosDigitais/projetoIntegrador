@@ -6,21 +6,22 @@ public class CreateObstacle : MonoBehaviour
 {
     public GameObject prefabObstacle;
     public float time;
+    private GameControllerJCorrida gameControllerJCorrida;
 
-    private void OnEnable()
+    private void Start()
     {
-        //scriptBird = FindObjectOfType<Bird>();
+        gameControllerJCorrida = FindObjectOfType<GameControllerJCorrida>();
         StartCoroutine(Spawn());
     }
     IEnumerator Spawn()
     {
-        //while (!scriptBird.gameOver)
-        //{
-        time = Random.Range(1, 2.5f);
-        yield return new WaitForSeconds(time);
+        while (!gameControllerJCorrida.gameOver)
+        {
+            time = Random.Range(1, 2.5f);
+            yield return new WaitForSeconds(time);
 
-        GameObject newObstacle = Instantiate(prefabObstacle, transform.position, Quaternion.identity);
-        newObstacle.transform.position = new Vector2(transform.position.x, transform.position.y);
-        // }
+            GameObject newObstacle = Instantiate(prefabObstacle, transform.position, Quaternion.identity);
+            newObstacle.transform.position = new Vector2(transform.position.x, transform.position.y);
+        }
     }
 }

@@ -5,18 +5,17 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     public int sideVelocity;
-
-    //private Bird scriptBird;
+    private GameControllerJCorrida gameControllerJCorrida;
     private void Start()
     {
-        //scriptBird = FindObjectOfType<Bird>();
+        gameControllerJCorrida = FindObjectOfType<GameControllerJCorrida>();
     }
     void Update()
     {
-        //if (!scriptBird.gameOver)
-        //{
+        if (!gameControllerJCorrida.gameOver)
+        {
             transform.Translate(-sideVelocity * Time.deltaTime, 0, 0);
-        //}
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

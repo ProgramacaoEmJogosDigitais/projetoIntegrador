@@ -9,6 +9,7 @@ TagManager:
   - Monument
   - Ground
   - DestroyObstacle
+  - Obstacle
   layers:
   - Default
   - TransparentFX

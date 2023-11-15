@@ -18,14 +18,16 @@ public class MovimentPlayer : MonoBehaviour
     private Rigidbody2D rb;
     private PlayerInput playerInput;
     PlayerInputActions input;
-    private float distance; 
+    public float distance { private set; get; } 
+    private GameControllerJCorrida gameController;
     public TMP_Text distanceText;
 
     private void Awake()
     {
         input = new PlayerInputActions();
         playerInput = GetComponent<PlayerInput>();
-        
+        gameController = FindObjectOfType<GameControllerJCorrida>();
+
     }
 
     void Start()
@@ -51,45 +53,42 @@ public class MovimentPlayer : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        jump = context.performed;
-        if ()//VERIFICAR A POSICAO DO PLAYER SE MUDOU
+
+        if (isGrounded)
         {
             isGrounded = false;
+            jump = false;
+            rb.AddForce(Vector2.up * jumpForce);
         }
-        
     }
-
-    void OnCollisionStay2D(Collision2D collision) // verifica se ta no chao
+    void OnCollisionEnter2D(Collision2D collision) // verifica se ta no chao
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
         }
-    }
 
-    private void FixedUpdate()
-    {
-        if (isGrounded && jump)
+        if (collision.gameObject.CompareTag("Obstacle"))
         {
-            jump = false;
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-
+            Debug.Log("COLIDIU");
+            gameController.gameOver = true;
+            rb.velocity = Vector3.zero;
         }
-
     }
     void Update()
     {
-        distance += Time.deltaTime * speed;
-
-        UpdateDistanceText();
+        while (!gameController.gameOver)
+        {
+            distance += Time.deltaTime * speed;
+            UpdateDistanceText();
+        }
+        
     }
 
     void UpdateDistanceText()
     {
-        if (distanceText != null)
-        {
-            distanceText.text = distance.ToString("F0") ; 
-        }
+         distanceText.text = distance.ToString("F0") ; 
+        
     }
 
 }

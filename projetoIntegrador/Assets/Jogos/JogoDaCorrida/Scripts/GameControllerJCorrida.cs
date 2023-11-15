@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 public class GameControllerJCorrida : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool gameOver;
+    public GameObject panelGameOver;
+    public TMP_Text pointsText;
+    private MovimentPlayer movimentPlayer;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        movimentPlayer = FindObjectOfType<MovimentPlayer>();
+    }
+    private void FixedUpdate()
+    {
+        if (gameOver)
+        {
+            pointsText.text = movimentPlayer.distance.ToString("F0");
+            panelGameOver.SetActive(true);
+        }
     }
 }
