@@ -95,4 +95,19 @@ public class Dialogue : MonoBehaviour
         imageComponent.rectTransform.anchoredPosition = new Vector2(xPositionImage, imageComponent.rectTransform.anchoredPosition.y);
         textComponent.rectTransform.anchoredPosition = new Vector2(xPositionText, textComponent.rectTransform.anchoredPosition.y);
     }*/
+    public void CloseDialogue()
+    {
+        //Configura a imagem, o but�o e o texto como invis�veis
+        canvas.gameObject.SetActive(false);
+        currentCharIndex = 0;
+        currentIndex = 0;
+        cont = 0;
+        completedText = false;
+        player.GetComponent<VanMoviment>().enabled = true;
+        panel.gameObject.SetActive(false);
+        if (button != null)
+        {
+            button.SetActive(false);
+        }
+    }
 }
