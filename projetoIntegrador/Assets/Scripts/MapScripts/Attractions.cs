@@ -4,7 +4,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class Attractions : MonoBehaviour
 {
@@ -12,8 +11,14 @@ public class Attractions : MonoBehaviour
     public GameObject attraction0;
     public GameObject attraction1;
     public GameObject attraction2;
+    public Image panel; 
     private bool isColliding = false;
+    private VanMoviment player;
 
+    private void Start()
+    {
+        player = FindObjectOfType<VanMoviment>();   
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -54,8 +59,9 @@ public class Attractions : MonoBehaviour
     {
         if (isColliding)
         {
-            if (Input.GetKeyDown(KeyCode.KeypadEnter) || (Input.GetKeyDown(KeyCode.Return)))
+            if (Input.GetKeyDown(KeyCode.Space) && !player.isMoving)
             {
+                panel.gameObject.SetActive(true);
                 canvasDialogue.gameObject.SetActive(true);
             }
         }

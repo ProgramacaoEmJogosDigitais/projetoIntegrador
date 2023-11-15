@@ -10,6 +10,8 @@ TagManager:
   - Ground
   - DestroyObstacle
   - Obstacle
+  - PlayerLixo
+  - lixo
   layers:
   - Default
   - TransparentFX
