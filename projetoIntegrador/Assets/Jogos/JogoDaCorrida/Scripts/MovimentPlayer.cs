@@ -77,18 +77,17 @@ public class MovimentPlayer : MonoBehaviour
     }
     void Update()
     {
-        while (!gameController.gameOver)
+        if (!gameController.gameOver)
         {
             distance += Time.deltaTime * speed;
             UpdateDistanceText();
         }
-        
+
     }
 
     void UpdateDistanceText()
     {
-         distanceText.text = distance.ToString("F0") ; 
-        
+        distanceText.text = distance.ToString("F0");
     }
 
 }

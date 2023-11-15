@@ -15,14 +15,17 @@ public class GameControllerJCorrida : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1;
         movimentPlayer = FindObjectOfType<MovimentPlayer>();
     }
     private void FixedUpdate()
     {
         if (gameOver)
         {
+            Time.timeScale = 0;
             pointsText.text = movimentPlayer.distance.ToString("F0");
             panelGameOver.SetActive(true);
         }
     }
+
 }
