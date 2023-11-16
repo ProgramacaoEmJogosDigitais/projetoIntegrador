@@ -44,7 +44,7 @@ public class GameControllerQuiz : MonoBehaviour
         respostaB.text = alternativaB[idPergunta];
         respostaC.text = alternativaC[idPergunta];
         respostaD.text = alternativaD[idPergunta];
-        infoRespostas.text = "Respondendo " + (idPergunta + 1).ToString() + " de " + questoes.ToString() + " perguntas. ";
+        infoRespostas.text = "Pergunta: " + (idPergunta + 1).ToString() + "/" + questoes.ToString();
     }
 
     // Update is called once per frame
@@ -120,7 +120,7 @@ public class GameControllerQuiz : MonoBehaviour
             respostaB.text = alternativaB[idPergunta];
             respostaC.text = alternativaC[idPergunta];
             respostaD.text = alternativaD[idPergunta];
-            infoRespostas.text = "Respondendo " + (idPergunta + 1).ToString() + " de " + questoes.ToString() + " perguntas. ";
+            infoRespostas.text = "Pergunta: " + (idPergunta + 1).ToString() + "/" + questoes.ToString();
         }
         else
         {
