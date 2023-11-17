@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,7 @@ public class PauseJCorrida : MonoBehaviour
 
     private void Start()
     {
-        pressButtonNoPause = false;
+        //pressButtonNoPause = false;
         panelPause.SetActive(false);
         time = 3.0f;
         InvokeRepeating("NoPause", 0.0f, 0.1f);
@@ -35,6 +36,7 @@ public class PauseJCorrida : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (time > 0.0f && gamePaused && pressButtonNoPause)
         {
             time -= 0.1f;
@@ -47,6 +49,15 @@ public class PauseJCorrida : MonoBehaviour
             gamePaused = false;
             Time.timeScale = 1f;
             time = 3.0f;
+        }*/
+        if (pressButtonNoPause)
+        {
+            time -= 0.1f;
+            txt_Countdown.text = time.ToString("F0");
+            if (time <= 0.0f)
+            {
+                
+            }
         }
     }
     public void Pause() //aciona o pause
@@ -60,11 +71,11 @@ public class PauseJCorrida : MonoBehaviour
     
     public void NoPause() //tira do pause
     {
-        //gamePaused = false;
         panelPause.gameObject.SetActive(false);
         bt_pause.gameObject.SetActive(true);
         txt_Countdown.gameObject.SetActive(true);
         pressButtonNoPause = true;
+
         //if (time > 0.0f && gamePaused)
         //{
         //    time -= 0.1f;
@@ -79,10 +90,12 @@ public class PauseJCorrida : MonoBehaviour
 
         //    Time.timeScale = 1f;
         //}
-        
+
+        //nao usar
         /*Time.timeScale = 1f;
         gamePaused = false;
         panelPause.gameObject.SetActive(false);
         bt_pause.gameObject.SetActive(true);*/
     }
+    
 }
