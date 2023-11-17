@@ -10,26 +10,30 @@ using UnityEngine.Networking.PlayerConnection;
 
 public class Dialogue : MonoBehaviour
 {
-    [SerializeField] private float textSpeed = 0.1f; //Velocidade de digita��o do texto
-
-    private float textTimer = 0.0f; //Temporizador para a velocidade de digita��o
-
     public GameObject player;
     public Canvas canvas;
-    public Image imageText; //Imagem fudo do texto
-    public Image imageComponent; //Componente que vai receber as imagens
-    public List<Sprite> images; //Lista de imagens
-    public List<string> texts; //Lista de textos
-    public TextMeshProUGUI textComponent; //Componente de texto
+    public List<Sprite> images; 
+    public List<string> texts; 
+    public TextMeshProUGUI textComponent;
     public int currentCharIndex = 0;
-    public int currentIndex = 0; //�ndice atual
+    public int currentIndex = 0; 
     public GameObject button;
     public bool completedText = false;
     public Image panel;
+    public Attractions attractions;
     private int cont = 0;
+    private float textSpeed = 0.1f;
+
+    private float textTimer = 0.0f; 
+
     void Awake()
     {
-        imageComponent.sprite = images[currentIndex];
+        GetComponent<Image>().sprite = images[currentIndex];
+    }
+    void Start()
+    {
+        GetComponent<Animator>().SetBool("dialogueRight", true);
+        GetComponent<Animator>().SetBool("dialogueLeft", false);
     }
 
     void Update()
@@ -40,10 +44,10 @@ public class Dialogue : MonoBehaviour
             player.GetComponent<VanMoviment>().enabled = false;
         }
 
-        imageComponent.sprite = images[currentIndex]; //Atualiza a imagem atual
+        GetComponent<Image>().sprite = images[currentIndex]; //Atualiza a imagem atual
         if (currentIndex >= images.Count - 1 && button != null)
         {
-            button.SetActive(true); 
+            button.SetActive(true);
         }
         if (textComponent.text == texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
         {
@@ -51,6 +55,7 @@ public class Dialogue : MonoBehaviour
             currentIndex++;
             textTimer = 0.0f; //Reinicia o temporizador
             completedText = false;
+            NextDialogue();
             if (currentIndex >= images.Count)
             {
                 //Configura a imagem, o but�o e o texto como invis�veis
@@ -88,11 +93,53 @@ public class Dialogue : MonoBehaviour
             }
         }
     }
-    /*private void PositionsImage() //Altera��o de posi��o e alfa da imagem e texto atual
+    public void NextDialogue()
     {
-        float xPositionImage = currentIndex % 2 == 0 ? -614.42f : 550;
-        float xPositionText = currentIndex % 2 == 0 ? 49 : -163;
-        imageComponent.rectTransform.anchoredPosition = new Vector2(xPositionImage, imageComponent.rectTransform.anchoredPosition.y);
-        textComponent.rectTransform.anchoredPosition = new Vector2(xPositionText, textComponent.rectTransform.anchoredPosition.y);
-    }*/
+        if (currentIndex % 2 == 0)
+        {
+            if (attractions == Attractions.Museu && currentIndex == 4)
+            {
+                GetComponent<Animator>().SetBool("dialogueLeft", true);
+                GetComponent<Animator>().SetBool("dialogueRight", false);
+            }
+            else 
+            {
+                GetComponent<Animator>().SetBool("dialogueRight", true);
+                GetComponent<Animator>().SetBool("dialogueLeft", false);
+            }
+        }
+        else
+        {
+            if (attractions == Attractions.Aquario && currentIndex == 9)
+            {
+                GetComponent<Animator>().SetBool("dialogueRight", true);
+                GetComponent<Animator>().SetBool("dialogueLeft", false);
+            }
+            else
+            {
+                GetComponent<Animator>().SetBool("dialogueLeft", true);
+                GetComponent<Animator>().SetBool("dialogueRight", false);
+            }
+        }
+    }
+    public void CloseDialogue()
+    {
+        canvas.gameObject.SetActive(false);
+        currentCharIndex = 0;
+        currentIndex = 0;
+        cont = 0;
+        completedText = false;
+        player.GetComponent<VanMoviment>().enabled = true;
+        panel.gameObject.SetActive(false);
+        if (button != null)
+        {
+            button.SetActive(false);
+        }
+    }
+    public enum Attractions
+    {
+        Aquario,
+        Museu,
+        Default
+    }
 }

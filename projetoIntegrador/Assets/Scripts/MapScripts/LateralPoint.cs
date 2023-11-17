@@ -20,13 +20,30 @@ public class LateralPoint : MonoBehaviour
     public Transform pointPositionMap;
     public float transitionDuration = 0.5f;
     private AnimationWhell[] wheels;
+    private bool isColliding = false;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            isColliding = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isColliding = false;
+        }
+    }
+    private void Update()
+    {
+        if (isColliding)
+        {
             if (lateralPointInitial)
-            {          
+            {
+                player.GetComponent<VanMoviment>().isMoving = true;
                 pointPositionDestiny.GetComponent<LateralPoint>().lateralPointInitial = false;
                 player.transform.position = pointPositionDestiny.transform.position;
             }
@@ -51,12 +68,11 @@ public class LateralPoint : MonoBehaviour
                     player.GetComponent<SpriteRenderer>().sprite = player.GetComponent<VanMoviment>().spriteVanRight;
                     player.GetComponent<VanMoviment>().wheelRight.SetActive(true);
                     player.GetComponent<VanMoviment>().wheelLeft.SetActive(false);
-                    MoveTo(pointPositionMap,-80);
+                    MoveTo(pointPositionMap, -80);
                 }
             }
         }
     }
-
     void MoveTo(Transform target, int value)
     {
         if (target != null)
@@ -105,7 +121,7 @@ public class LateralPoint : MonoBehaviour
         {
             wheels[i].speedRotation = 0;
         }
-        yield return new WaitForSeconds(1);
+        player.GetComponent<VanMoviment>().isMoving = false;
         lateralPointInitial = true;
     }
 
