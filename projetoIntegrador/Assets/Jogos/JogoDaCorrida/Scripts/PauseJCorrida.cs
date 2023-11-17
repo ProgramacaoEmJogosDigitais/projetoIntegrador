@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,13 +8,17 @@ public class PauseJCorrida : MonoBehaviour
 {
     public GameObject panelPause;
     public bool gamePaused;
+    public bool pressButtonNoPause;
     public Button bt_pause;
-    public Text time_txt;
-    private float timeLeval;
+    public float time;
+    public TMP_Text txt_Countdown;
 
     private void Start()
     {
+        pressButtonNoPause = false;
         panelPause.SetActive(false);
+        time = 3.0f;
+        InvokeRepeating("NoPause", 0.0f, 0.1f);
     }
 
     private void FixedUpdate()
@@ -27,6 +32,23 @@ public class PauseJCorrida : MonoBehaviour
             NoPause();
         }
     }
+
+    private void Update()
+    {
+        if (time > 0.0f && gamePaused && pressButtonNoPause)
+        {
+            time -= 0.1f;
+            txt_Countdown.text = time.ToString("F0");
+        }
+        else
+        {
+            CancelInvoke();
+            txt_Countdown.gameObject.SetActive(false);
+            gamePaused = false;
+            Time.timeScale = 1f;
+            time = 3.0f;
+        }
+    }
     public void Pause() //aciona o pause
     {
         Time.timeScale = 0.0f;
@@ -38,17 +60,29 @@ public class PauseJCorrida : MonoBehaviour
     
     public void NoPause() //tira do pause
     {
-        gamePaused = false;
+        //gamePaused = false;
         panelPause.gameObject.SetActive(false);
         bt_pause.gameObject.SetActive(true);
-        Time.timeScale = 1f;
-        for(int i = 0; i < 10; i++)
-        {
+        txt_Countdown.gameObject.SetActive(true);
+        pressButtonNoPause = true;
+        //if (time > 0.0f && gamePaused)
+        //{
+        //    time -= 0.1f;
+        //    txt_Countdown.text = time.ToString("F0");
+        //}
+        //else
+        //{
+        //    CancelInvoke();
+        //    txt_Countdown.gameObject.SetActive(false);
 
-        }
+        //    gamePaused = false;
+
+        //    Time.timeScale = 1f;
+        //}
+        
         /*Time.timeScale = 1f;
         gamePaused = false;
         panelPause.gameObject.SetActive(false);
-        bt_pause.gameObject.SetActive(true);*/           
+        bt_pause.gameObject.SetActive(true);*/
     }
 }
