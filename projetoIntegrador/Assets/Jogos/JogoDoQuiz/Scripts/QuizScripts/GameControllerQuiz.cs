@@ -7,14 +7,15 @@ using UnityEngine.UI;
 public class GameControllerQuiz : MonoBehaviour
 {
     public Image[] botao;
-  
-    public int idTema;
+
+    public GameObject gameOverQuiz;
     public TMP_Text pergunta;
     public TMP_Text respostaA;
     public TMP_Text respostaB;
     public TMP_Text respostaC;
     public TMP_Text respostaD;
     public TMP_Text infoRespostas;
+    public TMP_Text pontuacao;
     [TextArea]
     public string[] perguntas;
     [TextArea]
@@ -33,8 +34,10 @@ public class GameControllerQuiz : MonoBehaviour
 
     private float acertos;
     private float questoes;
+    private float erros ;
     void Start()
     {
+        gameOverQuiz.SetActive(false);
         idPergunta = 0;
         questoes = perguntas.Length;
 
@@ -50,7 +53,7 @@ public class GameControllerQuiz : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
     }
     public void resposta(string alternativa)
     {
@@ -59,11 +62,13 @@ public class GameControllerQuiz : MonoBehaviour
             if (alternativaA[idPergunta] == corretas[idPergunta])
             {
                 StartCoroutine(PiscaBotao(Color.white, Color.green, botao[0]));
+                acertos++;
             }
             else
             {
                 StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
                 StartCoroutine(PiscaBotao(Color.white, Color.red, botao[0]));
+                erros++;
 
             }
         }
@@ -72,11 +77,13 @@ public class GameControllerQuiz : MonoBehaviour
             if (alternativaB[idPergunta] == corretas[idPergunta])
             {
                 StartCoroutine(PiscaBotao(Color.white, Color.green, botao[1]));
+                acertos++;
             }
             else
             {
                 StartCoroutine(PiscaBotao(Color.white, Color.red, botao[1]));
                 StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
+                erros++;
             }
         }
         else if (alternativa == "C")
@@ -84,11 +91,13 @@ public class GameControllerQuiz : MonoBehaviour
             if (alternativaC[idPergunta] == corretas[idPergunta])
             {
                 StartCoroutine(PiscaBotao(Color.white, Color.green, botao[2]));
+                acertos++;
             }
             else
             {
                 StartCoroutine(PiscaBotao(Color.white, Color.red, botao[2]));
                 StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
+                erros++;
             }
         }
         else if (alternativa == "D")
@@ -96,11 +105,13 @@ public class GameControllerQuiz : MonoBehaviour
             if (alternativaD[idPergunta] == corretas[idPergunta])
             {
                 StartCoroutine(PiscaBotao(Color.white, Color.green, botao[3]));
+                acertos++;
             }
             else
             {
                 StartCoroutine(PiscaBotao(Color.white, Color.red, botao[3]));
                 StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
+                erros++;
             }
         }
 
@@ -111,7 +122,7 @@ public class GameControllerQuiz : MonoBehaviour
     void proximaPergunta()
     {
         idPergunta += 1;
-        if (idPergunta <= (questoes - 1))
+        if (idPergunta <= (questoes - 1) )
         {
 
 
@@ -122,9 +133,10 @@ public class GameControllerQuiz : MonoBehaviour
             respostaD.text = alternativaD[idPergunta];
             infoRespostas.text = "Pergunta: " + (idPergunta + 1).ToString() + "/" + questoes.ToString();
         }
-        else
+        else 
         {
-            idPergunta = 0;
+            gameOverQuiz.SetActive(true);
+            pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/" + questoes.ToString();
         }
 
     }

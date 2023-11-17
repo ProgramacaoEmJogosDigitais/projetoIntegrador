@@ -157,13 +157,14 @@ MonoBehaviour:
   - {fileID: 678555457}
   - {fileID: 1002139584}
   - {fileID: 1424774875}
-  idTema: 0
+  gameOverQuiz: {fileID: 1628082039}
   pergunta: {fileID: 1860178968}
   respostaA: {fileID: 1248504849}
   respostaB: {fileID: 513618085}
   respostaC: {fileID: 1325776770}
   respostaD: {fileID: 2010798884}
   infoRespostas: {fileID: 714550522}
+  pontuacao: {fileID: 2085343958}
   perguntas:
   - "Qual destes lugares \xE9 conhecido como um grande monumento que parece uma torre
     no formato de uma lan\xE7a? "
