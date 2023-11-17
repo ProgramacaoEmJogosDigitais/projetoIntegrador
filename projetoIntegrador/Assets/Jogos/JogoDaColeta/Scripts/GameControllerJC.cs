@@ -25,6 +25,10 @@ public class GameControllerJC : MonoBehaviour
 
     public Canvas scrollViewInstructions;
 
+    private bool isPaused = false;
+    private bool isUnpauseDelayed = false;
+    private float unpauseDelay = 3f;
+    private float unpauseTimer = 0f;
     private bool isOptionsMenuActive = false;
     public GameObject optionsMenu; // Arraste o prefab do menu de opções para este campo no Inspector
 
@@ -48,12 +52,17 @@ public class GameControllerJC : MonoBehaviour
     {
         Score();
 
+
         if (Input.GetKeyDown(KeyCode.P))
         {
-            PauseGame();
+            PauseAndUnpause();
         }
+        
+        
 
-            GameOver();
+
+
+        GameOver();
         // Check if the game over condition is met
         if (PlayerColeta.missingObjects >= lostObjectsForGameOver)
         {
@@ -61,32 +70,60 @@ public class GameControllerJC : MonoBehaviour
             nextSpawnTime = float.MaxValue;
         }
     }
-        public void PauseGame()
-        {
-            {
-                if (Time.timeScale == 0)
-                {
-                    Time.timeScale = 1;
-                }
-                else if (Time.timeScale == 1)
-                {
-                    Time.timeScale = 0;
-                }
 
-                if (isOptionsMenuActive)
-                {
-                    // Se o menu de opções estiver ativo, desative-o
-                    optionsMenu.SetActive(false);
-                    isOptionsMenuActive = false;
-                }
-                else
-                {
-                    // Se o menu de opções estiver inativo, ative-o
-                    optionsMenu.SetActive(true);
-                    isOptionsMenuActive = true;
-                }
+
+    public void PauseGame()
+    {
+        if (!isPaused)
+        {
+            Time.timeScale = 0;
+            isPaused = true;
+
+            if (isOptionsMenuActive)
+            {
+                // Se o menu de opções estiver ativo, desative-o
+                optionsMenu.SetActive(false);
+                isOptionsMenuActive = false;
+            }
+            else
+            {
+                // Se o menu de opções estiver inativo, ative-o
+                optionsMenu.SetActive(true);
+                isOptionsMenuActive = true;
             }
         }
+    }
+
+    public void PauseAndUnpause()
+    {
+        if (!isPaused)
+        {
+            PauseGame();
+        }
+        else // Se já está pausado, iniciar o atraso para despausar
+        {
+            isUnpauseDelayed = true;
+            unpauseTimer = 0f; // Reseta o contador ao pressionar 'P'
+        }
+    
+
+        if (isUnpauseDelayed)
+        {
+            unpauseTimer += Time.unscaledDeltaTime; // Usando Time.unscaledDeltaTime para contar o tempo independentemente do Time.timeScale
+
+            if (unpauseTimer >= unpauseDelay)
+            {
+                Time.timeScale = 1;
+                isPaused = false;
+                isUnpauseDelayed = false;
+
+                // Desativa o menu de opções
+                optionsMenu.SetActive(false);
+                isOptionsMenuActive = false;
+            }
+        }
+    }
+
     IEnumerator SpawnObjects()
     {
         yield return new WaitForSeconds(initialSpawnDelay);
