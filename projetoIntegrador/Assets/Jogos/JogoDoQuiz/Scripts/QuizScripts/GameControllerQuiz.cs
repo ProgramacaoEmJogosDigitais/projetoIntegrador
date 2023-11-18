@@ -16,6 +16,7 @@ public class GameControllerQuiz : MonoBehaviour
     public TMP_Text respostaD;
     public TMP_Text infoRespostas;
     public TMP_Text pontuacao;
+    public bool over;
     [TextArea]
     public string[] perguntas;
     [TextArea]
@@ -37,6 +38,7 @@ public class GameControllerQuiz : MonoBehaviour
     private float erros ;
     void Start()
     {
+        over = false;
         gameOverQuiz.SetActive(false);
         idPergunta = 0;
         questoes = perguntas.Length;
@@ -53,7 +55,7 @@ public class GameControllerQuiz : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        GameOver();
     }
     public void resposta(string alternativa)
     {
@@ -119,24 +121,42 @@ public class GameControllerQuiz : MonoBehaviour
 
 
     }
-    void proximaPergunta()
+    void GameOver()
     {
-        idPergunta += 1;
-        if (idPergunta <= (questoes - 1) )
-        {
-
-
-            pergunta.text = perguntas[idPergunta];
-            respostaA.text = alternativaA[idPergunta];
-            respostaB.text = alternativaB[idPergunta];
-            respostaC.text = alternativaC[idPergunta];
-            respostaD.text = alternativaD[idPergunta];
-            infoRespostas.text = "Pergunta: " + (idPergunta + 1).ToString() + "/" + questoes.ToString();
-        }
-        else 
-        {
-            gameOverQuiz.SetActive(true);
+        if(erros == 1)
+        {  
+            over = true;
+            StartCoroutine(Espera2());
             pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/" + questoes.ToString();
+        }
+    }
+    void ProximaPergunta()
+    {
+
+        if (over)
+        {
+            GameOver();
+           
+        }
+        else if(over == false)
+        {
+            idPergunta += 1;
+            if (idPergunta <= (questoes - 1))
+            {
+
+
+                pergunta.text = perguntas[idPergunta];
+                respostaA.text = alternativaA[idPergunta];
+                respostaB.text = alternativaB[idPergunta];
+                respostaC.text = alternativaC[idPergunta];
+                respostaD.text = alternativaD[idPergunta];
+                infoRespostas.text = "Pergunta: " + (idPergunta + 1).ToString() + "/" + questoes.ToString();
+            }
+            else
+            {
+                StartCoroutine(Espera2());
+                pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/" + questoes.ToString();
+            }
         }
 
     }
@@ -148,12 +168,20 @@ public class GameControllerQuiz : MonoBehaviour
         botao.color = corOriginal;
     }
 
+
     private IEnumerator Espera()
     {
 
         yield return new WaitForSeconds(1);
-        proximaPergunta();
+        ProximaPergunta();
 
+
+    }
+    private IEnumerator Espera2()
+    {
+
+        yield return new WaitForSeconds(1);
+        gameOverQuiz.SetActive(true);
 
     }
     public int AchaCerta()
