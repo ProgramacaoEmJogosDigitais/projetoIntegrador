@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,6 +33,10 @@ public class GameControllerJC : MonoBehaviour
     private bool isOptionsMenuActive = false;
     public GameObject optionsMenu; // Arraste o prefab do menu de opções para este campo no Inspector
 
+    [SerializeField] private TextMeshProUGUI unpauseCount;
+
+
+
 
     void Start()
     {
@@ -57,8 +62,35 @@ public class GameControllerJC : MonoBehaviour
         {
             PauseAndUnpause();
         }
-        
-        
+
+        if (isUnpauseDelayed)
+        {
+
+            // Desativa o menu de opções
+            optionsMenu.SetActive(false);
+            isOptionsMenuActive = false;
+
+
+            unpauseCount.text = unpauseTimer.ToString("F0");
+
+
+
+            unpauseTimer += Time.unscaledDeltaTime; // Usando Time.unscaledDeltaTime para contar o tempo independentemente do Time.timeScale
+
+            if (unpauseTimer >= unpauseDelay)
+            {
+
+                Time.timeScale = 1;
+                isPaused = false;
+                isUnpauseDelayed = false;
+
+                unpauseDelay = 3f;
+
+
+                unpauseCount.gameObject.SetActive(false);
+
+            }
+        }
 
 
 
@@ -78,6 +110,8 @@ public class GameControllerJC : MonoBehaviour
         {
             Time.timeScale = 0;
             isPaused = true;
+
+
 
             if (isOptionsMenuActive)
             {
@@ -104,23 +138,8 @@ public class GameControllerJC : MonoBehaviour
         {
             isUnpauseDelayed = true;
             unpauseTimer = 0f; // Reseta o contador ao pressionar 'P'
-        }
-    
 
-        if (isUnpauseDelayed)
-        {
-            unpauseTimer += Time.unscaledDeltaTime; // Usando Time.unscaledDeltaTime para contar o tempo independentemente do Time.timeScale
-
-            if (unpauseTimer >= unpauseDelay)
-            {
-                Time.timeScale = 1;
-                isPaused = false;
-                isUnpauseDelayed = false;
-
-                // Desativa o menu de opções
-                optionsMenu.SetActive(false);
-                isOptionsMenuActive = false;
-            }
+            unpauseCount.gameObject.SetActive(true);
         }
     }
 
