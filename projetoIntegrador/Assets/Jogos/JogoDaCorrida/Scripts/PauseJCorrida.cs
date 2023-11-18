@@ -14,50 +14,61 @@ public class PauseJCorrida : MonoBehaviour
     public float time;
     public TMP_Text txt_Countdown;
 
+    private void Awake()
+    {
+        pressButtonNoPause = false;
+    }
     private void Start()
     {
-        //pressButtonNoPause = false;
         panelPause.SetActive(false);
         time = 3.0f;
-        InvokeRepeating("NoPause", 0.0f, 0.1f);
     }
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.P) && gamePaused == false) //se o jogo nao tive pausado
-        {
-            Pause();
-        }
-        else if(Input.GetKey(KeyCode.P) && gamePaused)//se o jogo tiver pausado
-        {
-            NoPause();
-        }
+        //if (Input.GetKeyDown(KeyCode.P)) Time.timeScale = Time.timeScale == 1.0f ? 0.0f : 1.0f;
+        //Debug.Log(Time.timeScale);
+
+        //if (Input.GetKey(KeyCode.P) && gamePaused == false) //se o jogo nao tive pausado
+        //{
+        //    Pause();
+        //}
+        //else if (Input.GetKey(KeyCode.P) && gamePaused)//se o jogo tiver pausado
+        //{
+        //    NoPause();
+        //}
     }
 
-    private void Update()
+    private void Update()//erro para o botao "p"
     {
-        /*
-        if (time > 0.0f && gamePaused && pressButtonNoPause)
-        {
-            time -= 0.1f;
-            txt_Countdown.text = time.ToString("F0");
-        }
-        else
-        {
-            CancelInvoke();
-            txt_Countdown.gameObject.SetActive(false);
-            gamePaused = false;
-            Time.timeScale = 1f;
-            time = 3.0f;
-        }*/
         if (pressButtonNoPause)
         {
-            time -= 0.1f;
+            time -= 0.01f;
             txt_Countdown.text = time.ToString("F0");
             if (time <= 0.0f)
             {
-                
+                pressButtonNoPause=false;
+                txt_Countdown.gameObject.SetActive(false);
+                gamePaused = false;
+                Time.timeScale = 1f;
+                time = 3.0f;
+
             }
+        }
+
+        if (Input.GetKey(KeyCode.P) && gamePaused == false) //se o jogo nao tive pausado
+        {
+            //Pause();
+
+            Time.timeScale = 0.0f;
+            //gamePaused = true;
+            panelPause.gameObject.SetActive(true);
+            bt_pause.gameObject.SetActive(false);
+        }
+
+        else if (Input.GetKey(KeyCode.P) && gamePaused)//se o jogo tiver pausado
+        {
+            NoPause();
         }
     }
     public void Pause() //aciona o pause
@@ -76,26 +87,7 @@ public class PauseJCorrida : MonoBehaviour
         txt_Countdown.gameObject.SetActive(true);
         pressButtonNoPause = true;
 
-        //if (time > 0.0f && gamePaused)
-        //{
-        //    time -= 0.1f;
-        //    txt_Countdown.text = time.ToString("F0");
-        //}
-        //else
-        //{
-        //    CancelInvoke();
-        //    txt_Countdown.gameObject.SetActive(false);
-
-        //    gamePaused = false;
-
-        //    Time.timeScale = 1f;
-        //}
-
-        //nao usar
-        /*Time.timeScale = 1f;
-        gamePaused = false;
-        panelPause.gameObject.SetActive(false);
-        bt_pause.gameObject.SetActive(true);*/
+        
     }
     
 }
