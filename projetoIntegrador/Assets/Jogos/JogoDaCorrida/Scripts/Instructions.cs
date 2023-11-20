@@ -17,14 +17,13 @@ public class Instructions : MonoBehaviour
         {
             pauseJCorrida.bt_pause.gameObject.SetActive(false);
             StartCoroutine(SpawnInstructions());
-
         }
     }
 
     public IEnumerator SpawnInstructions()
     {
         //bt_pause.gameObject.SetActive(false);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.01f);
         panelInstructions.gameObject.SetActive(true);
         PlayerPrefs.SetInt("InstructionsShown", 1); // Instruções exibidas.
         Time.timeScale = 0.0f;
