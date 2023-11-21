@@ -2758,6 +2758,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1278933568}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: startLeft
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: attractions
       value: 2
       objectReference: {fileID: 0}
@@ -3354,6 +3358,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1278933568}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: startLeft
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: attractions
       value: 2
@@ -5746,6 +5754,7 @@ MonoBehaviour:
   menuSceneName: Map
   panelMainMenu: {fileID: 964721002}
   panelOptions: {fileID: 276036348}
+  panelBackground: {fileID: 0}
   componentImage: {fileID: 2118387478}
 --- !u!1 &756680820
 GameObject:
@@ -13465,6 +13474,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1278933568}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: startLeft
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: attractions
       value: 2
       objectReference: {fileID: 0}
@@ -13823,6 +13836,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1278933568}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: startLeft
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: imageComponent
       value: 
@@ -15348,6 +15365,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1278933568}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: startLeft
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: attractions
       value: 2
