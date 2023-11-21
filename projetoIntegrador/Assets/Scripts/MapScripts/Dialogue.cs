@@ -10,26 +10,31 @@ using UnityEngine.Networking.PlayerConnection;
 
 public class Dialogue : MonoBehaviour
 {
-    [SerializeField] private float textSpeed = 0.1f; //Velocidade de digita��o do texto
-
-    private float textTimer = 0.0f; //Temporizador para a velocidade de digita��o
-
     public GameObject player;
+    public GameObject space;
     public Canvas canvas;
-    public Image imageText; //Imagem fudo do texto
-    public Image imageComponent; //Componente que vai receber as imagens
-    public List<Sprite> images; //Lista de imagens
-    public List<string> texts; //Lista de textos
-    public TextMeshProUGUI textComponent; //Componente de texto
+    public List<Sprite> images; 
+    public List<string> texts; 
+    public TextMeshProUGUI textComponent;
     public int currentCharIndex = 0;
-    public int currentIndex = 0; //�ndice atual
+    public int currentIndex = 0; 
     public GameObject button;
     public bool completedText = false;
     public Image panel;
+    public Attractions attractions;
     private int cont = 0;
+    private float textSpeed = 0.04f;
+    private bool withBtn = false;
+    private float textTimer = 0.0f; 
+
     void Awake()
     {
-        imageComponent.sprite = images[currentIndex];
+        GetComponent<Image>().sprite = images[currentIndex];
+    }
+    void Start()
+    {
+        GetComponent<Animator>().SetBool("dialogueRight", true);
+        GetComponent<Animator>().SetBool("dialogueLeft", false);
     }
 
     void Update()
@@ -39,64 +44,93 @@ public class Dialogue : MonoBehaviour
         {
             player.GetComponent<VanMoviment>().enabled = false;
         }
-        panel.gameObject.SetActive(true);
-        imageComponent.sprite = images[currentIndex]; //Atualiza a imagem atual
-        if (currentIndex >= images.Count - 1 && button != null)
+
+        if (!withBtn)
         {
-            button.SetActive(true); 
-        }
-        if (textComponent.text == texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
-        {
-            currentCharIndex = 0;
-            currentIndex++;
-            textTimer = 0.0f; //Reinicia o temporizador
-            completedText = false;
-            if (currentIndex >= images.Count)
+            GetComponent<Image>().sprite = images[currentIndex]; //Atualiza a imagem atual
+
+            if (textComponent.text == texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
             {
-                //Configura a imagem, o but�o e o texto como invis�veis
                 currentCharIndex = 0;
-                currentIndex = 0;
-                cont = 0;
+                currentIndex++;
+                textTimer = 0.0f; //Reinicia o temporizador
                 completedText = false;
-                player.GetComponent<VanMoviment>().enabled = true;
-                panel.gameObject.SetActive(false);
-                if (button != null)
+                NextDialogue();
+
+                if (currentIndex >= images.Count && button != null)
                 {
-                    button.SetActive(false);
+                    textComponent.text = " ";
+                    button.SetActive(true);
+                    space.SetActive(false);
+                    withBtn = true;
                 }
-                canvas.gameObject.SetActive(false);
+                else if (currentIndex >= images.Count)
+                {
+                    CloseDialogue();
+                }
+            }
+            else if (textComponent.text != texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
+            {
+                completedText = true;
+                textComponent.text = texts[currentIndex];
+            }
+
+            if (texts.Count != 0 && !completedText && !withBtn)
+            {
+                //Se ainda houver caracteres do texto para serem exibidos
+                if (currentCharIndex < texts[currentIndex].Length)
+                {
+                    textTimer += Time.deltaTime; //Incrementa o temporizador do texto
+
+                    if (textTimer >= textSpeed) //Verifica se o atraso foi alcan�ado
+                    {
+                        textTimer = 0.0f; //Reinicia o temporizador
+                        currentCharIndex++;    //Incrementa o �ndice do caractere atual
+                        textComponent.text = texts[currentIndex].Substring(0, currentCharIndex); //Exibe o texto a partir do primeiro caractere at� o caractere atual
+                    }
+                }
             }
         }
-        else if (textComponent.text != texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
+        else
         {
-            completedText = true;
-            textComponent.text = texts[currentIndex];
-        }
-        if (texts.Count != 0 && !completedText)
-        {
-            //Se ainda houver caracteres do texto para serem exibidos
-            if (currentCharIndex < texts[currentIndex].Length)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                textTimer += Time.deltaTime; //Incrementa o temporizador do texto
-
-                if (textTimer >= textSpeed) //Verifica se o atraso foi alcan�ado
-                {
-                    textTimer = 0.0f; //Reinicia o temporizador
-                    currentCharIndex++;    //Incrementa o �ndice do caractere atual
-                    textComponent.text = texts[currentIndex].Substring(0, currentCharIndex); //Exibe o texto a partir do primeiro caractere at� o caractere atual
-                }
+                CloseDialogue();
             }
         }
     }
-    /*private void PositionsImage() //Altera��o de posi��o e alfa da imagem e texto atual
+    public void NextDialogue()
     {
-        float xPositionImage = currentIndex % 2 == 0 ? -614.42f : 550;
-        float xPositionText = currentIndex % 2 == 0 ? 49 : -163;
-        imageComponent.rectTransform.anchoredPosition = new Vector2(xPositionImage, imageComponent.rectTransform.anchoredPosition.y);
-        textComponent.rectTransform.anchoredPosition = new Vector2(xPositionText, textComponent.rectTransform.anchoredPosition.y);
-    }*/
+        if (currentIndex % 2 == 0)
+        {
+            if (attractions == Attractions.Museu && currentIndex == 4)
+            {
+                GetComponent<Animator>().SetBool("dialogueLeft", true);
+                GetComponent<Animator>().SetBool("dialogueRight", false);
+            }
+            else 
+            {
+                GetComponent<Animator>().SetBool("dialogueRight", true);
+                GetComponent<Animator>().SetBool("dialogueLeft", false);
+            }
+        }
+        else
+        {
+            if (attractions == Attractions.Aquario && currentIndex == 9)
+            {
+                GetComponent<Animator>().SetBool("dialogueRight", true);
+                GetComponent<Animator>().SetBool("dialogueLeft", false);
+            }
+            else
+            {
+                GetComponent<Animator>().SetBool("dialogueLeft", true);
+                GetComponent<Animator>().SetBool("dialogueRight", false);
+            }
+        }
+    }
     public void CloseDialogue()
     {
+        canvas.gameObject.SetActive(false);
         currentCharIndex = 0;
         currentIndex = 0;
         cont = 0;
@@ -105,8 +139,15 @@ public class Dialogue : MonoBehaviour
         panel.gameObject.SetActive(false);
         if (button != null)
         {
+            space.SetActive(true);
             button.SetActive(false);
+            withBtn = false;
         }
-        canvas.gameObject.SetActive(false);
+    }
+    public enum Attractions
+    {
+        Aquario,
+        Museu,
+        Default
     }
 }

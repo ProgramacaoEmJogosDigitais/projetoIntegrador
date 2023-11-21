@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Jogos/JogoDaColeta/Scenes/GameOver.unity
     guid: 5c3cb91ad6bf82a44a7bb4401f801444
+  - enabled: 1
+    path: "Assets/Jogos/JogoDoQuebraCabe\xE7a/Sene/JogoQuebraCabe\xE7a.unity"
+    guid: 445912cc97d56a741a203a99b3e5b65c
   m_configObjects: {}

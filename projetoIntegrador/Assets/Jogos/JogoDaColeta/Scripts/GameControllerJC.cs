@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,6 +26,17 @@ public class GameControllerJC : MonoBehaviour
 
     public Canvas scrollViewInstructions;
 
+    private bool isPaused = false;
+    private bool isUnpauseDelayed = false;
+    private float unpauseDelay = 0f;
+    private float unpauseTimer = 3f;
+    private bool isOptionsMenuActive = false;
+    public GameObject optionsMenu; // Arraste o prefab do menu de opções para este campo no Inspector
+
+    [SerializeField] private TextMeshProUGUI unpauseCount;
+
+
+
 
     void Start()
     {
@@ -45,12 +57,89 @@ public class GameControllerJC : MonoBehaviour
     {
         Score();
 
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PauseAndUnpause();
+        }
+
+        if (isUnpauseDelayed)
+        {
+
+            // Desativa o menu de opções
+            optionsMenu.SetActive(false);
+            isOptionsMenuActive = false;
+
+
+            unpauseCount.text = unpauseTimer.ToString("F0");
+
+
+
+            unpauseTimer -= Time.unscaledDeltaTime; // Usando Time.unscaledDeltaTime para contar o tempo independentemente do Time.timeScale
+
+            if (unpauseTimer <= 0)
+            {
+
+                Time.timeScale = 1;
+                isPaused = false;
+                isUnpauseDelayed = false;
+
+                unpauseTimer = 3f;
+
+
+                unpauseCount.gameObject.SetActive(false);
+
+            }
+        }
+
+
+
         GameOver();
         // Check if the game over condition is met
         if (PlayerColeta.missingObjects >= lostObjectsForGameOver)
         {
             // Disable fish and trash spawning
             nextSpawnTime = float.MaxValue;
+        }
+    }
+
+
+    public void PauseGame()
+    {
+        if (!isPaused)
+        {
+            Time.timeScale = 0;
+            isPaused = true;
+            unpauseTimer = 3;
+
+
+            if (isOptionsMenuActive)
+            {
+                // Se o menu de opções estiver ativo, desative-o
+                optionsMenu.SetActive(false);
+                isOptionsMenuActive = false;
+            }
+            else
+            {
+                // Se o menu de opções estiver inativo, ative-o
+                optionsMenu.SetActive(true);
+                isOptionsMenuActive = true;
+            }
+        }
+    }
+
+    public void PauseAndUnpause()
+    {
+        if (!isPaused)
+        {
+            PauseGame();
+        }
+        else // Se já está pausado, iniciar o atraso para despausar
+        {
+            isUnpauseDelayed = true;
+            unpauseTimer = 3f; // Reseta o contador ao pressionar 'P'
+
+            unpauseCount.gameObject.SetActive(true);
         }
     }
 

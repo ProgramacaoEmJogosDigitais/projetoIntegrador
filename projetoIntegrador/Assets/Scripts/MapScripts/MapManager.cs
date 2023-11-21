@@ -8,17 +8,24 @@ public class MapManager : MonoBehaviour
     public Canvas scrollViewInstructions;
     public Image panel;
     public GameObject player;
-    public bool instructions = false;
     void Start()
     {
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
         if (!PlayerPrefs.HasKey("InstructionsShown") || PlayerPrefs.GetInt("InstructionsShown") == 0)
         {
-            instructions = true;
             StartCoroutine(SpawnInstructions());
+        }
+        else
+        {
+            StartCoroutine(ColliderVan());
         }
     }
 
+    public IEnumerator ColliderVan()
+    {
+        yield return new WaitForSeconds(0.94f);
+        player.GetComponent<BoxCollider2D>().enabled = true;
+    }
     public IEnumerator SpawnInstructions()
     {
         yield return new WaitForSeconds(1);
@@ -33,6 +40,5 @@ public class MapManager : MonoBehaviour
         scrollViewInstructions.gameObject.SetActive(false);
         player.GetComponent<BoxCollider2D>().enabled = true;
         panel.gameObject.SetActive(false);
-        instructions = false;
     }
 }

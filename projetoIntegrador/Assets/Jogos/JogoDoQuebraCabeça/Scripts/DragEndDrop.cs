@@ -7,7 +7,16 @@ public class DragEndDrop : MonoBehaviour
     public Camera cam;
    
     public Rigidbody2D rb;
-    bool inPart,arrast;
+    public bool inPart,arrast ,blockMove;
+    public Transform originalPosition;
+    public float distance;
+    public static DragEndDrop Instance;
+
+    private void Awake()
+    {
+        Instance = this;    
+        blockMove = true;
+    }
 
     void OnMouseEnter()
     {
@@ -27,27 +36,53 @@ public class DragEndDrop : MonoBehaviour
 
         
     }
+    private void OnMouseDown()
+    {
+        if (inPart)
+            arrast = true;
+        
+    }
+    private void OnMouseUp()
+    {
+        if(inPart)
+            arrast = false;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if(inPart)
-        {
-            if(Input.GetMouseButtonDown(0))
-            {
-                arrast=(arrast) ? false : true;
-                Debug.Log(arrast);
+        //if(inPart)
+        //{
+        //    if(Input.GetMouseButtonDown(0))
+        //    {
+        //        arrast=(arrast) ? false : true;
+        //        Debug.Log(arrast);
 
-            }
+        //    }
+        //}
+        if(blockMove)
+        {
+            ArrastPart();
         }
-        ArrastPart();
+       
     }
 
     public void ArrastPart()
     {
         if(arrast)
         {
+            this.transform.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 4;
             rb.MovePosition(cam.ScreenToWorldPoint(Input.mousePosition));
+        }
+        else
+        {
+            this.transform.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 3;
+            if (Vector2.Distance(rb.transform.position,originalPosition.position)<=distance)
+            {
+                rb.transform.position = originalPosition.position;
+                RandonPositions.okPieces++;
+                blockMove = false;
+            }
         }
        
     }
