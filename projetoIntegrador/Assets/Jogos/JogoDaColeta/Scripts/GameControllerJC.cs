@@ -28,8 +28,8 @@ public class GameControllerJC : MonoBehaviour
 
     private bool isPaused = false;
     private bool isUnpauseDelayed = false;
-    private float unpauseDelay = 3f;
-    private float unpauseTimer = 0f;
+    private float unpauseDelay = 0f;
+    private float unpauseTimer = 3f;
     private bool isOptionsMenuActive = false;
     public GameObject optionsMenu; // Arraste o prefab do menu de opções para este campo no Inspector
 
@@ -75,16 +75,16 @@ public class GameControllerJC : MonoBehaviour
 
 
 
-            unpauseTimer += Time.unscaledDeltaTime; // Usando Time.unscaledDeltaTime para contar o tempo independentemente do Time.timeScale
+            unpauseTimer -= Time.unscaledDeltaTime; // Usando Time.unscaledDeltaTime para contar o tempo independentemente do Time.timeScale
 
-            if (unpauseTimer >= unpauseDelay)
+            if (unpauseTimer <= 0)
             {
 
                 Time.timeScale = 1;
                 isPaused = false;
                 isUnpauseDelayed = false;
 
-                unpauseDelay = 3f;
+                unpauseTimer = 3f;
 
 
                 unpauseCount.gameObject.SetActive(false);
@@ -110,7 +110,7 @@ public class GameControllerJC : MonoBehaviour
         {
             Time.timeScale = 0;
             isPaused = true;
-
+            unpauseTimer = 3;
 
 
             if (isOptionsMenuActive)
@@ -137,7 +137,7 @@ public class GameControllerJC : MonoBehaviour
         else // Se já está pausado, iniciar o atraso para despausar
         {
             isUnpauseDelayed = true;
-            unpauseTimer = 0f; // Reseta o contador ao pressionar 'P'
+            unpauseTimer = 3f; // Reseta o contador ao pressionar 'P'
 
             unpauseCount.gameObject.SetActive(true);
         }
