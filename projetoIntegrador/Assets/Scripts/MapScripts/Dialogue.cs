@@ -11,6 +11,7 @@ using UnityEngine.Networking.PlayerConnection;
 public class Dialogue : MonoBehaviour
 {
     public GameObject player;
+    public GameObject space;
     public Canvas canvas;
     public List<Sprite> images; 
     public List<string> texts; 
@@ -22,8 +23,8 @@ public class Dialogue : MonoBehaviour
     public Image panel;
     public Attractions attractions;
     private int cont = 0;
-    private float textSpeed = 0.1f;
-
+    private float textSpeed = 0.04f;
+    private bool withBtn = false;
     private float textTimer = 0.0f; 
 
     void Awake()
@@ -44,52 +45,57 @@ public class Dialogue : MonoBehaviour
             player.GetComponent<VanMoviment>().enabled = false;
         }
 
-        GetComponent<Image>().sprite = images[currentIndex]; //Atualiza a imagem atual
-        if (currentIndex >= images.Count - 1 && button != null)
+        if (!withBtn)
         {
-            button.SetActive(true);
-        }
-        if (textComponent.text == texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
-        {
-            currentCharIndex = 0;
-            currentIndex++;
-            textTimer = 0.0f; //Reinicia o temporizador
-            completedText = false;
-            NextDialogue();
-            if (currentIndex >= images.Count)
+            GetComponent<Image>().sprite = images[currentIndex]; //Atualiza a imagem atual
+
+            if (textComponent.text == texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
             {
-                //Configura a imagem, o but�o e o texto como invis�veis
-                canvas.gameObject.SetActive(false);
                 currentCharIndex = 0;
-                currentIndex = 0;
-                cont = 0;
+                currentIndex++;
+                textTimer = 0.0f; //Reinicia o temporizador
                 completedText = false;
-                player.GetComponent<VanMoviment>().enabled = true;
-                panel.gameObject.SetActive(false);
-                if (button != null)
+                NextDialogue();
+
+                if (currentIndex >= images.Count && button != null)
                 {
-                    button.SetActive(false);
+                    textComponent.text = " ";
+                    button.SetActive(true);
+                    space.SetActive(false);
+                    withBtn = true;
+                }
+                else if (currentIndex >= images.Count)
+                {
+                    CloseDialogue();
+                }
+            }
+            else if (textComponent.text != texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
+            {
+                completedText = true;
+                textComponent.text = texts[currentIndex];
+            }
+
+            if (texts.Count != 0 && !completedText && !withBtn)
+            {
+                //Se ainda houver caracteres do texto para serem exibidos
+                if (currentCharIndex < texts[currentIndex].Length)
+                {
+                    textTimer += Time.deltaTime; //Incrementa o temporizador do texto
+
+                    if (textTimer >= textSpeed) //Verifica se o atraso foi alcan�ado
+                    {
+                        textTimer = 0.0f; //Reinicia o temporizador
+                        currentCharIndex++;    //Incrementa o �ndice do caractere atual
+                        textComponent.text = texts[currentIndex].Substring(0, currentCharIndex); //Exibe o texto a partir do primeiro caractere at� o caractere atual
+                    }
                 }
             }
         }
-        else if (textComponent.text != texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
+        else
         {
-            completedText = true;
-            textComponent.text = texts[currentIndex];
-        }
-        if (texts.Count != 0 && !completedText)
-        {
-            //Se ainda houver caracteres do texto para serem exibidos
-            if (currentCharIndex < texts[currentIndex].Length)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                textTimer += Time.deltaTime; //Incrementa o temporizador do texto
-
-                if (textTimer >= textSpeed) //Verifica se o atraso foi alcan�ado
-                {
-                    textTimer = 0.0f; //Reinicia o temporizador
-                    currentCharIndex++;    //Incrementa o �ndice do caractere atual
-                    textComponent.text = texts[currentIndex].Substring(0, currentCharIndex); //Exibe o texto a partir do primeiro caractere at� o caractere atual
-                }
+                CloseDialogue();
             }
         }
     }
@@ -133,7 +139,9 @@ public class Dialogue : MonoBehaviour
         panel.gameObject.SetActive(false);
         if (button != null)
         {
+            space.SetActive(true);
             button.SetActive(false);
+            withBtn = false;
         }
     }
     public enum Attractions

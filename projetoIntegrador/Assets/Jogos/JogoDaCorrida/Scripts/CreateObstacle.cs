@@ -17,7 +17,7 @@ public class CreateObstacle : MonoBehaviour
     {
         while (!gameControllerJCorrida.gameOver)
         {
-            time = Random.Range(3, 5f);
+            time = Random.Range(1f, 2f);
             yield return new WaitForSeconds(time);
 
             GameObject newObstacle = Instantiate(prefabObstacle, transform.position, Quaternion.identity);
