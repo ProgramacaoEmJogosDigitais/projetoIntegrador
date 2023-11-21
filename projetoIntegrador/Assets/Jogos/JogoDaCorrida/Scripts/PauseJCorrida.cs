@@ -13,11 +13,12 @@ public class PauseJCorrida : MonoBehaviour
     public Button bt_pause;
     public float time;
     public TMP_Text txt_Countdown;
-    public bool pauseWithP = false;
+    public bool pauseWithP;
 
     private void Awake()
     {
         pressButtonNoPause = false;
+        pauseWithP = true;
     }
     private void Start()
     {
