@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+
+
 
 public class CreateObstacle : MonoBehaviour
 {
-    public GameObject prefabObstacle;
+    public List<GameObject> prefabObstacle;
     public float time;
     private GameControllerJCorrida gameControllerJCorrida;
 
@@ -17,10 +20,10 @@ public class CreateObstacle : MonoBehaviour
     {
         while (!gameControllerJCorrida.gameOver)
         {
+            int obstacleIndex = UnityEngine.Random.Range(0, prefabObstacle.Count);
             time = Random.Range(1f, 2f);
             yield return new WaitForSeconds(time);
-
-            GameObject newObstacle = Instantiate(prefabObstacle, transform.position, Quaternion.identity);
+            GameObject newObstacle = Instantiate(prefabObstacle[obstacleIndex], transform.position, Quaternion.identity);
             newObstacle.transform.position = new Vector2(transform.position.x, transform.position.y);
         }
     }
