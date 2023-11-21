@@ -19,7 +19,7 @@ public class Dialogue : MonoBehaviour
     public int currentCharIndex = 0;
     public int currentIndex = 0; 
     public GameObject button;
-    public bool completedText = false;
+    public bool completedText = false, startLeft = false;
     public Image panel;
     public Attractions attractions;
     private int cont = 0;
@@ -33,8 +33,17 @@ public class Dialogue : MonoBehaviour
     }
     void Start()
     {
-        GetComponent<Animator>().SetBool("dialogueRight", true);
-        GetComponent<Animator>().SetBool("dialogueLeft", false);
+        if (startLeft)
+        {
+            GetComponent<Animator>().SetBool("dialogueRight", false);
+            GetComponent<Animator>().SetBool("dialogueLeft", true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("dialogueRight", true);
+            GetComponent<Animator>().SetBool("dialogueLeft", false);
+        }
+
     }
 
     void Update()
