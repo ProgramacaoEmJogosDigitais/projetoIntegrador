@@ -123,7 +123,7 @@ public class GameControllerQuiz : MonoBehaviour
     }
     void GameOver()
     {
-        if(erros == 1)
+        if(erros == 3)
         {  
             over = true;
             StartCoroutine(Espera2());
