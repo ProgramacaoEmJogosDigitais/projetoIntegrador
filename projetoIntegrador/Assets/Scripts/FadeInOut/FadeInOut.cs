@@ -9,9 +9,12 @@ public class FadeInOut : MonoBehaviour
 {    
     public Image componentImage;
     public Canvas canvas;
+  
     private void Start()
     {
         StartCoroutine(FadeSystem());
+       
+       
     }
 
     public IEnumerator FadeSystem()

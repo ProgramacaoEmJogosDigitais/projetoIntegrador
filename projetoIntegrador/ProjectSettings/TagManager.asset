@@ -7,6 +7,9 @@ TagManager:
   - Fish
   - Menu
   - Monument
+  - Ground
+  - DestroyObstacle
+  - Obstacle
   - PlayerLixo
   - lixo
   layers:
