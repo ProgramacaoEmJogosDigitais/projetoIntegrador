@@ -25,7 +25,9 @@ public class Dialogue : MonoBehaviour
     private int cont = 0;
     private float textSpeed = 0.04f;
     private bool withBtn = false;
-    private float textTimer = 0.0f; 
+    private float textTimer = 0.0f;
+
+    private Bubble currentBubble;
 
     void Awake()
     {
@@ -35,13 +37,11 @@ public class Dialogue : MonoBehaviour
     {
         if (startLeft)
         {
-            GetComponent<Animator>().SetBool("dialogueRight", false);
-            GetComponent<Animator>().SetBool("dialogueLeft", true);
+            LeftBubble();
         }
         else
         {
-            GetComponent<Animator>().SetBool("dialogueRight", true);
-            GetComponent<Animator>().SetBool("dialogueLeft", false);
+            RightBubble();
         }
 
     }
@@ -108,32 +108,43 @@ public class Dialogue : MonoBehaviour
             }
         }
     }
+
+    private void RightBubble()
+    {
+        currentBubble = Bubble.Right;
+        GetComponent<Animator>().SetBool("dialogueRight", true);
+        GetComponent<Animator>().SetBool("dialogueLeft", false);
+    }
+
+    public void LeftBubble()
+    {
+        currentBubble = Bubble.Left;
+        GetComponent<Animator>().SetBool("dialogueRight", false);
+        GetComponent<Animator>().SetBool("dialogueLeft", true);
+    }
+
     public void NextDialogue()
     {
-        if (currentIndex % 2 == 0)
+        if (currentBubble == Bubble.Left)
         {
             if (attractions == Attractions.Museu && currentIndex == 4)
             {
-                GetComponent<Animator>().SetBool("dialogueLeft", true);
-                GetComponent<Animator>().SetBool("dialogueRight", false);
+                LeftBubble();
             }
             else 
             {
-                GetComponent<Animator>().SetBool("dialogueRight", true);
-                GetComponent<Animator>().SetBool("dialogueLeft", false);
+                RightBubble();
             }
         }
         else
         {
             if (attractions == Attractions.Aquario && currentIndex == 9)
             {
-                GetComponent<Animator>().SetBool("dialogueRight", true);
-                GetComponent<Animator>().SetBool("dialogueLeft", false);
+                RightBubble();
             }
             else
             {
-                GetComponent<Animator>().SetBool("dialogueLeft", true);
-                GetComponent<Animator>().SetBool("dialogueRight", false);
+                LeftBubble();
             }
         }
     }
@@ -159,4 +170,6 @@ public class Dialogue : MonoBehaviour
         Museu,
         Default
     }
+
+    private enum Bubble { Left, Right }
 }
