@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
-using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
