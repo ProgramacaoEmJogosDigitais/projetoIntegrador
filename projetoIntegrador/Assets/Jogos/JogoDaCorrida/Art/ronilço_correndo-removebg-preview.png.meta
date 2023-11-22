@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9b2e097f83e1506448ecafc46c4e0453
+guid: 40d0dabcb4022b34f8403cb94599c011
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -102,7 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -114,7 +114,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -127,7 +127,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "ronil\xE7o_correndo-removebg-preview_1"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 113
+        width: 112
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc33b80be5445cf4a8186ee8bb3ff14b
+      internalID: 1520059728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ronil\xE7o_correndo-removebg-preview_2"
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 94
+        width: 89
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7119189a0496546afa81f1a518f2f9
+      internalID: 2081354638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ronil\xE7o_correndo-removebg-preview_3"
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 108
+        width: 144
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 833ad5c9d7a338943a3d8bf97cd0b8da
+      internalID: 1626306205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +201,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "ronil\xE7o_correndo-removebg-preview_1": 1520059728
+      "ronil\xE7o_correndo-removebg-preview_2": 2081354638
+      "ronil\xE7o_correndo-removebg-preview_0": -1392128812
+      "ronil\xE7o_correndo-removebg-preview_3": 1626306205
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

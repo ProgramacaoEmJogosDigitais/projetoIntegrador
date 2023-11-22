@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseJCorrida : MonoBehaviour
@@ -33,7 +34,7 @@ public class PauseJCorrida : MonoBehaviour
             txt_Countdown.text = time.ToString("F0");
             if (time <= 0.0f)
             {
-                pressButtonNoPause=false;
+                pressButtonNoPause = false;
                 txt_Countdown.gameObject.SetActive(false);
                 gamePaused = false;
                 Time.timeScale = 1f;
@@ -66,7 +67,7 @@ public class PauseJCorrida : MonoBehaviour
         bt_pause.gameObject.SetActive(false);
 
     }
-    
+
     public void NoPause() //tira do pause
     {
         panelPause.gameObject.SetActive(false);
@@ -74,7 +75,11 @@ public class PauseJCorrida : MonoBehaviour
         txt_Countdown.gameObject.SetActive(true);
         pressButtonNoPause = true;
 
-        
+
     }
-    
+    public void GoMap(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+
+    }
 }
