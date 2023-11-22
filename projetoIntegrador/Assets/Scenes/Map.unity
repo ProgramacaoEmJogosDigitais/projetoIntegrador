@@ -8869,11 +8869,11 @@ PrefabInstance:
       objectReference: {fileID: 1798757267}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[0]
@@ -8926,6 +8926,12 @@ PrefabInstance:
         verdadeiramente especial para todos."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[8]
+      value: "Me disseram que est\xE1 rolando um jogo de corrida de obst\xE1culos
+        aqui pelo Parque das Na\xE7\xF5es Ind\xEDgenas. Vamos nessa? Iremos correr,
+        saltar troncos e desviar de objetos. Vai ser uma aventura!  "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: 243d632fb11e9694a99116a03fbf2cca, type: 3}
@@ -8960,7 +8966,7 @@ PrefabInstance:
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[8]
       value: 
-      objectReference: {fileID: 21300000, guid: 7b832ac8d1bbe8b4ab2a124ee500cd62, type: 3}
+      objectReference: {fileID: 21300000, guid: 243d632fb11e9694a99116a03fbf2cca, type: 3}
     - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: panel
       value: 
@@ -9659,9 +9665,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[3]
-      value: "Exatamente! E o museu possui um rico acervo que conta com v\xE1rias
-        cole\xE7\xF5es, como cole\xE7\xE3o de: Minerais, F\xF3sseis, Insetos e objetos
-        da Pr\xE9-hist\xF3ria."
+      value: "Exatamente! E o museu possui um rico acervo que inclui v\xE1rias cole\xE7\xF5es,
+        tais como Minerais, F\xF3sseis, Insetos e objetos da Pr\xE9-hist\xF3ria."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[4]
