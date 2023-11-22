@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private string menuSceneName;
     [SerializeField] private GameObject panelMainMenu;
     [SerializeField] private GameObject panelOptions;
+    [SerializeField] private GameObject panelBackground;
     //public FadeInOut fadeInOut;
     public Image componentImage;
 
@@ -19,14 +20,20 @@ public class MenuManager : MonoBehaviour
 
     public void OpenOptions()
     {
-        panelMainMenu.SetActive(false);
         panelOptions.SetActive(true);
+        if (panelMainMenu != null)
+            panelMainMenu.SetActive(false);
+        if (panelBackground != null)
+            panelBackground.SetActive(true);
     }
 
     public void CloseOptions()
     {
         panelOptions.SetActive(false);
-        panelMainMenu.SetActive(true);
+        if (panelMainMenu != null)
+            panelMainMenu.SetActive(true);
+        if (panelBackground != null)
+            panelBackground.SetActive(false);
     }
     public void QuitGame()
     {
@@ -43,7 +50,7 @@ public class MenuManager : MonoBehaviour
         Color colorImage = componentImage.GetComponent<Image>().color;
         colorImage.a = 0.0f;
         componentImage.GetComponent<Image>().color = colorImage;
-        componentImage.gameObject.SetActive(true) ;
+        componentImage.gameObject.SetActive(true);
         componentImage.GetComponent<Animator>().SetTrigger("In");
         yield return new WaitForSeconds(3);
     }

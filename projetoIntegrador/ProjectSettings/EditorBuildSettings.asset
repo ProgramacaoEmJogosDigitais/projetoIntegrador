@@ -15,9 +15,12 @@ EditorBuildSettings:
     path: Assets/Jogos/JogoDaColeta/Scenes/JogoDaColeta.unity
     guid: 06eca9d34f295944aa0eb4fa026984fe
   - enabled: 1
-    path: Assets/Jogos/JogoDaColeta/Scenes/GameOver.unity
-    guid: 5c3cb91ad6bf82a44a7bb4401f801444
+    path: Assets/Jogos/JogoDaCorrida/Scenes/JogoDaCorrida.unity
+    guid: 0ffdc64017f102142ba5cb8a1eda159b
   - enabled: 1
     path: "Assets/Jogos/JogoDoQuebraCabe\xE7a/Sene/JogoQuebraCabe\xE7a.unity"
-    guid: 445912cc97d56a741a203a99b3e5b65c
+    guid: a0751e35db83ad64da502e97edf2530e
+  - enabled: 1
+    path: Assets/Jogos/JogoDoQuiz/Scenes/Quiz.unity
+    guid: 21a54b5481f008d4e9c85d4d1884d52c
   m_configObjects: {}
