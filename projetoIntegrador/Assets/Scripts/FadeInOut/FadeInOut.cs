@@ -12,9 +12,10 @@ public class FadeInOut : MonoBehaviour
   
     private void Start()
     {
+        Time.timeScale = 1;
         StartCoroutine(FadeSystem());
        
-       
+     
     }
 
     public IEnumerator FadeSystem()

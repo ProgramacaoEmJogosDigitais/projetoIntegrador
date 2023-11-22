@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5214095014064069162}
   - component: {fileID: 5876540148784684675}
   - component: {fileID: 207290089111900346}
-  - component: {fileID: 7995170647241829690}
+  - component: {fileID: 3728431032399417263}
   m_Layer: 0
   m_Name: Square
   m_TagString: Obstacle
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325129658531716637}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5387, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: e16ad46229323aa45bff521234e134e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 071e8893f917d2f4893bd61d31f038a7, type: 3}
   m_Color: {r: 1, g: 0.898395, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.29, y: 1.9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -113,20 +113,20 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.028106213, y: 0.21548069}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.89, y: 3.43}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2.29, y: 1.9}
+    newSize: {x: 2.29, y: 1.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.124247, y: 1.4309614}
   m_EdgeRadius: 0
---- !u!60 &7995170647241829690
+--- !u!60 &3728431032399417263
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,60 +143,34 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.89, y: 3.43}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2.29, y: 1.9}
+    newSize: {x: 2.29, y: 1.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.435, y: -1.5749999}
-      - {x: 0.49499997, y: -1.425}
-      - {x: 0.515, y: -1.355}
-      - {x: 0.555, y: -0.615}
-      - {x: 0.625, y: -0.16499999}
-      - {x: 0.645, y: 0.035}
-      - {x: 0.715, y: 0.085}
-      - {x: 0.835, y: 0.16499999}
-      - {x: 0.945, y: 0.255}
-      - {x: 0.945, y: 0.45499998}
-      - {x: 0.885, y: 0.515}
-      - {x: 0.79499996, y: 0.565}
-      - {x: 0.66499996, y: 0.555}
-      - {x: 0.645, y: 0.66499996}
-      - {x: 0.675, y: 0.79499996}
-      - {x: 0.705, y: 0.97499996}
-      - {x: 0.705, y: 1.185}
-      - {x: 0.685, y: 1.235}
-      - {x: 0.60499996, y: 1.405}
-      - {x: 0.505, y: 1.495}
-      - {x: 0.325, y: 1.605}
-      - {x: 0.145, y: 1.685}
-      - {x: 0.024999999, y: 1.7149999}
-      - {x: -0.145, y: 1.7149999}
-      - {x: -0.275, y: 1.6949999}
-      - {x: -0.525, y: 1.555}
-      - {x: -0.655, y: 1.4549999}
-      - {x: -0.675, y: 1.145}
-      - {x: -0.675, y: 0.675}
-      - {x: -0.695, y: 0.645}
-      - {x: -0.745, y: 0.505}
-      - {x: -0.775, y: 0.415}
-      - {x: -0.825, y: 0.114999995}
-      - {x: -0.865, y: 0.005}
-      - {x: -0.91499996, y: -0.235}
-      - {x: -0.91499996, y: -0.635}
-      - {x: -0.935, y: -0.78499997}
-      - {x: -0.945, y: -0.84499997}
-      - {x: -0.945, y: -1.025}
-      - {x: -0.905, y: -1.2149999}
-      - {x: -0.805, y: -1.4449999}
-      - {x: -0.59499997, y: -1.635}
-      - {x: -0.525, y: -1.665}
-      - {x: -0.345, y: -1.7149999}
-      - {x: 0.145, y: -1.7149999}
-      - {x: 0.255, y: -1.6949999}
+    - - {x: 1.1307831, y: -0.21324444}
+      - {x: 1.0330467, y: -0.21254858}
+      - {x: 1.0115492, y: 0.78757834}
+      - {x: 1.0156885, y: 0.91620505}
+      - {x: 0.83948356, y: 0.91620505}
+      - {x: 0.76775825, y: 0.88206583}
+      - {x: -0.1581025, y: 0.816205}
+      - {x: -0.8613203, y: 0.9248232}
+      - {x: -1.0190331, y: 0.9356133}
+      - {x: -1.0299062, y: -0.21247481}
+      - {x: -1.1236315, y: -0.21757197}
+      - {x: -1.145, y: -0.95}
+      - {x: -0.885, y: -0.95}
+      - {x: -0.885, y: -0.47}
+      - {x: 0.875, y: -0.95}
+      - {x: 1.145, y: -0.95}
+    - - {x: -0.79499996, y: 0.02}
+      - {x: 0.805, y: 0.02}
+      - {x: 0.805, y: -0.17}
+      - {x: -0.79499996, y: -0.17}
 --- !u!1 &2343247496503373061
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +182,7 @@ GameObject:
   - component: {fileID: 3762453074387941430}
   - component: {fileID: 6094662462378758755}
   m_Layer: 0
-  m_Name: Obstacle3JCorrida
+  m_Name: Obstacle1_Chair_JCorrida
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
