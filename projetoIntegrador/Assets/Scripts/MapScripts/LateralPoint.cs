@@ -122,6 +122,7 @@ public class LateralPoint : MonoBehaviour
             wheels[i].speedRotation = 0;
         }
         player.GetComponent<VanMoviment>().isMoving = false;
+        yield return new WaitForSeconds(0.1f);
         lateralPointInitial = true;
     }
 

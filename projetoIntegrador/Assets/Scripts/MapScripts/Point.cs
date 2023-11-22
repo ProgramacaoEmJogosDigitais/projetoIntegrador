@@ -17,7 +17,10 @@ public class Point : MonoBehaviour
     public bool boolRight = false;
 
     public GameObject player;
-    public float transitionDuration = 0.5f;
+    public float transitionDurationUp = 0.5f;
+    public float transitionDurationDown = 0.5f;
+    public float transitionDurationLeft = 0.5f;
+    public float transitionDurationRight = 0.5f;
 
     private AnimationWhell[] wheels;
     private VanMoviment vanMoviment;
@@ -52,33 +55,33 @@ public class Point : MonoBehaviour
                 player.GetComponent<SpriteRenderer>().sprite = player.GetComponent<VanMoviment>().spriteVanUpAndDown;
                 player.GetComponent<VanMoviment>().wheelRight.SetActive(false);
                 player.GetComponent<VanMoviment>().wheelLeft.SetActive(false);
-                MoveTo(pointUp, 0);
+                MoveTo(pointUp, 0, transitionDurationUp);
             }
             else if (vanMoviment.moveVector.x == 0 && vanMoviment.moveVector.y < 0 && boolDown)
             {
                 player.GetComponent<SpriteRenderer>().sprite = player.GetComponent<VanMoviment>().spriteVanUpAndDown;
                 player.GetComponent<VanMoviment>().wheelRight.SetActive(false);
                 player.GetComponent<VanMoviment>().wheelLeft.SetActive(false);
-                MoveTo(pointDown,0);
+                MoveTo(pointDown,0, transitionDurationDown);
             }
             else if (vanMoviment.moveVector.x < 0 && vanMoviment.moveVector.y == 0 && boolLeft)
             {
                 player.GetComponent<SpriteRenderer>().sprite = player.GetComponent<VanMoviment>().spriteVanLeft;
                 player.GetComponent<VanMoviment>().wheelRight.SetActive(false);
                 player.GetComponent<VanMoviment>().wheelLeft.SetActive(true);
-                MoveTo(pointLeft, 80);
+                MoveTo(pointLeft, 80, transitionDurationLeft);
             }
             else if (vanMoviment.moveVector.x > 0 && vanMoviment.moveVector.y == 0 && boolRight)
             {
                 player.GetComponent<SpriteRenderer>().sprite = player.GetComponent<VanMoviment>().spriteVanRight;
                 player.GetComponent<VanMoviment>().wheelRight.SetActive(true);
                 player.GetComponent<VanMoviment>().wheelLeft.SetActive(false);
-                MoveTo(pointRight, -80);
+                MoveTo(pointRight, -80, transitionDurationRight);
             }
         }
     }
 
-    void MoveTo(Transform target, int value)
+    void MoveTo(Transform target, int value, float transitionDuration)
     {
         if (target != null)
         {
@@ -93,11 +96,11 @@ public class Point : MonoBehaviour
             // Rotaciona a van/player ligeiramente na direção do movimento
             player.transform.rotation = Quaternion.Euler(0, 0, targetAngle);
 
-            StartCoroutine(TransitionPlayer(targetPosition, value));
+            StartCoroutine(TransitionPlayer(targetPosition, value, transitionDuration));
         }
     }
 
-    IEnumerator TransitionPlayer(Vector3 targetPosition, int value)
+    IEnumerator TransitionPlayer(Vector3 targetPosition, int value, float transitionDuration)
     {
         wheels = FindObjectsOfType<AnimationWhell>();
 
