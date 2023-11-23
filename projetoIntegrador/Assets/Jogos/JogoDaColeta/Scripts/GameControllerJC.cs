@@ -134,12 +134,14 @@ public class GameControllerJC : MonoBehaviour
         {
             PauseGame();
         }
-        else // Se já está pausado, iniciar o atraso para despausar
+        else // Se já está pausado
         {
-            isUnpauseDelayed = true;
-            unpauseTimer = 3f; // Reseta o contador ao pressionar 'P'
-
-            unpauseCount.gameObject.SetActive(true);
+            if (!isUnpauseDelayed)
+            {
+                isUnpauseDelayed = true;
+                unpauseTimer = 3f; // Reseta o contador ao pressionar 'P'
+                unpauseCount.gameObject.SetActive(true);
+            }
         }
     }
 
