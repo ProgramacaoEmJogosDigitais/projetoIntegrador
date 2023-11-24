@@ -1067,7 +1067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ddddbe1c854e84b8d3b6988c4ac8da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speedPoints: 6
   jumpForce: 800
   jump: 0
   isGrounded: 1
@@ -1297,6 +1297,7 @@ GameObject:
   - component: {fileID: 349419358}
   - component: {fileID: 349419360}
   - component: {fileID: 349419361}
+  - component: {fileID: 349419362}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1367,6 +1368,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelInstructions: {fileID: 53537175}
   panelPause: {fileID: 1572889033}
+--- !u!114 &349419362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349419357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 788adf9740545d84399e851e2ae25101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inclementoDePontos: 100
+  metaParaInclemento: 100
+  incrementoSpeeadPoints: 0.1
+  "\xE9Maior": 0
 --- !u!1 &456617019
 GameObject:
   m_ObjectHideFlags: 0
@@ -8704,7 +8721,7 @@ GameObject:
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2085048647
 Transform:
   m_ObjectHideFlags: 0
