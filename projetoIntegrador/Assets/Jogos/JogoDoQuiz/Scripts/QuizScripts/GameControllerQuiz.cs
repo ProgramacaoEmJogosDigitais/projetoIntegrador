@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,15 +28,15 @@ public class GameControllerQuiz : MonoBehaviour
     public string[] alternativaD;
     [TextArea]
     public string[] corretas;
-    [TextArea]
 
     private int idPergunta;
 
     private float acertos;
     private float questoes;
-    private float erros ;
+    private float erros;
     private bool verificacao_acerto;
     private bool verificacao_pergunta = true;
+
     void Start()
     {
         over = false;
@@ -45,7 +44,6 @@ public class GameControllerQuiz : MonoBehaviour
         idPergunta = 0;
         questoes = perguntas.Length;
 
-        print(questoes);
         pergunta.text = perguntas[idPergunta];
         respostaA.text = alternativaA[idPergunta];
         respostaB.text = alternativaB[idPergunta];
@@ -54,29 +52,30 @@ public class GameControllerQuiz : MonoBehaviour
         infoRespostas.text = "Pergunta: " + (idPergunta + 1).ToString() + "/" + questoes.ToString();
     }
 
-    // Update is called once per frame
     void Update()
     {
         GameOver();
     }
+
     public void resposta(string alternativa)
     {
         if (verificacao_pergunta)
         {
+            StartCoroutine(Espera());
+            verificacao_pergunta = false;
+
             if (alternativa == "A")
             {
                 if (alternativaA[idPergunta] == corretas[idPergunta])
                 {
                     StartCoroutine(PiscaBotao(Color.white, Color.green, botao[0]));
                     acertos++;
-
                 }
                 else
                 {
                     StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
                     StartCoroutine(PiscaBotao(Color.white, Color.red, botao[0]));
                     erros++;
-                    
                 }
             }
             else if (alternativa == "B")
@@ -121,44 +120,37 @@ public class GameControllerQuiz : MonoBehaviour
                     erros++;
                 }
             }
-
         }
-        StartCoroutine(Espera());
-        verificacao_pergunta = false;
     }
+
     void GameOver()
     {
-        if(erros == 3)
-        {  
+        if (erros == 3)
+        {
             over = true;
             StartCoroutine(Espera2());
             pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/" + questoes.ToString();
         }
     }
+
     void ProximaPergunta()
     {
-        verificacao_acerto = true;
-
-      if (verificacao_acerto) 
-      { 
         if (over)
         {
             GameOver();
-
         }
         else if (!over)
         {
             idPergunta += 1;
             if (idPergunta <= (questoes - 1))
             {
-
-
                 pergunta.text = perguntas[idPergunta];
                 respostaA.text = alternativaA[idPergunta];
                 respostaB.text = alternativaB[idPergunta];
                 respostaC.text = alternativaC[idPergunta];
                 respostaD.text = alternativaD[idPergunta];
                 infoRespostas.text = "Pergunta: " + (idPergunta + 1).ToString() + "/" + questoes.ToString();
+                verificacao_pergunta = true;
             }
             else
             {
@@ -166,9 +158,8 @@ public class GameControllerQuiz : MonoBehaviour
                 pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/" + questoes.ToString();
             }
         }
-      }
     }
-   
+
     private IEnumerator PiscaBotao(Color corOriginal, Color corPisca, Image botao)
     {
         botao.color = corPisca;
@@ -176,25 +167,21 @@ public class GameControllerQuiz : MonoBehaviour
         botao.color = corOriginal;
     }
 
-
     private IEnumerator Espera()
     {
-
         yield return new WaitForSeconds(1);
         ProximaPergunta();
-
-
     }
+
     private IEnumerator Espera2()
     {
-
         yield return new WaitForSeconds(1);
         gameOverQuiz.SetActive(true);
-
     }
+
     public int AchaCerta()
     {
-       if (corretas[idPergunta]== alternativaA[idPergunta])
+        if (corretas[idPergunta] == alternativaA[idPergunta])
         {
             return 0;
         }
@@ -211,11 +198,5 @@ public class GameControllerQuiz : MonoBehaviour
             return 3;
         }
         return 4;
-
-
-
     }
-
-
 }
-   
