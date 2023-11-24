@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MapManager : MonoBehaviour
 {
-    public Canvas scrollViewInstructions;
+    public GameObject scrollViewInstructions;
     public Image panel;
     public GameObject player;
     void Start()
@@ -31,13 +31,13 @@ public class MapManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         panel.gameObject.SetActive(true);
         player.GetComponent<BoxCollider2D>().enabled = false;
-        scrollViewInstructions.gameObject.SetActive(true);
+        scrollViewInstructions.SetActive(true);
         PlayerPrefs.SetInt("InstructionsShown", 1); // Instruções exibidas.
     }
 
     public void GoMap()
     {
-        scrollViewInstructions.gameObject.SetActive(false);
+        scrollViewInstructions.SetActive(false);
         player.GetComponent<BoxCollider2D>().enabled = true;
         panel.gameObject.SetActive(false);
     }
