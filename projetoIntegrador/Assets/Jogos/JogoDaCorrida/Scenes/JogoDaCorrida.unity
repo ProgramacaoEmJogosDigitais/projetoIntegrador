@@ -1354,6 +1354,7 @@ MonoBehaviour:
   time: 3
   txt_Countdown: {fileID: 1281844601}
   pauseWithP: 0
+  contando: 0
 --- !u!114 &349419361
 MonoBehaviour:
   m_ObjectHideFlags: 0
