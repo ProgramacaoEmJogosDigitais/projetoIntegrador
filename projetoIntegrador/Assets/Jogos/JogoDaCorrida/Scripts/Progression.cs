@@ -7,7 +7,6 @@ public class Progression : MonoBehaviour
 {
     private MovimentPlayer movimentPlayerScript;
     public float inclementoDePontos;
-    //public float aumentaOProgresso;
     public float metaParaInclemento;
     public float incrementoSpeeadPoints;
     public bool ÈMaior;
@@ -31,9 +30,6 @@ public class Progression : MonoBehaviour
         {
             metaParaInclemento = +inclementoDePontos;
             movimentPlayerScript.speedPoints = movimentPlayerScript.speedPoints * incrementoSpeeadPoints;
-        Debug.Log("metaParaInclemento:" + metaParaInclemento);
-        Debug.Log("inclementoDePontos:" + inclementoDePontos);
-        Debug.Log("movimentPlayerScript.speedPoints:" + movimentPlayerScript.speedPoints);
             ÈMaior = false;
         }
     }
