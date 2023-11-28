@@ -10392,7 +10392,11 @@ MonoBehaviour:
   wheelRight: {fileID: 803948807}
   posInitial: {fileID: 1685598606}
   isMoving: 0
-  arrowPrefab: {fileID: 3381990964555348432, guid: e9abf0dfe860e404e8061be246174fee, type: 3}
+  arrowPrefabs:
+  - {fileID: 7801281396329850999, guid: 66bd076c0107b704ea40f3f78f781bcb, type: 3}
+  - {fileID: 8700054749853543762, guid: bc44181df6cb3fa4eb20f32f9ddf0647, type: 3}
+  - {fileID: 1508961924888050309, guid: f031215f15c9d8843bfd02fb63a97d81, type: 3}
+  - {fileID: 2377017082903424849, guid: 3ca71931db22a504486371a0b0a3cbd8, type: 3}
 --- !u!1 &1285711619
 GameObject:
   m_ObjectHideFlags: 0
