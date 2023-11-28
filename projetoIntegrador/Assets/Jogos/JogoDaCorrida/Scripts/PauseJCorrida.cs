@@ -14,11 +14,13 @@ public class PauseJCorrida : MonoBehaviour
     public float time;
     public TMP_Text txt_Countdown;
     public bool pauseWithP;
+    //public bool counting;
 
     private void Awake()
     {
         pressButtonNoPause = false;
         pauseWithP = true;
+        //counting = false;
     }
     private void Start()
     {
@@ -26,7 +28,7 @@ public class PauseJCorrida : MonoBehaviour
         time = 3.0f;
     }
 
-    private void Update()//erro para o botao "p"
+    private void Update()
     {
         if (pressButtonNoPause)
         {
@@ -39,11 +41,19 @@ public class PauseJCorrida : MonoBehaviour
                 gamePaused = false;
                 Time.timeScale = 1f;
                 time = 3.0f;
+                //counting = false;
+                bt_pause.gameObject.SetActive(true);
 
+            }
+            else
+            {
+                Debug.Log(time);
+                //counting = true; //nao pode apertar pause de novo;
+                pressButtonNoPause = true;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.P) && pauseWithP) //se o jogo nao tive pausado
+        if (Input.GetKeyDown(KeyCode.P) && pauseWithP && !pressButtonNoPause) //se o jogo nao tive pausado, ele pode apertar o pause
         {
             Time.timeScale = 0.0f;
             panelPause.gameObject.SetActive(true);
@@ -52,7 +62,7 @@ public class PauseJCorrida : MonoBehaviour
             gamePaused = true;
         }
 
-        else if (Input.GetKeyDown(KeyCode.P) && gamePaused)//se o jogo tiver pausado
+        else if (Input.GetKeyDown(KeyCode.P) && gamePaused)//se o jogo tiver pausado, aperta pra despasuar
         {
             gamePaused = false;
             pauseWithP = true;
@@ -71,7 +81,7 @@ public class PauseJCorrida : MonoBehaviour
     public void NoPause() //tira do pause
     {
         panelPause.gameObject.SetActive(false);
-        bt_pause.gameObject.SetActive(true);
+        //bt_pause.gameObject.SetActive(true);
         txt_Countdown.gameObject.SetActive(true);
         pressButtonNoPause = true;
 
