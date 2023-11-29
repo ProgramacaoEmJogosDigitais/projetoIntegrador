@@ -21,6 +21,8 @@ public class VanMoviment : MonoBehaviour
 
     public List<GameObject> arrowPrefabs = new List<GameObject>();
     private List<GameObject> arrowObjects = new List<GameObject>();
+    GameObject arrowObject;
+
 
     private void Awake()
     {
@@ -55,6 +57,13 @@ public class VanMoviment : MonoBehaviour
 
     void Update()
     {
+        if (arrowObject != null)
+        {
+            Vector3 offset = new Vector3(0f, 2f, 0f);
+            arrowObject.transform.position = gameObject.transform.position + offset;
+        }
+
+
         if (arrowObjects.Count >= arrowPrefabs.Count)
         {
             foreach (GameObject arrowObject in arrowObjects)
@@ -76,7 +85,7 @@ public class VanMoviment : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(15f);
+            yield return new WaitForSeconds(6f);
             SpawnRandomArrow();
             StartCoroutine(DestroyArrowRoutine());
         }
@@ -101,9 +110,9 @@ public class VanMoviment : MonoBehaviour
         {
             int randomIndex = Random.Range(0, arrowPrefabs.Count);
             GameObject selectedArrowPrefab = arrowPrefabs[randomIndex];
-            GameObject arrowObject = Instantiate(selectedArrowPrefab, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+            arrowObject = Instantiate(selectedArrowPrefab, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
 
-            arrowObject.transform.parent = transform;
+            //arrowObject.transform.parent = transform;
 
             arrowObjects.Add(arrowObject);
         }
