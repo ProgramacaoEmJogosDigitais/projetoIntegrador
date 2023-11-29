@@ -8,6 +8,11 @@ public class GameControllerQuiz : MonoBehaviour
     public Image[] botao;
 
     public GameObject gameOverQuiz;
+    public Image coracao;
+    public Image coracao2;
+    public Image coracao3;
+    public Sprite vidaCheia;
+    public Sprite vidaUsada;
     public TMP_Text pergunta;
     public TMP_Text respostaA;
     public TMP_Text respostaB;
@@ -55,6 +60,7 @@ public class GameControllerQuiz : MonoBehaviour
     void Update()
     {
         GameOver();
+        Vida();
     }
 
     public void resposta(string alternativa)
@@ -123,6 +129,37 @@ public class GameControllerQuiz : MonoBehaviour
         }
     }
 
+    void Vida()
+    {
+        if (erros == 0)
+        {
+            coracao.sprite = vidaCheia;
+            coracao2.sprite = vidaCheia;
+            coracao3.sprite = vidaCheia;
+        }
+        else if (erros == 1)
+        {
+
+            coracao.sprite = vidaUsada;
+            coracao2.sprite = vidaCheia;
+            coracao3.sprite = vidaCheia;
+
+        }
+        else if (erros == 2)
+        {
+            coracao.sprite = vidaUsada;
+            coracao2.sprite = vidaUsada;
+            coracao3.sprite = vidaCheia;
+        }
+        else if (erros == 3)
+        {
+            coracao.sprite = vidaUsada;
+            coracao2.sprite = vidaUsada;
+            coracao3.sprite = vidaUsada;
+
+        }
+      
+    }
     void GameOver()
     {
         if (erros == 3)
