@@ -10,7 +10,8 @@ public class GameControllerJC : MonoBehaviour
     public GameObject[] prefabFishs;
     public static int lostObjectsForGameOver = 3;
     public GameObject gameOverObject;
-    public TextMeshProUGUI score_txt;
+    public TextMeshProUGUI Fishscore_txt;
+    public TextMeshProUGUI Trashscore_txt;
     public TextMeshProUGUI missScore_txt;
     public TextMeshProUGUI waveInfoText;
     public TextMeshProUGUI score;
@@ -28,7 +29,6 @@ public class GameControllerJC : MonoBehaviour
 
     private bool isPaused = false;
     private bool isUnpauseDelayed = false;
-    private float unpauseDelay = 0f;
     private float unpauseTimer = 3f;
     private bool isOptionsMenuActive = false;
     public GameObject optionsMenu; // Arraste o prefab do menu de opções para este campo no Inspector
@@ -43,7 +43,8 @@ public class GameControllerJC : MonoBehaviour
         gameOverObject.SetActive(false);
         PlayerColeta.missingObjects = 0;
         StartCoroutine(SpawnObjects());
-        FishsFalling.points = 0;
+        FishsFalling.pointsFish = 0;
+        ObjectsFalling.pointsTrash = 0;
 
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
         /*if (!PlayerPrefs.HasKey("InstructionsShown") || PlayerPrefs.GetInt("InstructionsShown") == 0)
@@ -178,7 +179,8 @@ public class GameControllerJC : MonoBehaviour
     {
         // Texts that appear in the game
         missScore_txt.text = PlayerColeta.missingObjects.ToString();
-        score_txt.text = "X" + FishsFalling.points.ToString();
+        Fishscore_txt.text = "X" + FishsFalling.pointsFish.ToString();
+        Trashscore_txt.text = "X" + ObjectsFalling.pointsTrash.ToString();
     }
 
     public void GameOver()
@@ -186,9 +188,16 @@ public class GameControllerJC : MonoBehaviour
         int resetScore = 0;
         if (PlayerColeta.missingObjects >= 3)
         {
-            score.text = score_txt.text;
+            score.text = Fishscore_txt.text;
             gameOverObject.SetActive(true);
-            score_txt.text = resetScore.ToString();
+            Fishscore_txt.text = resetScore.ToString();
+        }
+
+        if (PlayerColeta.missingObjects >= 3)
+        {
+            score.text = Trashscore_txt.text;
+            gameOverObject.SetActive(true);
+            Trashscore_txt.text = resetScore.ToString();
         }
     }
 

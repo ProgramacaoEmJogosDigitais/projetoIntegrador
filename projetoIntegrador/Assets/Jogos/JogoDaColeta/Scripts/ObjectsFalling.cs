@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObjectsFalling : MonoBehaviour
 {
     public float fallSpeed = 1f;
+    public static int pointsTrash = 0;
 
     //void OnTriggerEnter2D(Collider2D other)
     //{

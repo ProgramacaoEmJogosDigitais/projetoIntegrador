@@ -91,8 +91,8 @@ public class PlayerColeta : MonoBehaviour
             // Destruir o objeto pego
             Destroy(other.gameObject);
 
-            // Aumentar os erros
-            FishsFalling.points++;
+            // Aumentar os pontos
+            ObjectsFalling.pointsTrash++;
         }
 
         if (other.CompareTag("lixo") && !playerTrash)

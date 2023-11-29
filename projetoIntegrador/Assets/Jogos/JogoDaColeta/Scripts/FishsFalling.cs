@@ -5,7 +5,7 @@ using UnityEngine;
 public class FishsFalling : MonoBehaviour
 {
     public float fallSpeed = 1f;
-    public static int points = 0;
+    public static int pointsFish = 0;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,7 +15,7 @@ public class FishsFalling : MonoBehaviour
             Destroy(gameObject);
 
             // Aumentar a pontuação do jogador
-            points ++;
+            pointsFish++;
         }
     }
     void Update()
