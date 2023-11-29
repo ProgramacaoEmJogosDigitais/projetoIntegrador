@@ -20,6 +20,12 @@ public class AlternarObjeto : MonoBehaviour
             ativarObjeto1 = !ativarObjeto1;
             AtivarObjetos();
         }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            ativarObjeto1 = !ativarObjeto1;
+            AtivarObjetos();
+        }
     }
 
     void AtivarObjetos()

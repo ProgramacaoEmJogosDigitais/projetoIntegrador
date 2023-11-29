@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +8,11 @@ public class GameControllerQuiz : MonoBehaviour
     public Image[] botao;
 
     public GameObject gameOverQuiz;
+    public Image coracao;
+    public Image coracao2;
+    public Image coracao3;
+    public Sprite vidaCheia;
+    public Sprite vidaUsada;
     public TMP_Text pergunta;
     public TMP_Text respostaA;
     public TMP_Text respostaB;
@@ -29,13 +33,15 @@ public class GameControllerQuiz : MonoBehaviour
     public string[] alternativaD;
     [TextArea]
     public string[] corretas;
-    [TextArea]
 
     private int idPergunta;
 
     private float acertos;
     private float questoes;
-    private float erros ;
+    private float erros;
+    private bool verificacao_acerto;
+    private bool verificacao_pergunta = true;
+
     void Start()
     {
         over = false;
@@ -43,7 +49,6 @@ public class GameControllerQuiz : MonoBehaviour
         idPergunta = 0;
         questoes = perguntas.Length;
 
-        print(questoes);
         pergunta.text = perguntas[idPergunta];
         respostaA.text = alternativaA[idPergunta];
         respostaB.text = alternativaB[idPergunta];
@@ -52,105 +57,137 @@ public class GameControllerQuiz : MonoBehaviour
         infoRespostas.text = "Pergunta: " + (idPergunta + 1).ToString() + "/" + questoes.ToString();
     }
 
-    // Update is called once per frame
     void Update()
     {
         GameOver();
+        Vida();
     }
+
     public void resposta(string alternativa)
     {
-        if (alternativa == "A")
+        if (verificacao_pergunta)
         {
-            if (alternativaA[idPergunta] == corretas[idPergunta])
-            {
-                StartCoroutine(PiscaBotao(Color.white, Color.green, botao[0]));
-                acertos++;
-            }
-            else
-            {
-                StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
-                StartCoroutine(PiscaBotao(Color.white, Color.red, botao[0]));
-                erros++;
+            StartCoroutine(Espera());
+            verificacao_pergunta = false;
 
+            if (alternativa == "A")
+            {
+                if (alternativaA[idPergunta] == corretas[idPergunta])
+                {
+                    StartCoroutine(PiscaBotao(Color.white, Color.green, botao[0]));
+                    acertos++;
+                }
+                else
+                {
+                    StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
+                    StartCoroutine(PiscaBotao(Color.white, Color.red, botao[0]));
+                    erros++;
+                }
+            }
+            else if (alternativa == "B")
+            {
+                if (alternativaB[idPergunta] == corretas[idPergunta])
+                {
+                    StartCoroutine(PiscaBotao(Color.white, Color.green, botao[1]));
+                    acertos++;
+                }
+                else
+                {
+                    StartCoroutine(PiscaBotao(Color.white, Color.red, botao[1]));
+                    StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
+                    erros++;
+                }
+            }
+            else if (alternativa == "C")
+            {
+                if (alternativaC[idPergunta] == corretas[idPergunta])
+                {
+                    StartCoroutine(PiscaBotao(Color.white, Color.green, botao[2]));
+                    acertos++;
+                }
+                else
+                {
+                    StartCoroutine(PiscaBotao(Color.white, Color.red, botao[2]));
+                    StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
+                    erros++;
+                }
+            }
+            else if (alternativa == "D")
+            {
+                if (alternativaD[idPergunta] == corretas[idPergunta])
+                {
+                    StartCoroutine(PiscaBotao(Color.white, Color.green, botao[3]));
+                    acertos++;
+                }
+                else
+                {
+                    StartCoroutine(PiscaBotao(Color.white, Color.red, botao[3]));
+                    StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
+                    erros++;
+                }
             }
         }
-        else if (alternativa == "B")
-        {
-            if (alternativaB[idPergunta] == corretas[idPergunta])
-            {
-                StartCoroutine(PiscaBotao(Color.white, Color.green, botao[1]));
-                acertos++;
-            }
-            else
-            {
-                StartCoroutine(PiscaBotao(Color.white, Color.red, botao[1]));
-                StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
-                erros++;
-            }
-        }
-        else if (alternativa == "C")
-        {
-            if (alternativaC[idPergunta] == corretas[idPergunta])
-            {
-                StartCoroutine(PiscaBotao(Color.white, Color.green, botao[2]));
-                acertos++;
-            }
-            else
-            {
-                StartCoroutine(PiscaBotao(Color.white, Color.red, botao[2]));
-                StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
-                erros++;
-            }
-        }
-        else if (alternativa == "D")
-        {
-            if (alternativaD[idPergunta] == corretas[idPergunta])
-            {
-                StartCoroutine(PiscaBotao(Color.white, Color.green, botao[3]));
-                acertos++;
-            }
-            else
-            {
-                StartCoroutine(PiscaBotao(Color.white, Color.red, botao[3]));
-                StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
-                erros++;
-            }
-        }
+    }
 
-        StartCoroutine(Espera());
+    void Vida()
+    {
+        if (erros == 0)
+        {
+            coracao.sprite = vidaCheia;
+            coracao2.sprite = vidaCheia;
+            coracao3.sprite = vidaCheia;
+        }
+        else if (erros == 1)
+        {
 
+            coracao.sprite = vidaUsada;
+            coracao2.sprite = vidaCheia;
+            coracao3.sprite = vidaCheia;
 
+        }
+        else if (erros == 2)
+        {
+            coracao.sprite = vidaUsada;
+            coracao2.sprite = vidaUsada;
+            coracao3.sprite = vidaCheia;
+        }
+        else if (erros == 3)
+        {
+            coracao.sprite = vidaUsada;
+            coracao2.sprite = vidaUsada;
+            coracao3.sprite = vidaUsada;
+
+        }
+      
     }
     void GameOver()
     {
-        if(erros == 3)
-        {  
+        if (erros == 3)
+        {
             over = true;
             StartCoroutine(Espera2());
             pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/" + questoes.ToString();
         }
     }
+
     void ProximaPergunta()
     {
-
         if (over)
         {
             GameOver();
-           
         }
-        else if(over == false)
+        else if (!over)
         {
             idPergunta += 1;
             if (idPergunta <= (questoes - 1))
             {
-
-
                 pergunta.text = perguntas[idPergunta];
                 respostaA.text = alternativaA[idPergunta];
                 respostaB.text = alternativaB[idPergunta];
                 respostaC.text = alternativaC[idPergunta];
                 respostaD.text = alternativaD[idPergunta];
                 infoRespostas.text = "Pergunta: " + (idPergunta + 1).ToString() + "/" + questoes.ToString();
+                verificacao_pergunta = true;
             }
             else
             {
@@ -158,9 +195,8 @@ public class GameControllerQuiz : MonoBehaviour
                 pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/" + questoes.ToString();
             }
         }
-
     }
-   
+
     private IEnumerator PiscaBotao(Color corOriginal, Color corPisca, Image botao)
     {
         botao.color = corPisca;
@@ -168,25 +204,21 @@ public class GameControllerQuiz : MonoBehaviour
         botao.color = corOriginal;
     }
 
-
     private IEnumerator Espera()
     {
-
         yield return new WaitForSeconds(1);
         ProximaPergunta();
-
-
     }
+
     private IEnumerator Espera2()
     {
-
         yield return new WaitForSeconds(1);
         gameOverQuiz.SetActive(true);
-
     }
+
     public int AchaCerta()
     {
-       if (corretas[idPergunta]== alternativaA[idPergunta])
+        if (corretas[idPergunta] == alternativaA[idPergunta])
         {
             return 0;
         }
@@ -203,10 +235,5 @@ public class GameControllerQuiz : MonoBehaviour
             return 3;
         }
         return 4;
-
-
-
     }
-
 }
-   
