@@ -14,14 +14,13 @@ public class VanMoviment : MonoBehaviour
 
     public GameObject wheelLeft;
     public GameObject wheelRight;
-
+    public GameObject cameraMain;
     public Transform posInitial;
     public bool isMoving = false;
 
-    
-    private List<GameObject> arrowObjects = new List<GameObject>();
-    private bool canSpawn = true;
+
     public List<GameObject> arrowPrefabs = new List<GameObject>();
+    private List<GameObject> arrowObjects = new List<GameObject>();
 
     private void Awake()
     {
@@ -31,6 +30,7 @@ public class VanMoviment : MonoBehaviour
     private void Start()
     {
         transform.position = posInitial.position;
+        StartCoroutine(CameraAnimator());
         StartCoroutine(SpawnArrowRoutine());
     }
 
@@ -55,9 +55,7 @@ public class VanMoviment : MonoBehaviour
 
     void Update()
     {
-
-
-        if (arrowObjects.Count > 0)
+        if (arrowObjects.Count >= arrowPrefabs.Count)
         {
             foreach (GameObject arrowObject in arrowObjects)
             {
@@ -65,21 +63,22 @@ public class VanMoviment : MonoBehaviour
             }
             arrowObjects.Clear();
         }
-
+    }
+    IEnumerator CameraAnimator()
+    {
+        yield return new WaitForSeconds(3.30f);
+        cameraMain.GetComponent<Animator>().enabled = false;
 
     }
+
 
     IEnumerator SpawnArrowRoutine()
     {
         while (true)
         {
             yield return new WaitForSeconds(15f);
-            if (canSpawn)
-            {
-                SpawnRandomArrow();
-                canSpawn = false;
-                StartCoroutine(DestroyArrowRoutine());
-            }
+            SpawnRandomArrow();
+            StartCoroutine(DestroyArrowRoutine());
         }
     }
 
@@ -94,7 +93,6 @@ public class VanMoviment : MonoBehaviour
             }
             arrowObjects.Clear();
         }
-        canSpawn = true;
     }
 
     private void SpawnRandomArrow()
