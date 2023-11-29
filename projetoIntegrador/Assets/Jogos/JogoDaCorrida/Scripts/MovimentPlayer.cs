@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class MovimentPlayer : MonoBehaviour
 {
-    [SerializeField] private float speed = 6;
+    public float speedPoints = 6;
     [SerializeField] private float jumpForce;
     [SerializeField] private bool jump;
     [SerializeField] private bool isGrounded = true;
@@ -77,7 +77,7 @@ public class MovimentPlayer : MonoBehaviour
     {
         if (!gameController.gameOver)
         {
-            distance += Time.deltaTime * speed;
+            distance += Time.deltaTime * speedPoints;
             UpdateDistanceText();
         }
 
