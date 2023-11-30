@@ -188,15 +188,9 @@ public class GameControllerJC : MonoBehaviour
         int resetScore = 0;
         if (PlayerColeta.missingObjects >= 3)
         {
-            score.text = Fishscore_txt.text;
+            score.text = (FishsFalling.pointsFish + ObjectsFalling.pointsTrash).ToString();
             gameOverObject.SetActive(true);
             Fishscore_txt.text = resetScore.ToString();
-        }
-
-        if (PlayerColeta.missingObjects >= 3)
-        {
-            score.text = Trashscore_txt.text;
-            gameOverObject.SetActive(true);
             Trashscore_txt.text = resetScore.ToString();
         }
     }
