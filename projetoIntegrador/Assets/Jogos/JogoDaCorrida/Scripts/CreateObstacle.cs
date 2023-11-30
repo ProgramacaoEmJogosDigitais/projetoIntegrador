@@ -12,11 +12,17 @@ public class CreateObstacle : MonoBehaviour
     private GameControllerJCorrida gameControllerJCorrida;
     public float maxTime;
     public float minTime;
+    private Obstacle obstacleScript;
+    private Progression progressionScript;
+    public float multipleSpeed;
+
 
     private void Start()
     {
         gameControllerJCorrida = FindObjectOfType<GameControllerJCorrida>();
         StartCoroutine(Spawn());
+        obstacleScript = FindObjectOfType<Obstacle>();
+        progressionScript = FindObjectOfType<Progression>();
     }
     IEnumerator Spawn()
     {
@@ -27,6 +33,16 @@ public class CreateObstacle : MonoBehaviour
             GameObject newObstacle = Instantiate(prefabObstacle[obstacleIndex], transform.position, Quaternion.identity);
             newObstacle.transform.position = new Vector2(transform.position.x, transform.position.y);
             yield return new WaitForSeconds(time); // adiciona o ytime no inspetor da unity
+        }
+    }
+    void Update()
+    {
+        if (progressionScript.atingiuAMeta)
+        {
+            Debug.Log(progressionScript.atingiuAMeta);
+            progressionScript.atingiuAMeta = false;
+            obstacleScript.sideVelocity *= multipleSpeed;
+            Debug.Log(obstacleScript.sideVelocity);
         }
     }
 }

@@ -5,32 +5,37 @@ using UnityEngine;
 
 public class Progression : MonoBehaviour
 {
+    public float meta;
+    public float multipleSpeed;
     private MovimentPlayer movimentPlayerScript;
-    public float inclementoDePontos;
-    public float metaParaInclemento;
-    public float incrementoSpeeadPoints;
-    public bool ÈMaior;
+    private ParallaxJCorrida parallaxJCorridaScript;
+    private Obstacle obstacleScript;
+    private CreateObstacle createObstacleScript;
+    public bool atingiuAMeta;
+
     void Start()
     {
         movimentPlayerScript = FindObjectOfType<MovimentPlayer>();
-        ÈMaior = false;
+        parallaxJCorridaScript = FindObjectOfType<ParallaxJCorrida>();
+        obstacleScript = FindObjectOfType<Obstacle>();
+        createObstacleScript = FindObjectOfType<CreateObstacle>();
+        atingiuAMeta = false;
     }
     void Update()
     {
-        if (movimentPlayerScript.distance >= metaParaInclemento)
+        if (movimentPlayerScript.distance >= meta)
         {
-            ÈMaior=true;
             AcelerarCorrida();
         }
     }
-
+    
     void AcelerarCorrida()
     {
-        if (ÈMaior)
-        {
-            metaParaInclemento = +inclementoDePontos;
-            movimentPlayerScript.speedPoints = movimentPlayerScript.speedPoints * incrementoSpeeadPoints;
-            ÈMaior = false;
-        }
+        atingiuAMeta = true;
+        meta += 100; Debug.Log("META:" + meta);
+        //parallaxJCorridaScript.objectSpeed *= newSpeed; Debug.Log("OBJECT SPEED: "+parallaxJCorridaScript.objectSpeed);
+        movimentPlayerScript.speedPoints *= multipleSpeed; Debug.Log("SPEED POINTS: " + movimentPlayerScript.speedPoints);
+        //obstacleScript.sideVelocity *= newSpeed; Debug.Log("OBSTACULO SPEED: " +obstacleScript.sideVelocity);
+        createObstacleScript.maxTime -= 0.1f; Debug.Log("max time: " + createObstacleScript.maxTime);
     }
 }

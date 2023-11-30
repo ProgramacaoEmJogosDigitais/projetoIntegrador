@@ -47,7 +47,7 @@ public class PauseJCorrida : MonoBehaviour
             }
             else
             {
-                Debug.Log(time);
+                //Debug.Log(time);
                 //counting = true; //nao pode apertar pause de novo;
                 pressButtonNoPause = true;
             }

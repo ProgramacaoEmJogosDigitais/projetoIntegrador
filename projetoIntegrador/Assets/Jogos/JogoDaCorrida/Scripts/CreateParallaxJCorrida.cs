@@ -15,6 +15,7 @@ public class CreateParallaxJCorrida : MonoBehaviour
 
     private void Start()
     {
+
         StartCoroutine(SpawnObjectsParallax());
         spawn = true;
     }
@@ -35,4 +36,6 @@ public class CreateParallaxJCorrida : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
         }
     }
+
+    
 }

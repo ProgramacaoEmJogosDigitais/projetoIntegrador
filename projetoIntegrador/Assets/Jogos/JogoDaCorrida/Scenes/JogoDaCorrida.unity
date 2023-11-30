@@ -1101,15 +1101,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349419357}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 788adf9740545d84399e851e2ae25101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inclementoDePontos: 100
-  metaParaInclemento: 100
-  incrementoSpeeadPoints: 0.1
-  "\xE9Maior": 0
+  meta: 50
+  multipleSpeed: 1.1
+  atingiuAMeta: 0
 --- !u!1 &431501408
 GameObject:
   m_ObjectHideFlags: 0
@@ -6334,11 +6333,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabObstacle:
-  - {fileID: 2343247496503373061, guid: 8b06c0b9771697b4fb26b4a223375c2b, type: 3}
-  - {fileID: 2343247496503373061, guid: 649f739462ffcd5449e63634d0eed279, type: 3}
-  - {fileID: 2343247496503373061, guid: f26635ea933374742a6c9c6b40f4d18f, type: 3}
-  maxTime: 7
-  minTime: 3
+  - {fileID: 664306024084289464, guid: 6968078f2391f5b45a42b08529444cde, type: 3}
+  - {fileID: 6745518057371742983, guid: 622fd85d72fd4094aa6d98f917bad275, type: 3}
+  - {fileID: 1740576833103840641, guid: b1f83bd76ce4e8a4badfcfbd0722b6fa, type: 3}
+  maxTime: 3
+  minTime: 1
+  multipleSpeed: 3
 --- !u!1 &2143284158
 GameObject:
   m_ObjectHideFlags: 0

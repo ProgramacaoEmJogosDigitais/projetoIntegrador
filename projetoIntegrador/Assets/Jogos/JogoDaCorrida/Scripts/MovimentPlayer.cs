@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class MovimentPlayer : MonoBehaviour
 {
-    public float speedPoints = 6;
+    public float speedPoints = 5;
     [SerializeField] private float jumpForce;
     [SerializeField] private bool jump;
     [SerializeField] private bool isGrounded = true;
