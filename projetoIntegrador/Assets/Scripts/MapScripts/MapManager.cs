@@ -23,12 +23,12 @@ public class MapManager : MonoBehaviour
 
     public IEnumerator ColliderVan()
     {
-        yield return new WaitForSeconds(0.94f);
+        yield return new WaitForSeconds(13.52f);
         player.GetComponent<BoxCollider2D>().enabled = true;
     }
     public IEnumerator SpawnInstructions()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(13.52f);
         panel.gameObject.SetActive(true);
         player.GetComponent<BoxCollider2D>().enabled = false;
         scrollViewInstructions.SetActive(true);

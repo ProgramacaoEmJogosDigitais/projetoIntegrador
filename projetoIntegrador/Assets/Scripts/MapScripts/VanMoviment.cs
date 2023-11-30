@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.InputSystem;
 
 public class VanMoviment : MonoBehaviour
@@ -59,7 +61,23 @@ public class VanMoviment : MonoBehaviour
     {
         if (arrowObject != null)
         {
-            Vector3 offset = new Vector3(0f, 2f, 0f);
+            if (moveVector.x == 0 && moveVector.y > 0)
+            {
+            
+            }
+            else if (moveVector.x == 0 && moveVector.y < 0)
+            {
+             
+            }
+            else if (moveVector.x < 0 && moveVector.y == 0)
+            {
+              
+            }
+            else if (moveVector.x > 0 && moveVector.y == 0)
+            {
+              
+            }
+            Vector3 offset = new Vector3(0.5f, 1.1f, 0f);
             arrowObject.transform.position = gameObject.transform.position + offset;
         }
 
@@ -75,7 +93,7 @@ public class VanMoviment : MonoBehaviour
     }
     IEnumerator CameraAnimator()
     {
-        yield return new WaitForSeconds(3.30f);
+        yield return new WaitForSeconds(13.50f);
         cameraMain.GetComponent<Animator>().enabled = false;
 
     }
