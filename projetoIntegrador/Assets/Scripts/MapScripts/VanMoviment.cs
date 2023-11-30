@@ -23,8 +23,8 @@ public class VanMoviment : MonoBehaviour
 
     public List<GameObject> arrowPrefabs = new List<GameObject>();
     private List<GameObject> arrowObjects = new List<GameObject>();
-    GameObject arrowObject;
-
+    private GameObject arrowObject;
+    private Vector3 offset;
 
     private void Awake()
     {
@@ -61,23 +61,19 @@ public class VanMoviment : MonoBehaviour
     {
         if (arrowObject != null)
         {
-            if (moveVector.x == 0 && moveVector.y > 0)
+            if (GetComponent<SpriteRenderer>().sprite.name == "Vanteca_Sprite_Cima")
             {
-            
+                offset = new Vector3(0f, 1.1f, 0f);
             }
-            else if (moveVector.x == 0 && moveVector.y < 0)
+            else if (GetComponent<SpriteRenderer>().sprite.name == "Vanteca_Sprite_LadoEsquerdo")
             {
-             
+                offset = new Vector3(-0.5f, 1.1f, 0f);
             }
-            else if (moveVector.x < 0 && moveVector.y == 0)
+            else if (GetComponent<SpriteRenderer>().sprite.name == "Vanteca_Sprite_LadoDireito")
             {
-              
+                offset = new Vector3(0.5f, 1.1f, 0f);
             }
-            else if (moveVector.x > 0 && moveVector.y == 0)
-            {
-              
-            }
-            Vector3 offset = new Vector3(0.5f, 1.1f, 0f);
+
             arrowObject.transform.position = gameObject.transform.position + offset;
         }
 
