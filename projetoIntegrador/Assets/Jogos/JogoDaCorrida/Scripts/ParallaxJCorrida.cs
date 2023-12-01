@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class ParallaxJCorrida : MonoBehaviour
 {
-    
+
     public float objectSpeed;
     private Progression progressionScript;
+    private CreateParallaxJCorrida createParallaxJCorridaScript;
 
     private void Start()
     {
         progressionScript = FindObjectOfType<Progression>();
+        createParallaxJCorridaScript = FindObjectOfType<CreateParallaxJCorrida>();
     }
     private void Update()
     {
@@ -30,7 +32,14 @@ public class ParallaxJCorrida : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("SpawnNewObject"))
+        {
+            Debug.Log("EEEEEEEEEEEEEEEEEEEE");
+            createParallaxJCorridaScript.spawn = true;
+        }
+    }
 }
 
 

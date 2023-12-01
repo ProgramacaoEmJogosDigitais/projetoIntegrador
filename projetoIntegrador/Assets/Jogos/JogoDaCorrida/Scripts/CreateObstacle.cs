@@ -39,10 +39,10 @@ public class CreateObstacle : MonoBehaviour
     {
         if (progressionScript.atingiuAMeta)
         {
-            Debug.Log(progressionScript.atingiuAMeta);
+            Debug.Log("AAAAAAA: "+progressionScript.atingiuAMeta);
             progressionScript.atingiuAMeta = false;
             obstacleScript.sideVelocity *= multipleSpeed;
-            Debug.Log(obstacleScript.sideVelocity);
+            Debug.Log("BBBBBBB: "+obstacleScript.sideVelocity);
         }
     }
 }

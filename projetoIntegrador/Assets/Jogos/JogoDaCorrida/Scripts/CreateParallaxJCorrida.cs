@@ -16,16 +16,37 @@ public class CreateParallaxJCorrida : MonoBehaviour
     private void Start()
     {
 
-        StartCoroutine(SpawnObjectsParallax());
-        spawn = true;
+        //StartCoroutine(SpawnObjectsParallax());
+        //spawn = true;
     }
 
+    private void Update()
+    {
+        if (spawn)
+        {
+            Spaw();
+            Debug.Log("QQQQQ: " + spawn);
+        }
+    }
+
+    private void Spaw()
+    {
+        spawn = false;
+        int obstacleIndex = UnityEngine.Random.Range(0, objectPrefab.Count);
+        // Instancia o objeto
+        float variateYCloud = UnityEngine.Random.Range(minY, maxY);
+        GameObject objectParallax = Instantiate(objectPrefab[obstacleIndex], transform.position, Quaternion.identity);
+        objectParallax.transform.position = new Vector2(transform.position.x, variateYCloud);
+
+        //spawnInterval = Random.Range(minTime, maxTime); //adicionar o minimo e maximo no inspetor da unity
+
+    }
+    /*
     private IEnumerator SpawnObjectsParallax()
     {
         while (spawn)
         {
             int obstacleIndex = UnityEngine.Random.Range(0, objectPrefab.Count);
-            //entre o 0 e o 5
             // Instancia o objeto
             float variateYCloud = UnityEngine.Random.Range(minY, maxY);
             GameObject objectParallax = Instantiate(objectPrefab[obstacleIndex], transform.position, Quaternion.identity);
@@ -35,7 +56,7 @@ public class CreateParallaxJCorrida : MonoBehaviour
 
             yield return new WaitForSeconds(spawnInterval);
         }
-    }
+    }*/
 
     
 }
