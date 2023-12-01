@@ -16,6 +16,8 @@ public class Comic : MonoBehaviour
     //[SerializeField] private List<Sprite> pagesSprite2;
     [SerializeField] private GameObject backButton;
     [SerializeField] private GameObject forwardButton;
+    [SerializeField] private GameObject goMapButton;
+
     private int index = -1;
     private bool rotate = false;
     private float angle1;
@@ -64,6 +66,7 @@ public class Comic : MonoBehaviour
         {
             comic.transform.position = posComicOnePage.position;
             forwardButton.SetActive(false);
+            Invoke("ButtonGoMapForward", 0.35f);
         }
     }
     public void RotateBack()
@@ -79,6 +82,7 @@ public class Comic : MonoBehaviour
         if (forwardButton.activeInHierarchy == false)
         {
             forwardButton.SetActive(true);
+            Invoke("ButtonGoMapBack", 0.45f);
         }
         if (index - 1 == -1) // Capa
         {
@@ -86,6 +90,14 @@ public class Comic : MonoBehaviour
             backButton.SetActive(false);
         }
 
+    }
+    public void ButtonGoMapForward()
+    {
+        goMapButton.SetActive(true);
+    } 
+    public void ButtonGoMapBack()
+    {
+        goMapButton.SetActive(false);
     }
     IEnumerator Rotate(float angle, bool forward)
     {
@@ -98,7 +110,7 @@ public class Comic : MonoBehaviour
             value += Time.deltaTime * pageSpeed;
             pagesGameObject[index].transform.rotation = Quaternion.Slerp(pagesGameObject[index].transform.rotation, targetRotation, value);
             angle1 = Quaternion.Angle(pagesGameObject[index].transform.rotation, targetRotation);
-            Debug.Log(angle1);
+
             if (angle1 <= 90f && forward && index > 0)
             {
                 pagesImage1[index - 1].gameObject.SetActive(false); // Desativa a imagem da página 1

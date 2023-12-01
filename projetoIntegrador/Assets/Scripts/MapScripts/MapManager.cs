@@ -8,6 +8,7 @@ public class MapManager : MonoBehaviour
     public GameObject scrollViewInstructions;
     public Image panel;
     public GameObject player;
+
     void Start()
     {
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
