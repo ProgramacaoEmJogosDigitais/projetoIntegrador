@@ -7959,6 +7959,7 @@ MonoBehaviour:
   maxTime: 3
   minTime: 1
   multipleSpeed: 3
+  currentSpeedInfor: 9
 --- !u!1 &2143284158
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Progression : MonoBehaviour
 {
-    public float meta;
+    public float meta = 50;
     public float multipleSpeed;
     private MovimentPlayer movimentPlayerScript;
     private ParallaxJCorrida parallaxJCorridaScript;
