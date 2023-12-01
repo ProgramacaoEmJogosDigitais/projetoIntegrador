@@ -68,7 +68,6 @@ public class MovimentPlayer : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("COLIDIU");
             gameController.gameOver = true;
             rb.velocity = Vector3.zero;
         }

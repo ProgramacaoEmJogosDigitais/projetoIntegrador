@@ -2739,13 +2739,14 @@ GameObject:
   - component: {fileID: 700406180}
   - component: {fileID: 700406179}
   - component: {fileID: 700406181}
+  - component: {fileID: 700406182}
   m_Layer: 0
   m_Name: nuvem 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &700406178
 Transform:
   m_ObjectHideFlags: 0
@@ -2754,7 +2755,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700406177}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -745, y: 397, z: -9720}
+  m_LocalPosition: {x: -745, y: 397, z: 0}
   m_LocalScale: {x: 108, y: 108, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2836,7 +2837,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2886,6 +2887,27 @@ PolygonCollider2D:
       - {x: -1.405, y: -0.89}
       - {x: -1.355, y: -0.9}
       - {x: 1.105, y: -0.9}
+--- !u!50 &700406182
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700406177}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &705630743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2898,6 +2920,7 @@ GameObject:
   - component: {fileID: 705630746}
   - component: {fileID: 705630745}
   - component: {fileID: 705630747}
+  - component: {fileID: 705630748}
   m_Layer: 0
   m_Name: nuvem 3
   m_TagString: Untagged
@@ -2913,7 +2936,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705630743}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1033, y: 329, z: -9720}
+  m_LocalPosition: {x: 1033, y: 329, z: 0}
   m_LocalScale: {x: 108, y: 108, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3092,6 +3115,27 @@ PolygonCollider2D:
       - {x: 1.935, y: -1.5649999}
       - {x: 2.245, y: -1.535}
       - {x: 2.635, y: -1.495}
+--- !u!50 &705630748
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705630743}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &743517862
 GameObject:
   m_ObjectHideFlags: 0
@@ -4681,6 +4725,7 @@ GameObject:
   - component: {fileID: 1142577351}
   - component: {fileID: 1142577350}
   - component: {fileID: 1142577352}
+  - component: {fileID: 1142577353}
   m_Layer: 0
   m_Name: nuvem 2
   m_TagString: Untagged
@@ -4696,7 +4741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142577348}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -68, y: 212, z: -9720}
+  m_LocalPosition: {x: -68, y: 212, z: 0}
   m_LocalScale: {x: 108, y: 108, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4858,6 +4903,27 @@ PolygonCollider2D:
       - {x: -0.635, y: -1.255}
       - {x: -0.205, y: -1.235}
       - {x: 0.125, y: -1.2149999}
+--- !u!50 &1142577353
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142577348}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1179675523
 GameObject:
   m_ObjectHideFlags: 0
