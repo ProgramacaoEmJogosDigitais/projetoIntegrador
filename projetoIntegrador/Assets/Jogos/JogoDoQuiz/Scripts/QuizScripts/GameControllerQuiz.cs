@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Reflection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,13 +7,16 @@ using UnityEngine.UI;
 public class GameControllerQuiz : MonoBehaviour
 {
     public Image[] botao;
-
+    public int numeroAleatorizado = 0;
     public GameObject gameOverQuiz;
     public Image coracao;
     public Image coracao2;
     public Image coracao3;
     public Sprite vidaCheia;
     public Sprite vidaUsada;
+    public Sprite[] personagens;
+    public Image PontoP;
+  
     public TMP_Text pergunta;
     public TMP_Text respostaA;
     public TMP_Text respostaB;
@@ -35,6 +39,7 @@ public class GameControllerQuiz : MonoBehaviour
     public string[] corretas;
 
     private int idPergunta;
+   
 
     private float acertos;
     private float questoes;
@@ -48,6 +53,7 @@ public class GameControllerQuiz : MonoBehaviour
         gameOverQuiz.SetActive(false);
         idPergunta = 0;
         questoes = perguntas.Length;
+        TrocaDePersonagens();
 
         pergunta.text = perguntas[idPergunta];
         respostaA.text = alternativaA[idPergunta];
@@ -67,6 +73,7 @@ public class GameControllerQuiz : MonoBehaviour
     {
         if (verificacao_pergunta)
         {
+           
             StartCoroutine(Espera());
             verificacao_pergunta = false;
 
@@ -169,9 +176,15 @@ public class GameControllerQuiz : MonoBehaviour
             pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/" + questoes.ToString();
         }
     }
+    void TrocaDePersonagens()
+    {
+        PontoP.sprite = personagens[Random.Range(0, 5)];
+    }
+   
 
     void ProximaPergunta()
     {
+        TrocaDePersonagens();
         if (over)
         {
             GameOver();
@@ -179,6 +192,7 @@ public class GameControllerQuiz : MonoBehaviour
         else if (!over)
         {
             idPergunta += 1;
+            
             if (idPergunta <= (questoes - 1))
             {
                 pergunta.text = perguntas[idPergunta];
