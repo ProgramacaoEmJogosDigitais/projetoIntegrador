@@ -17,7 +17,7 @@ public class CreateParallaxJCorrida : MonoBehaviour
     {
 
         //StartCoroutine(SpawnObjectsParallax());
-        //spawn = true;
+        spawn = false;
     }
 
     private void Update()
