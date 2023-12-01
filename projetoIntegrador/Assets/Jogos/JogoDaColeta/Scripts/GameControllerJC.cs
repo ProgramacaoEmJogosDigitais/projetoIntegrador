@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class GameControllerJC : MonoBehaviour
 {
     public GameObject[] prefabFishs;
-    public static int lostObjectsForGameOver = 3;
     public GameObject gameOverObject;
     public TextMeshProUGUI score_txt;
     public TextMeshProUGUI missScore_txt;
@@ -28,7 +27,6 @@ public class GameControllerJC : MonoBehaviour
 
     private bool isPaused = false;
     private bool isUnpauseDelayed = false;
-    private float unpauseDelay = 0f;
     private float unpauseTimer = 3f;
     private bool isOptionsMenuActive = false;
     public GameObject optionsMenu; // Arraste o prefab do menu de opções para este campo no Inspector
@@ -41,7 +39,7 @@ public class GameControllerJC : MonoBehaviour
     void Start()
     {
         gameOverObject.SetActive(false);
-        PlayerColeta.missingObjects = 0;
+        PlayerColeta.missingObjects = 5;
         StartCoroutine(SpawnObjects());
         FishsFalling.points = 0;
 
@@ -96,7 +94,7 @@ public class GameControllerJC : MonoBehaviour
 
         GameOver();
         // Check if the game over condition is met
-        if (PlayerColeta.missingObjects >= lostObjectsForGameOver)
+        if (PlayerColeta.missingObjects <= 0)
         {
             // Disable fish and trash spawning
             nextSpawnTime = float.MaxValue;
@@ -184,7 +182,7 @@ public class GameControllerJC : MonoBehaviour
     public void GameOver()
     {
         int resetScore = 0;
-        if (PlayerColeta.missingObjects >= 3)
+        if (PlayerColeta.missingObjects <= 0)
         {
             score.text = score_txt.text;
             gameOverObject.SetActive(true);
