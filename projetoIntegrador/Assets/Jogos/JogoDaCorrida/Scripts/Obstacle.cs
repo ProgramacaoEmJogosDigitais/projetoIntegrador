@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    public int sideVelocity;
+    public float sideVelocity;
     private GameControllerJCorrida gameControllerJCorrida;
     private void Start()
     {

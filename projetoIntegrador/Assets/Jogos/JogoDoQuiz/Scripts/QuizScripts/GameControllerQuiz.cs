@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Reflection;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,8 +39,8 @@ public class GameControllerQuiz : MonoBehaviour
     [TextArea]
     public string[] corretas;
 
+    private List<int> indicesUtilizados = new List<int>(); // Lista para controlar índices utilizados
     private int idPergunta;
-   
 
     private float acertos;
     private float questoes;
@@ -55,18 +56,73 @@ public class GameControllerQuiz : MonoBehaviour
         questoes = perguntas.Length;
         TrocaDePersonagens();
 
-        pergunta.text = perguntas[idPergunta];
-        respostaA.text = alternativaA[idPergunta];
-        respostaB.text = alternativaB[idPergunta];
-        respostaC.text = alternativaC[idPergunta];
-        respostaD.text = alternativaD[idPergunta];
-        infoRespostas.text = "Pergunta: " + (idPergunta + 1).ToString() + "/" + questoes.ToString();
+        ShuffleQuestions(); // Embaralha as perguntas no início do jogo
+        ShowQuestion();
     }
 
     void Update()
     {
         GameOver();
         Vida();
+    }
+
+    void ShuffleQuestions()
+    {
+        for (int i = 0; i < perguntas.Length; i++)
+        {
+            int temp = Random.Range(0, perguntas.Length);
+            string tempPergunta = perguntas[temp];
+            string tempAltA = alternativaA[temp];
+            string tempAltB = alternativaB[temp];
+            string tempAltC = alternativaC[temp];
+            string tempAltD = alternativaD[temp];
+            string tempCorreta = corretas[temp];
+
+            perguntas[temp] = perguntas[i];
+            alternativaA[temp] = alternativaA[i];
+            alternativaB[temp] = alternativaB[i];
+            alternativaC[temp] = alternativaC[i];
+            alternativaD[temp] = alternativaD[i];
+            corretas[temp] = corretas[i];
+
+            perguntas[i] = tempPergunta;
+            alternativaA[i] = tempAltA;
+            alternativaB[i] = tempAltB;
+            alternativaC[i] = tempAltC;
+            alternativaD[i] = tempAltD;
+            corretas[i] = tempCorreta;
+        }
+    }
+
+    void ShowQuestion()
+    {
+        if (indicesUtilizados.Count == perguntas.Length)
+        {
+            //TODO Talvez reiniciar o jogo, aqui ja foram todas as perguntas.
+            StartCoroutine(Espera2());
+            indicesUtilizados.Clear();
+            //ShuffleQuestions();
+        }
+
+        int randomIndex = Random.Range(0, perguntas.Length);
+
+      
+        while (indicesUtilizados.Contains(randomIndex))
+        {
+            randomIndex = Random.Range(0, perguntas.Length);
+        }
+
+        indicesUtilizados.Add(randomIndex); // Adicione o índice usado à lista
+
+        idPergunta = randomIndex;
+        pergunta.text = perguntas[idPergunta];
+        respostaA.text = alternativaA[idPergunta];
+        respostaB.text = alternativaB[idPergunta];
+        respostaC.text = alternativaC[idPergunta];
+        respostaD.text = alternativaD[idPergunta];
+        infoRespostas.text = "Pergunta: " + (indicesUtilizados.Count).ToString() + "/" + questoes.ToString();
+
+        verificacao_pergunta = true; // Reinicie a verificação da pergunta
     }
 
     public void resposta(string alternativa)
@@ -146,11 +202,9 @@ public class GameControllerQuiz : MonoBehaviour
         }
         else if (erros == 1)
         {
-
             coracao.sprite = vidaUsada;
             coracao2.sprite = vidaCheia;
             coracao3.sprite = vidaCheia;
-
         }
         else if (erros == 2)
         {
@@ -163,10 +217,9 @@ public class GameControllerQuiz : MonoBehaviour
             coracao.sprite = vidaUsada;
             coracao2.sprite = vidaUsada;
             coracao3.sprite = vidaUsada;
-
         }
-      
     }
+
     void GameOver()
     {
         if (erros == 3)
@@ -191,6 +244,7 @@ public class GameControllerQuiz : MonoBehaviour
         }
         else if (!over)
         {
+            /*
             idPergunta += 1;
             
             if (idPergunta <= (questoes - 1))
@@ -208,6 +262,9 @@ public class GameControllerQuiz : MonoBehaviour
                 StartCoroutine(Espera2());
                 pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/" + questoes.ToString();
             }
+            */
+
+            ShowQuestion(); 
         }
     }
 

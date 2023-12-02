@@ -38,14 +38,22 @@ public class DragEndDrop : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (inPart)
-            arrast = true;
-        
+        if (blockMove)
+        {
+            if (inPart)
+                arrast = true;
+
+
+        }
     }
     private void OnMouseUp()
     {
-        if(inPart)
-            arrast = false;
+        if (blockMove)
+        {
+            if (inPart)
+                arrast = false;
+        }
+       
     }
 
     // Update is called once per frame
