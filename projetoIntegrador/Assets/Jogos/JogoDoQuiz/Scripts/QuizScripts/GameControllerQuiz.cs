@@ -99,6 +99,7 @@ public class GameControllerQuiz : MonoBehaviour
         if (indicesUtilizados.Count == perguntas.Length)
         {
             //TODO Talvez reiniciar o jogo, aqui ja foram todas as perguntas.
+            GameOver();
             StartCoroutine(Espera2());
             indicesUtilizados.Clear();
             //ShuffleQuestions();
@@ -237,6 +238,7 @@ public class GameControllerQuiz : MonoBehaviour
 
     void ProximaPergunta()
     {
+        verificacao_pergunta = true;
         TrocaDePersonagens();
         if (over)
         {
