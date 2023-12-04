@@ -29,7 +29,7 @@ public class FishsFalling : MonoBehaviour
             Destroy(gameObject);
 
             // Aumentar o número de objetos perdidos do jogador
-            PlayerColeta.MissingObject();
+            PlayerColeta.missingObjects--;
         }
     }
 

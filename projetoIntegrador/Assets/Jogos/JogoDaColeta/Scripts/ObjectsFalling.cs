@@ -29,7 +29,7 @@ public class ObjectsFalling : MonoBehaviour
             Destroy(gameObject);
 
             // Aumentar o número de objetos perdidos do jogador
-            PlayerColeta.MissingObject();
+            PlayerColeta.missingObjects--;
         }
     }
 

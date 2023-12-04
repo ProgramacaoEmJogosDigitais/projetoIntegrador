@@ -1,12 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerColeta : MonoBehaviour
 {
     public float playerSpeed = 5f;
-    public static int missingObjects = 0;
+    public static int missingObjects = 5;
     public bool playerTrash;
+
+    [SerializeField] Image lifeOn;
+    [SerializeField] Image lifeOn2;
+    [SerializeField] Image lifeOn3;
+    [SerializeField] Image lifeOn4;
+    [SerializeField] Image lifeOn5;
+
+    public Sprite corazonBroken;
 
     SpriteRenderer playerFlip;
     private Animator pAnimator;
@@ -33,6 +42,8 @@ public class PlayerColeta : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(horizontalInput, 0);
         transform.Translate(Time.deltaTime * playerSpeed * movement);
+
+        DropLife();
 
         if (horizontalInput > 0)
         {
@@ -68,9 +79,33 @@ public class PlayerColeta : MonoBehaviour
         }
     }
 
-    public static void MissingObject()
+    private void DropLife()
     {
-        missingObjects++;
+        if (missingObjects == 4)
+        {
+            lifeOn.sprite = corazonBroken;
+        }
+
+        if (missingObjects == 3)
+        {
+            lifeOn2.sprite = corazonBroken;
+        }
+
+        if (missingObjects == 2)
+        {
+            lifeOn3.sprite = corazonBroken;
+        }
+
+
+        if (missingObjects == 1)
+        {
+            lifeOn4.sprite = corazonBroken;
+        }
+
+        if (missingObjects == 0)
+        {
+            lifeOn5.sprite = corazonBroken;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -82,7 +117,7 @@ public class PlayerColeta : MonoBehaviour
             Destroy(other.gameObject);
 
             // Aumentar os erros
-            PlayerColeta.MissingObject();
+            PlayerColeta.missingObjects--;
         }
 
         if (other.CompareTag("lixo") && playerTrash)
@@ -102,7 +137,7 @@ public class PlayerColeta : MonoBehaviour
             Destroy(other.gameObject);
 
             // Aumentar os erros
-            PlayerColeta.MissingObject();
+            PlayerColeta.missingObjects--;
         }
     }
 }
