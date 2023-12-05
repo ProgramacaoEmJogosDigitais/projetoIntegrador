@@ -7,17 +7,21 @@ public class CreateParallaxJCorrida : MonoBehaviour
 {
     public List<GameObject> objectPrefab;
     private float spawnInterval;
-    public bool spawn;
+    public bool spawn ;
     public float maxTime;
     public float minTime;
     public float minY;
     public float maxY;
 
+    private void Awake()
+    {
+        //spawn = false;
+
+    }
     private void Start()
     {
 
         //StartCoroutine(SpawnObjectsParallax());
-        spawn = false;
     }
 
     private void Update()
@@ -28,7 +32,7 @@ public class CreateParallaxJCorrida : MonoBehaviour
             Debug.Log("QQQQQ: " + spawn);
         }
     }
-
+    
     private void Spaw()
     {
         spawn = false;

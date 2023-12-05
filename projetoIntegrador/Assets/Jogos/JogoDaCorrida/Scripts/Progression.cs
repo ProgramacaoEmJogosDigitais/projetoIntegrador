@@ -21,6 +21,7 @@ public class Progression : MonoBehaviour
         createObstacleScript = FindObjectOfType<CreateObstacle>();
         atingiuAMeta = false;
     }
+    /*
     void Update()
     {
         if (movimentPlayerScript.distance >= meta)
@@ -37,5 +38,5 @@ public class Progression : MonoBehaviour
         movimentPlayerScript.speedPoints *= multipleSpeed; Debug.Log("SPEED POINTS: " + movimentPlayerScript.speedPoints);
         //obstacleScript.sideVelocity *= newSpeed; Debug.Log("OBSTACULO SPEED: " +obstacleScript.sideVelocity);
         createObstacleScript.maxTime -= 0.1f; Debug.Log("max time: " + createObstacleScript.maxTime);
-    }
+    }**/
 }

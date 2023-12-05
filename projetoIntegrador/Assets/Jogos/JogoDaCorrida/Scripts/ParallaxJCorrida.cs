@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ParallaxJCorrida : MonoBehaviour
@@ -9,6 +10,9 @@ public class ParallaxJCorrida : MonoBehaviour
     public float objectSpeed;
     private Progression progressionScript;
     private CreateParallaxJCorrida createParallaxJCorridaScript;
+    public List<GameObject> transformsSpawn;
+    public GameObject transformRemove;
+
 
     private void Start()
     {
@@ -26,18 +30,23 @@ public class ParallaxJCorrida : MonoBehaviour
         }*/
 
         transform.Translate(Vector3.left * objectSpeed * Time.deltaTime);
-        // Verifica se o objeto saiu dos limites e destrói
-        if (transform.position.x < -20)
+
+        // Verifica se o objeto saiu dos limites realinha a posicao
+        if (transform.position.x <= transformRemove.transform.position.x) //x >= -1600f;
         {
-            Destroy(gameObject);
+            int indexLocalSpawn = UnityEngine.Random.Range(0, transformsSpawn.Count); // Sorteia o local
+            //GameObject objectParallax = Instantiate(gameObject, transform.position, Quaternion.identity); //instancia
+            gameObject.transform.position = new Vector2(transformsSpawn[indexLocalSpawn].transform.position.x, transformsSpawn[indexLocalSpawn].transform.position.y); //coloca na posicao do local sorteado;           
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("SpawnNewObject"))
         {
-            Debug.Log("EEEEEEEEEEEEEEEEEEEE");
-            createParallaxJCorridaScript.spawn = true;
+            //createParallaxJCorridaScript.spawn = true;
+            Debug.Log($"Tocouu,{collision.name}");
+            Debug.Log(createParallaxJCorridaScript.spawn);
         }
     }
    
