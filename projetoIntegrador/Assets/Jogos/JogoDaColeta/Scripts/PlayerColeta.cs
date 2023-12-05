@@ -96,7 +96,6 @@ public class PlayerColeta : MonoBehaviour
             lifeOn3.sprite = corazonBroken;
         }
 
-
         if (missingObjects == 1)
         {
             lifeOn4.sprite = corazonBroken;

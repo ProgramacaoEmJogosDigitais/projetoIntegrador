@@ -32,9 +32,7 @@ public class GameControllerJC : MonoBehaviour
     public GameObject optionsMenu; // Arraste o prefab do menu de opções para este campo no Inspector
 
     [SerializeField] private TextMeshProUGUI unpauseCount;
-
-
-
+    private GameObject instantiatedPrefabs;
 
     void Start()
     {
@@ -98,6 +96,7 @@ public class GameControllerJC : MonoBehaviour
         {
             // Disable fish and trash spawning
             nextSpawnTime = float.MaxValue;
+            Destroy(instantiatedPrefabs);
         }
     }
 
@@ -154,7 +153,7 @@ public class GameControllerJC : MonoBehaviour
                 float x = Random.Range(-8f, 8f);
                 float y = 7f;
                 Vector2 spawnPosition = new Vector2(x, y);
-                Instantiate(prefabFishs[Random.Range(0, prefabFishs.Length)], spawnPosition, Quaternion.identity);
+                instantiatedPrefabs = Instantiate(prefabFishs[Random.Range(0, prefabFishs.Length)], spawnPosition, Quaternion.identity);
                 enemiesSpawned++;
                 nextSpawnTime = Time.time + spawnInterval;
             }
