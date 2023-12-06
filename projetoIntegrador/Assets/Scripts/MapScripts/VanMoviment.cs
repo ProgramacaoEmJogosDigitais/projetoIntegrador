@@ -16,7 +16,6 @@ public class VanMoviment : MonoBehaviour
 
     public GameObject wheelLeft;
     public GameObject wheelRight;
-    public GameObject cameraMain;
     public Transform posInitial;
     public bool isMoving = false;
 
@@ -34,7 +33,6 @@ public class VanMoviment : MonoBehaviour
     private void Start()
     {
         transform.position = posInitial.position;
-        StartCoroutine(CameraAnimator());
         StartCoroutine(SpawnArrowRoutine());
     }
 
@@ -87,13 +85,6 @@ public class VanMoviment : MonoBehaviour
             arrowObjects.Clear();
         }
     }
-    IEnumerator CameraAnimator()
-    {
-        yield return new WaitForSeconds(13.50f);
-        cameraMain.GetComponent<Animator>().enabled = false;
-
-    }
-
 
     IEnumerator SpawnArrowRoutine()
     {

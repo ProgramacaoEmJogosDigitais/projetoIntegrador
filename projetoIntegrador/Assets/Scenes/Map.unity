@@ -4991,7 +4991,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599326011}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7a1bba883194f984a89d54764499b1dc, type: 2}
   m_CullingMode: 0
@@ -9245,6 +9245,7 @@ GameObject:
   - component: {fileID: 1278933574}
   - component: {fileID: 1278933573}
   - component: {fileID: 1278933571}
+  - component: {fileID: 1278933576}
   - component: {fileID: 1278933575}
   - component: {fileID: 1278933570}
   - component: {fileID: 1278933569}
@@ -9420,7 +9421,6 @@ MonoBehaviour:
   spriteVanLeft: {fileID: 21300000, guid: a09d1fce23c24e340b0616545abdcdc3, type: 3}
   wheelLeft: {fileID: 211361643}
   wheelRight: {fileID: 803948807}
-  cameraMain: {fileID: 599326011}
   posInitial: {fileID: 1685598606}
   isMoving: 0
   arrowPrefabs:
@@ -9428,6 +9428,18 @@ MonoBehaviour:
   - {fileID: 8700054749853543762, guid: bc44181df6cb3fa4eb20f32f9ddf0647, type: 3}
   - {fileID: 1508961924888050309, guid: f031215f15c9d8843bfd02fb63a97d81, type: 3}
   - {fileID: 2377017082903424849, guid: 3ca71931db22a504486371a0b0a3cbd8, type: 3}
+--- !u!114 &1278933576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278933568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd26ccdc1cca06840a951831d01847c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1285711619
 GameObject:
   m_ObjectHideFlags: 0
@@ -10621,6 +10633,7 @@ GameObject:
   - component: {fileID: 1456585745}
   - component: {fileID: 1456585746}
   - component: {fileID: 1456585747}
+  - component: {fileID: 1456585748}
   m_Layer: 0
   m_Name: gameController
   m_TagString: Untagged
@@ -10704,9 +10717,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d151e1c33f28b894eb7b3622ccd4d1fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraMain: {fileID: 599326011}
   scrollViewInstructions: {fileID: 1576137407}
-  panel: {fileID: 1247362328}
   player: {fileID: 1278933568}
+  panel: {fileID: 1247362328}
+--- !u!114 &1456585748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456585742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8864e7d764ec84280295ef1fe0cf24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1466461448
 GameObject:
   m_ObjectHideFlags: 0
