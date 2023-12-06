@@ -103,7 +103,7 @@ public class GameControllerQuiz : MonoBehaviour
         if (indicesUtilizados.Count == perguntas.Length)
         {
             //TODO Talvez reiniciar o jogo, aqui ja foram todas as perguntas.
-           
+            StartCoroutine(Espera2());
             pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/" + questoes.ToString();
             gameOverQuiz.SetActive(true);
             indicesUtilizados.Clear();
@@ -230,10 +230,8 @@ public class GameControllerQuiz : MonoBehaviour
     {
         if (erros == 3)
         {
+            Debug.Log("aa");
             over = true;
-            
-            painelGameOver.SetActive(true);
-            
             StartCoroutine(Espera2());
             pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/" + questoes.ToString();
         }
@@ -295,7 +293,9 @@ public class GameControllerQuiz : MonoBehaviour
 
     private IEnumerator Espera2()
     {
-        yield return new WaitForSeconds(0); ;
+        yield return new WaitForSeconds(1);
+        painelGameOver.SetActive(true);
+        gameOverQuiz.SetActive(true);
         
     }
 
