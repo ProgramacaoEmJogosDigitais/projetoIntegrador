@@ -9,7 +9,6 @@ public class ParallaxJCorrida : MonoBehaviour
 
     public float objectSpeed;
     private Progression progressionScript;
-    private CreateParallaxJCorrida createParallaxJCorridaScript;
     public List<GameObject> transformsSpawn;
     public GameObject transformRemove;
 
@@ -17,7 +16,6 @@ public class ParallaxJCorrida : MonoBehaviour
     private void Start()
     {
         progressionScript = FindObjectOfType<Progression>();
-        createParallaxJCorridaScript = FindObjectOfType<CreateParallaxJCorrida>();
     }
     private void Update()
     {
@@ -35,12 +33,17 @@ public class ParallaxJCorrida : MonoBehaviour
         if (transform.position.x <= transformRemove.transform.position.x) //x >= -1600f;
         {
             int indexLocalSpawn = UnityEngine.Random.Range(0, transformsSpawn.Count); // Sorteia o local
-            //GameObject objectParallax = Instantiate(gameObject, transform.position, Quaternion.identity); //instancia
-            gameObject.transform.position = new Vector2(transformsSpawn[indexLocalSpawn].transform.position.x, transformsSpawn[indexLocalSpawn].transform.position.y); //coloca na posicao do local sorteado;           
+            int indexFlip = UnityEngine.Random.Range(0, 1); //Sorteia se vai fliparou não 
+            gameObject.transform.position = new Vector2(transformsSpawn[indexLocalSpawn].transform.position.x, transformsSpawn[indexLocalSpawn].transform.position.y); //coloca na posicao do local sorteado;
+            if(indexFlip == 0)//0 == flip
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }                                                                                                                                                          
+
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("SpawnNewObject"))
         {
@@ -48,7 +51,7 @@ public class ParallaxJCorrida : MonoBehaviour
             Debug.Log($"Tocouu,{collision.name}");
             Debug.Log(createParallaxJCorridaScript.spawn);
         }
-    }
+    }*/
    
 }
 
