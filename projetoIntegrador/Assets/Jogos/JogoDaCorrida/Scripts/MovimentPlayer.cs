@@ -11,7 +11,6 @@ public class MovimentPlayer : MonoBehaviour
 {
     public float speedPoints = 6;
     [SerializeField] private float jumpForce;
-    [SerializeField] private bool jump;
     [SerializeField] private bool isGrounded = true;
     private Rigidbody2D rb;
     private PlayerInput playerInput;
@@ -55,7 +54,6 @@ public class MovimentPlayer : MonoBehaviour
         if (isGrounded)
         {
             isGrounded = false;
-            jump = false;
             rb.AddForce(Vector2.up * jumpForce);
         }
     }
