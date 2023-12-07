@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class GameControllerJC : MonoBehaviour
 {
     public GameObject[] prefabFishs;
-    public static int lostObjectsForGameOver = 3;
     public GameObject gameOverObject;
     public TextMeshProUGUI score_txt;
     public TextMeshProUGUI missScore_txt;
@@ -28,20 +27,17 @@ public class GameControllerJC : MonoBehaviour
 
     private bool isPaused = false;
     private bool isUnpauseDelayed = false;
-    private float unpauseDelay = 0f;
     private float unpauseTimer = 3f;
     private bool isOptionsMenuActive = false;
     public GameObject optionsMenu; // Arraste o prefab do menu de opções para este campo no Inspector
 
     [SerializeField] private TextMeshProUGUI unpauseCount;
-
-
-
+    private GameObject instantiatedPrefabs;
 
     void Start()
     {
         gameOverObject.SetActive(false);
-        PlayerColeta.missingObjects = 0;
+        PlayerColeta.missingObjects = 5;
         StartCoroutine(SpawnObjects());
         FishsFalling.points = 0;
 
@@ -96,10 +92,11 @@ public class GameControllerJC : MonoBehaviour
 
         GameOver();
         // Check if the game over condition is met
-        if (PlayerColeta.missingObjects >= lostObjectsForGameOver)
+        if (PlayerColeta.missingObjects <= 0)
         {
             // Disable fish and trash spawning
             nextSpawnTime = float.MaxValue;
+            Destroy(instantiatedPrefabs);
         }
     }
 
@@ -156,7 +153,7 @@ public class GameControllerJC : MonoBehaviour
                 float x = Random.Range(-8f, 8f);
                 float y = 7f;
                 Vector2 spawnPosition = new Vector2(x, y);
-                Instantiate(prefabFishs[Random.Range(0, prefabFishs.Length)], spawnPosition, Quaternion.identity);
+                instantiatedPrefabs = Instantiate(prefabFishs[Random.Range(0, prefabFishs.Length)], spawnPosition, Quaternion.identity);
                 enemiesSpawned++;
                 nextSpawnTime = Time.time + spawnInterval;
             }
@@ -178,13 +175,13 @@ public class GameControllerJC : MonoBehaviour
     {
         // Texts that appear in the game
         missScore_txt.text = PlayerColeta.missingObjects.ToString();
-        score_txt.text = "X" + FishsFalling.points.ToString();
+        score_txt.text = FishsFalling.points.ToString();
     }
 
     public void GameOver()
     {
         int resetScore = 0;
-        if (PlayerColeta.missingObjects >= 3)
+        if (PlayerColeta.missingObjects <= 0)
         {
             score.text = score_txt.text;
             gameOverObject.SetActive(true);

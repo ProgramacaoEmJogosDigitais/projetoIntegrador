@@ -5,39 +5,44 @@ using UnityEngine.UI;
 
 public class MapManager : MonoBehaviour
 {
-    public Canvas scrollViewInstructions;
-    public Image panel;
+    public GameObject cameraMain;
+    public GameObject scrollViewInstructions;
     public GameObject player;
+    public Image panel;
+
     void Start()
     {
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
         if (!PlayerPrefs.HasKey("InstructionsShown") || PlayerPrefs.GetInt("InstructionsShown") == 0)
         {
+            cameraMain.GetComponent<Animator>().enabled = true;
             StartCoroutine(SpawnInstructions());
         }
         else
         {
-            StartCoroutine(ColliderVan());
+            ColliderVan();
         }
     }
 
-    public IEnumerator ColliderVan()
+    public void ColliderVan()
     {
-        yield return new WaitForSeconds(0.94f);
         player.GetComponent<BoxCollider2D>().enabled = true;
     }
     public IEnumerator SpawnInstructions()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(13.50f);
+        cameraMain.GetComponent<Animator>().enabled = false;
+
+        yield return new WaitForSeconds(0.2f);
         panel.gameObject.SetActive(true);
         player.GetComponent<BoxCollider2D>().enabled = false;
-        scrollViewInstructions.gameObject.SetActive(true);
+        scrollViewInstructions.SetActive(true);
         PlayerPrefs.SetInt("InstructionsShown", 1); // Instruções exibidas.
     }
 
     public void GoMap()
     {
-        scrollViewInstructions.gameObject.SetActive(false);
+        scrollViewInstructions.SetActive(false);
         player.GetComponent<BoxCollider2D>().enabled = true;
         panel.gameObject.SetActive(false);
     }

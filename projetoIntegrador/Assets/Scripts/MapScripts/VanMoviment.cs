@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.InputSystem;
 
 public class VanMoviment : MonoBehaviour
@@ -15,14 +16,14 @@ public class VanMoviment : MonoBehaviour
 
     public GameObject wheelLeft;
     public GameObject wheelRight;
-
     public Transform posInitial;
     public bool isMoving = false;
 
-    private float idleTime = 0f;
-    private bool isArrowDisplayed = false;
-    public GameObject arrowPrefab;
+
+    public List<GameObject> arrowPrefabs = new List<GameObject>();
+    private List<GameObject> arrowObjects = new List<GameObject>();
     private GameObject arrowObject;
+    private Vector3 offset;
 
     private void Awake()
     {
@@ -32,10 +33,9 @@ public class VanMoviment : MonoBehaviour
     private void Start()
     {
         transform.position = posInitial.position;
-        DisplayArrow();
+        StartCoroutine(SpawnArrowRoutine());
     }
 
-    // OnEnable é chamado quando o script é habilitado
     private void OnEnable()
     {
         input.Enable();
@@ -43,7 +43,6 @@ public class VanMoviment : MonoBehaviour
         input.Player.Moviment.canceled += SetMovement;
     }
 
-    // OnDisable é chamado quando o script é desabilitado
     private void OnDisable()
     {
         input.Disable();
@@ -51,7 +50,6 @@ public class VanMoviment : MonoBehaviour
         input.Player.Moviment.canceled -= SetMovement;
     }
 
-    //Lê o movimento realizado pelo jogador; Armazena a horizontal e vertical e define o movimento do jogador
     public void SetMovement(InputAction.CallbackContext context)
     {
         moveVector = context.ReadValue<Vector2>();
@@ -59,39 +57,69 @@ public class VanMoviment : MonoBehaviour
 
     void Update()
     {
-        if (isMoving)
-        {
-            idleTime = 0f;
-            if (isArrowDisplayed)
-            {
-                DestroyArrow();
-            }
-        }
-        else
-        {
-            idleTime += Time.deltaTime;
-            if (idleTime >= 2.5f && !isArrowDisplayed)
-            {
-                DisplayArrow();
-            }
-        }
-    }
-
-    private void DisplayArrow()
-    {
-        if (arrowPrefab != null)
-        {
-            arrowObject = Instantiate(arrowPrefab, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
-            isArrowDisplayed = true;
-        }
-    }
-
-    private void DestroyArrow()
-    {
         if (arrowObject != null)
         {
-            Destroy(arrowObject);
-            isArrowDisplayed = false;
+            if (GetComponent<SpriteRenderer>().sprite.name == "Vanteca_Sprite_Cima")
+            {
+                offset = new Vector3(0f, 1.1f, 0f);
+            }
+            else if (GetComponent<SpriteRenderer>().sprite.name == "Vanteca_Sprite_LadoEsquerdo")
+            {
+                offset = new Vector3(-0.5f, 1.1f, 0f);
+            }
+            else if (GetComponent<SpriteRenderer>().sprite.name == "Vanteca_Sprite_LadoDireito")
+            {
+                offset = new Vector3(0.5f, 1.1f, 0f);
+            }
+
+            arrowObject.transform.position = gameObject.transform.position + offset;
+        }
+
+
+        if (arrowObjects.Count >= arrowPrefabs.Count)
+        {
+            foreach (GameObject arrowObject in arrowObjects)
+            {
+                Destroy(arrowObject);
+            }
+            arrowObjects.Clear();
+        }
+    }
+
+    IEnumerator SpawnArrowRoutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(6f);
+            SpawnRandomArrow();
+            StartCoroutine(DestroyArrowRoutine());
+        }
+    }
+
+    IEnumerator DestroyArrowRoutine()
+    {
+        yield return new WaitForSeconds(5f);
+        if (arrowObjects.Count > 0)
+        {
+            foreach (GameObject arrowObject in arrowObjects)
+            {
+                Destroy(arrowObject);
+            }
+            arrowObjects.Clear();
+        }
+    }
+
+    private void SpawnRandomArrow()
+    {
+        if (arrowPrefabs.Count > 0)
+        {
+            int randomIndex = Random.Range(0, arrowPrefabs.Count);
+            GameObject selectedArrowPrefab = arrowPrefabs[randomIndex];
+            arrowObject = Instantiate(selectedArrowPrefab, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+
+            //arrowObject.transform.parent = transform;
+
+            arrowObjects.Add(arrowObject);
         }
     }
 }
