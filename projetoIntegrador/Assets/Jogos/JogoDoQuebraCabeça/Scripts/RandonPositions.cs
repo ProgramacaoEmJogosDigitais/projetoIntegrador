@@ -61,7 +61,6 @@ public class RandonPositions : MonoBehaviour
 
     public void RandonPiece()
     {
-
         for (int j = 0; j < randonPositions.Length; j++)
         {
             vectorPositions[j] = randonPositions[randonIndiceList[j]].position;
@@ -77,27 +76,12 @@ public class RandonPositions : MonoBehaviour
         timeInt = Mathf.FloorToInt(time);
         timeConter.text = timeInt.ToString();
 
-        if (timeInt > 0 && timeInt <5 && transprent)
-        {
-            StopPiece();
-
-        }
-        if (timeInt == 0 && transprent)
-        {
-            time = 60;
-            timeInt = 60;
-            StartpPiece();
-            ShowSprite();
-
-        }
         if (timeInt <= 0)
         {
             time = 60;
             timeInt = 60;
             min--;
             minTimeCont.text = min.ToString();
-
-
         }
         if (min <= 0)
         {
@@ -139,8 +123,10 @@ public class RandonPositions : MonoBehaviour
     public void RandSpriteButton()
     {
         randomSprite = false;
-        time = 5;
-        timeInt = 5;
+        StartpPiece(); // Iniciar peças imediatamente
+        ShowSprite(); // Tornar a imagem transparente imediatamente
+        time = 60;
+        timeInt = 60;
     }
     void ChangePices(int selectPiece)
     {
@@ -214,8 +200,6 @@ public class RandonPositions : MonoBehaviour
         //    sp3 = false;
         //}
         ChangePices(index);
-
-
     }
     void GameOver()
     {
@@ -286,16 +270,16 @@ public class RandonPositions : MonoBehaviour
     }
     public void Restart()
     {
-        min = 5;
-        
+        min = 0;
+
         okPieces = 0;
         randomSprite = true;
         transprent = true;
         //winGameText.enabled = false;
         //gameOverText.enabled = false;
         pauseTime = 1;
-        time = 5;
-        timeInt = 5;
+        time = 0;
+        timeInt = 0;
         pauseTime = 1;
         okPieces = 0;
         startGame = false;
@@ -304,10 +288,27 @@ public class RandonPositions : MonoBehaviour
 
         spriteRenderer.color = spriteRenderer.color + new Color(0, 0, 0, 1);
         StartCoroutine(RandomSprite());
-        for (int i = 0; i < randonPositions.Length; i++)
+        /*
+        min = 4;
+        
+        randomSprite = true;
+        transprent = true;
+        //winGameText.enabled = false;
+        //gameOverText.enabled = false;
+        pauseTime = 1;
+        time = 60;
+        timeInt = 60;
+        okPieces = 0;
+        startGame = false;
+        minTimeCont.text = min.ToString();
+        timeConter.text = timeInt.ToString();
+
+        spriteRenderer.color = spriteRenderer.color + new Color(0, 0, 0, 1);
+        StartCoroutine(RandomSprite());
+        /*for (int i = 0; i < randonPositions.Length; i++)
         {
             randonPositions[i].position = originalPosition[i].position;
-        }
+        }*/
     }
     private IEnumerator UpDown()
     {
