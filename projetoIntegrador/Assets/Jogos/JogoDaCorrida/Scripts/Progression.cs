@@ -5,13 +5,17 @@ using UnityEngine;
 
 public class Progression : MonoBehaviour
 {
-    public float meta = 50;
+    public float meta;
+    public float increaseMeta;
     public float multipleSpeed;
     private MovimentPlayer movimentPlayerScript;
     private ParallaxJCorrida parallaxJCorridaScript;
     private Obstacle obstacleScript;
     private CreateObstacle createObstacleScript;
     public bool atingiuAMeta;
+
+    public List<GameObject> objectsGame = new List<GameObject>(); // Lista de obstáculos instanciados
+
 
     void Start()
     {
@@ -21,22 +25,15 @@ public class Progression : MonoBehaviour
         createObstacleScript = FindObjectOfType<CreateObstacle>();
         atingiuAMeta = false;
     }
-    /*
+
+    
     void Update()
     {
-        if (movimentPlayerScript.distance >= meta)
+        if (movimentPlayerScript.distance >= meta)//TODO: Fazer logica de quando muda velocidade.
         {
-            AcelerarCorrida();
+            atingiuAMeta = true;
+            meta = meta + increaseMeta;
         }
     }
-    
-    void AcelerarCorrida()
-    {
-        atingiuAMeta = true;
-        meta += 100; Debug.Log("META:" + meta);
-        //parallaxJCorridaScript.objectSpeed *= newSpeed; Debug.Log("OBJECT SPEED: "+parallaxJCorridaScript.objectSpeed);
-        movimentPlayerScript.speedPoints *= multipleSpeed; Debug.Log("SPEED POINTS: " + movimentPlayerScript.speedPoints);
-        //obstacleScript.sideVelocity *= newSpeed; Debug.Log("OBSTACULO SPEED: " +obstacleScript.sideVelocity);
-        createObstacleScript.maxTime -= 0.1f; Debug.Log("max time: " + createObstacleScript.maxTime);
-    }**/
+
 }

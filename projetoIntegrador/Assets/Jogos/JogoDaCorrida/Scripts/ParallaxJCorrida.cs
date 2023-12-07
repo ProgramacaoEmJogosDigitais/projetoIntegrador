@@ -8,7 +8,9 @@ public class ParallaxJCorrida : MonoBehaviour
 {
 
     public float objectSpeed;
+    public float increaseObjectSpeed;
     private Progression progressionScript;
+    private CreateObstacle createObstacleScript;
     public List<GameObject> transformsSpawn;
     public GameObject transformRemove;
 
@@ -16,16 +18,17 @@ public class ParallaxJCorrida : MonoBehaviour
     private void Start()
     {
         progressionScript = FindObjectOfType<Progression>();
+        createObstacleScript = FindObjectOfType<CreateObstacle>();
     }
     private void Update()
     {
-        /*
+        
         if (progressionScript.atingiuAMeta)
         {
             progressionScript.atingiuAMeta = false;
-            objectSpeed *= multipleSpeed;
-
-        }*/
+            IncreaseObjectsSpeed();
+            //objectSpeed = objectSpeed + increaseObjectSpeed;
+        }
 
         transform.Translate(Vector3.left * objectSpeed * Time.deltaTime);
 
@@ -42,6 +45,16 @@ public class ParallaxJCorrida : MonoBehaviour
 
         }
     }
+    void IncreaseObjectsSpeed() //ERRo so acelera o primeiro objeto que chega na meta primeiro
+    {
+        foreach (GameObject objectsInMap in progressionScript.objectsGame)
+        {
+            if (objectsInMap != null)
+            {
+                objectSpeed = objectSpeed + increaseObjectSpeed;
+            }
+        }
+    }
 
     /*private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -52,7 +65,7 @@ public class ParallaxJCorrida : MonoBehaviour
             Debug.Log(createParallaxJCorridaScript.spawn);
         }
     }*/
-   
+
 }
 
 

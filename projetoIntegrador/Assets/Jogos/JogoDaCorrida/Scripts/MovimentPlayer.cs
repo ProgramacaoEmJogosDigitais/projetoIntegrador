@@ -9,7 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class MovimentPlayer : MonoBehaviour
 {
-    public float speedPoints = 5;
+    public float speedPoints;
+    public float increaseSpeedPoints;
     [SerializeField] private float jumpForce;
     [SerializeField] private bool jump;
     [SerializeField] private bool isGrounded = true;
@@ -18,6 +19,7 @@ public class MovimentPlayer : MonoBehaviour
     PlayerInputActions input;
     public float distance { private set; get; } 
     private GameControllerJCorrida gameController;
+    private Progression progressionScript;
     public TMP_Text distanceText;
 
     private void Awake()
@@ -25,6 +27,7 @@ public class MovimentPlayer : MonoBehaviour
         input = new PlayerInputActions();
         playerInput = GetComponent<PlayerInput>();
         gameController = FindObjectOfType<GameControllerJCorrida>();
+        progressionScript = FindObjectOfType<Progression>();
 
     }
 
@@ -78,6 +81,11 @@ public class MovimentPlayer : MonoBehaviour
         {
             distance += Time.deltaTime * speedPoints;
             UpdateDistanceText();
+        }
+        if (progressionScript.atingiuAMeta)
+        {
+            progressionScript.atingiuAMeta = false;
+            speedPoints = speedPoints + increaseSpeedPoints;
         }
 
     }

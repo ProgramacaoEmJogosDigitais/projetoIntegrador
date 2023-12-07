@@ -11,11 +11,10 @@ public class CreateObstacle : MonoBehaviour
     public float maxTime;
     public float minTime;
     private Progression progressionScript;
-    public float multipleSpeed;
+    public float currentSpeedInfor;
     private float speedChangeInterval = 5.0f;
     private float speedChangeTimer = 0.0f;
-    public float currentSpeedInfor;
-    private List<Obstacle> spawnedObstacles = new List<Obstacle>(); // Lista de obstáculos instanciados
+    private List<Obstacle> spawnedObstacles { get; set; } = new List<Obstacle>(); // Lista de obstáculos instanciados
 
     private void Start()
     {
@@ -44,15 +43,15 @@ public class CreateObstacle : MonoBehaviour
 
     void Update()
     {
-        if (movimentPlayerScript.distance>=progressionScript.meta)//TODO: Fazer logica de quando muda velocidade.
+        if (progressionScript.atingiuAMeta)//TODO: Fazer logica de quando muda velocidade.
         {
-            progressionScript.meta += 10;
+            progressionScript.atingiuAMeta = false;
             IncreaseObstacleSpeed();
             currentSpeedInfor++;
         }
     }
 
-    void IncreaseObstacleSpeed()
+    void IncreaseObstacleSpeed() 
     {
         foreach (Obstacle obstacle in spawnedObstacles)
         {
