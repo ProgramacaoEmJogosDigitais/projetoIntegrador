@@ -4202,6 +4202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pauseGame
       objectReference: {fileID: 0}
+    - target: {fileID: 3642139534181924210, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3304020da11fb2c4fb50f999202af373, type: 3}
     - target: {fileID: 3642139534527424284, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
