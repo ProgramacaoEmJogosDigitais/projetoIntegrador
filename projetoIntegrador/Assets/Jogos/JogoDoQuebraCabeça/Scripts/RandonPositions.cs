@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class RandonPositions : MonoBehaviour
@@ -120,8 +121,9 @@ public class RandonPositions : MonoBehaviour
             StartCoroutine(UpDown());
         }
     }
-    public void RandSpriteButton()
+    public IEnumerator RandSpriteButton()
     {
+        yield return new WaitForSeconds(3f);
         randomSprite = false;
         StartpPiece(); // Iniciar peças imediatamente
         ShowSprite(); // Tornar a imagem transparente imediatamente
@@ -165,7 +167,7 @@ public class RandonPositions : MonoBehaviour
         }
         if (sp1 && index == 0)
         {
-            index = 0;
+            index = 2;
             spriteRenderer.sprite = spriteFull[index];
         }
         if (sp2 && index == 1)
@@ -175,7 +177,7 @@ public class RandonPositions : MonoBehaviour
         }
         if (sp3 && index == 2)
         {
-            index = 2;
+            index = 0;
             spriteRenderer.sprite = spriteFull[index];
         }
         if ((sp1 && sp2))
@@ -270,45 +272,7 @@ public class RandonPositions : MonoBehaviour
     }
     public void Restart()
     {
-        min = 0;
-
-        okPieces = 0;
-        randomSprite = true;
-        transprent = true;
-        //winGameText.enabled = false;
-        //gameOverText.enabled = false;
-        pauseTime = 1;
-        time = 0;
-        timeInt = 0;
-        pauseTime = 1;
-        okPieces = 0;
-        startGame = false;
-        minTimeCont.text = min.ToString();
-        timeConter.text = timeInt.ToString();
-
-        spriteRenderer.color = spriteRenderer.color + new Color(0, 0, 0, 1);
-        StartCoroutine(RandomSprite());
-        /*
-        min = 4;
-        
-        randomSprite = true;
-        transprent = true;
-        //winGameText.enabled = false;
-        //gameOverText.enabled = false;
-        pauseTime = 1;
-        time = 60;
-        timeInt = 60;
-        okPieces = 0;
-        startGame = false;
-        minTimeCont.text = min.ToString();
-        timeConter.text = timeInt.ToString();
-
-        spriteRenderer.color = spriteRenderer.color + new Color(0, 0, 0, 1);
-        StartCoroutine(RandomSprite());
-        /*for (int i = 0; i < randonPositions.Length; i++)
-        {
-            randonPositions[i].position = originalPosition[i].position;
-        }*/
+        SceneManager.LoadScene("JogoQuebraCabeça");
     }
     private IEnumerator UpDown()
     {
