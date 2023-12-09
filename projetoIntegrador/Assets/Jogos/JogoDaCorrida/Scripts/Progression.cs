@@ -7,32 +7,32 @@ public class Progression : MonoBehaviour
 {
     public float meta;
     public float increaseMeta;
-    public float multipleSpeed;
     private MovimentPlayer movimentPlayerScript;
     private ParallaxJCorrida parallaxJCorridaScript;
-    private Obstacle obstacleScript;
-    private CreateObstacle createObstacleScript;
+    private CreateObstacle createobstacleScript;
     public bool atingiuAMeta;
-
-    public List<GameObject> objectsGame = new List<GameObject>(); // Lista de obstáculos instanciados
-
 
     void Start()
     {
         movimentPlayerScript = FindObjectOfType<MovimentPlayer>();
         parallaxJCorridaScript = FindObjectOfType<ParallaxJCorrida>();
-        obstacleScript = FindObjectOfType<Obstacle>();
-        createObstacleScript = FindObjectOfType<CreateObstacle>();
+        createobstacleScript = FindObjectOfType<CreateObstacle>();
+
         atingiuAMeta = false;
     }
 
     
     void Update()
     {
-        if (movimentPlayerScript.distance >= meta)//TODO: Fazer logica de quando muda velocidade.
+        if (movimentPlayerScript.distance >= meta)  
         {
             atingiuAMeta = true;
             meta = meta + increaseMeta;
+        }
+
+        if (parallaxJCorridaScript.progressParallaxJScript && movimentPlayerScript.progressMovimentPScript && createobstacleScript.progressCreateOScript) 
+        {
+            atingiuAMeta = false;
         }
     }
 

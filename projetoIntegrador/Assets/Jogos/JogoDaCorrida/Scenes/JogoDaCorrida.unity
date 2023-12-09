@@ -1681,13 +1681,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meta: 50
-  increaseMeta: 20
-  multipleSpeed: 1.1
+  increaseMeta: 50
   atingiuAMeta: 0
-  objectsGame:
-  - {fileID: 2058636191}
-  - {fileID: 1466992127}
-  - {fileID: 1225027603}
 --- !u!1 &430905101
 GameObject:
   m_ObjectHideFlags: 0
@@ -11169,7 +11164,7 @@ GameObject:
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2085048647
 Transform:
   m_ObjectHideFlags: 0
@@ -11203,6 +11198,7 @@ MonoBehaviour:
   - {fileID: 1740576833103840641, guid: b1f83bd76ce4e8a4badfcfbd0722b6fa, type: 3}
   maxTime: 3
   minTime: 1
+  increaseMaxTime: 0.2
   currentSpeedInfor: 10
 --- !u!1 &2106960143
 GameObject:

@@ -23,6 +23,7 @@ public class Obstacle : MonoBehaviour
         {
             transform.Translate(Vector3.left * sideVelocity * Time.deltaTime);
         }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

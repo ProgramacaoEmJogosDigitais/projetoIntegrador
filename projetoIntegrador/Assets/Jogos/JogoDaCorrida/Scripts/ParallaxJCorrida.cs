@@ -6,34 +6,38 @@ using UnityEngine;
 
 public class ParallaxJCorrida : MonoBehaviour
 {
-
+    private const int count = 10;
     public float objectSpeed;
     public float increaseObjectSpeed;
     private Progression progressionScript;
-    private CreateObstacle createObstacleScript;
     public List<GameObject> transformsSpawn;
     public GameObject transformRemove;
+    public bool progressParallaxJScript;
 
 
     private void Start()
     {
         progressionScript = FindObjectOfType<Progression>();
-        createObstacleScript = FindObjectOfType<CreateObstacle>();
+        progressParallaxJScript = false;
     }
     private void Update()
     {
         
         if (progressionScript.atingiuAMeta)
         {
-            progressionScript.atingiuAMeta = false;
-            IncreaseObjectsSpeed();
-            //objectSpeed = objectSpeed + increaseObjectSpeed;
+            //progressionScript.atingiuAMeta = false;
+            progressParallaxJScript = true;
+            ParallaxJCorrida[] objectsGame = FindObjectsOfType<ParallaxJCorrida>(); // procura todos objetos com esse script
+            foreach (ParallaxJCorrida obj in objectsGame)
+            {
+                obj.IncreaseObjectsSpeed();
+            }
         }
 
         transform.Translate(Vector3.left * objectSpeed * Time.deltaTime);
 
         // Verifica se o objeto saiu dos limites realinha a posicao
-        if (transform.position.x <= transformRemove.transform.position.x) //x >= -1600f;
+        if (transform.position.x <= transformRemove.transform.position.x) 
         {
             int indexLocalSpawn = UnityEngine.Random.Range(0, transformsSpawn.Count); // Sorteia o local
             int indexFlip = UnityEngine.Random.Range(0, 1); //Sorteia se vai fliparou não 
@@ -45,27 +49,10 @@ public class ParallaxJCorrida : MonoBehaviour
 
         }
     }
-    void IncreaseObjectsSpeed() //ERRo so acelera o primeiro objeto que chega na meta primeiro
+    void IncreaseObjectsSpeed()// Aumenta a velocidade
     {
-        foreach (GameObject objectsInMap in progressionScript.objectsGame)
-        {
-            if (objectsInMap != null)
-            {
-                objectSpeed = objectSpeed + increaseObjectSpeed;
-            }
-        }
+        objectSpeed = objectSpeed + increaseObjectSpeed;
     }
-
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("SpawnNewObject"))
-        {
-            //createParallaxJCorridaScript.spawn = true;
-            Debug.Log($"Tocouu,{collision.name}");
-            Debug.Log(createParallaxJCorridaScript.spawn);
-        }
-    }*/
-
 }
 
 

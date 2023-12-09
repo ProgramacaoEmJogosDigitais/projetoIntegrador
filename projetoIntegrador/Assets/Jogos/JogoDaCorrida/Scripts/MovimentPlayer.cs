@@ -21,6 +21,8 @@ public class MovimentPlayer : MonoBehaviour
     private GameControllerJCorrida gameController;
     private Progression progressionScript;
     public TMP_Text distanceText;
+    public bool progressMovimentPScript;
+
 
     private void Awake()
     {
@@ -28,6 +30,7 @@ public class MovimentPlayer : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         gameController = FindObjectOfType<GameControllerJCorrida>();
         progressionScript = FindObjectOfType<Progression>();
+        progressMovimentPScript = false;
 
     }
 
@@ -84,7 +87,8 @@ public class MovimentPlayer : MonoBehaviour
         }
         if (progressionScript.atingiuAMeta)
         {
-            progressionScript.atingiuAMeta = false;
+            //progressionScript.atingiuAMeta = false;
+            progressMovimentPScript = true;
             speedPoints = speedPoints + increaseSpeedPoints;
         }
 

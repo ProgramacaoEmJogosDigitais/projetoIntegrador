@@ -6,14 +6,12 @@ public class CreateObstacle : MonoBehaviour
 {
     public List<GameObject> prefabObstacle;
     private GameControllerJCorrida gameControllerJCorrida;
-    private MovimentPlayer movimentPlayerScript;
-    private Obstacle obstacleScript;
     public float maxTime;
     public float minTime;
+    public float increaseMaxTime;
     private Progression progressionScript;
     public float currentSpeedInfor;
-    private float speedChangeInterval = 5.0f;
-    private float speedChangeTimer = 0.0f;
+    public bool progressCreateOScript;
     private List<Obstacle> spawnedObstacles { get; set; } = new List<Obstacle>(); // Lista de obstáculos instanciados
 
     private void Start()
@@ -21,8 +19,7 @@ public class CreateObstacle : MonoBehaviour
         gameControllerJCorrida = FindObjectOfType<GameControllerJCorrida>();
         StartCoroutine(Spawn());
         progressionScript = FindObjectOfType<Progression>();
-        movimentPlayerScript = FindObjectOfType<MovimentPlayer>();
-        obstacleScript = FindObjectOfType<Obstacle>();
+        progressCreateOScript = false;
     }
 
     IEnumerator Spawn()
@@ -45,9 +42,12 @@ public class CreateObstacle : MonoBehaviour
     {
         if (progressionScript.atingiuAMeta)//TODO: Fazer logica de quando muda velocidade.
         {
-            progressionScript.atingiuAMeta = false;
-            IncreaseObstacleSpeed();
+            Debug.Log("ENTROUUU");
+            //progressionScript.atingiuAMeta = false;
+            progressCreateOScript = true;
             currentSpeedInfor++;
+            IncreaseObstacleSpeed();
+            maxTime = maxTime + increaseMaxTime;
         }
     }
 
