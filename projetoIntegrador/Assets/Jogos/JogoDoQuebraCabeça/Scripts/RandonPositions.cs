@@ -7,26 +7,48 @@ using UnityEngine.UI;
 
 public class RandonPositions : MonoBehaviour
 {
-    public Transform[] randonPositions, originalPosition;
-    public Vector3[] vectorPositions;
-    public TextMeshProUGUI timeConter, minTimeCont, gameOverText, winGameText;
-
-    int min;
-    public int randonIndice, len;
-    public List<int> randonIndiceList;
-    public SpriteRenderer spriteRenderer;
-    public Sprite[] spritePieces1, spritePieces2, spritePieces3, spriteFull;
     public static int okPieces;
-    int index, pauseTime;
+
     public float time;
-    bool startGame, randomSprite, transprent, gameOver;
-    public GameObject buttonRestart, buttonSelect, bookPointsAnim;
-    bool sp1, sp2, sp3, goToMapOk;
-    int timeInt, randSprit;
     public Image bookScore;
     public ParticleSystem particle;
+    public List<Sprite> spriteFull;
+    public Vector3[] vectorPositions;
+    public List<int> randonIndiceList;
+    public SpriteRenderer spriteRenderer;
+    public Transform[] randonPositions, originalPosition;
+    public GameObject buttonRestart, buttonSelect, bookPointsAnim;
+    public Sprite[] spritePieces1, spritePieces2, spritePieces3;
+    public TextMeshProUGUI timeConter, minTimeCont, gameOverText, winGameText;
 
-    public bool repet;
+    private List<Sprite> spriteFullReserve;
+    private int timeInt, index, pauseTime, min, len;
+    private bool startGame, randomSprite, transprent, gameOver, goToMapOk, repet;
+    void Start()
+    {
+        goToMapOk = true;
+        okPieces = 0;
+        randomSprite = true;
+        transprent = true;
+        //winGameText.enabled = false;
+        //gameOverText.enabled = false;
+        pauseTime = 1;
+        time = 6;
+        timeInt = 6;
+        min = 5;
+
+        BooksPonts.pJigsaw = 0;
+
+        StartCoroutine(RandomSprite());
+    }
+    void Update()
+    {
+        if (BooksPonts.pJigsaw == 4 && goToMapOk)
+        {
+            goToMapOk = false;
+            StartCoroutine(UpDown());
+        }
+    }
     private void FixedUpdate()
     {
         if (okPieces >= 24)
@@ -37,29 +59,7 @@ public class RandonPositions : MonoBehaviour
         {
             ContTime();
         }
-
     }
-    void Start()
-    {
-        goToMapOk = true;
-        okPieces = 0;
-        randomSprite = true;
-        transprent = true;
-        //winGameText.enabled = false;
-        //gameOverText.enabled = false;
-        pauseTime = 1;
-        sp1 = false;
-        sp2 = false;
-        sp3 = false;
-        time = 6;
-        timeInt = 6;
-        min = 5;
-
-        BooksPonts.pJigsaw = 0;
-
-        StartCoroutine(RandomSprite());
-    }
-
     public void RandonPiece()
     {
         for (int j = 0; j < randonPositions.Length; j++)
@@ -113,14 +113,6 @@ public class RandonPositions : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (BooksPonts.pJigsaw == 4 && goToMapOk)
-        {
-           goToMapOk = false;
-            StartCoroutine(UpDown());
-        }
-    }
     public IEnumerator RandSpriteButton()
     {
         yield return new WaitForSeconds(3f);
@@ -151,57 +143,17 @@ public class RandonPositions : MonoBehaviour
         startGame = true;
         RandonPiece();
     }
-    private IEnumerator RandomSprite()
+    public IEnumerator RandomSprite()
     {
         while (randomSprite)
         {
-            index++;
-
-            if (index == spriteFull.Length)
-            {
-                index = 0;
-
-            }
+            index = UnityEngine.Random.Range(0, spriteFull.Count);
             spriteRenderer.sprite = spriteFull[index];
             yield return new WaitForSeconds(0.1f);
         }
-        if (sp1 && index == 0)
-        {
-            index = 2;
-            spriteRenderer.sprite = spriteFull[index];
-        }
-        if (sp2 && index == 1)
-        {
-            index = 1;
-            spriteRenderer.sprite = spriteFull[index];
-        }
-        if (sp3 && index == 2)
-        {
-            index = 0;
-            spriteRenderer.sprite = spriteFull[index];
-        }
-        if ((sp1 && sp2))
-        {
-            index = 2;
-            spriteRenderer.sprite = spriteFull[index];
-        }
-        if (sp1 && sp3)
-        {
-            index = 1;
-            spriteRenderer.sprite = spriteFull[index];
-        }
-        if (sp2 && sp3)
-        {
-            index = 0;
-            spriteRenderer.sprite = spriteFull[index];
-        }
-        // if (sp1 && sp2 && sp3)
-        //{
-        //    sp1 = false;
-        //    sp2 = false;
-        //    sp3 = false;
-        //}
         ChangePices(index);
+        spriteFull.RemoveAt(index);
+        spriteFull.Add(spriteFull[index]);
     }
     void GameOver()
     {
@@ -212,7 +164,7 @@ public class RandonPositions : MonoBehaviour
     }
     void WinGame()
     {
-        if (index == 0)
+        /*if (index == 0)
         {
             sp1 = true;
         }
@@ -259,7 +211,7 @@ public class RandonPositions : MonoBehaviour
 
         pauseTime = 0;
         buttonRestart.SetActive(true);
-        buttonSelect.SetActive(false);
+        buttonSelect.SetActive(false);*/
     }
     private IEnumerator BooksPoints()
     {
