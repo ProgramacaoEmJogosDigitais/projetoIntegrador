@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class QuebraCabecaManager : MonoBehaviour
+public class JigsawManager : MonoBehaviour
 {
     public RandonPositions randon;
     public GameObject instructions;

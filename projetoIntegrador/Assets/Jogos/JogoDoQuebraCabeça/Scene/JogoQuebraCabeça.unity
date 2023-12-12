@@ -7943,6 +7943,7 @@ GameObject:
   - component: {fileID: 996645503}
   - component: {fileID: 996645504}
   - component: {fileID: 996645502}
+  - component: {fileID: 996645505}
   m_Layer: 0
   m_Name: Controler
   m_TagString: Untagged
@@ -7962,6 +7963,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7eb3fa9e93b5f4d8640c210907c504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 0
+  time: 0
+  bookScore: {fileID: 0}
+  particle: {fileID: 2025075626}
+  spriteFull:
+  - {fileID: 21300000, guid: 7ba80fe30fab4f344b851f0031a1f27b, type: 3}
+  - {fileID: 21300000, guid: 5428ae66860b40c4e972df007354b5d7, type: 3}
+  - {fileID: 21300000, guid: d4af0657897054848b1414fdacc8273f, type: 3}
+  vectorPositions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  randonIndiceList: 0c00000016000000170000000e0000000d000000080000000500000004000000060000000a0000000900000013000000120000000b000000110000000f0000000000000001000000030000000200000007000000100000001400000015000000
+  spriteRenderer: {fileID: 1115264856}
   randonPositions:
   - {fileID: 1506341849}
   - {fileID: 127222248}
@@ -8012,39 +8048,9 @@ MonoBehaviour:
   - {fileID: 561348470}
   - {fileID: 633933195}
   - {fileID: 541892320}
-  vectorPositions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  timeConter: {fileID: 397601340}
-  minTimeCont: {fileID: 266311421}
-  gameOverText: {fileID: 0}
-  winGameText: {fileID: 0}
-  randonIndice: 0
-  len: 0
-  randonIndiceList: 0c00000016000000170000000e0000000d000000080000000500000004000000060000000a0000000900000013000000120000000b000000110000000f0000000000000001000000030000000200000007000000100000001400000015000000
-  spriteRenderer: {fileID: 1115264856}
+  buttonRestart: {fileID: 1870494413}
+  buttonSelect: {fileID: 0}
+  bookPointsAnim: {fileID: 1486019406}
   spritePieces1:
   - {fileID: 21300000, guid: 87cde943f3706084e8edcb26fe4ec935, type: 3}
   - {fileID: 21300000, guid: 36bdd15aa592bc848afc1028b4a0ea9a, type: 3}
@@ -8120,17 +8126,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1b2c7b29119eb154dab70727fa620a46, type: 3}
   - {fileID: 21300000, guid: 59de195de14d23a4fa108131d2cf5929, type: 3}
   - {fileID: 21300000, guid: 9e79d3ed2316f6143b4b44344d0fe810, type: 3}
-  spriteFull:
-  - {fileID: 21300000, guid: 7ba80fe30fab4f344b851f0031a1f27b, type: 3}
-  - {fileID: 21300000, guid: 5428ae66860b40c4e972df007354b5d7, type: 3}
-  - {fileID: 21300000, guid: d4af0657897054848b1414fdacc8273f, type: 3}
-  time: 0
-  buttonRestart: {fileID: 1870494413}
-  buttonSelect: {fileID: 0}
-  bookPointsAnim: {fileID: 1486019406}
-  bookScore: {fileID: 0}
-  particle: {fileID: 2025075626}
-  repet: 0
+  timeConter: {fileID: 397601340}
+  minTimeCont: {fileID: 266311421}
+  gameOverText: {fileID: 0}
+  winGameText: {fileID: 0}
 --- !u!4 &996645503
 Transform:
   m_ObjectHideFlags: 0
@@ -8161,6 +8160,19 @@ MonoBehaviour:
   randon: {fileID: 996645502}
   instructions: {fileID: 1435489378}
   panel: {fileID: 1344201519}
+--- !u!114 &996645505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996645501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf790237a25ba54dbba1781e543ef32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randon: {fileID: 996645502}
 --- !u!1 &1014964210
 GameObject:
   m_ObjectHideFlags: 0

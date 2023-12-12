@@ -9,6 +9,7 @@ public class RandonPositions : MonoBehaviour
 {
     public static int okPieces;
 
+    public int index;
     public float time;
     public Image bookScore;
     public ParticleSystem particle;
@@ -21,8 +22,7 @@ public class RandonPositions : MonoBehaviour
     public Sprite[] spritePieces1, spritePieces2, spritePieces3;
     public TextMeshProUGUI timeConter, minTimeCont, gameOverText, winGameText;
 
-    private List<Sprite> spriteFullReserve;
-    private int timeInt, index, pauseTime, min, len;
+    private int timeInt, pauseTime, min, len;
     private bool startGame, randomSprite, transprent, gameOver, goToMapOk, repet;
     void Start()
     {
@@ -152,8 +152,6 @@ public class RandonPositions : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         ChangePices(index);
-        spriteFull.RemoveAt(index);
-        spriteFull.Add(spriteFull[index]);
     }
     void GameOver()
     {
