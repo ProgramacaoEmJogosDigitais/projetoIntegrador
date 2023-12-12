@@ -147,3 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sideVelocity: 8
+  transformDelete: {x: -20, y: 0, z: 0}

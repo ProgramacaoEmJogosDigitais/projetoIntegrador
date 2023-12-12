@@ -11,7 +11,7 @@ public class Progression : MonoBehaviour
     private ParallaxJCorrida parallaxJCorridaScript;
     private CreateObstacle createobstacleScript;
     public bool atingiuAMeta;
-
+    public int cont;
     void Start()
     {
         movimentPlayerScript = FindObjectOfType<MovimentPlayer>();
@@ -19,6 +19,7 @@ public class Progression : MonoBehaviour
         createobstacleScript = FindObjectOfType<CreateObstacle>();
 
         atingiuAMeta = false;
+        cont = 0;
     }
 
     
@@ -28,6 +29,7 @@ public class Progression : MonoBehaviour
         {
             atingiuAMeta = true;
             meta = meta + increaseMeta;
+            cont++;
         }
 
         if (parallaxJCorridaScript.progressParallaxJScript && movimentPlayerScript.progressMovimentPScript && createobstacleScript.progressCreateOScript) 

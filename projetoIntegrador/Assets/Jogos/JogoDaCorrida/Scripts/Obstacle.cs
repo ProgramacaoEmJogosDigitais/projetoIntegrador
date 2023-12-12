@@ -6,10 +6,13 @@ public class Obstacle : MonoBehaviour
 {
     [SerializeField] private float sideVelocity;
     private GameControllerJCorrida gameControllerJCorrida;
+    public Transform transformDelete;
+
 
     private void Start()
     {
         gameControllerJCorrida = FindObjectOfType<GameControllerJCorrida>();
+        transformDelete = GameObject.Find("Obstacles").transform;
     }
 
     public void SetObstacleSpeed(float speed)
@@ -23,14 +26,15 @@ public class Obstacle : MonoBehaviour
         {
             transform.Translate(Vector3.left * sideVelocity * Time.deltaTime);
         }
-        
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("DestroyObstacle"))
+        if (transformDelete != null)
         {
-            Destroy(gameObject);
+            if (transform.position.x <= transformDelete.transform.position.x)
+                Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log("O transformDelete é nullo");
         }
     }
 }
