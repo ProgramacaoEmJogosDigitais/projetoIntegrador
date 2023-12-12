@@ -42,8 +42,6 @@ public class CreateObstacle : MonoBehaviour
     {
         if (progressionScript.atingiuAMeta)//TODO: Fazer logica de quando muda velocidade.
         {
-            Debug.Log("ENTROUUU");
-            //progressionScript.atingiuAMeta = false;
             progressCreateOScript = true;
             currentSpeedInfor++;
             IncreaseObstacleSpeed();

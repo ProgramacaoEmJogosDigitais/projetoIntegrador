@@ -87,9 +87,10 @@ public class MovimentPlayer : MonoBehaviour
         }
         if (progressionScript.atingiuAMeta)
         {
-            //progressionScript.atingiuAMeta = false;
+            Debug.Log("ATINGIUUUU");
             progressMovimentPScript = true;
             speedPoints = speedPoints + increaseSpeedPoints;
+            Debug.Log("aaaaa"+speedPoints);
         }
 
     }

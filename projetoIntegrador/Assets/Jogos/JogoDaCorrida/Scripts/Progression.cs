@@ -32,6 +32,9 @@ public class Progression : MonoBehaviour
 
         if (parallaxJCorridaScript.progressParallaxJScript && movimentPlayerScript.progressMovimentPScript && createobstacleScript.progressCreateOScript) 
         {
+            parallaxJCorridaScript.progressParallaxJScript = false;
+            movimentPlayerScript.progressMovimentPScript = false;
+            createobstacleScript.progressCreateOScript = false;
             atingiuAMeta = false;
         }
     }

@@ -25,7 +25,6 @@ public class ParallaxJCorrida : MonoBehaviour
         
         if (progressionScript.atingiuAMeta)
         {
-            //progressionScript.atingiuAMeta = false;
             progressParallaxJScript = true;
             ParallaxJCorrida[] objectsGame = FindObjectsOfType<ParallaxJCorrida>(); // procura todos objetos com esse script
             foreach (ParallaxJCorrida obj in objectsGame)
