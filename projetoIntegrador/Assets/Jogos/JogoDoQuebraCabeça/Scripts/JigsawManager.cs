@@ -24,6 +24,7 @@ public class JigsawManager : MonoBehaviour
 
     public void Play()
     {
+        randon.saveIndex = true;
         randon.StartCoroutine(randon.RandSpriteButton());
     }
     public IEnumerator SpawnInstructions()
@@ -38,6 +39,7 @@ public class JigsawManager : MonoBehaviour
     {
         instructions.SetActive(false);
         panel.gameObject.SetActive(false);
+        randon.saveIndex = true;
         randon.StartCoroutine(randon.RandSpriteButton());
     }
 }

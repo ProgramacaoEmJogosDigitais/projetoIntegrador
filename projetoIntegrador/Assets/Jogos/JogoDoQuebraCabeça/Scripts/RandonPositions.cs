@@ -11,6 +11,7 @@ public class RandonPositions : MonoBehaviour
 
     public int index;
     public float time;
+    public bool saveIndex = false;
     public Image bookScore;
     public ParticleSystem particle;
     public List<Sprite> spriteFull;
