@@ -24,7 +24,7 @@ public class CreateObstacle : MonoBehaviour
         progressCreateOScript = false;
     }
 
-    IEnumerator Spawn()
+    IEnumerator Spawn() //instancia os obstaculos
     {
         while (!gameControllerJCorrida.gameOver)
         {
@@ -40,9 +40,9 @@ public class CreateObstacle : MonoBehaviour
         }
     }
 
-    void Update()
+    void Update() //verifica se atingiu a meta 
     {
-        if (progressionScript.atingiuAMeta)//TODO: Fazer logica de quando muda velocidade.
+        if (progressionScript.atingiuAMeta) //estabiliza a velocidade da instanciacao, dependnedo da distancia percorrida
         {
             if(movimentPlayerScript.distance >= 1500f && movimentPlayerScript.distance < 2750f)
             {
@@ -70,7 +70,7 @@ public class CreateObstacle : MonoBehaviour
         }
     }
 
-    void IncreaseObstacleSpeed() 
+    void IncreaseObstacleSpeed()  //muda a vellocidade doos obstaculos que estao na cena
     {
         foreach (Obstacle obstacle in spawnedObstacles)
         {

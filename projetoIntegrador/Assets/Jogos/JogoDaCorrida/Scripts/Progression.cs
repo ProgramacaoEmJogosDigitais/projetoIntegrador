@@ -23,7 +23,7 @@ public class Progression : MonoBehaviour
     }
 
     
-    void Update()
+    void Update()//verifica se atingiu a meta
     {
         if (movimentPlayerScript.distance >= meta)  
         {
@@ -32,7 +32,7 @@ public class Progression : MonoBehaviour
             cont++;
         }
 
-        if (parallaxJCorridaScript.progressParallaxJScript && movimentPlayerScript.progressMovimentPScript && createobstacleScript.progressCreateOScript) 
+        if (parallaxJCorridaScript.progressParallaxJScript && movimentPlayerScript.progressMovimentPScript && createobstacleScript.progressCreateOScript) //verifica se as variaveis estao verdadeiras para deixar falsa novamente o atingiu a meta
         {
             parallaxJCorridaScript.progressParallaxJScript = false;
             movimentPlayerScript.progressMovimentPScript = false;

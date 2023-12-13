@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
@@ -22,7 +23,6 @@ public class MovimentPlayer : MonoBehaviour
     private Progression progressionScript;
     public TMP_Text distanceText;
     public bool progressMovimentPScript;
-
 
     private void Awake()
     {
@@ -78,7 +78,7 @@ public class MovimentPlayer : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
     }
-    void Update()
+    void Update() //aumenta a velocidade da pontuacao quando atinge a meta
     {
         if (!gameController.gameOver)
         {
@@ -87,15 +87,13 @@ public class MovimentPlayer : MonoBehaviour
         }
         if (progressionScript.atingiuAMeta)
         {
-            Debug.Log("ATINGIUUUU");
             progressMovimentPScript = true;
             speedPoints = speedPoints + increaseSpeedPoints;
-            Debug.Log("aaaaa"+speedPoints);
         }
 
     }
 
-    void UpdateDistanceText()
+    void UpdateDistanceText() //mostra na tela
     {
         distanceText.text = distance.ToString("F0");
     }

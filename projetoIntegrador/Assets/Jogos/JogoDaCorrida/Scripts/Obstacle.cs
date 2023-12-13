@@ -20,7 +20,7 @@ public class Obstacle : MonoBehaviour
         sideVelocity = speed;
     }
 
-    void Update()
+    void Update() //faz o obstaculo se mover para a esquerda e destroy
     {
         if (!gameControllerJCorrida.gameOver)
         {
@@ -31,10 +31,6 @@ public class Obstacle : MonoBehaviour
         {
             if (transform.position.x <= transformDelete.transform.position.x)
                 Destroy(gameObject);
-        }
-        else
-        {
-            Debug.Log("O transformDelete é nullo");
         }
     }
 }

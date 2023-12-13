@@ -20,7 +20,7 @@ public class GameControllerJCorrida : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (gameOver)
+        if (gameOver) //verifica se perdeu
         {
             Time.timeScale = 0;
             pointsText.text = movimentPlayer.distance.ToString("F0");
