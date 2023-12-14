@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
@@ -24,6 +25,8 @@ public class MovimentPlayer : MonoBehaviour
     public TMP_Text distanceText;
     public bool progressMovimentPScript;
 
+    private Animator animator;
+
     private void Awake()
     {
         input = new PlayerInputActions();
@@ -38,6 +41,7 @@ public class MovimentPlayer : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         distance = 0f;
+        animator = GetComponent<Animator>();
     }
 
     private void OnEnable() // executado quando um objeto é ativado
@@ -60,9 +64,10 @@ public class MovimentPlayer : MonoBehaviour
 
         if (isGrounded)
         {
+            animator.SetBool("Jump", true);
             isGrounded = false;
             jump = false;
-            rb.AddForce(Vector2.up * jumpForce);
+            rb.AddForce(Vector2.up * jumpForce);            
         }
     }
     void OnCollisionEnter2D(Collision2D collision) // verifica se ta no chao
@@ -70,6 +75,7 @@ public class MovimentPlayer : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            animator.SetBool("Jump", false);
         }
 
         if (collision.gameObject.CompareTag("Obstacle"))
