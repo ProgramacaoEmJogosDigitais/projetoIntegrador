@@ -17,7 +17,10 @@ public class GameControllerQuiz : MonoBehaviour
     public Sprite vidaUsada;
     public Sprite[] personagens;
     public Image PontoP;
-  
+    public GameObject painelGameOver;
+    public GameObject painelBackground;
+
+
     public TMP_Text pergunta;
     public TMP_Text respostaA;
     public TMP_Text respostaB;
@@ -47,6 +50,7 @@ public class GameControllerQuiz : MonoBehaviour
     private float erros;
     private bool verificacao_acerto;
     private bool verificacao_pergunta = true;
+    
 
     void Start()
     {
@@ -99,8 +103,9 @@ public class GameControllerQuiz : MonoBehaviour
         if (indicesUtilizados.Count == perguntas.Length)
         {
             //TODO Talvez reiniciar o jogo, aqui ja foram todas as perguntas.
-            GameOver();
             StartCoroutine(Espera2());
+            pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/" + questoes.ToString();
+            gameOverQuiz.SetActive(true);
             indicesUtilizados.Clear();
             //ShuffleQuestions();
         }
@@ -225,6 +230,7 @@ public class GameControllerQuiz : MonoBehaviour
     {
         if (erros == 3)
         {
+            Debug.Log("aa");
             over = true;
             StartCoroutine(Espera2());
             pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/" + questoes.ToString();
@@ -266,7 +272,9 @@ public class GameControllerQuiz : MonoBehaviour
             }
             */
 
-            ShowQuestion(); 
+            ShowQuestion();
+         
+           
         }
     }
 
@@ -286,7 +294,9 @@ public class GameControllerQuiz : MonoBehaviour
     private IEnumerator Espera2()
     {
         yield return new WaitForSeconds(1);
+        painelGameOver.SetActive(true);
         gameOverQuiz.SetActive(true);
+        
     }
 
     public int AchaCerta()
