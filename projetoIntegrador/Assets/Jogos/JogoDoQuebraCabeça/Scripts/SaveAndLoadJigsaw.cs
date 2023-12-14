@@ -16,13 +16,12 @@ public class SaveAndLoadJigsaw : MonoBehaviour
             Debug.Log("img zero: " + PlayerPrefs.GetString("Img0"));
             for (int i = 0; i < randon.spriteFull.Count; i++)
             {
-                Debug.Log(i);
-
                 if (randon.spriteFull[i].name == PlayerPrefs.GetString("Img0"))
                 {
                     randon.spriteFull.RemoveAt(i);
                 }
             }
+            randon.isPlay = true;
         }
         else if (randon.saveIndex && PlayerPrefs.HasKey("Img0"))
         {
@@ -37,13 +36,14 @@ public class SaveAndLoadJigsaw : MonoBehaviour
                     randon.spriteFull.RemoveAt(i);
                 }
             }
-            for (int i = 0; i < randon.spriteFull.Count; i++)
+            for (int j = 0; j < randon.spriteFull.Count; j++)
             {
-                if (randon.spriteFull[i].name == PlayerPrefs.GetString("Img1"))
+                if (randon.spriteFull[j].name == PlayerPrefs.GetString("Img1"))
                 {
-                    randon.spriteFull.RemoveAt(i);
+                    randon.spriteFull.RemoveAt(j);
                 }
             }
+            randon.isPlay = true;
         }
     }
     private void OnDestroy()
@@ -54,7 +54,9 @@ public class SaveAndLoadJigsaw : MonoBehaviour
 
     public void SaveObjectJigsaw()
     {
-        PlayerPrefs.SetString("randonName", randon.spriteRenderer.sprite.name);
+        PlayerPrefs.SetString("randonName", randon.spriteFull[randon.index].name);
+        PlayerPrefs.Save();
+
         Debug.Log("Index  : " + PlayerPrefs.GetString("randonName"));
     }
 }
