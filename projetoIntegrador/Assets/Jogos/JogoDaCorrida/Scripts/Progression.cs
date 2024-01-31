@@ -5,32 +5,40 @@ using UnityEngine;
 
 public class Progression : MonoBehaviour
 {
+    public float meta;
+    public float increaseMeta;
     private MovimentPlayer movimentPlayerScript;
-    public float inclementoDePontos;
-    public float metaParaInclemento;
-    public float incrementoSpeeadPoints;
-    public bool ÈMaior;
+    private ParallaxJCorrida parallaxJCorridaScript;
+    private CreateObstacle createobstacleScript;
+    public bool atingiuAMeta;
+    public int cont;
     void Start()
     {
         movimentPlayerScript = FindObjectOfType<MovimentPlayer>();
-        ÈMaior = false;
+        parallaxJCorridaScript = FindObjectOfType<ParallaxJCorrida>();
+        createobstacleScript = FindObjectOfType<CreateObstacle>();
+
+        atingiuAMeta = false;
+        cont = 0;
     }
-    void Update()
+
+    
+    void Update()//verifica se atingiu a meta
     {
-        if (movimentPlayerScript.distance >= metaParaInclemento)
+        if (movimentPlayerScript.distance >= meta)  
         {
-            ÈMaior=true;
-            AcelerarCorrida();
+            atingiuAMeta = true;
+            meta = meta + increaseMeta;
+            cont++;
+        }
+
+        if (parallaxJCorridaScript.progressParallaxJScript && movimentPlayerScript.progressMovimentPScript && createobstacleScript.progressCreateOScript) //verifica se as variaveis estao verdadeiras para deixar falsa novamente o atingiu a meta
+        {
+            parallaxJCorridaScript.progressParallaxJScript = false;
+            movimentPlayerScript.progressMovimentPScript = false;
+            createobstacleScript.progressCreateOScript = false;
+            atingiuAMeta = false;
         }
     }
 
-    void AcelerarCorrida()
-    {
-        if (ÈMaior)
-        {
-            metaParaInclemento = +inclementoDePontos;
-            movimentPlayerScript.speedPoints = movimentPlayerScript.speedPoints * incrementoSpeeadPoints;
-            ÈMaior = false;
-        }
-    }
 }

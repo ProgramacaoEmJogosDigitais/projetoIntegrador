@@ -42,14 +42,6 @@ public class Instructions : MonoBehaviour
         Time.timeScale = 0.0f;
         panelPause.SetActive(false);
         panelInstructions.gameObject.SetActive(true);
-        //bt_pause.gameObject.SetActive(false);
 
     }
-
-    /*
-    public void ExitInstructions()
-    {
-        panelPause.SetActive(true);
-        canvasInstructions.gameObject.SetActive(false);
-    }*/
 }
