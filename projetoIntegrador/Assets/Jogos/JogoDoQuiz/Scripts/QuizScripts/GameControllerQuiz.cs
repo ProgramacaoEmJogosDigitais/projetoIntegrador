@@ -17,7 +17,10 @@ public class GameControllerQuiz : MonoBehaviour
     public Sprite vidaUsada;
     public Sprite[] personagens;
     public Image PontoP;
-  
+    public GameObject painelGameOver;
+    public Image[] pontosTuristicos;
+
+
     public TMP_Text pergunta;
     public TMP_Text respostaA;
     public TMP_Text respostaB;
@@ -41,12 +44,13 @@ public class GameControllerQuiz : MonoBehaviour
 
     private List<int> indicesUtilizados = new List<int>(); // Lista para controlar índices utilizados
     private int idPergunta;
+    private int endQuestions = 0;
 
     private float acertos;
     private float questoes;
     private float erros;
-    private bool verificacao_acerto;
     private bool verificacao_pergunta = true;
+    
 
     void Start()
     {
@@ -64,12 +68,14 @@ public class GameControllerQuiz : MonoBehaviour
     {
         GameOver();
         Vida();
+     
     }
 
     void ShuffleQuestions()
     {
         for (int i = 0; i < perguntas.Length; i++)
         {
+            
             int temp = Random.Range(0, perguntas.Length);
             string tempPergunta = perguntas[temp];
             string tempAltA = alternativaA[temp];
@@ -91,16 +97,20 @@ public class GameControllerQuiz : MonoBehaviour
             alternativaC[i] = tempAltC;
             alternativaD[i] = tempAltD;
             corretas[i] = tempCorreta;
+           
         }
+    
     }
 
     void ShowQuestion()
     {
+        endQuestions++;
         if (indicesUtilizados.Count == perguntas.Length)
         {
             //TODO Talvez reiniciar o jogo, aqui ja foram todas as perguntas.
-            GameOver();
             StartCoroutine(Espera2());
+            pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/5";
+            gameOverQuiz.SetActive(true);
             indicesUtilizados.Clear();
             //ShuffleQuestions();
         }
@@ -121,7 +131,7 @@ public class GameControllerQuiz : MonoBehaviour
         respostaB.text = alternativaB[idPergunta];
         respostaC.text = alternativaC[idPergunta];
         respostaD.text = alternativaD[idPergunta];
-        infoRespostas.text = "Pergunta: " + (indicesUtilizados.Count).ToString() + "/" + questoes.ToString();
+        infoRespostas.text = "Pergunta: " + (indicesUtilizados.Count).ToString() + "/5" ;
 
         verificacao_pergunta = true; // Reinicie a verificação da pergunta
     }
@@ -223,11 +233,11 @@ public class GameControllerQuiz : MonoBehaviour
 
     void GameOver()
     {
-        if (erros == 3)
+        if (erros == 3 || endQuestions > 5)
         {
             over = true;
             StartCoroutine(Espera2());
-            pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/" + questoes.ToString();
+            pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/5";
         }
     }
     void TrocaDePersonagens()
@@ -246,27 +256,10 @@ public class GameControllerQuiz : MonoBehaviour
         }
         else if (!over)
         {
-            /*
-            idPergunta += 1;
-            
-            if (idPergunta <= (questoes - 1))
-            {
-                pergunta.text = perguntas[idPergunta];
-                respostaA.text = alternativaA[idPergunta];
-                respostaB.text = alternativaB[idPergunta];
-                respostaC.text = alternativaC[idPergunta];
-                respostaD.text = alternativaD[idPergunta];
-                infoRespostas.text = "Pergunta: " + (idPergunta + 1).ToString() + "/" + questoes.ToString();
-                verificacao_pergunta = true;
-            }
-            else
-            {
-                StartCoroutine(Espera2());
-                pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/" + questoes.ToString();
-            }
-            */
 
-            ShowQuestion(); 
+            ShowQuestion();
+         
+           
         }
     }
 
@@ -285,8 +278,10 @@ public class GameControllerQuiz : MonoBehaviour
 
     private IEnumerator Espera2()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
+        painelGameOver.SetActive(true);
         gameOverQuiz.SetActive(true);
+        
     }
 
     public int AchaCerta()
