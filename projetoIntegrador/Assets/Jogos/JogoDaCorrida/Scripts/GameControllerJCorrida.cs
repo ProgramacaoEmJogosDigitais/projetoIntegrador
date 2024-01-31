@@ -10,6 +10,7 @@ public class GameControllerJCorrida : MonoBehaviour
 {
     public bool gameOver;
     public GameObject panelGameOver;
+    public GameObject panelOptions;
     public TMP_Text pointsText;
     private MovimentPlayer movimentPlayer;
 
@@ -26,6 +27,11 @@ public class GameControllerJCorrida : MonoBehaviour
             pointsText.text = movimentPlayer.distance.ToString("F0");
             panelGameOver.SetActive(true);
         }
+    }
+
+    public void OpenOptions()
+    {
+        panelOptions.gameObject.SetActive(true);
     }
 
 }

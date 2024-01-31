@@ -86,4 +86,5 @@ public class PauseJCorrida : MonoBehaviour
         SceneManager.LoadScene(sceneName);
 
     }
+
 }
