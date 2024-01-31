@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 
 public class MovimentPlayer : MonoBehaviour
 {
+    public AudioSource jumpSound;
     public float speedPoints;
     public float increaseSpeedPoints;
     [SerializeField] private float jumpForce;
@@ -67,7 +68,8 @@ public class MovimentPlayer : MonoBehaviour
             animator.SetBool("Jump", true);
             isGrounded = false;
             jump = false;
-            rb.AddForce(Vector2.up * jumpForce);            
+            rb.AddForce(Vector2.up * jumpForce);   
+            jumpSound.Play();
         }
     }
     void OnCollisionEnter2D(Collision2D collision) // verifica se ta no chao
