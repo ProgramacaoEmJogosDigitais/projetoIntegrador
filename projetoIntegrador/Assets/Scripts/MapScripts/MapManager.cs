@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class MapManager : MonoBehaviour
 {
-    public GameObject cameraMain;
+    public GameObject cameraMain; 
+    public GameObject panelTransition;
     public GameObject scrollViewInstructions;
     public GameObject player;
     public Image panel;
@@ -31,9 +32,10 @@ public class MapManager : MonoBehaviour
     public IEnumerator SpawnInstructions()
     {
         yield return new WaitForSeconds(13.50f);
-        cameraMain.GetComponent<Animator>().enabled = false;
+        cameraMain.GetComponent<Animator>().SetBool("CameraIdle", true);
 
-        yield return new WaitForSeconds(0.2f);
+        panelTransition.SetActive(true);
+        yield return new WaitForSeconds(1);
         panel.gameObject.SetActive(true);
         player.GetComponent<BoxCollider2D>().enabled = false;
         scrollViewInstructions.SetActive(true);
