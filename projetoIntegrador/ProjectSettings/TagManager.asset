@@ -12,6 +12,7 @@ TagManager:
   - Obstacle
   - PlayerLixo
   - lixo
+  - SpawnNewObject
   layers:
   - Default
   - TransparentFX

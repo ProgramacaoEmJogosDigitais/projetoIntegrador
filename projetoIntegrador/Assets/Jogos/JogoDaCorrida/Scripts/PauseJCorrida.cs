@@ -14,13 +14,11 @@ public class PauseJCorrida : MonoBehaviour
     public float time;
     public TMP_Text txt_Countdown;
     public bool pauseWithP;
-    //public bool counting;
 
     private void Awake()
     {
         pressButtonNoPause = false;
         pauseWithP = true;
-        //counting = false;
     }
     private void Start()
     {
@@ -41,14 +39,11 @@ public class PauseJCorrida : MonoBehaviour
                 gamePaused = false;
                 Time.timeScale = 1f;
                 time = 3.0f;
-                //counting = false;
                 bt_pause.gameObject.SetActive(true);
 
             }
             else
             {
-                Debug.Log(time);
-                //counting = true; //nao pode apertar pause de novo;
                 pressButtonNoPause = true;
             }
         }
@@ -81,7 +76,6 @@ public class PauseJCorrida : MonoBehaviour
     public void NoPause() //tira do pause
     {
         panelPause.gameObject.SetActive(false);
-        //bt_pause.gameObject.SetActive(true);
         txt_Countdown.gameObject.SetActive(true);
         pressButtonNoPause = true;
 

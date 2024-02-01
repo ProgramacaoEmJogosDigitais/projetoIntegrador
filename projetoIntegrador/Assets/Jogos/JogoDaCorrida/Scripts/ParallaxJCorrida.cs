@@ -1,76 +1,58 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ParallaxJCorrida : MonoBehaviour
 {
-    
-    public float objectSpeed; 
-    private void Update()
-    {
-        transform.Translate(Vector3.left * objectSpeed * Time.deltaTime);
-        // Verifica se o objeto saiu dos limites e destrói
-        if (transform.position.x < -20)
-        {
-            Destroy(gameObject);
-        }
-    }
+    private const int count = 10;
+    public float objectSpeed;
+    public float increaseObjectSpeed;
+    private Progression progressionScript;
+    public List<GameObject> transformsSpawn;
+    public GameObject transformRemove;
+    public bool progressParallaxJScript;
 
-}
-
-
-    /*
-    public float parallaxSpeed; // Velocidade do parallax
-    public float destroyXPosition = -10f; // Posição em X para destruir o objeto
-    public GameObject nextObjectPrefab; // Prefab do próximo objeto a ser instanciado 
-    public float instantiateXPosition = 10f; // Posição em X para instanciar o próximo objeto 
-    public float spawnInterval = 2f;
-    public bool spawn;
 
     private void Start()
     {
-        spawn = true;
+        progressionScript = FindObjectOfType<Progression>();
+        progressParallaxJScript = false;
     }
-    void Update()
+    private void Update()
     {
-        // Move o objeto para a esquerda com base na velocidade de parallax
-        transform.Translate(Vector3.left * parallaxSpeed * Time.deltaTime);
-
-
-        // Verifica se o objeto atingiu a posição de destruição
-        if (transform.position.x <= destroyXPosition)
+        
+        if (progressionScript.atingiuAMeta)
         {
-            Destroy(gameObject);
-        }
-
-
-        // Verifica se o objeto atingiu a posição de instanciação
-        if (transform.position.x <= instantiateXPosition)
-        {
-            StartCoroutine(InstantiateNextObject());
-        }
-    }
-
-    private IEnumerator InstantiateNextObject()
-    {
-        while (spawn)
-        {
-            if (nextObjectPrefab != null)
+            progressParallaxJScript = true;
+            ParallaxJCorrida[] objectsGame = FindObjectsOfType<ParallaxJCorrida>(); // procura todos objetos com esse script
+            foreach (ParallaxJCorrida obj in objectsGame)
             {
-                GameObject nextObject = Instantiate(nextObjectPrefab, new Vector3(instantiateXPosition, transform.position.y, transform.position.z), Quaternion.identity);
+                obj.IncreaseObjectsSpeed();
             }
-            yield return new WaitForSeconds(spawnInterval);
+        }
+
+        transform.Translate(Vector3.left * objectSpeed * Time.deltaTime);
+
+        // Verifica se o objeto saiu dos limites realinha a posicao
+        if (transform.position.x <= transformRemove.transform.position.x) 
+        {
+            int indexLocalSpawn = UnityEngine.Random.Range(0, transformsSpawn.Count); // Sorteia o local
+            int indexFlip = UnityEngine.Random.Range(0, 1); //Sorteia se vai fliparou não 
+            gameObject.transform.position = new Vector2(transformsSpawn[indexLocalSpawn].transform.position.x, transformsSpawn[indexLocalSpawn].transform.position.y); //coloca na posicao do local sorteado;
+            if(indexFlip == 0)//0 == flip
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }                                                                                                                                                          
+
         }
     }
-
-    //void InstantiateNextObject()
-    //{
-    //    // Instancia o próximo objeto na posição especificada
-    //    if (nextObjectPrefab != null)
-    //    {
-    //        GameObject nextObject = Instantiate(nextObjectPrefab, new Vector3(instantiateXPosition, transform.position.y, transform.position.z), Quaternion.identity);
-    //    }
-    //}
+    void IncreaseObjectsSpeed()// Aumenta a velocidade
+    {
+        objectSpeed = objectSpeed + increaseObjectSpeed;
+    }
 }
-    */
+
+
+   
