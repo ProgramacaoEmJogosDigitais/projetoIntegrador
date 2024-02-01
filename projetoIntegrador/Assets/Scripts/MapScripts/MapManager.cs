@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MapManager : MonoBehaviour
 {
-    public GameObject cameraMain; 
+    public GameObject cameraMain;
     public GameObject panelTransition;
     public GameObject scrollViewInstructions;
     public GameObject player;
@@ -42,10 +42,17 @@ public class MapManager : MonoBehaviour
         PlayerPrefs.SetInt("InstructionsShown", 1); // Instruções exibidas.
     }
 
-    public void GoMap()
+    public void ButtonGoMap()
+    {
+        StartCoroutine(GoMap());
+    }
+    public IEnumerator GoMap()
     {
         scrollViewInstructions.SetActive(false);
         player.GetComponent<BoxCollider2D>().enabled = true;
+        panelTransition.GetComponent<Animator>().SetBool("PanelTransitionFadeOut", true);
+        yield return new WaitForSeconds(1.3f);
+        panelTransition.SetActive(false);
         panel.gameObject.SetActive(false);
     }
 }
