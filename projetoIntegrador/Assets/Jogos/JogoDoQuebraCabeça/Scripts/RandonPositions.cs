@@ -173,10 +173,7 @@ public class RandonPositions : MonoBehaviour
         buttonRestart.SetActive(true);
         buttonSelect.SetActive(false);
     }
-    public void WinGame()
-    {
-        SceneManager.LoadScene("JogoQuebraCabeça");
-    }
+
     private IEnumerator BooksPoints()
     {
         bookPointsAnim.SetActive(true);

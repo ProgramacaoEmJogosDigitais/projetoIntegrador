@@ -61,6 +61,5 @@ public class PauseJigsaw : MonoBehaviour
     public void GoMap(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-
     }
 }
