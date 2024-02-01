@@ -94,7 +94,7 @@ public class Comic : MonoBehaviour
     public void ButtonGoMapForward()
     {
         goMapButton.SetActive(true);
-    } 
+    }
     public void ButtonGoMapBack()
     {
         goMapButton.SetActive(false);
@@ -111,16 +111,15 @@ public class Comic : MonoBehaviour
             pagesGameObject[index].transform.rotation = Quaternion.Slerp(pagesGameObject[index].transform.rotation, targetRotation, value);
             angle1 = Quaternion.Angle(pagesGameObject[index].transform.rotation, targetRotation);
 
-            if (angle1 <= 90f && forward && index > 0)
+            if (angle1 <= 90f && forward && index >= 0)
             {
-                pagesImage1[index - 1].gameObject.SetActive(false); // Desativa a imagem da página 1
-                pagesImage2[index - 1].gameObject.SetActive(true);
+                pagesImage1[index].gameObject.SetActive(false); // Desativa a imagem da página 1
+                pagesImage2[index].gameObject.SetActive(true);
             }
-            else if (angle1 <= 90f && !forward && index > 0 && index < pagesGameObject.Count)
+            else if (angle1 <= 90f && !forward && index >= 0 && index < pagesGameObject.Count)
             {
-                pagesImage1[index - 1].gameObject.SetActive(true);   // Ativa a imagem da página 1
-                pagesImage2[index - 1].gameObject.SetActive(false);
-
+                pagesImage1[index].gameObject.SetActive(true);   // Ativa a imagem da página 1
+                pagesImage2[index].gameObject.SetActive(false);
             }
 
             if (angle1 < 0.1f)
