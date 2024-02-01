@@ -100,12 +100,12 @@ public class MovimentPlayer : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
 
         }
-        else if (progressionScript.atingiuAMeta)
+        if (progressionScript.atingiuAMeta)
         {
             progressMovimentPScript = true;
             speedPoints = speedPoints + increaseSpeedPoints;
         }
-        else if(pauseJCorridaScript.gamePaused)// se tiver pausado 
+        if(pauseJCorridaScript.gamePaused)// se tiver pausado 
         {
             RonilcoAnimator.speed = 0;
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY;

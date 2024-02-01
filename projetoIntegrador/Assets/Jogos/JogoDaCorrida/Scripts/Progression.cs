@@ -29,6 +29,7 @@ public class Progression : MonoBehaviour
         {
             atingiuAMeta = true;
             meta = meta + increaseMeta;
+            Debug.Log(meta);
             cont++;
         }
 
