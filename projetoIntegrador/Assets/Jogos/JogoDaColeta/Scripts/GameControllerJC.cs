@@ -97,6 +97,10 @@ public class GameControllerJC : MonoBehaviour
             // Disable fish and trash spawning
             nextSpawnTime = float.MaxValue;
             Destroy(instantiatedPrefabs);
+
+            unpauseCount.gameObject.SetActive(false);
+
+
         }
     }
 
@@ -127,7 +131,7 @@ public class GameControllerJC : MonoBehaviour
 
     public void PauseAndUnpause()
     {
-        if (!isPaused)
+        if (!isPaused && PlayerColeta.missingObjects > 0)
         {
             PauseGame();
         }
