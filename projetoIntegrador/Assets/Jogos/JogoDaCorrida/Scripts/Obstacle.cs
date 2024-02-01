@@ -8,10 +8,13 @@ public class Obstacle : MonoBehaviour
     private GameControllerJCorrida gameControllerJCorrida;
     public Transform transformDelete;
 
+    private PauseJCorrida pauseJCorridaScript;
+
 
     private void Start()
     {
         gameControllerJCorrida = FindObjectOfType<GameControllerJCorrida>();
+        pauseJCorridaScript = FindObjectOfType<PauseJCorrida>();
         transformDelete = GameObject.Find("Obstacles").transform;
     }
 
@@ -22,7 +25,7 @@ public class Obstacle : MonoBehaviour
 
     void Update() //faz o obstaculo se mover para a esquerda e destroy
     {
-        if (!gameControllerJCorrida.gameOver)
+        if (!gameControllerJCorrida.gameOver && pauseJCorridaScript.gamePaused==false)
         {
             transform.Translate(Vector3.left * sideVelocity * Time.deltaTime);
         }

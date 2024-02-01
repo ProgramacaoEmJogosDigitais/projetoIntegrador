@@ -10,6 +10,7 @@ public class ParallaxJCorrida : MonoBehaviour
     public float objectSpeed;
     public float increaseObjectSpeed;
     private Progression progressionScript;
+    private PauseJCorrida pauseJCorridaScript;
     public List<GameObject> transformsSpawn;
     public GameObject transformRemove;
     public bool progressParallaxJScript;
@@ -18,6 +19,7 @@ public class ParallaxJCorrida : MonoBehaviour
     private void Start()
     {
         progressionScript = FindObjectOfType<Progression>();
+        pauseJCorridaScript = FindObjectOfType<PauseJCorrida>();
         progressParallaxJScript = false;
     }
     private void Update()
@@ -33,7 +35,10 @@ public class ParallaxJCorrida : MonoBehaviour
             }
         }
 
-        transform.Translate(Vector3.left * objectSpeed * Time.deltaTime);
+        if (pauseJCorridaScript.gamePaused==false)
+        {
+            transform.Translate(Vector3.left * objectSpeed * Time.deltaTime);
+        }
 
         // Verifica se o objeto saiu dos limites realinha a posicao
         if (transform.position.x <= transformRemove.transform.position.x) 
@@ -52,6 +57,15 @@ public class ParallaxJCorrida : MonoBehaviour
     {
         objectSpeed = objectSpeed + increaseObjectSpeed;
     }
+
+    /*public void StopObjectPause()
+    {
+        ParallaxJCorrida[] objectsGame = FindObjectsOfType<ParallaxJCorrida>(); // procura todos objetos com esse script
+        foreach (ParallaxJCorrida obj in objectsGame)
+        {
+            obj.objectSpeed = 0;
+        }
+    }*/
 }
 
 
