@@ -33,5 +33,11 @@ public class GameControllerJCorrida : MonoBehaviour
     {
         panelOptions.gameObject.SetActive(true);
     }
+    
+    public void ExitOptions()
+    {
+        panelOptions.gameObject.SetActive(false);
+    }
+
 
 }

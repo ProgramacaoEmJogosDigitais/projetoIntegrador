@@ -30,20 +30,21 @@ public class CreateObstacle : MonoBehaviour
     {
         while (!gameControllerJCorrida.gameOver)
         {
-            int obstacleIndex = Random.Range(0, prefabObstacle.Count);
-            GameObject newObstacle = Instantiate(prefabObstacle[obstacleIndex], transform.position, Quaternion.identity);
-            Obstacle obstacleScript = newObstacle.GetComponent<Obstacle>();
-            obstacleScript.SetObstacleSpeed(currentSpeedInfor);
-            spawnedObstacles.Add(obstacleScript);
-            newObstacle.transform.position = new Vector2(transform.position.x, transform.position.y);
             float time;
-            if (pauseJCorridaScript.gamePaused) {
-                time = 12000*10;
+            if (pauseJCorridaScript.gamePaused)
+            {
+                
             }
             else
             {
-                time = Random.Range(minTime, maxTime);//Os obstaculos voltam a ser instaciados dentro do tempo
+                int obstacleIndex = Random.Range(0, prefabObstacle.Count);
+                GameObject newObstacle = Instantiate(prefabObstacle[obstacleIndex], transform.position, Quaternion.identity);
+                Obstacle obstacleScript = newObstacle.GetComponent<Obstacle>();
+                obstacleScript.SetObstacleSpeed(currentSpeedInfor);
+                spawnedObstacles.Add(obstacleScript);
+                newObstacle.transform.position = new Vector2(transform.position.x, transform.position.y);
             }
+            time = Random.Range(minTime, maxTime);//Os obstaculos voltam a ser instaciados dentro do tempo
             yield return new WaitForSeconds(time);
 
         }
