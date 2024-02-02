@@ -26,6 +26,7 @@ public class RandonPositions : MonoBehaviour
     public Sprite[] spritePieces1, spritePieces2, spritePieces3;
     public TextMeshProUGUI timeConter, minTimeCont, gameOverText, winGameText;
 
+    private string namePieces;
     private int indexReserve, timeInt, pauseTime, min, len;
     private bool startGame, randomSprite, transprent, gameOver, goToMapOk, repet;
 
@@ -133,19 +134,19 @@ public class RandonPositions : MonoBehaviour
         time = 60;
         timeInt = 60;
     }
-    void ChangePices(int selectPiece)
+    void ChangePices(string namePieces)
     {
         for (int i = 0; i < randonPositions.Length; i++)
         {
-            if (selectPiece == 0)
+            if (namePieces == spriteFullReserve[0].name)
             {
                 randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces1[i];
             }
-            if (selectPiece == 1)
+            if (namePieces == spriteFullReserve[1].name)
             {
                 randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces2[i];
             }
-            if (selectPiece == 2)
+            if (namePieces == spriteFullReserve[2].name)
             {
                 randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces3[i];
 
@@ -159,12 +160,13 @@ public class RandonPositions : MonoBehaviour
         while (randomSprite)
         {
             indexReserve = UnityEngine.Random.Range(0, spriteFullReserve.Count);
-            spriteRenderer.sprite = spriteFullReserve[indexReserve];
+            spriteRenderer.sprite = spriteFullReserve[indexReserve]; 
             index = UnityEngine.Random.Range(0, spriteFull.Count);
             yield return new WaitForSeconds(0.1f);
         }
+        namePieces = spriteFull[index].name;
         spriteRenderer.sprite = spriteFull[index];
-        ChangePices(index);
+        ChangePices(namePieces);
     }
     void GameOver()
     {
