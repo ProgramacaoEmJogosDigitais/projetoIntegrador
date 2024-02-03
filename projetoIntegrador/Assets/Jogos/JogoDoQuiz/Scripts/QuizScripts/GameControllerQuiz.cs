@@ -50,6 +50,8 @@ public class GameControllerQuiz : MonoBehaviour
     private float questoes;
     private float erros;
     private bool verificacao_pergunta = true;
+    private int scoring;
+    
     
 
     void Start()
@@ -68,7 +70,7 @@ public class GameControllerQuiz : MonoBehaviour
     {
         GameOver();
         Vida();
-     
+     ScoringSystem();
     }
 
     void ShuffleQuestions()
@@ -303,5 +305,22 @@ public class GameControllerQuiz : MonoBehaviour
             return 3;
         }
         return 4;
+    }
+
+    void ScoringSystem()
+    {
+        if(acertos == 3)
+        {
+            scoring = 1000;
+        }
+        if(acertos == 4)
+        {
+            scoring = +1000;
+        }
+        if(acertos == 5)
+        {
+            scoring = +1000;
+        }
+        Debug.Log(scoring);
     }
 }
