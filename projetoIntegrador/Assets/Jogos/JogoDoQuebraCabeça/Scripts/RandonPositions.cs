@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,12 +10,13 @@ public class RandonPositions : MonoBehaviour
 {
     public static int okPieces;
 
-    public int index;
+    public int index, indexBooks = 0;
     public float time;
     public bool isPlay = false;
     public bool saveIndex = false;
     public Image bookScore;
     public ParticleSystem particle;
+    public List<SpriteRenderer> books;
     public List<Sprite> spriteFull;
     public GameObject canvasWinGame;
     public List<Sprite> spriteFullReserve;
@@ -28,10 +30,14 @@ public class RandonPositions : MonoBehaviour
 
     private string namePieces;
     private int indexReserve, timeInt, pauseTime, min, len;
-    private bool startGame, randomSprite, transprent, gameOver, goToMapOk, repet;
+    private bool startGame, randomSprite, transprent, gameOver, goToMapOk;
 
     private void Awake()
     {
+        indexBooks = PlayerPrefs.GetInt("numBooks");
+
+        Books();
+
         for (int i = 0; i < spriteFull.Count; i++)
         {
             spriteFullReserve.Add(spriteFull[i]);
@@ -53,6 +59,36 @@ public class RandonPositions : MonoBehaviour
         BooksPonts.pJigsaw = 0;
         StartCoroutine(RandomSprite());
     }
+    public void Books()
+    {
+        Debug.Log("booksssss");
+
+        Color colorBook = new Color(books[0].GetComponent<SpriteRenderer>().color.r, books[0].GetComponent<SpriteRenderer>().color.g, books[0].GetComponent<SpriteRenderer>().color.b);
+        colorBook.a = 1;
+
+        if (indexBooks == 1)
+        {
+            books[0].GetComponent<SpriteRenderer>().color = colorBook;
+        }
+        else if(indexBooks == 2)
+        {
+            books[0].GetComponent<SpriteRenderer>().color = colorBook;
+            books[1].GetComponent<SpriteRenderer>().color = colorBook;
+        }
+        else if (indexBooks == 3)
+        {
+            books[0].GetComponent<SpriteRenderer>().color = colorBook;
+            books[1].GetComponent<SpriteRenderer>().color = colorBook;
+            books[2].GetComponent<SpriteRenderer>().color = colorBook;
+        }
+        else if (indexBooks == 4)
+        {
+            books[0].GetComponent<SpriteRenderer>().color = colorBook;
+            books[1].GetComponent<SpriteRenderer>().color = colorBook;
+            books[2].GetComponent<SpriteRenderer>().color = colorBook;
+            books[3].GetComponent<SpriteRenderer>().color = colorBook;
+        }
+    }
     void Update()
     {
         if (BooksPonts.pJigsaw == 4 && goToMapOk)
@@ -71,6 +107,16 @@ public class RandonPositions : MonoBehaviour
         {
             ContTime();
         }
+    }
+    public void BtnNumBook(string sceneName)
+    {
+        if (indexBooks >= 0 && indexBooks <= 4)
+        {
+            indexBooks++;
+            PlayerPrefs.SetInt("numBooks", indexBooks);
+            PlayerPrefs.Save();
+        }
+        SceneManager.LoadScene(sceneName);
     }
     public void RandonPiece()
     {
