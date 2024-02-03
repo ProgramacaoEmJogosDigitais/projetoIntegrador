@@ -45,7 +45,7 @@ public class AudioSystem : MonoBehaviour
 
     public void Update()
     {
-        if (PlayerColeta.playerSpeed > 0f)
+        //if (PlayerColeta.playerSpeed > 0f)
         {
             sfxSource.PlayOneShot(footstepsSound);
         }

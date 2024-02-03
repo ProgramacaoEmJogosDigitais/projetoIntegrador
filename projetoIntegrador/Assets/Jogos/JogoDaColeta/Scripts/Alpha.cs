@@ -5,6 +5,10 @@ public class Alpha : MonoBehaviour
     // Referência ao material do objeto
     private Material material;
 
+    // Variáveis de controle de pontuação
+    public float pontuacao = 0.0f;
+    public float limiteDePontuacao = 50.0f;
+
     void Start()
     {
         // Obtém o material do objeto (pode ser necessário ter um Renderer no objeto)
@@ -13,6 +17,16 @@ public class Alpha : MonoBehaviour
 
         // Define o alpha para 0.5 (transparência de 50%)
         SetAlpha(0.5f);
+    }
+
+    void Update()
+    {
+        // Verifica se a pontuação ultrapassa o limite especificado
+        if (FishsFalling.points > limiteDePontuacao)
+        {
+            // Define o alpha para 1.0 (transparência de 100%)
+            SetAlpha(1.0f);
+        }
     }
 
     void SetAlpha(float alpha)

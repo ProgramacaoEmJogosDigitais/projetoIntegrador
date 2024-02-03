@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerColeta : MonoBehaviour
 {
-    public static float playerSpeed = 5f;
+    public float playerSpeed = 5f;
     public static int missingObjects = 5;
     public bool playerTrash;
 
