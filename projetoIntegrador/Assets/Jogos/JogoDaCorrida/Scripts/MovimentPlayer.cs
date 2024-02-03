@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 
 public class MovimentPlayer : MonoBehaviour
 {
+    public AudioSource jumpSound;
     public float speedPoints;
     public float increaseSpeedPoints;
     [SerializeField] private float jumpForce;
@@ -24,8 +25,11 @@ public class MovimentPlayer : MonoBehaviour
     private Progression progressionScript;
     public TMP_Text distanceText;
     public bool progressMovimentPScript;
+    public Animator RonilcoAnimator;
 
     private Animator animator;
+    private PauseJCorrida pauseJCorridaScript;
+
 
     private void Awake()
     {
@@ -42,6 +46,7 @@ public class MovimentPlayer : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         distance = 0f;
         animator = GetComponent<Animator>();
+        pauseJCorridaScript = FindObjectOfType<PauseJCorrida>();
     }
 
     private void OnEnable() // executado quando um objeto é ativado
@@ -62,12 +67,13 @@ public class MovimentPlayer : MonoBehaviour
     public void Jump(InputAction.CallbackContext context)
     {
 
-        if (isGrounded)
+        if (isGrounded && pauseJCorridaScript.gamePaused == false)
         {
             animator.SetBool("Jump", true);
             isGrounded = false;
             jump = false;
-            rb.AddForce(Vector2.up * jumpForce);            
+            rb.AddForce(Vector2.up * jumpForce);   
+            jumpSound.Play();
         }
     }
     void OnCollisionEnter2D(Collision2D collision) // verifica se ta no chao
@@ -86,22 +92,26 @@ public class MovimentPlayer : MonoBehaviour
     }
     void Update() //aumenta a velocidade da pontuacao quando atinge a meta
     {
-        if (!gameController.gameOver)
+        if (!gameController.gameOver && pauseJCorridaScript.gamePaused == false) //se nao for gameover e nao tiver pausado
         {
             distance += Time.deltaTime * speedPoints;
-            UpdateDistanceText();
+            RonilcoAnimator.speed = 1;
+            distanceText.text = distance.ToString("F0");
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+
         }
         if (progressionScript.atingiuAMeta)
         {
             progressMovimentPScript = true;
             speedPoints = speedPoints + increaseSpeedPoints;
         }
+        if(pauseJCorridaScript.gamePaused)// se tiver pausado 
+        {
+            RonilcoAnimator.speed = 0;
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY;
 
-    }
+        }
 
-    void UpdateDistanceText() //mostra na tela
-    {
-        distanceText.text = distance.ToString("F0");
     }
 
 }
