@@ -5,7 +5,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class BookSystem : MonoBehaviour
 {
-    //A cada 625 pontos instancia um livro
+    //A cada 300 pontos instancia um livro
     public float metaTakeBook;
     public float increaseMetaTakeBook;
     public List<GameObject> prefabBook; //lista de livros
