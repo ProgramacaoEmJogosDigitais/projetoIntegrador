@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MapManager : MonoBehaviour
 {
     public GameObject cameraMain;
+    public GameObject panelTransition;
     public GameObject scrollViewInstructions;
     public GameObject player;
     public Image panel;
@@ -31,19 +32,27 @@ public class MapManager : MonoBehaviour
     public IEnumerator SpawnInstructions()
     {
         yield return new WaitForSeconds(13.50f);
-        cameraMain.GetComponent<Animator>().enabled = false;
+        cameraMain.GetComponent<Animator>().SetBool("CameraIdle", true);
 
-        yield return new WaitForSeconds(0.2f);
+        panelTransition.SetActive(true);
+        yield return new WaitForSeconds(1);
         panel.gameObject.SetActive(true);
         player.GetComponent<BoxCollider2D>().enabled = false;
         scrollViewInstructions.SetActive(true);
         PlayerPrefs.SetInt("InstructionsShown", 1); // Instruções exibidas.
     }
 
-    public void GoMap()
+    public void ButtonGoMap()
+    {
+        StartCoroutine(GoMap());
+    }
+    public IEnumerator GoMap()
     {
         scrollViewInstructions.SetActive(false);
         player.GetComponent<BoxCollider2D>().enabled = true;
+        panelTransition.GetComponent<Animator>().SetBool("PanelTransitionFadeOut", true);
+        yield return new WaitForSeconds(1.3f);
+        panelTransition.SetActive(false);
         panel.gameObject.SetActive(false);
     }
 }

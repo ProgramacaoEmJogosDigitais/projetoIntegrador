@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
@@ -9,21 +11,33 @@ using UnityEngine.SceneManagement;
 
 public class MovimentPlayer : MonoBehaviour
 {
-    public float speedPoints = 6;
+    public AudioSource jumpSound;
+    public float speedPoints;
+    public float increaseSpeedPoints;
     [SerializeField] private float jumpForce;
+    [SerializeField] private bool jump;
     [SerializeField] private bool isGrounded = true;
     private Rigidbody2D rb;
     private PlayerInput playerInput;
     PlayerInputActions input;
     public float distance { private set; get; } 
     private GameControllerJCorrida gameController;
+    private Progression progressionScript;
     public TMP_Text distanceText;
+    public bool progressMovimentPScript;
+    public Animator RonilcoAnimator;
+
+    private Animator animator;
+    private PauseJCorrida pauseJCorridaScript;
+
 
     private void Awake()
     {
         input = new PlayerInputActions();
         playerInput = GetComponent<PlayerInput>();
         gameController = FindObjectOfType<GameControllerJCorrida>();
+        progressionScript = FindObjectOfType<Progression>();
+        progressMovimentPScript = false;
 
     }
 
@@ -31,6 +45,8 @@ public class MovimentPlayer : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         distance = 0f;
+        animator = GetComponent<Animator>();
+        pauseJCorridaScript = FindObjectOfType<PauseJCorrida>();
     }
 
     private void OnEnable() // executado quando um objeto é ativado
@@ -51,10 +67,13 @@ public class MovimentPlayer : MonoBehaviour
     public void Jump(InputAction.CallbackContext context)
     {
 
-        if (isGrounded)
+        if (isGrounded && pauseJCorridaScript.gamePaused == false)
         {
+            animator.SetBool("Jump", true);
             isGrounded = false;
-            rb.AddForce(Vector2.up * jumpForce);
+            jump = false;
+            rb.AddForce(Vector2.up * jumpForce);   
+            jumpSound.Play();
         }
     }
     void OnCollisionEnter2D(Collision2D collision) // verifica se ta no chao
@@ -62,28 +81,37 @@ public class MovimentPlayer : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            animator.SetBool("Jump", false);
         }
 
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("COLIDIU");
             gameController.gameOver = true;
             rb.velocity = Vector3.zero;
         }
     }
-    void Update()
+    void Update() //aumenta a velocidade da pontuacao quando atinge a meta
     {
-        if (!gameController.gameOver)
+        if (!gameController.gameOver && pauseJCorridaScript.gamePaused == false) //se nao for gameover e nao tiver pausado
         {
             distance += Time.deltaTime * speedPoints;
-            UpdateDistanceText();
+            RonilcoAnimator.speed = 1;
+            distanceText.text = distance.ToString("F0");
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+
+        }
+        if (progressionScript.atingiuAMeta)
+        {
+            progressMovimentPScript = true;
+            speedPoints = speedPoints + increaseSpeedPoints;
+        }
+        if(pauseJCorridaScript.gamePaused)// se tiver pausado 
+        {
+            RonilcoAnimator.speed = 0;
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY;
+
         }
 
-    }
-
-    void UpdateDistanceText()
-    {
-        distanceText.text = distance.ToString("F0");
     }
 
 }

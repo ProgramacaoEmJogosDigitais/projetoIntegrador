@@ -4,24 +4,36 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    public float sideVelocity;
+    [SerializeField] private float sideVelocity;
     private GameControllerJCorrida gameControllerJCorrida;
+    public Transform transformDelete;
+
+    private PauseJCorrida pauseJCorridaScript;
+
+
     private void Start()
     {
         gameControllerJCorrida = FindObjectOfType<GameControllerJCorrida>();
+        pauseJCorridaScript = FindObjectOfType<PauseJCorrida>();
+        transformDelete = GameObject.Find("Obstacles").transform;
     }
-    void Update()
+
+    public void SetObstacleSpeed(float speed)
     {
-        if (!gameControllerJCorrida.gameOver)
+        sideVelocity = speed;
+    }
+
+    void Update() //faz o obstaculo se mover para a esquerda e destroy
+    {
+        if (!gameControllerJCorrida.gameOver && pauseJCorridaScript.gamePaused==false)
         {
-            transform.Translate(-sideVelocity * Time.deltaTime, 0, 0);
+            transform.Translate(Vector3.left * sideVelocity * Time.deltaTime);
         }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("DestroyObstacle"))
+
+        if (transformDelete != null)
         {
-            Destroy(gameObject);
+            if (transform.position.x <= transformDelete.transform.position.x)
+                Destroy(gameObject);
         }
     }
 }

@@ -10,6 +10,7 @@ public class GameControllerJCorrida : MonoBehaviour
 {
     public bool gameOver;
     public GameObject panelGameOver;
+    public GameObject panelOptions;
     public TMP_Text pointsText;
     private MovimentPlayer movimentPlayer;
 
@@ -20,12 +21,23 @@ public class GameControllerJCorrida : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (gameOver)
+        if (gameOver) //verifica se perdeu
         {
             Time.timeScale = 0;
             pointsText.text = movimentPlayer.distance.ToString("F0");
             panelGameOver.SetActive(true);
         }
     }
+
+    public void OpenOptions()
+    {
+        panelOptions.gameObject.SetActive(true);
+    }
+    
+    public void ExitOptions()
+    {
+        panelOptions.gameObject.SetActive(false);
+    }
+
 
 }
