@@ -7,6 +7,7 @@ public class CreateObstacle : MonoBehaviour
     public List<GameObject> prefabObstacle;
     private GameControllerJCorrida gameControllerJCorrida;
     private MovimentPlayer movimentPlayerScript;
+    private PauseJCorrida pauseJCorridaScript;
     public float maxTime;
     public float minTime;
     public float decreaseMaxTime;
@@ -19,8 +20,9 @@ public class CreateObstacle : MonoBehaviour
     {
         gameControllerJCorrida = FindObjectOfType<GameControllerJCorrida>();
         movimentPlayerScript = FindObjectOfType<MovimentPlayer>();
-        StartCoroutine(Spawn());
         progressionScript = FindObjectOfType<Progression>();
+        pauseJCorridaScript = FindObjectOfType<PauseJCorrida>();
+        StartCoroutine(Spawn());
         progressCreateOScript = false;
     }
 
@@ -28,15 +30,23 @@ public class CreateObstacle : MonoBehaviour
     {
         while (!gameControllerJCorrida.gameOver)
         {
-            int obstacleIndex = Random.Range(0, prefabObstacle.Count);
-
-            GameObject newObstacle = Instantiate(prefabObstacle[obstacleIndex], transform.position, Quaternion.identity);
-            Obstacle obstacleScript = newObstacle.GetComponent<Obstacle>();
-            obstacleScript.SetObstacleSpeed(currentSpeedInfor);
-            spawnedObstacles.Add(obstacleScript);
-            newObstacle.transform.position = new Vector2(transform.position.x, transform.position.y);
-            float time = Random.Range(minTime, maxTime);
+            float time;
+            if (pauseJCorridaScript.gamePaused)
+            {
+                
+            }
+            else
+            {
+                int obstacleIndex = Random.Range(0, prefabObstacle.Count);
+                GameObject newObstacle = Instantiate(prefabObstacle[obstacleIndex], transform.position, Quaternion.identity);
+                Obstacle obstacleScript = newObstacle.GetComponent<Obstacle>();
+                obstacleScript.SetObstacleSpeed(currentSpeedInfor);
+                spawnedObstacles.Add(obstacleScript);
+                newObstacle.transform.position = new Vector2(transform.position.x, transform.position.y);
+            }
+            time = Random.Range(minTime, maxTime);//Os obstaculos voltam a ser instaciados dentro do tempo
             yield return new WaitForSeconds(time);
+
         }
     }
 
@@ -44,7 +54,7 @@ public class CreateObstacle : MonoBehaviour
     {
         if (progressionScript.atingiuAMeta) //estabiliza a velocidade da instanciacao, dependnedo da distancia percorrida
         {
-            if(movimentPlayerScript.distance >= 1500f && movimentPlayerScript.distance < 2750f)
+            if (movimentPlayerScript.distance >= 1500f && movimentPlayerScript.distance < 2750f)
             {
                 maxTime = 2f;
 
