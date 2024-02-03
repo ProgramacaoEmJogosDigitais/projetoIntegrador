@@ -6,37 +6,43 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class BookSystem : MonoBehaviour
 {
     //A cada 625 pontos instancia um livro
-    private int nBooks;
-    private Progression progressionScript;
-    public float metaToTakeBook; //meta para pegar os livros;
-    public List<GameObject> prefabBooks;
+    public float metaTakeBook;
+    public float increaseMetaTakeBook;
+    public List<GameObject> prefabBook; //lista de livros
+    private MovimentPlayer movimentPlayerScript;
+    private Book bookScript;
+    public float currentSpeedInfor;
+    public int nBooks;
+    private int countBook;
+    //private List<Book> spawnedBooks { get; set; } = new List<Book>(); // Lista de livros instanciados
 
     private void Start()
     {
-        progressionScript = FindObjectOfType<Progression>();
+        movimentPlayerScript = FindObjectOfType<MovimentPlayer>();
+        bookScript = FindObjectOfType<Book>();
+        countBook = 0;
     }
 
-    private void Update()
+    void Update() //verifica se atingiu a meta de pegar o livro para instancia-lo
     {
-        if (progressionScript.meta >= metaToTakeBook) //se a meta do player for maior ou igual a meta para a instaciação do livro no game
+        if (movimentPlayerScript.distance >= metaTakeBook)
         {
-            metaToTakeBook = +metaToTakeBook;
-            int bookIndex = Random.Range(0, prefabBooks.Count);
-            GameObject newBook = Instantiate(prefabBooks[bookIndex], transform.position, Quaternion.identity);
+            GameObject newBook = Instantiate(prefabBook[countBook], transform.position, Quaternion.identity);
             Book bookScript = newBook.GetComponent<Book>();
-            //bookScript.SetBookSpeed(currentSpeedInfor); //criar essa funcao************************;
-            //spawnedBook.Add(bookScript);
-            //newBook.transform.position = new Vector2(transform.position.x, transform.position.y);
+            bookScript.SetBookSpeed(currentSpeedInfor);
+            //spawnedBooks.Add(bookScript);
+            newBook.transform.position = new Vector2(transform.position.x, transform.position.y);
+            metaTakeBook = metaTakeBook + increaseMetaTakeBook;
+            countBook++;
+            Debug.Log(metaTakeBook);
+        }
+        if(countBook > 4)
+        {
 
         }
+        //if (bookScript.collectedBook)
+        //{
+        //    //preciso remover da lista o livro coletado
+        //}
     }
-
 }
-
-
-//int obstacleIndex = Random.Range(0, prefabObstacle.Count);
-//GameObject newObstacle = Instantiate(prefabObstacle[obstacleIndex], transform.position, Quaternion.identity);
-//Obstacle obstacleScript = newObstacle.GetComponent<Obstacle>();
-//obstacleScript.SetObstacleSpeed(currentSpeedInfor);
-//spawnedObstacles.Add(obstacleScript);
-//newObstacle.transform.position = new Vector2(transform.position.x, transform.position.y);
