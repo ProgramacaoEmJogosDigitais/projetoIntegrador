@@ -51,7 +51,7 @@ public class Selector : MonoBehaviour
         {
             case "Ana":
                 photoGame.GetComponent<Image>().sprite = photos[0];
-                description.text = "Ana Graziela Monteiro dos Santos - Disse se é Gaiatooooo 545 vezes e ficou emburrada quase todas as aulas.";
+                description.text = "Ana Graziela Monteiro dos Santos - Disse se é Gaiatooooo 545 vezes e ficou emburrada 520 + 1.";
                 break;
             case "Augusto":
                 photoGame.GetComponent<Image>().sprite = photos[1];
