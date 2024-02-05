@@ -36,11 +36,14 @@ public class Book : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             collectedBook = true;
-            bookSystemScript.nBooks++;
-            Debug.Log("numeros de livros pegados: " +bookSystemScript.nBooks);
+            bookSystemScript.nBooksJCorrida++; //Caso colida com o player, aumenta o numero de livro coletado
+
+            PlayerPrefs.SetInt("CollectedBooks", bookSystemScript.nBooksJCorrida);
+            PlayerPrefs.Save();
+
+            bookSystemScript.prefabBook.RemoveAt(bookSystemScript.countBook); //Remove o livro coletado da lista de prefabs
+
             Destroy(gameObject);
-
         }
-
     }
 }
