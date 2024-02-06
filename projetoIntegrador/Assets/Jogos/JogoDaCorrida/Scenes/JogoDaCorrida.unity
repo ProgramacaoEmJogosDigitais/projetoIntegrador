@@ -2521,7 +2521,6 @@ MonoBehaviour:
   - {fileID: 1233864843}
   - {fileID: 1640988228}
   - {fileID: 1576653987}
-  currentSpeedInfor: 0
   nBooksJCorrida: 0
 --- !u!1 &430905101
 GameObject:

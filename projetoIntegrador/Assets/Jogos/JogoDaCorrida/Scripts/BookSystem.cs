@@ -7,11 +7,10 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class BookSystem : MonoBehaviour
 {
-    //A cada 300 pontos anhar um livro
+    //A cada 300 pontos ganha um livro
     public float metaTakeBook;
     public float increaseMetaTakeBook;
     public List<SpriteRenderer> spriteBook; //lista de livros/sprites da cena
-    public float currentSpeedInfor;
     public int nBooksJCorrida;
     private MovimentPlayer movimentPlayerScript;
     private void Awake()
