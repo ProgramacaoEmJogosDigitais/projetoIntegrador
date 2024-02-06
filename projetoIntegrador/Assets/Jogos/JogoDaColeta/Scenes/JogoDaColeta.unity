@@ -61047,6 +61047,7 @@ MonoBehaviour:
   scrollViewInstructions: {fileID: 1130348698}
   optionsMenu: {fileID: 4854573}
   unpauseCount: {fileID: 654069069}
+  audioSystem: {fileID: 1817898477}
 --- !u!114 &1503362174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70995,6 +70996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1817898476}
   - component: {fileID: 1817898475}
+  - component: {fileID: 1817898477}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -71029,6 +71031,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1817898477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817898474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c706c5e7a252e4ebf1919c01990ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEntries:
+  - key: MenuMusic
+    audioClip: {fileID: 8300000, guid: cafa5ef3d99eaea4ca420b175813f495, type: 3}
 --- !u!1 &1847960935
 GameObject:
   m_ObjectHideFlags: 0
