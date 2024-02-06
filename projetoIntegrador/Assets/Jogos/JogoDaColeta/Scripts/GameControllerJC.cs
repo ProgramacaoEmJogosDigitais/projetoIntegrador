@@ -34,12 +34,16 @@ public class GameControllerJC : MonoBehaviour
     [SerializeField] private TextMeshProUGUI unpauseCount;
     private GameObject instantiatedPrefabs;
 
+    public AudioSystem audioSystem;
+
     void Start()
     {
         gameOverObject.SetActive(false);
         PlayerColeta.missingObjects = 5;
         StartCoroutine(SpawnObjects());
         FishsFalling.points = 0;
+
+        audioSystem.PlaySound("MenuMusic");
 
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
         /*if (!PlayerPrefs.HasKey("InstructionsShown") || PlayerPrefs.GetInt("InstructionsShown") == 0)
