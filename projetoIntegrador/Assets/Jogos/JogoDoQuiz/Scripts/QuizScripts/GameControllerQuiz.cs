@@ -29,6 +29,8 @@ public class GameControllerQuiz : MonoBehaviour
     public TMP_Text infoRespostas;
     public TMP_Text pontuacao;
     public bool over;
+    public List<SpriteRenderer> books;
+
     [TextArea]
     public string[] perguntas;
     [TextArea]
@@ -50,10 +52,20 @@ public class GameControllerQuiz : MonoBehaviour
     private float questoes;
     private float erros;
     private bool verificacao_pergunta = true;
-    
+    private int scoring;
+
+    private void Awake()
+    {
+        scoring  = PlayerPrefs.GetInt("QuizBooks");
+        Books();
+       
+
+    }
 
     void Start()
     {
+        int n = PlayerPrefs.GetInt("QuizBooks");
+        Debug.Log("N de livro: "+ n);
         over = false;
         gameOverQuiz.SetActive(false);
         idPergunta = 0;
@@ -68,7 +80,8 @@ public class GameControllerQuiz : MonoBehaviour
     {
         GameOver();
         Vida();
-     
+     ScoringSystem();
+       
     }
 
     void ShuffleQuestions()
@@ -303,5 +316,76 @@ public class GameControllerQuiz : MonoBehaviour
             return 3;
         }
         return 4;
+    }
+
+    public void ScoringSystem()
+    {
+        Color colorBook = new Color(books[0].GetComponent<SpriteRenderer>().color.r, books[0].GetComponent<SpriteRenderer>().color.g, books[0].GetComponent<SpriteRenderer>().color.b);
+        colorBook.a = 1;
+
+        if (acertos == 2)
+        {
+            scoring = 1;
+            books[0].GetComponent<SpriteRenderer>().color = colorBook;
+
+        }
+        if (acertos == 3)
+        {
+            scoring = 2;
+            books[1].GetComponent<SpriteRenderer>().color = colorBook;
+
+        }
+        if (acertos == 4)
+        {
+            scoring = 3;
+            books[2].GetComponent<SpriteRenderer>().color = colorBook;
+
+        }
+        if (acertos == 5)
+        {
+            scoring = 4;
+            books[3].GetComponent<SpriteRenderer>().color = colorBook;
+
+
+        }
+        PlayerPrefs.SetInt("QuizBooks", scoring);
+        PlayerPrefs.Save();
+
+        
+
+        //if (indexBooks == 1)
+        //{
+        //    books[0].GetComponent<SpriteRenderer>().color = colorBook;
+        //}
+
+    }
+
+    public void Books()
+    {
+        Color colorBook = new Color(books[0].GetComponent<SpriteRenderer>().color.r, books[0].GetComponent<SpriteRenderer>().color.g, books[0].GetComponent<SpriteRenderer>().color.b);
+        colorBook.a = 1;
+
+        if (scoring == 1)
+        {
+            books[0].GetComponent<SpriteRenderer>().color = colorBook;
+        }
+        else if (scoring == 2)
+        {
+            books[0].GetComponent<SpriteRenderer>().color = colorBook;
+            books[1].GetComponent<SpriteRenderer>().color = colorBook;
+        }
+        else if (scoring == 3)
+        {
+            books[0].GetComponent<SpriteRenderer>().color = colorBook;
+            books[1].GetComponent<SpriteRenderer>().color = colorBook;
+            books[2].GetComponent<SpriteRenderer>().color = colorBook;
+        }
+        else if (scoring == 4)
+        {
+            books[0].GetComponent<SpriteRenderer>().color = colorBook;
+            books[1].GetComponent<SpriteRenderer>().color = colorBook;
+            books[2].GetComponent<SpriteRenderer>().color = colorBook;
+            books[3].GetComponent<SpriteRenderer>().color = colorBook;
+        }
     }
 }
