@@ -72,5 +72,9 @@ public class LoadPosition : MonoBehaviour
             PlayerPrefs.SetString("SpriteVan", objectToSave.GetComponent<SpriteRenderer>().sprite.name);
             PlayerPrefs.Save();
         }
+        else
+        {
+            Debug.LogError("Objeto Nullo");
+        }
     }
 }
