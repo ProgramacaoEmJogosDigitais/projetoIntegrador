@@ -1,79 +1,65 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class BookSystem : MonoBehaviour
 {
-    //A cada 300 pontos instancia um livro
+    //A cada 300 pontos anhar um livro
     public float metaTakeBook;
     public float increaseMetaTakeBook;
-    public List<GameObject> prefabBook; //lista de livros
-    public List<GameObject> livrosInstanciados; //lista de livros
+    public List<SpriteRenderer> spriteBook; //lista de livros/sprites da cena
     public float currentSpeedInfor;
     public int nBooksJCorrida;
     private MovimentPlayer movimentPlayerScript;
-    public int countBook { get; private set; }
-    private bool instantiate; //diz se pode ou nao instanciar livros
-
+    private void Awake()
+    {
+        nBooksJCorrida = PlayerPrefs.GetInt("CollectedBooksJCorrida", 0);
+    }
     private void Start()
     {
-        countBook = 0;
         movimentPlayerScript = FindObjectOfType<MovimentPlayer>();
-        nBooksJCorrida = PlayerPrefs.GetInt("CollectedBooks", 0);
-
-        // Se nBooksJCorrida for igual ou superior a 4, nao pode instanciar livros, pq ja pegou todos os livros
-        if (nBooksJCorrida >= 4)
-        {
-            instantiate = false;
-        }
-
-        // Se nBooksJCorrida for menor que 4, pode instanciar livros
-        if (nBooksJCorrida < 4)
-        {
-            instantiate = true;
-        }
-
-        //busca a lista de instanciados e verifica se contasins na lkista normal
-        //NAO TA DANDO CERTO
-        //FALTA VER A QUESTAO DOS LIVROS INSTANCIADOS OU NAO
-        string listaInstanciadosJSON = PlayerPrefs.GetString("LivrosInstanciados", "");
-        if (!string.IsNullOrEmpty(listaInstanciadosJSON))
-        {
-            List<GameObject> livrosInstanciados = JsonUtility.FromJson<List<GameObject>>(listaInstanciadosJSON);
-
-            // Remover livros instanciados da lista normal de prefabs
-            foreach (var livroInstanciado in livrosInstanciados)
-            {
-                if (prefabBook.Contains(livroInstanciado))
-                {
-                    prefabBook.Remove(livroInstanciado);
-                }
-            }
-        }
-
     }
 
+    private void FixedUpdate()
+    {
+        Color colorBook = new Color(spriteBook[0].GetComponent<SpriteRenderer>().color.r, spriteBook[0].GetComponent<SpriteRenderer>().color.g, spriteBook[0].GetComponent<SpriteRenderer>().color.b);
+        colorBook.a = 1;
+
+        if (nBooksJCorrida == 1)
+        {
+            spriteBook[0].GetComponent<SpriteRenderer>().color = colorBook;
+        }
+        else if (nBooksJCorrida == 2)
+        {
+            spriteBook[0].GetComponent<SpriteRenderer>().color = colorBook;
+            spriteBook[1].GetComponent<SpriteRenderer>().color = colorBook;
+        }
+        else if (nBooksJCorrida == 3)
+        {
+            spriteBook[0].GetComponent<SpriteRenderer>().color = colorBook;
+            spriteBook[1].GetComponent<SpriteRenderer>().color = colorBook;
+            spriteBook[2].GetComponent<SpriteRenderer>().color = colorBook;
+        }
+        else if (nBooksJCorrida == 4)
+        {
+            spriteBook[0].GetComponent<SpriteRenderer>().color = colorBook;
+            spriteBook[1].GetComponent<SpriteRenderer>().color = colorBook;
+            spriteBook[2].GetComponent<SpriteRenderer>().color = colorBook;
+            spriteBook[3].GetComponent<SpriteRenderer>().color = colorBook;
+        }
+    }
     void Update()
     {
-        if (movimentPlayerScript.distance >= metaTakeBook && instantiate)
+        if (movimentPlayerScript.distance >= metaTakeBook && nBooksJCorrida < 4)
         {
-
-            GameObject newBookObject = Instantiate(prefabBook[countBook], transform.position, Quaternion.identity);
-            countBook++; // Próximo livro da lista
-            Book newBookScript = newBookObject.GetComponent<Book>();
-            newBookScript.SetBookSpeed(currentSpeedInfor);
-
-            // Adicionar o livro à lista de livros instanciados
-            livrosInstanciados.Add(newBookObject);
+            nBooksJCorrida++;
+            PlayerPrefs.SetInt("CollectedBooksJCorrida", nBooksJCorrida);
+            PlayerPrefs.Save();
 
             metaTakeBook += increaseMetaTakeBook;
-
-            // Atingiu o limite de 4 livros coletados
-            if (nBooksJCorrida >= 4)
-            {
-                instantiate = false;
-            }
         }
     }
 }
