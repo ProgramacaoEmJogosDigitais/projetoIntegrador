@@ -44,6 +44,7 @@ public class GameControllerJC : MonoBehaviour
         FishsFalling.points = 0;
 
         audioSystem.PlaySound("MenuMusic");
+        audioSystem.SetLooping(true);
 
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
         /*if (!PlayerPrefs.HasKey("InstructionsShown") || PlayerPrefs.GetInt("InstructionsShown") == 0)

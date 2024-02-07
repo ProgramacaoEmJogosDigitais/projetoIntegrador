@@ -42,5 +42,12 @@ public class AudioSystem : MonoBehaviour
         {
             Debug.LogWarning("Áudio não encontrado para a chave: " + key);
         }
+
+    }
+
+
+    public void SetLooping(bool loop)
+    {
+        audioSource.loop = loop;
     }
 }
