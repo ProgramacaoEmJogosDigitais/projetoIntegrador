@@ -7,8 +7,12 @@ public class JigsawManager : MonoBehaviour
 {
     public RandonPositions randon;
     public GameObject instructions;
-    public Image panel;
+    public SpriteRenderer panel;
 
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+    }
     void Start()
     {
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
@@ -24,8 +28,11 @@ public class JigsawManager : MonoBehaviour
 
     public void Play()
     {
-        randon.saveIndex = true;
-        randon.StartCoroutine(randon.RandSpriteButton());
+        if (randon.reset != 1)
+        {
+            randon.saveIndex = true;
+            randon.StartCoroutine(randon.RandSpriteButton());
+        }
     }
     public IEnumerator SpawnInstructions()
     {
@@ -34,7 +41,14 @@ public class JigsawManager : MonoBehaviour
         PlayerPrefs.SetInt("InstructionsQuebraCabeca", 1); // Instruções exibidas.
         yield return null;
     }
-
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+    }
+    public void NoPause()
+    {
+        Time.timeScale = 1f;
+    }
     public void GoGame()
     {
         instructions.SetActive(false);

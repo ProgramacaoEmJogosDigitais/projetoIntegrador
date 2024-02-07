@@ -10,7 +10,7 @@ public class RandonPositions : MonoBehaviour
 {
     public static int okPieces;
 
-    public int index, indexBooks = 0;
+    public int index, indexBooks = 0, reset = 0;
     public float time;
     public bool isPlay = false;
     public bool saveIndex = false;
@@ -30,7 +30,7 @@ public class RandonPositions : MonoBehaviour
 
     private string namePieces;
     private int indexReserve, timeInt, pauseTime, min, len;
-    private bool startGame, randomSprite, transprent, gameOver, goToMapOk;
+    private bool startGame, randomSprite, gameOver, goToMapOk;
 
     private void Awake()
     {
@@ -48,7 +48,6 @@ public class RandonPositions : MonoBehaviour
         goToMapOk = true;
         okPieces = 0;
         randomSprite = true;
-        transprent = true;
         //winGameText.enabled = false;
         //gameOverText.enabled = false;
         pauseTime = 1;
@@ -57,12 +56,29 @@ public class RandonPositions : MonoBehaviour
         min = 5;
 
         BooksPonts.pJigsaw = 0;
-        StartCoroutine(RandomSprite());
+
+        reset = PlayerPrefs.GetInt("reset");
+        if (reset == 1)
+        {
+            index = PlayerPrefs.GetInt("numReset");
+
+            StartpPiece(); // Iniciar peças imediatamente
+            ShowSprite(); // Tornar a imagem transparente imediatamente
+            time = 60;
+            timeInt = 60;
+
+            PlayerPrefs.SetInt("reset", 0);
+            PlayerPrefs.Save();
+
+            UpdateParts();
+        }
+        else
+        {
+            StartCoroutine(RandomSprite());
+        }
     }
     public void Books()
     {
-        Debug.Log("booksssss");
-
         Color colorBook = new Color(books[0].GetComponent<SpriteRenderer>().color.r, books[0].GetComponent<SpriteRenderer>().color.g, books[0].GetComponent<SpriteRenderer>().color.b);
         colorBook.a = 1;
 
@@ -70,7 +86,7 @@ public class RandonPositions : MonoBehaviour
         {
             books[0].GetComponent<SpriteRenderer>().color = colorBook;
         }
-        else if(indexBooks == 2)
+        else if (indexBooks == 2)
         {
             books[0].GetComponent<SpriteRenderer>().color = colorBook;
             books[1].GetComponent<SpriteRenderer>().color = colorBook;
@@ -118,6 +134,12 @@ public class RandonPositions : MonoBehaviour
         }
         SceneManager.LoadScene(sceneName);
     }
+    public void BtnReset(string sceneName)
+    {
+        PlayerPrefs.SetInt("reset", 1);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(sceneName);
+    }
     public void RandonPiece()
     {
         for (int j = 0; j < randonPositions.Length; j++)
@@ -150,7 +172,6 @@ public class RandonPositions : MonoBehaviour
     }
     void ShowSprite()
     {
-        transprent = false;
         spriteRenderer.color = new Color(1, 1, 1, 0.3f);
         min = 4;
         time = 60;
@@ -206,10 +227,17 @@ public class RandonPositions : MonoBehaviour
         while (randomSprite)
         {
             indexReserve = UnityEngine.Random.Range(0, spriteFullReserve.Count);
-            spriteRenderer.sprite = spriteFullReserve[indexReserve]; 
+            spriteRenderer.sprite = spriteFullReserve[indexReserve];
             index = UnityEngine.Random.Range(0, spriteFull.Count);
             yield return new WaitForSeconds(0.1f);
         }
+        PlayerPrefs.SetInt("numReset", index);
+        PlayerPrefs.Save();
+        UpdateParts();
+
+    }
+    public void UpdateParts()
+    {
         namePieces = spriteFull[index].name;
         spriteRenderer.sprite = spriteFull[index];
         ChangePices(namePieces);
