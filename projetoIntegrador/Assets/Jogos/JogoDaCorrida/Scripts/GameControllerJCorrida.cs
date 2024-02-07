@@ -39,5 +39,10 @@ public class GameControllerJCorrida : MonoBehaviour
         panelOptions.gameObject.SetActive(false);
     }
 
+    void RestartGame()
+    {
+        
+    }
+
 
 }

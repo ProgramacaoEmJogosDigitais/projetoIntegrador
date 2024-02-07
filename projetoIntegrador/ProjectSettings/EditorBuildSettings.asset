@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Jogos/JogoDaCorrida/Scenes/JogoDaCorrida.unity
     guid: 0ffdc64017f102142ba5cb8a1eda159b
   - enabled: 1
-    path: "Assets/Jogos/JogoDoQuebraCabe\xE7a/Sene/JogoQuebraCabe\xE7a.unity"
+    path: "Assets/Jogos/JogoDoQuebraCabe\xE7a/Scene/JogoQuebraCabe\xE7a.unity"
     guid: a0751e35db83ad64da502e97edf2530e
   - enabled: 1
     path: Assets/Jogos/JogoDoQuiz/Scenes/Quiz.unity
