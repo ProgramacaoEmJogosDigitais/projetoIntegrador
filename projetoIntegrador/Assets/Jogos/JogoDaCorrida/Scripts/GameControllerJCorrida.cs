@@ -12,12 +12,27 @@ public class GameControllerJCorrida : MonoBehaviour
     public GameObject panelGameOver;
     public GameObject panelOptions;
     public TMP_Text pointsText;
+    public AudioSystem audioSystemScript;
     private MovimentPlayer movimentPlayer;
+    private PauseJCorrida pauseJCorridaScript;
 
     private void Awake()
     {
         Time.timeScale = 1;
         movimentPlayer = FindObjectOfType<MovimentPlayer>();
+        pauseJCorridaScript = FindObjectOfType<PauseJCorrida>();
+    }
+
+    private void Start()
+    {
+        audioSystemScript.PlaySound("BackGameCorrida");
+        audioSystemScript.SetLooping(true);
+
+        if (pauseJCorridaScript.gamePaused)
+        {
+            //musica precisa parar quando tiver pausado
+
+        }
     }
     private void FixedUpdate()
     {

@@ -50,4 +50,9 @@ public class AudioSystem : MonoBehaviour
     {
         audioSource.loop = loop;
     }
+
+    public void StopSound()
+    {
+        audioSource?.Stop();
+    }
 }
