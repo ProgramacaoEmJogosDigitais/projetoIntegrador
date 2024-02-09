@@ -7946,6 +7946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSlider: {fileID: 1584015020}
   effectSlider: {fileID: 43801006}
+  canvOptions: {fileID: 3504890325731277211, guid: 14514cbba3d71874eb59c4bf053dc1db, type: 3}
 --- !u!4 &2133945169
 Transform:
   m_ObjectHideFlags: 0

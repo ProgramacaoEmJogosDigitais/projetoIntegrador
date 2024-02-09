@@ -16,7 +16,7 @@ public class AudioSystem : MonoBehaviour
 
     private AudioSource audioSource;
 
-    private void Start()
+    private void Awake()
     {
         // Obtém ou cria um objeto AudioSource para reprodução de áudio
         audioSource = GetComponent<AudioSource>();
