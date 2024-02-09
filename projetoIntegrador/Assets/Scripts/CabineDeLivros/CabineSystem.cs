@@ -1,23 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.UI;
 
-public class Attractions : MonoBehaviour
+public class CabineSystem : MonoBehaviour
 {
-    public Canvas canvasDialogue;
     public GameObject attraction0;
     public GameObject attraction1;
     public GameObject attraction2;
-    public Image panel; 
+    public Canvas popUpCabineCanva;
     private bool isColliding = false;
     private VanMoviment player;
 
     private void Start()
     {
-        player = FindObjectOfType<VanMoviment>();   
+        player = FindObjectOfType<VanMoviment>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -40,7 +37,6 @@ public class Attractions : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            canvasDialogue.gameObject.SetActive(false);
             if (attraction1 != null)
             {
                 attraction0.gameObject.SetActive(false);
@@ -61,11 +57,9 @@ public class Attractions : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) && !player.isMoving)
             {
-                panel.gameObject.SetActive(true);
-                canvasDialogue.gameObject.SetActive(true);
+                popUpCabineCanva.gameObject.SetActive(true);
             }
 
         }
     }
-
 }

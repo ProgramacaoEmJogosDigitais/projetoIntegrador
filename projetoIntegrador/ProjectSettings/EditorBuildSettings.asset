@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Jogos/JogoDoQuiz/Scenes/Quiz.unity
     guid: 21a54b5481f008d4e9c85d4d1884d52c
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 5e498026c9d58754e85bb5c545a39d3b
   m_configObjects: {}
