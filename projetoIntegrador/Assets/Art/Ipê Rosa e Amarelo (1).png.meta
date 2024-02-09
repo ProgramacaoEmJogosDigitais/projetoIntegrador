@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0cf9180f007cdb449bed51957b3784a6
+guid: 2bc6bcfd23a90614a84bbe9eb610bdf9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gibiteca_0
+      name: "Ip\xEA Rosa e Amarelo (1)_0"
       rect:
         serializedVersion: 2
         x: 0
-        y: 398
-        width: 719
-        height: 313
+        y: 0
+        width: 820
+        height: 845
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8ac2f63f7e636940b1aca59f4a2e555
-      internalID: -1799691047
+      spriteID: 095e588f807c79b48a9969b7b21918ff
+      internalID: 37168571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gibiteca_1
+      name: "Ip\xEA Rosa e Amarelo (1)_1"
       rect:
         serializedVersion: 2
-        x: 0
+        x: 901
         y: 0
-        width: 719
-        height: 398
+        width: 814
+        height: 845
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a83ed0f3ed97f8499b930ce74fcb0b3
-      internalID: 132866148
+      spriteID: e484d7607acd22544959fc77afbf880f
+      internalID: -1817001457
       vertices: []
       indices: 
       edges: []
@@ -181,8 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gibiteca_0: -1799691047
-      gibiteca_1: 132866148
+      "Ip\xEA Rosa e Amarelo (1)_0": 37168571
+      "Ip\xEA Rosa e Amarelo (1)_1": -1817001457
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -22,26 +22,26 @@ public class Instructions : MonoBehaviour
 
     public IEnumerator SpawnInstructions()
     {
-        //bt_pause.gameObject.SetActive(false);
         yield return new WaitForSeconds(0.01f);
         panelInstructions.gameObject.SetActive(true);
         PlayerPrefs.SetInt("InstructionsShown", 1); // Instruções exibidas.
-        Time.timeScale = 0.0f;
+        pauseJCorrida.gamePaused = true;//Time.timeScale = 0.0f;
     }
 
     public void GoGame()
     {
         panelInstructions.gameObject.SetActive(false);
-        Time.timeScale = 1.0f;
+        //Time.timeScale = 1.0f; MUDAR
         pauseJCorrida.bt_pause.gameObject.SetActive(true);
+        pauseJCorrida.gamePaused = false;
 
     }
 
     public void OpenInstructions()
     {
-        Time.timeScale = 0.0f;
+        //Time.timeScale = 0.0f; MUDAR
         panelPause.SetActive(false);
         panelInstructions.gameObject.SetActive(true);
-
+        pauseJCorrida.gamePaused = true;
     }
 }
