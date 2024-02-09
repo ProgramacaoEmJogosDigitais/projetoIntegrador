@@ -18,6 +18,7 @@ public class GameControllerQuiz : MonoBehaviour
     public Sprite[] personagens;
     public Image PontoP;
     public GameObject painelGameOver;
+    public GameObject paineloptions;
     public Image[] pontosTuristicos;
 
 
