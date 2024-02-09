@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class Comic : MonoBehaviour
 {
+    public bool endPageLeft = false;
     [SerializeField] private GameObject comic;
     [SerializeField] private Transform posComicOnePage;
+    [SerializeField] private Transform posComicOnePageEndLeft;
     [SerializeField] private Transform posComicTwoPages;
     [SerializeField] private float pageSpeed = 0.5f;
     [SerializeField] private List<GameObject> pagesGameObject;
@@ -21,6 +23,7 @@ public class Comic : MonoBehaviour
     private int index = -1;
     private bool rotate = false;
     private float angle1;
+
 
     private void Start()
     {
@@ -53,7 +56,6 @@ public class Comic : MonoBehaviour
         pagesGameObject[index].transform.SetAsLastSibling();
         ForwardButtonActions();
         StartCoroutine(Rotate(angle, true));
-        comic.transform.position = posComicTwoPages.position;
     }
     public void ForwardButtonActions()
     {
@@ -61,8 +63,15 @@ public class Comic : MonoBehaviour
         {
             comic.transform.position = posComicTwoPages.position;
             backButton.SetActive(true);
+
         }
-        if (index + 1 == pagesGameObject.Count) //Última página
+        if (index == pagesGameObject.Count - 1 && endPageLeft)
+        {
+            comic.transform.position = posComicOnePageEndLeft.position;
+            forwardButton.SetActive(false);
+            Invoke("ButtonGoMapForward", 0.35f);
+        }
+        else if (index + 1 == pagesGameObject.Count) //Última página
         {
             comic.transform.position = posComicOnePage.position;
             forwardButton.SetActive(false);
@@ -81,6 +90,7 @@ public class Comic : MonoBehaviour
     {
         if (forwardButton.activeInHierarchy == false)
         {
+            comic.transform.position = posComicTwoPages.position;
             forwardButton.SetActive(true);
             Invoke("ButtonGoMapBack", 0.45f);
         }
