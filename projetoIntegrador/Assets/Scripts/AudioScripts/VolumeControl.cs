@@ -7,12 +7,10 @@ public class VolumeControl : MonoBehaviour
     private static VolumeControl instance;
 
     // Volume configuração inicial
-    private float volume = 1.0f;
-    private float volumeEffect = 1.0f;
+    private float volume, volumeEffect;
 
     // Referência ao slider no painel de controle de volume
-    public Slider musicSlider;
-    public Slider effectSlider;
+    public Slider musicSlider, effectSlider;
 
     // Referência ao objeto canv_options
     public GameObject canvOptions;
@@ -41,21 +39,26 @@ public class VolumeControl : MonoBehaviour
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", volume);
         effectSlider.value = PlayerPrefs.GetFloat("EffectVolume", volume);
         SetVolume(volume); // Configura o volume ao iniciar
+        SetVolume(volumeEffect);
     }
 
     public void SetVolume(float value)
     {
         // Define o volume, salva no PlayerPrefs e atualiza o slider
         volume = value;
+        volumeEffect = value;
         PlayerPrefs.SetFloat("MusicVolume", value);
         PlayerPrefs.SetFloat("EffectVolume", value);
         AudioListener.volume = volume;
+        AudioListener.volume = volumeEffect;
     }
 
     public void Update()
     {
         FindObjectOfType<Slider>().value = volume;
         FindObjectOfType<Slider>().value = volumeEffect;
+        volume = musicSlider.value;
+        volumeEffect = effectSlider.value;
     }
 
     public void LoadOtherScene()
