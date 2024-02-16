@@ -3348,19 +3348,22 @@ MonoBehaviour:
   attraction2: {fileID: 903306460}
   popUpCabineCanva: {fileID: 492417954}
   booksScene: {fileID: 152489506}
-  BooksSprites:
+  booksQuebraCabeca:
   - {fileID: 644247301}
   - {fileID: 99512132}
   - {fileID: 592088115}
   - {fileID: 417369911}
+  booksQuiz:
   - {fileID: 314937779}
   - {fileID: 1982602639}
   - {fileID: 1101177849}
   - {fileID: 2120778001}
+  booksCorrida:
   - {fileID: 1366732648}
   - {fileID: 721655635}
   - {fileID: 787620095}
   - {fileID: 1470039508}
+  booksAquario:
   - {fileID: 1064354360}
   - {fileID: 1390809811}
   - {fileID: 268145037}

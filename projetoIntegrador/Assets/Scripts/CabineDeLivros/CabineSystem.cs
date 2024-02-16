@@ -13,7 +13,7 @@ public class CabineSystem : MonoBehaviour
     public Canvas popUpCabineCanva;
     public GameObject booksScene;
 
-    public List<SpriteRenderer> BooksSprites; //Lista de livros
+    //public List<SpriteRenderer> BooksSprites; //Lista de livros
 
     //quebra cabeca
     //quiz
@@ -23,10 +23,10 @@ public class CabineSystem : MonoBehaviour
     private bool isColliding = false;
     private VanMoviment playerScript;
 
-    private List<SpriteRenderer> booksQuebraCabeca;
-    private List<SpriteRenderer> booksQuiz;
-    private List<SpriteRenderer> booksCorrida;
-    private List<SpriteRenderer> booksAquario;
+    public List<SpriteRenderer> booksQuebraCabeca;
+    public List<SpriteRenderer> booksQuiz;
+    public List<SpriteRenderer> booksCorrida;
+    public List<SpriteRenderer> booksAquario;
 
     private int jQuebraCabeca;
     private int jQuiz;
@@ -36,12 +36,14 @@ public class CabineSystem : MonoBehaviour
     private void Start()
     {
         playerScript = FindObjectOfType<VanMoviment>();
-        //SepareteBooks();
 
         jQuebraCabeca = PlayerPrefs.GetInt("numBooks");
         jQuiz = PlayerPrefs.GetInt("QuizBooks");
         jCorrida = PlayerPrefs.GetInt("CollectedBooksJCorrida");
         jAquario = PlayerPrefs.GetInt("");
+
+        //SepareteBooks();
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -100,28 +102,28 @@ public class CabineSystem : MonoBehaviour
         player.GetComponent<VanMoviment>().enabled=true;
     }
 
-    private void SepareteBooks()
-    {
-        for (int i = 0; i < BooksSprites.Count; i++)
-        {
-            if (i >= 0 && i <= 3) //quebra cabeca
-            {
-                booksQuebraCabeca.Add(BooksSprites[i]);
-            }
-            if (i >= 4 && i <= 7)//quiz
-            {
-                booksQuiz.Add(BooksSprites[i]);
-            }
-            if (i >= 8 && i <= 11)//corrida     
-            {
-                booksCorrida.Add(BooksSprites[i]);
-            }
-            if (i >= 12 && i <= 15)//coleta /Aquario
-            {
-                booksAquario.Add(BooksSprites[i]);
-            }
-        }
-    }
+    //private void SepareteBooks()
+    //{
+    //    for (int i = 0; i < BooksSprites.Count; i++)
+    //    {
+    //        if (i >= 0 && i <= 3) //quebra cabeca
+    //        {
+    //            booksQuebraCabeca.Add(BooksSprites[i]);
+    //        }
+    //        if (i >= 4 && i <= 7)//quiz
+    //        {
+    //            booksQuiz.Add(BooksSprites[i]);
+    //        }
+    //        if (i >= 8 && i <= 11)//corrida     
+    //        {
+    //            booksCorrida.Add(BooksSprites[i]);
+    //        }
+    //        if (i >= 12 && i <= 15)//coleta /Aquario
+    //        {
+    //            booksAquario.Add(BooksSprites[i]);
+    //        }
+    //    }
+    //}
 
     public void CheckBooks()
     {
@@ -133,8 +135,12 @@ public class CabineSystem : MonoBehaviour
         //jAquario = PlayerPrefs.GetInt("");
 
 
-        Color colorBook = new Color(BooksSprites[0].GetComponent<SpriteRenderer>().color.r, BooksSprites[0].GetComponent<SpriteRenderer>().color.g, BooksSprites[0].GetComponent<SpriteRenderer>().color.b);
+        Color colorBook = new Color(booksQuebraCabeca[0].GetComponent<SpriteRenderer>().color.r, booksQuebraCabeca[0].GetComponent<SpriteRenderer>().color.g, booksQuebraCabeca[0].GetComponent<SpriteRenderer>().color.b);
         colorBook.a = 1;
+        colorBook.r = 255;
+        colorBook.g = 255;
+        colorBook.b = 255;
+
         
         //quebra cabeca
         //if (PlayerPrefs.GetInt("numBooks") > jQuebraCabeca)
