@@ -42,6 +42,10 @@ public class CabineSystem : MonoBehaviour
         jCorrida = PlayerPrefs.GetInt("CollectedBooksJCorrida");
         jAquario = PlayerPrefs.GetInt("");
 
+        Debug.Log("numero de livros na cena do mapa "+jQuiz);
+
+        FirstTime();
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -89,7 +93,6 @@ public class CabineSystem : MonoBehaviour
                 booksScene.SetActive(true);
                 CheckBooks();
             }
-
         }
     }
 
@@ -109,78 +112,95 @@ public class CabineSystem : MonoBehaviour
         colorBook.b = 255;
 
         //quebra cabeca
-        if (jQuebraCabeca == 1)
+        if (jQuebraCabeca > PlayerPrefs.GetInt("QuebraCabecaCabine"))
         {
-            booksQuebraCabeca[0].GetComponent<SpriteRenderer>().color = colorBook;
-        }
-        else if (jQuebraCabeca == 2)
-        {
-            booksQuebraCabeca[0].GetComponent<SpriteRenderer>().color = colorBook;
-            booksQuebraCabeca[1].GetComponent<SpriteRenderer>().color = colorBook;
-        }
-        else if (jQuebraCabeca == 3)
-        {
-            booksQuebraCabeca[0].GetComponent<SpriteRenderer>().color = colorBook;
-            booksQuebraCabeca[1].GetComponent<SpriteRenderer>().color = colorBook;
-            booksQuebraCabeca[2].GetComponent<SpriteRenderer>().color = colorBook;
-        }
-        else if (jQuebraCabeca == 4)
-        {
-            booksQuebraCabeca[0].GetComponent<SpriteRenderer>().color = colorBook;
-            booksQuebraCabeca[1].GetComponent<SpriteRenderer>().color = colorBook;
-            booksQuebraCabeca[2].GetComponent<SpriteRenderer>().color = colorBook;
-            booksQuebraCabeca[3].GetComponent<SpriteRenderer>().color = colorBook;
+            PlayerPrefs.SetInt("QuebraCabecaCabine", jQuebraCabeca);
+            if (jQuebraCabeca == 1)
+            {
+                booksQuebraCabeca[0].GetComponent<SpriteRenderer>().color = colorBook;
+            }
+            else if (jQuebraCabeca == 2)
+            {
+                booksQuebraCabeca[0].GetComponent<SpriteRenderer>().color = colorBook;
+                booksQuebraCabeca[1].GetComponent<SpriteRenderer>().color = colorBook;
+            }
+            else if (jQuebraCabeca == 3)
+            {
+                booksQuebraCabeca[0].GetComponent<SpriteRenderer>().color = colorBook;
+                booksQuebraCabeca[1].GetComponent<SpriteRenderer>().color = colorBook;
+                booksQuebraCabeca[2].GetComponent<SpriteRenderer>().color = colorBook;
+            }
+            else if (jQuebraCabeca == 4)
+            {
+                booksQuebraCabeca[0].GetComponent<SpriteRenderer>().color = colorBook;
+                booksQuebraCabeca[1].GetComponent<SpriteRenderer>().color = colorBook;
+                booksQuebraCabeca[2].GetComponent<SpriteRenderer>().color = colorBook;
+                booksQuebraCabeca[3].GetComponent<SpriteRenderer>().color = colorBook;
+            }
         }
 
         //quiz
-        if (jQuiz == 1)
+        if (jQuiz > PlayerPrefs.GetInt("QuizCabine"))
         {
-            booksQuiz[0].GetComponent<SpriteRenderer>().color = colorBook;
-        }
-        else if (jQuiz == 2)
-        {
-            booksQuiz[0].GetComponent<SpriteRenderer>().color = colorBook;
-            booksQuiz[1].GetComponent<SpriteRenderer>().color = colorBook;
-        }
-        else if (jQuiz == 3)
-        {
-            booksQuiz[0].GetComponent<SpriteRenderer>().color = colorBook;
-            booksQuiz[1].GetComponent<SpriteRenderer>().color = colorBook;
-            booksQuiz[2].GetComponent<SpriteRenderer>().color = colorBook;
-        }
-        else if (jQuiz == 4)
-        {
-            booksQuiz[0].GetComponent<SpriteRenderer>().color = colorBook;
-            booksQuiz[1].GetComponent<SpriteRenderer>().color = colorBook;
-            booksQuiz[2].GetComponent<SpriteRenderer>().color = colorBook;
-            booksQuiz[3].GetComponent<SpriteRenderer>().color = colorBook;
+            PlayerPrefs.SetInt("QuizCabine", jQuiz);
+            Debug.Log("Na cabine"+PlayerPrefs.GetInt("QuizCabine"));
+            Debug.Log("Quanto ganhou"+jQuiz);
+            if (jQuiz == 1)
+            {
+                booksQuiz[0].GetComponent<SpriteRenderer>().color = colorBook;
+            }
+            else if (jQuiz == 2)
+            {
+                booksQuiz[0].GetComponent<SpriteRenderer>().color = colorBook;
+                booksQuiz[1].GetComponent<SpriteRenderer>().color = colorBook;
+            }
+            else if (jQuiz == 3)
+            {
+                booksQuiz[0].GetComponent<SpriteRenderer>().color = colorBook;
+                booksQuiz[1].GetComponent<SpriteRenderer>().color = colorBook;
+                booksQuiz[2].GetComponent<SpriteRenderer>().color = colorBook;
+            }
+            else if (jQuiz == 4)
+            {
+                booksQuiz[0].GetComponent<SpriteRenderer>().color = colorBook;
+                booksQuiz[1].GetComponent<SpriteRenderer>().color = colorBook;
+                booksQuiz[2].GetComponent<SpriteRenderer>().color = colorBook;
+                booksQuiz[3].GetComponent<SpriteRenderer>().color = colorBook;
+            }
         }
 
         //corrida
-        if (jCorrida == 1)
+        if(jCorrida > PlayerPrefs.GetInt("CorridaCabin"))
         {
-            booksCorrida[0].GetComponent<SpriteRenderer>().color = colorBook;
-        }
-        else if (jCorrida == 2)
-        {
-            booksCorrida[0].GetComponent<SpriteRenderer>().color = colorBook;
-            booksCorrida[1].GetComponent<SpriteRenderer>().color = colorBook;
-        }
-        else if (jCorrida == 3)
-        {
-            booksCorrida[0].GetComponent<SpriteRenderer>().color = colorBook;
-            booksCorrida[1].GetComponent<SpriteRenderer>().color = colorBook;
-            booksCorrida[2].GetComponent<SpriteRenderer>().color = colorBook;
-        }
-        else if (jCorrida == 4)
-        {
-            booksCorrida[0].GetComponent<SpriteRenderer>().color = colorBook;
-            booksCorrida[1].GetComponent<SpriteRenderer>().color = colorBook;
-            booksCorrida[2].GetComponent<SpriteRenderer>().color = colorBook;
-            booksCorrida[3].GetComponent<SpriteRenderer>().color = colorBook;
+            PlayerPrefs.SetInt("CorridaCabin", jCorrida);
+            if (jCorrida == 1)
+            {
+                booksCorrida[0].GetComponent<SpriteRenderer>().color = colorBook;
+            }
+            else if (jCorrida == 2)
+            {
+                booksCorrida[0].GetComponent<SpriteRenderer>().color = colorBook;
+                booksCorrida[1].GetComponent<SpriteRenderer>().color = colorBook;
+            }
+            else if (jCorrida == 3)
+            {
+                booksCorrida[0].GetComponent<SpriteRenderer>().color = colorBook;
+                booksCorrida[1].GetComponent<SpriteRenderer>().color = colorBook;
+                booksCorrida[2].GetComponent<SpriteRenderer>().color = colorBook;
+            }
+            else if (jCorrida == 4)
+            {
+                booksCorrida[0].GetComponent<SpriteRenderer>().color = colorBook;
+                booksCorrida[1].GetComponent<SpriteRenderer>().color = colorBook;
+                booksCorrida[2].GetComponent<SpriteRenderer>().color = colorBook;
+                booksCorrida[3].GetComponent<SpriteRenderer>().color = colorBook;
+            }
         }
 
         //aquario
+        //if (jAquario > PlayerPrefs.GetInt("AquarioCabin"))
+        //{
+        //    PlayerPrefs.SetInt("AquarioCabin", jAquario);
         //  if (jCorrida == 1)
         //  {
         //      booksAquario[0].GetComponent<Image>().color = colorBook;
@@ -203,5 +223,27 @@ public class CabineSystem : MonoBehaviour
         //      booksAquario[2].GetComponent<Image>().color = colorBook;
         //      booksAquario[3].GetComponent<Image>().color = colorBook;
         //  }
+        //}
+        
+        //PINTA A QUANTIDADE QUE JA ESTAVA
+        else
+        {
+            for (int i = 0; i < PlayerPrefs.GetInt("QuizCabin"); i++)
+            {
+                booksQuiz[i].GetComponent<SpriteRenderer>().color = colorBook;
+            }
+        }
+    }
+
+    private void FirstTime()
+    {
+        if(!PlayerPrefs.HasKey("QuebraCabecaCabin") && !PlayerPrefs.HasKey("QuizCabin") && !PlayerPrefs.HasKey("CorridaCabin") && !PlayerPrefs.HasKey("AquarioCabin"))
+        {
+            Debug.Log("Entrou");
+            PlayerPrefs.SetInt("QuebraCabecaCabin", 0);
+            PlayerPrefs.SetInt("QuizCabin", 0);
+            PlayerPrefs.SetInt("CorridaCabin", 0);
+            PlayerPrefs.SetInt("AquarioCabin", 0);
+        }
     }
 }
