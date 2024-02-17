@@ -1,85 +1,53 @@
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class AudioSystem : MonoBehaviour
 {
-    public static AudioSystem instance;
-
-    public AudioClip musicMainMenu;
-    public AudioClip musicMap;
-    public AudioClip jumpSound;
-    public AudioClip footstepsSound;
-
-    private AudioSource musicSource;
-    private AudioSource sfxSource;
-
-    public List <AudioSource> musicList;
-    public List<AudioSource> effectList;
-    public List <AudioClip> musicListClip;
-    public List <AudioClip> effectListClip;
-
-    void Awake()
+    // Estrutura para armazenar áudios associados a chaves
+    [System.Serializable]
+    public struct SoundEntry
     {
-        if (instance == null)
+        public string key;
+        public AudioClip audioClip;
+    }
+
+    // Lista de entradas de áudio
+    public List<SoundEntry> soundEntries;
+
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        // Obtém ou cria um objeto AudioSource para reprodução de áudio
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
 
-            // AudioSource para músicas
-            musicSource = gameObject.AddComponent<AudioSource>();
+    // Chame este método para reproduzir um som pelo nome da chave
+    public void PlaySound(string key)
+    {
+        // Procura o áudio correspondente à chave na lista
+        SoundEntry soundEntry = soundEntries.Find(entry => entry.key == key);
 
-            // AudioSource para efeitos sonoros
-            sfxSource = gameObject.AddComponent<AudioSource>();
+        // Se encontrar, reproduz o áudio
+        if (soundEntry.audioClip != null)
+        {
+            audioSource.clip = soundEntry.audioClip;
+            audioSource.Play();
         }
         else
         {
-            Destroy(gameObject);
+            Debug.LogWarning("Áudio não encontrado para a chave: " + key);
         }
+
     }
 
-    public void Start()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
 
-    public void Update()
+    public void SetLooping(bool loop)
     {
-        //if (PlayerColeta.playerSpeed > 0f)
-        {
-            sfxSource.PlayOneShot(footstepsSound);
-        }
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        // Audios específicos da cena
-        if (scene.name == "MainMenu")
-        {
-            PlayMusic(musicMainMenu);
-        }
-        else if (scene.name == "Map")
-        {
-            PlayMusic(musicMap);
-        }
-    }
-
-    // Método para reproduzir música de fundo
-    void PlayMusic(AudioClip musicClip)
-    {
-        musicSource.clip = musicClip;
-        musicSource.loop = true;
-        musicSource.Play();
-    }
-
-    // Métodos para reproduzir efeitos sonoros específicos
-    public void PlayJumpSound()
-    {
-        sfxSource.PlayOneShot(jumpSound);
-    }
-
-    public void PlayFootstepsSound()
-    {
-        sfxSource.PlayOneShot(footstepsSound);
+        audioSource.loop = loop;
     }
 }
