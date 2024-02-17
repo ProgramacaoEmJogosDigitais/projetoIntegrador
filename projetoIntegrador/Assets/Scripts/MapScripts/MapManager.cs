@@ -1,5 +1,7 @@
+using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +12,7 @@ public class MapManager : MonoBehaviour
     public GameObject scrollViewInstructions;
     public GameObject player;
     public Image panel;
+    public Comic comic;
 
     void Start()
     {
@@ -54,5 +57,7 @@ public class MapManager : MonoBehaviour
         yield return new WaitForSeconds(1.3f);
         panelTransition.SetActive(false);
         panel.gameObject.SetActive(false);
+        cameraMain.GetComponent<Animator>().enabled = false;
+        comic.ResetComic();
     }
 }
