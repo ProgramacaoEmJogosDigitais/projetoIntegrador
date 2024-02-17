@@ -1,17 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class JigsawManager : MonoBehaviour
 {
     public RandonPositions randon;
     public GameObject instructions;
     public SpriteRenderer panel;
-
+    public Comic comic;
+    public List<DragEndDrop> dragEndDrop;
     private void Awake()
     {
-        Time.timeScale = 1f;
+        randon.pause = false;
+        DragEndDrop[] dragEndDropArray = FindObjectsOfType<DragEndDrop>();
+
+        // Inicializar a lista com os objetos encontrados
+        dragEndDrop = new List<DragEndDrop>(dragEndDropArray);
+
     }
     void Start()
     {
@@ -43,11 +53,13 @@ public class JigsawManager : MonoBehaviour
     }
     public void Pause()
     {
-        Time.timeScale = 0f;
+        DisableParts();
+        randon.pause = true;
     }
     public void NoPause()
     {
-        Time.timeScale = 1f;
+        EnableParts();
+        randon.pause = false;
     }
     public void GoGame()
     {
@@ -55,5 +67,21 @@ public class JigsawManager : MonoBehaviour
         panel.gameObject.SetActive(false);
         randon.saveIndex = true;
         randon.StartCoroutine(randon.RandSpriteButton());
+        comic.rotate = false;
+        comic.ResetComic(); 
+    }
+    public void DisableParts()
+    {
+        for (int i = 0; i < dragEndDrop.Count; i++)
+        {
+            dragEndDrop[i].blockMove = false;
+        }
+    }
+    public void EnableParts()
+    {
+        for (int i = 0; i < dragEndDrop.Count; i++)
+        {
+            dragEndDrop[i].blockMove = true;
+        }
     }
 }

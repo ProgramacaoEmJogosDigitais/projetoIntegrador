@@ -6,25 +6,30 @@ using UnityEngine.UI;
 public class Comic : MonoBehaviour
 {
     public bool endPageLeft = false;
-    [SerializeField] private GameObject comic;
-    [SerializeField] private Transform posComicOnePage;
-    [SerializeField] private Transform posComicOnePageEndLeft;
-    [SerializeField] private Transform posComicTwoPages;
-    [SerializeField] private float pageSpeed = 0.5f;
-    [SerializeField] private List<GameObject> pagesGameObject;
-    [SerializeField] private List<Image> pagesImage1;
-    [SerializeField] private List<Image> pagesImage2;
-    [SerializeField] private List<Sprite> pagesSprite;
+    public GameObject backButton;
+    public GameObject comic;
+    public Transform posComicOnePage;
+    public Transform posComicOnePageEndLeft;
+    public Transform posComicTwoPages;
+    public float pageSpeed = 0.5f;
+    public List<GameObject> pagesGameObject;
+    public List<Image> pagesImage1;
+    public List<Image> pagesImage2;
+    public List<Sprite> pagesSprite;
     //[SerializeField] private List<Sprite> pagesSprite2;
-    [SerializeField] private GameObject backButton;
-    [SerializeField] private GameObject forwardButton;
-    [SerializeField] private GameObject goMapButton;
+    public GameObject forwardButton;
+    public GameObject goMapButton;
+    public JigsawManager jigsawManager;
+    public int index = -1;
+    public bool rotate = false;
+    public float angle1;
 
-    private int index = -1;
-    private bool rotate = false;
-    private float angle1;
 
-
+    private void Awake()
+    {
+        jigsawManager = FindObjectOfType<JigsawManager>();
+        jigsawManager.DisableParts();
+    }
     private void Start()
     {
         comic.transform.position = posComicOnePage.position;
@@ -46,7 +51,6 @@ public class Comic : MonoBehaviour
             }
         }
         pagesImage1.ForEach(image => image.gameObject.SetActive(true));
-
     }
     public void RotateForward()
     {
@@ -145,5 +149,35 @@ public class Comic : MonoBehaviour
         }
     }
 
+    public void ResetComic()
+    {
+        index = -1;
+        rotate = false;
+        angle1 = 0f;
 
+        // Reinicie as posições e ativação/inativação de botões conforme necessário
+        comic.transform.position = posComicOnePage.position;
+        backButton.SetActive(false);
+        forwardButton.SetActive(true);
+        goMapButton.SetActive(false);
+        pagesGameObject[0].transform.SetAsLastSibling();
+
+        // Ative todas as imagens da página 1 e desative as imagens da página 2
+        foreach (var image in pagesImage1)
+        {
+            image.gameObject.SetActive(true);
+        }
+
+        foreach (var image in pagesImage2)
+        {
+            image.gameObject.SetActive(false);
+        }
+
+        // Reinicie a rotação das páginas
+        foreach (var page in pagesGameObject)
+        {
+            page.transform.rotation = Quaternion.identity;
+        }
+        jigsawManager.EnableParts();
+    }
 }

@@ -14,6 +14,7 @@ public class RandonPositions : MonoBehaviour
     public float time;
     public bool isPlay = false;
     public bool saveIndex = false;
+    public bool pause = false;
     public Image bookScore;
     public ParticleSystem particle;
     public List<SpriteRenderer> books;
@@ -119,7 +120,7 @@ public class RandonPositions : MonoBehaviour
         {
             canvasWinGame.SetActive(true);
         }
-        if (startGame)
+        if (startGame && !pause)
         {
             ContTime();
         }

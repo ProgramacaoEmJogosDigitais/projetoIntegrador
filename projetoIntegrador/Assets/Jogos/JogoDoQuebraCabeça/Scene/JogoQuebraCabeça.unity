@@ -7182,6 +7182,17 @@ Transform:
   m_Father: {fileID: 904439031}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &676374175 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7033362623627441848, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
+  m_PrefabInstance: {fileID: 1259005523}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d343af774a56e4ea300d7cdf5ce8f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &687512738
 GameObject:
   m_ObjectHideFlags: 0
@@ -13153,6 +13164,7 @@ MonoBehaviour:
   time: 0
   isPlay: 0
   saveIndex: 0
+  pause: 0
   bookScore: {fileID: 0}
   particle: {fileID: 2025075626}
   books:
@@ -13355,6 +13367,8 @@ MonoBehaviour:
   randon: {fileID: 996645502}
   instructions: {fileID: 428696164}
   panel: {fileID: 58164573}
+  comic: {fileID: 676374175}
+  dragEndDrop: []
 --- !u!114 &996645505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15530,7 +15544,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3642139534102858353, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642139534102858353, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3642139534102858353, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -15541,8 +15559,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1394916840}
     - target: {fileID: 3642139534102858353, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 996645504}
+    - target: {fileID: 3642139534102858353, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642139534102858353, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642139534102858353, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: DisableParts
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642139534102858353, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: JigsawManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642139534102858353, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3642139534181924204, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
       propertyPath: m_Pivot.x
