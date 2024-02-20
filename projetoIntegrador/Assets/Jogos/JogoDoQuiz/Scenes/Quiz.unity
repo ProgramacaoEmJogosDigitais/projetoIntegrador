@@ -978,8 +978,7 @@ MonoBehaviour:
   - {fileID: 2046580174}
   - {fileID: 714022615}
   perguntas:
-  - "Qual destes lugares \xE9 conhecido como um grande monumento que parece uma torre
-    no formato de uma lan\xE7a? "
+  - "Qual monumento foi erguido para celebrar o anivers\xE1rio da cidade?"
   - "Onde voc\xEA pode ver uma grande variedade de peixes e outras esp\xE9cies aqu\xE1ticas
     da regi\xE3o do Pantanal? "
   - "Qual \xE9 o nome do lugar que homenageia e preserva a cultura ind\xEDgena, com
@@ -998,7 +997,7 @@ MonoBehaviour:
     urbana de Campo Grande por volta de qual ano?\n"
   - " A casa do artes\xE3o vende quais tipos de coisas?\r\n\n"
   - "Em quais anos ocorreram uma reforma na casa do artes\xE3o?\n"
-  - "Em que ano a casa do artes\xE3o virou a \u201C Casa do Artes\xE3o\u201D?\n"
+  - "Em que ano a casa do artes\xE3o virou a \u201C Casa do Artes\xE3o \u201D?\n"
   - "Qual destes locais \xE9 um espa\xE7o cultural que oferece exposi\xE7\xF5es e
     atividades para aprender mais sobre a hist\xF3ria e a arte da regi\xE3o?\n"
   - "Al\xE9m das exposi\xE7\xF5es, o museu oferece quais outras atividades?"
