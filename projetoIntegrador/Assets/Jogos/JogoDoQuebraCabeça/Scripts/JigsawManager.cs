@@ -1,14 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class JigsawManager : MonoBehaviour
 {
     public RandonPositions randon;
     public GameObject instructions;
-    public Image panel;
+    public SpriteRenderer panel;
+    public Comic comic;
+    public List<DragEndDrop> dragEndDrop;
+    private void Awake()
+    {
+        randon.pause = false;
+        DragEndDrop[] dragEndDropArray = FindObjectsOfType<DragEndDrop>();
 
+        // Inicializar a lista com os objetos encontrados
+        dragEndDrop = new List<DragEndDrop>(dragEndDropArray);
+
+    }
     void Start()
     {
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
@@ -24,8 +38,11 @@ public class JigsawManager : MonoBehaviour
 
     public void Play()
     {
-        randon.saveIndex = true;
-        randon.StartCoroutine(randon.RandSpriteButton());
+        if (randon.reset != 1)
+        {
+            randon.saveIndex = true;
+            randon.StartCoroutine(randon.RandSpriteButton());
+        }
     }
     public IEnumerator SpawnInstructions()
     {
@@ -34,12 +51,37 @@ public class JigsawManager : MonoBehaviour
         PlayerPrefs.SetInt("InstructionsQuebraCabeca", 1); // Instruções exibidas.
         yield return null;
     }
-
+    public void Pause()
+    {
+        DisableParts();
+        randon.pause = true;
+    }
+    public void NoPause()
+    {
+        EnableParts();
+        randon.pause = false;
+    }
     public void GoGame()
     {
         instructions.SetActive(false);
         panel.gameObject.SetActive(false);
         randon.saveIndex = true;
         randon.StartCoroutine(randon.RandSpriteButton());
+        comic.rotate = false;
+        comic.ResetComic(); 
+    }
+    public void DisableParts()
+    {
+        for (int i = 0; i < dragEndDrop.Count; i++)
+        {
+            dragEndDrop[i].blockMove = false;
+        }
+    }
+    public void EnableParts()
+    {
+        for (int i = 0; i < dragEndDrop.Count; i++)
+        {
+            dragEndDrop[i].blockMove = true;
+        }
     }
 }
