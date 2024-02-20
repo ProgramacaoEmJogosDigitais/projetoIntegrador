@@ -186,7 +186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3317213911917560330
 RectTransform:
   m_ObjectHideFlags: 0
@@ -334,21 +334,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: JigsawManager, Assembly-CSharp
-        m_MethodName: GoGame
+        m_TargetAssemblyTypeName: MapManager, Assembly-CSharp
+        m_MethodName: ButtonGoMap
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -618,7 +606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.32778206, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -687,6 +675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPageLeft: 1
+  backButton: {fileID: 7033362623035576980}
   comic: {fileID: 7033362623859231947}
   posComicOnePage: {fileID: 7033362622933680590}
   posComicOnePageEndLeft: {fileID: 8652236190534434079}
@@ -702,13 +691,18 @@ MonoBehaviour:
   - {fileID: 7033362624597893090}
   - {fileID: 7033362624340482329}
   pagesSprite:
-  - {fileID: 21300000, guid: ccba7d369a33d9240a464a5ef5997a8d, type: 3}
-  - {fileID: 21300000, guid: 6b80e3d593ada2e48bb53ef28ca52e8b, type: 3}
-  - {fileID: 21300000, guid: e268c30208dd8a04e94728d845269baa, type: 3}
-  - {fileID: 21300000, guid: 78977b1c3b8e51a4498825270f53ef23, type: 3}
-  backButton: {fileID: 7033362623035576980}
+  - {fileID: 21300000, guid: 53196ca41380b6940a2eb98b7918f96f, type: 3}
+  - {fileID: 21300000, guid: c13caa5a9f0be064dbcc4ecb1fd89f76, type: 3}
+  - {fileID: 21300000, guid: 514fac6d5076a054dbf792ad00bdec5a, type: 3}
+  - {fileID: 21300000, guid: 7ae48e7190e4c3449aa4d42b708100f0, type: 3}
+  - {fileID: 21300000, guid: 4ca1294b9da4f564089d869803cd1ac5, type: 3}
+  - {fileID: 21300000, guid: 8b2928cc5df452741ae65c4991de495e, type: 3}
   forwardButton: {fileID: 7033362624752335541}
   goMapButton: {fileID: 6341123026064960159}
+  jigsawManager: {fileID: 0}
+  index: -1
+  rotate: 0
+  angle1: 0
 --- !u!1 &7033362623686098811
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,7 +798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.49185848, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -878,7 +872,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7033362624111148367
 RectTransform:
   m_ObjectHideFlags: 0
@@ -896,8 +890,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60.508, y: 0}
-  m_SizeDelta: {x: 1527.9, y: 823}
+  m_AnchoredPosition: {x: 426.03024, y: 0}
+  m_SizeDelta: {x: 762.3, y: 823}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7033362624111148353
 CanvasRenderer:
@@ -920,7 +914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.52930945, g: 0.6509434, b: 0.23745102, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1030,7 +1024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.8868089, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1106,7 +1100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.97429186, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
