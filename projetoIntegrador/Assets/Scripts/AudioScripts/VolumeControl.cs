@@ -1,45 +1,33 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.Audio;
 
 public class VolumeControl : MonoBehaviour
 {
-    // Singleton instance
-    private static VolumeControl instance;
-
     // Volume configuração inicial
-    private float volume, volumeEffect;
+    public static float volume, volumeEffect;
 
     // Referência ao slider no painel de controle de volume
     public Slider musicSlider, effectSlider;
 
-    // Referência ao objeto canv_options
-    public GameObject canvOptions;
-
-    private void Awake()
-    {
-        // Encontra instância existente na cena
-        instance = FindObjectOfType<VolumeControl>();
-
-        // Se não existir uma instância, esta se torna a instância única
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            // Destroi esta instância se já existir uma
-            Destroy(gameObject);
-        }
-    }
-
     private void Start()
     {
         // Configura o valor inicial do slider
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", volume);
-        effectSlider.value = PlayerPrefs.GetFloat("EffectVolume", volume);
+        musicSlider.value = PlayerPrefs.GetFloat("volume", volume);
+        effectSlider.value = PlayerPrefs.GetFloat("volumeEffect", volumeEffect);
         SetVolume(volume); // Configura o volume ao iniciar
         SetVolume(volumeEffect);
+    }
+
+    public void Update()
+    {
+        volume = musicSlider.value;
+        volumeEffect = effectSlider.value;
+        FindObjectOfType<Slider>().value = volume;
+        FindObjectOfType<Slider>().value = volumeEffect;
+       
     }
 
     public void SetVolume(float value)
@@ -49,21 +37,7 @@ public class VolumeControl : MonoBehaviour
         volumeEffect = value;
         PlayerPrefs.SetFloat("MusicVolume", value);
         PlayerPrefs.SetFloat("EffectVolume", value);
-        AudioListener.volume = volume;
-        AudioListener.volume = volumeEffect;
-    }
-
-    public void Update()
-    {
-        FindObjectOfType<Slider>().value = volume;
-        FindObjectOfType<Slider>().value = volumeEffect;
-        volume = musicSlider.value;
-        volumeEffect = effectSlider.value;
-    }
-
-    public void LoadOtherScene()
-    {
-        // Configura o volume ao carregar uma nova cena
-        canvOptions.GetComponent<VolumeControl>().SetVolume(volume);
+        //AudioListener.volume = volume;
+        //AudioListener.volume = volumeEffect;
     }
 }

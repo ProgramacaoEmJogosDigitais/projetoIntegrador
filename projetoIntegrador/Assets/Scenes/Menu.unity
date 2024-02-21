@@ -6686,7 +6686,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3259990028337045605, guid: faa374f7336a37545889fe23fee4d9e1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.584
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3259990028337045605, guid: faa374f7336a37545889fe23fee4d9e1, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6694,11 +6694,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3259990028337045605, guid: faa374f7336a37545889fe23fee4d9e1, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.584
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3259990028779616991, guid: faa374f7336a37545889fe23fee4d9e1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.584
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3259990028779616991, guid: faa374f7336a37545889fe23fee4d9e1, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6885,6 +6885,10 @@ PrefabInstance:
     - target: {fileID: 8708043563841383843, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
       propertyPath: m_Name
       value: VolumeControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708043563841383843, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8708043563841383868, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
       propertyPath: canvOptions

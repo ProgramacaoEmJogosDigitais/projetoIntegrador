@@ -9,17 +9,18 @@ public class AudioManager : MonoBehaviour
     public List<AudioSource> musicList;
     public static float volume;
     public float volume2;
-    public  Slider musicVolume;
+    //public  Slider musicVolume;
     int indexmusic;
 
     private void Update()
     {
-        volume = musicVolume.value;   
-        musicList[indexmusic].volume = volume;  
+        //volume = musicVolume.value;   
+        //musicList[indexmusic].volume = volume;
+        musicList[indexmusic].volume = VolumeControl.volume;
     }
     private void Start()
     {
-        musicVolume.value = volume;
+        //musicVolume.value = volume;
         StartCoroutine(PlayMusic(musicList));
     }
     public IEnumerator PlayMusic(List <AudioSource> music)
