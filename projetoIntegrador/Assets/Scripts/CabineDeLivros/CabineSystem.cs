@@ -111,7 +111,7 @@ public class CabineSystem : MonoBehaviour
 
         CheckQuebraCabeca(colorBook);
         CheckQuiz(colorBook);
-        Checkorrida(colorBook);
+        CheckCorrida(colorBook);
         CheckAquario(colorBook);
     }
 
@@ -207,7 +207,7 @@ public class CabineSystem : MonoBehaviour
             }
         }
     }
-    private void Checkorrida(Color colorBook)
+    private void CheckCorrida(Color colorBook)
     {
         //corrida
         if (jCorrida > PlayerPrefs.GetInt("CorridaCabin"))
@@ -237,13 +237,13 @@ public class CabineSystem : MonoBehaviour
                 booksCorrida[2].GetComponent<SpriteRenderer>().color = colorBook;
                 booksCorrida[3].GetComponent<SpriteRenderer>().color = colorBook;
             }
-            //PINTA A QUANTIDADE QUE JA ESTAVA
-            else
+        }
+        //PINTA A QUANTIDADE QUE JA ESTAVA
+        else
+        {
+            for (int i = 0; i < PlayerPrefs.GetInt("CorridaCabin"); i++)
             {
-                for (int i = 0; i < PlayerPrefs.GetInt("CorridaCabin"); i++)
-                {
-                    booksQuiz[i].GetComponent<SpriteRenderer>().color = colorBook;
-                }
+                booksQuiz[i].GetComponent<SpriteRenderer>().color = colorBook;
             }
         }
     }
