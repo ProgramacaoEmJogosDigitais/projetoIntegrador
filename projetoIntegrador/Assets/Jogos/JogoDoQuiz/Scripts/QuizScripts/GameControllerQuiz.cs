@@ -372,7 +372,6 @@ public class GameControllerQuiz : MonoBehaviour
         {
             PlayerPrefs.SetInt("QuizBooks", scoring);
             PlayerPrefs.SetInt("RodadaPassada", scoring);
-            Debug.Log("numero de livros conswguidos na rodada foi maior e ta salvando: " + scoring);
             PlayerPrefs.Save();
         }
 
@@ -417,7 +416,6 @@ public class GameControllerQuiz : MonoBehaviour
         if (!PlayerPrefs.HasKey("RodadaPassada"))
         {
             PlayerPrefs.SetInt("Rodadapassada", 0);
-            Debug.Log("primeira rodada: " + PlayerPrefs.GetInt("Rodadapassada"));
 
         }
     }
