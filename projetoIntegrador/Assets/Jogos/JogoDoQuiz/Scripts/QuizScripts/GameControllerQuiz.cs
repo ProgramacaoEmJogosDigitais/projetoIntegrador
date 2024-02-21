@@ -75,14 +75,13 @@ public class GameControllerQuiz : MonoBehaviour
 
         ShuffleQuestions(); // Embaralha as perguntas no início do jogo
         ShowQuestion();
+        FirstTime();
     }
 
     void Update()
     {
         GameOver();
-        Vida();
-     ScoringSystem();
-       
+        Vida();       
     }
 
     void ShuffleQuestions()
@@ -253,6 +252,26 @@ public class GameControllerQuiz : MonoBehaviour
             StartCoroutine(Espera2());
             pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/5";
         }
+
+        //if(scoring == 1)
+        //{
+        //    PlayerPrefs.SetInt("RodadaPassada", 0);
+        //}
+        //if (scoring == 2)
+        //{
+        //    PlayerPrefs.SetInt("RodadaPassada", 1);
+        //}
+        //if (scoring == 3)
+        //{
+        //    PlayerPrefs.SetInt("RodadaPassada", 2);
+        //}
+        //if (scoring == 4)
+        //{
+        //    PlayerPrefs.SetInt("RodadaPassada", 3);
+        //}
+        
+        //Debug.Log("livros da rodada passada "+ scoring);
+        ScoringSystem();
     }
     void TrocaDePersonagens()
     {
@@ -349,10 +368,13 @@ public class GameControllerQuiz : MonoBehaviour
 
 
         }
-        PlayerPrefs.SetInt("QuizBooks", scoring);
-        PlayerPrefs.Save();
-
-        
+        if (scoring > PlayerPrefs.GetInt("RodadaPassada"))
+        {
+            PlayerPrefs.SetInt("QuizBooks", scoring);
+            PlayerPrefs.SetInt("RodadaPassada", scoring);
+            Debug.Log("numero de livros conswguidos na rodada foi maior e ta salvando: " + scoring);
+            PlayerPrefs.Save();
+        }
 
         //if (indexBooks == 1)
         //{
@@ -387,6 +409,16 @@ public class GameControllerQuiz : MonoBehaviour
             books[1].GetComponent<SpriteRenderer>().color = colorBook;
             books[2].GetComponent<SpriteRenderer>().color = colorBook;
             books[3].GetComponent<SpriteRenderer>().color = colorBook;
+        }
+    }
+   
+    private void FirstTime()
+    {
+        if (!PlayerPrefs.HasKey("RodadaPassada"))
+        {
+            PlayerPrefs.SetInt("Rodadapassada", 0);
+            Debug.Log("primeira rodada: " + PlayerPrefs.GetInt("Rodadapassada"));
+
         }
     }
 }
