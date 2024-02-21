@@ -1003,7 +1003,6 @@ MonoBehaviour:
   - "Al\xE9m das exposi\xE7\xF5es, o museu oferece quais outras atividades?"
   - "O museu Dom Bosco possui um rico acervo que conta com v\xE1rias cole\xE7\xF5es
     sendo elas?\r\n"
-  - "A Morada Dos Ba\xEDs homenageia qual m\xFAsico de Campo Grande?"
   - "A Morada dos Ba\xEDs \xE9 um pr\xE9dio antigo que se localiza a onde ?\r\n"
   - "Qual \xE9 o nome oficial do Carro de Boi?"
   - "O mercad\xE3o \xE9 conhecido por?"
@@ -1036,7 +1035,6 @@ MonoBehaviour:
   - "Casa do Artes\xE3o"
   - "Palestras, semin\xE1rios e oficinas culturais"
   - "Insetos, Artes e F\xF3sseis"
-  - "Manoel Martins Ba\xEDs"
   - No norte de Campo Grande
   - 'Monumento aos exploradores '
   - "Por oferecer produtos t\xEDpicos de nossa de cultura"
@@ -1069,7 +1067,6 @@ MonoBehaviour:
   - Museu Dom Bosco
   - "Shows, aulas e atra\xE7\xF5es"
   - "Minerais, F\xF3sseis, Insetos e objetos da Pr\xE9-hist\xF3ria"
-  - Dalva Barros
   - No leste de Campo Grande
   - Monumento aos viajantes
   - "Por oferecer produtos t\xEDpicos de outras culturas"
@@ -1092,7 +1089,6 @@ MonoBehaviour:
   - "Morada do Ba\xEDs"
   - Palestras, shows e arte
   - "Palestras, Semin\xE1rio e Minerais"
-  - "Humberto Esp\xEDndola"
   - No centro de Campo Grande
   - Monumento aos desbravadores
   - Por oferecer produtos importados
@@ -1115,7 +1111,6 @@ MonoBehaviour:
   - Monumento Carro de Boi
   - "Oficinas culturais, semin\xE1rios e palestras"
   - Oficinas culturais, palestras e Artes
-  - "Jo\xE3o Sebasti\xE3o"
   - No Oeste de Campo Grande
   - Monumento ao povoamento
   - Nenhuma das alternativas
@@ -1139,7 +1134,6 @@ MonoBehaviour:
   - Museu Dom Bosco
   - "Palestras, semin\xE1rios e oficinas culturais"
   - "Minerais, F\xF3sseis, Insetos e objetos da Pr\xE9-hist\xF3ria"
-  - "Manoel Martins Ba\xEDs"
   - No centro de Campo Grande
   - Monumento aos desbravadores
   - "Por oferecer produtos t\xEDpicos de nossa de cultura"
@@ -3298,6 +3292,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookInstruction
       objectReference: {fileID: 0}
+    - target: {fileID: 5954198183234991020, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8614599827439231054, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -3667,7 +3665,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 11
   m_TargetDisplay: 0
