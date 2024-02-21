@@ -28,7 +28,8 @@ public class Comic : MonoBehaviour
     private void Awake()
     {
         jigsawManager = FindObjectOfType<JigsawManager>();
-        jigsawManager.DisableParts();
+        if (jigsawManager != null)
+            jigsawManager.DisableParts();
     }
     private void Start()
     {
@@ -178,6 +179,7 @@ public class Comic : MonoBehaviour
         {
             page.transform.rotation = Quaternion.identity;
         }
-        jigsawManager.EnableParts();
+        if (jigsawManager != null)
+            jigsawManager.EnableParts();
     }
 }
