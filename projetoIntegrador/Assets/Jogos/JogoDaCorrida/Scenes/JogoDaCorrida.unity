@@ -2660,6 +2660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOver: 0
+  buttonPause: {fileID: 189081955}
   panelGameOver: {fileID: 2022026315}
   panelOptions: {fileID: 13746400}
   pointsText: {fileID: 1412505168}
