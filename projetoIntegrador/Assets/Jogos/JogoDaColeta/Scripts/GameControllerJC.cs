@@ -33,11 +33,20 @@ public class GameControllerJC : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI unpauseCount;
     private GameObject instantiatedPrefabs;
+    private SystemBooksJColeta systemBooksJColetaScript;
 
     public AudioSystem audioSystem;
 
+    public bool gameOver;
+
+    private void Awake()
+    {
+        gameOver = false;
+   
+    }
     void Start()
     {
+        systemBooksJColetaScript = GetComponent<SystemBooksJColeta>();
         gameOverObject.SetActive(false);
         PlayerColeta.missingObjects = 5;
         StartCoroutine(SpawnObjects());
@@ -187,15 +196,20 @@ public class GameControllerJC : MonoBehaviour
         score_txt.text = FishsFalling.points.ToString();
     }
 
-    public void GameOver()
+    public void GameOver()//Se tiver dado game over
     {
         int resetScore = 0;
         if (PlayerColeta.missingObjects <= 0)
         {
+            Debug.Log("Deu GAMEOVER");
             score.text = score_txt.text;
             gameOverObject.SetActive(true);
             score_txt.text = resetScore.ToString();
+            gameOver = true;
+            Debug.Log("valor do game over: " + gameOver);
+            systemBooksJColetaScript.BooksPoints();
         }
+        
     }
 
     /*public IEnumerator SpawnInstructions()
