@@ -20322,7 +20322,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279415294}
   m_CullTransparentMesh: 1
---- !u!1001 &282039437
+--- !u!1001 &293035301
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -20333,10 +20333,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: VolumeControl
       objectReference: {fileID: 0}
-    - target: {fileID: 8708043563841383868, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
-      propertyPath: canvOptions
-      value: 
-      objectReference: {fileID: 302535543}
     - target: {fileID: 8708043563841383868, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
       propertyPath: musicSlider
       value: 
@@ -60937,7 +60933,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSlider: {fileID: 0}
   effectSlider: {fileID: 0}
-  canvOptions: {fileID: 0}
 --- !u!4 &1418449751
 Transform:
   m_ObjectHideFlags: 0

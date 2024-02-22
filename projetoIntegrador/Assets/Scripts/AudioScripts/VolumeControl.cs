@@ -25,9 +25,7 @@ public class VolumeControl : MonoBehaviour
     {
         volume = musicSlider.value;
         volumeEffect = effectSlider.value;
-        FindObjectOfType<Slider>().value = volume;
-        FindObjectOfType<Slider>().value = volumeEffect;
-       
+        Debug.Log("music volume:" + volume);
     }
 
     public void SetVolume(float value)

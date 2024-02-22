@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
         //volume = musicVolume.value;   
         //musicList[indexmusic].volume = volume;
         musicList[indexmusic].volume = VolumeControl.volume;
+
     }
     private void Start()
     {

@@ -15,6 +15,7 @@ public class AudioSystem : MonoBehaviour
     public List<SoundEntry> soundEntries;
 
     private AudioSource audioSource;
+    internal float volume;
 
     private void Awake()
     {

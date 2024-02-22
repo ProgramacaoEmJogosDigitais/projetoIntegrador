@@ -35,7 +35,6 @@ public class GameControllerJC : MonoBehaviour
     private GameObject instantiatedPrefabs;
 
     public AudioSystem audioSystem;
-
     void Start()
     {
         gameOverObject.SetActive(false);
@@ -57,7 +56,6 @@ public class GameControllerJC : MonoBehaviour
     public void Update()
     {
         Score();
-
 
         if (Input.GetKeyDown(KeyCode.P))
         {
