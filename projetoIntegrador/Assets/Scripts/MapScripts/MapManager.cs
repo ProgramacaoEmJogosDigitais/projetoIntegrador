@@ -52,6 +52,7 @@ public class MapManager : MonoBehaviour
         player.GetComponent<BoxCollider2D>().enabled = true;
         panelTransition.GetComponent<Animator>().SetBool("PanelTransitionFadeOut", true);
         yield return new WaitForSeconds(1.3f);
+        cameraMain.GetComponent<Animator>().enabled = false;
         panelTransition.SetActive(false);
         panel.gameObject.SetActive(false);
     }

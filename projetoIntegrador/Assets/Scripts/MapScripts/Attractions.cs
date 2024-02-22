@@ -64,6 +64,7 @@ public class Attractions : MonoBehaviour
                 panel.gameObject.SetActive(true);
                 canvasDialogue.gameObject.SetActive(true);
             }
+
         }
     }
 
