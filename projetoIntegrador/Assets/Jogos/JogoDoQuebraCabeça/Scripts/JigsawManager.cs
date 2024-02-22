@@ -56,6 +56,10 @@ public class JigsawManager : MonoBehaviour
         DisableParts();
         randon.pause = true;
     }
+    public void NoInstruction()
+    {
+        randon.pause = false;
+    }
     public void NoPause()
     {
         EnableParts();

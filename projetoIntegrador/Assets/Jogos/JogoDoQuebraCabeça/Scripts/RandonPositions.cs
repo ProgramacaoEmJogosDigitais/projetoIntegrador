@@ -25,7 +25,7 @@ public class RandonPositions : MonoBehaviour
     public List<int> randonIndiceList;
     public SpriteRenderer spriteRenderer;
     public Transform[] randonPositions, originalPosition;
-    public GameObject buttonRestart, buttonSelect, bookPointsAnim;
+    public GameObject buttonRestart, buttonSelect, bookPointsAnim, buttonPause;
     public Sprite[] spritePieces1, spritePieces2, spritePieces3;
     public TextMeshProUGUI timeConter, minTimeCont, gameOverText, winGameText;
 
@@ -119,6 +119,8 @@ public class RandonPositions : MonoBehaviour
         if (okPieces >= 24)
         {
             canvasWinGame.SetActive(true);
+            buttonPause.SetActive(false);
+            pause = true;
         }
         if (startGame && !pause)
         {
