@@ -86,5 +86,10 @@ public class PauseJCorrida : MonoBehaviour
         SceneManager.LoadScene(sceneName);
 
     }
+    public void GoMapInstructions()
+    {
+        pressButtonNoPause = true;
+        gamePaused = true;
+    }
 
 }

@@ -9,6 +9,7 @@ using UnityEngine.Windows;
 public class GameControllerJCorrida : MonoBehaviour
 {
     public bool gameOver;
+    public GameObject buttonPause;
     public GameObject panelGameOver;
     public GameObject panelOptions;
     public TMP_Text pointsText;
@@ -26,6 +27,7 @@ public class GameControllerJCorrida : MonoBehaviour
             Time.timeScale = 0;
             pointsText.text = movimentPlayer.distance.ToString("F0");
             panelGameOver.SetActive(true);
+            buttonPause.SetActive(false);
         }
     }
 
