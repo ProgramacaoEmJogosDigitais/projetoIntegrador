@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
     public List<AudioSource> musicList;
-    public static float volume;
-    public float volume2;
+    //public static float volume;
+    //public float volume2;
     //public  Slider musicVolume;
     int indexmusic;
 

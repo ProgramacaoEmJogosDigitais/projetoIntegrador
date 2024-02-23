@@ -15,7 +15,6 @@ public class AudioSystem : MonoBehaviour
     public List<SoundEntry> soundEntries;
 
     private AudioSource audioSource;
-    internal float volume;
 
     private void Awake()
     {
@@ -25,6 +24,11 @@ public class AudioSystem : MonoBehaviour
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
+    }
+
+    private void Update()
+    {
+        audioSource.volume = VolumeControl.volume;
     }
 
     // Chame este método para reproduzir um som pelo nome da chave
@@ -38,6 +42,7 @@ public class AudioSystem : MonoBehaviour
         {
             audioSource.clip = soundEntry.audioClip;
             audioSource.Play();
+            
         }
         else
         {
