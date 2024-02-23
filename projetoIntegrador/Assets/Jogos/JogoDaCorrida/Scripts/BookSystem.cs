@@ -80,8 +80,6 @@ public class BookSystem : MonoBehaviour
             PlayerPrefs.SetInt("CollectedBooksJCorrida", 0);
             PlayerPrefs.SetInt("PastRoundJCorrida", 0);
             PlayerPrefs.Save();
-
-
         }
     }
     private void PaintBooks()

@@ -25,7 +25,7 @@ public class RandonPositions : MonoBehaviour
     public Transform[] randonPositions, originalPosition;
     public GameObject bookPointsAnim, buttonPause;
     public Sprite[] spritePieces1, spritePieces2, spritePieces3;
-    public TextMeshProUGUI secTime, minTime, gameOverText, winGameText;
+    public TextMeshProUGUI secTime, minTime;
 
     private string namePieces;
     private int indexReserve, min, len;
@@ -40,6 +40,7 @@ public class RandonPositions : MonoBehaviour
         {
             spriteFullReserve.Add(spriteFull[i]);
         }
+        FirstTime();
     }
 
     void Start()
@@ -317,6 +318,24 @@ public class RandonPositions : MonoBehaviour
         for (int i = 0; i < randonPositions.Length; i++)
         {
             randonPositions[i].gameObject.GetComponent<DragEndDrop>().blockMove = true; ;
+        }
+    }
+    private void FirstTime()
+    {
+        if (!PlayerPrefs.HasKey("PastRoundJJigsaw") && !PlayerPrefs.HasKey("CollectedBooksJJigsaw"))
+        {
+            PlayerPrefs.SetInt("PastRoundJJigsaw", 0);
+            PlayerPrefs.SetInt("CollectedBooksJJigsaw", 0);
+            PlayerPrefs.Save();
+        }
+    }
+    public void SaveBooksExit()
+    {
+        if (indexBooks > PlayerPrefs.GetInt("PastRoundJJigsaw"))
+        {
+            PlayerPrefs.SetInt("PastRoundJJigsaw", indexBooks);
+            PlayerPrefs.SetInt("CollectedBooksJJigsaw", indexBooks);
+            PlayerPrefs.Save();
         }
     }
 }
