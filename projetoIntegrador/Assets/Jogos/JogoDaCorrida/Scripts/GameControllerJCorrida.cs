@@ -15,10 +15,18 @@ public class GameControllerJCorrida : MonoBehaviour
     public TMP_Text pointsText;
     private MovimentPlayer movimentPlayer;
 
+    public AudioSystem audioSystem;
+
     private void Awake()
     {
         Time.timeScale = 1;
         movimentPlayer = FindObjectOfType<MovimentPlayer>();
+    }
+
+    private void Start()
+    {
+        audioSystem.PlaySound("GameMusicCorrida");
+        audioSystem.SetLooping(true);
     }
     private void FixedUpdate()
     {
