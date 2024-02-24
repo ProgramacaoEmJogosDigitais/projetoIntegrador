@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class GameControllerJC : MonoBehaviour
 {
+    public GameObject btn_Exit;
+    public GameObject btn_Pause;
+    public GameObject box_Points;
+
     public GameObject[] prefabFishs;
     public GameObject gameOverObject;
     public TextMeshProUGUI score_txt;
@@ -33,11 +37,20 @@ public class GameControllerJC : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI unpauseCount;
     private GameObject instantiatedPrefabs;
+    private SystemBooksJColeta systemBooksJColetaScript;
 
     public AudioSystem audioSystem;
 
+    public bool gameOver;
+
+    private void Awake()
+    {
+        gameOver = false;
+   
+    }
     void Start()
     {
+        systemBooksJColetaScript = GetComponent<SystemBooksJColeta>();
         gameOverObject.SetActive(false);
         PlayerColeta.missingObjects = 5;
         StartCoroutine(SpawnObjects());
@@ -187,15 +200,22 @@ public class GameControllerJC : MonoBehaviour
         score_txt.text = FishsFalling.points.ToString();
     }
 
-    public void GameOver()
+    public void GameOver()//Se tiver dado game over
     {
         int resetScore = 0;
         if (PlayerColeta.missingObjects <= 0)
         {
+            btn_Exit.SetActive(false);
+            btn_Pause.SetActive(false);
+            box_Points.SetActive(false);
+            score_txt.gameObject.SetActive(false);
             score.text = score_txt.text;
             gameOverObject.SetActive(true);
             score_txt.text = resetScore.ToString();
+            gameOver = true;
+            systemBooksJColetaScript.BooksPoints();
         }
+        
     }
 
     /*public IEnumerator SpawnInstructions()
