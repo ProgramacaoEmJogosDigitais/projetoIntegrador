@@ -37,7 +37,7 @@ public class CabineSystem : MonoBehaviour
     {
         playerScript = FindObjectOfType<VanMoviment>();
 
-        jQuebraCabeca = PlayerPrefs.GetInt("numBooks");
+        jQuebraCabeca = PlayerPrefs.GetInt("CollectedBooksJJigsaw");
         jQuiz = PlayerPrefs.GetInt("QuizBooks");
         jCorrida = PlayerPrefs.GetInt("CollectedBooksJCorrida");
         jAquario = PlayerPrefs.GetInt("");

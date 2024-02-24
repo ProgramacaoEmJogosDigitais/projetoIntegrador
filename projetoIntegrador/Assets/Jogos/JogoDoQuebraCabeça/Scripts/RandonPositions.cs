@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -55,7 +56,14 @@ public class RandonPositions : MonoBehaviour
         reset = PlayerPrefs.GetInt("reset");
         if (reset == 1)
         {
-            index = PlayerPrefs.GetInt("numReset");
+            namePieces = PlayerPrefs.GetString("nameSprite");
+            for (int i = 0; i < spriteFull.Count; i++)
+            {
+                if (namePieces == spriteFull[i].name)
+                {
+                    index = i;
+                }
+            }
 
             StartPiece(); // Iniciar peças imediatamente
             ShowSprite(); // Tornar a imagem transparente imediatamente
@@ -84,8 +92,6 @@ public class RandonPositions : MonoBehaviour
     {
         if (okPieces >= 24)
         {
-            /*if (indexBooks >= 0 && indexBooks <= 4)
-            else */      //SPRITE DE VITÓRiA DE LIVRO OU APENAS MONTAGEM DO PUZZLE
             WinGame();
         }
         else if (startGame && !pause)
@@ -218,15 +224,16 @@ public class RandonPositions : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
 
-        PlayerPrefs.SetInt("numReset", index);
-        PlayerPrefs.Save();
-
         UpdateParts();
     }
 
     public void UpdateParts()
     {
         namePieces = spriteFull[index].name;
+
+        PlayerPrefs.SetString("nameSprite", namePieces);
+        PlayerPrefs.Save();
+
         spriteRenderer.sprite = spriteFull[index];
         ChangePieces(namePieces);
     }
