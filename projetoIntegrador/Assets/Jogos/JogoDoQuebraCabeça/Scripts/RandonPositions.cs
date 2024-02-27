@@ -90,6 +90,7 @@ public class RandonPositions : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log(okPieces);
         if (okPieces >= 24)
         {
             WinGame();
