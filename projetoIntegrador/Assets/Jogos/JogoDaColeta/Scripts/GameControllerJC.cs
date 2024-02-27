@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameControllerJC : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class GameControllerJC : MonoBehaviour
     private void Awake()
     {
         gameOver = false;
-   
+
     }
     void Start()
     {
@@ -71,11 +72,11 @@ public class GameControllerJC : MonoBehaviour
     {
         Score();
 
-
         if (Input.GetKeyDown(KeyCode.P))
         {
             PauseAndUnpause();
         }
+
 
         if (isUnpauseDelayed)
         {
@@ -105,8 +106,6 @@ public class GameControllerJC : MonoBehaviour
 
             }
         }
-
-
 
         GameOver();
         // Check if the game over condition is met
@@ -215,7 +214,7 @@ public class GameControllerJC : MonoBehaviour
             gameOver = true;
             systemBooksJColetaScript.BooksPoints();
         }
-        
+
     }
 
     /*public IEnumerator SpawnInstructions()

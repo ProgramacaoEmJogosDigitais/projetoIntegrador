@@ -6,6 +6,8 @@ public class ObjectsFalling : MonoBehaviour
 {
     public float fallSpeed = 1f;
 
+    private AudioSource audioSource;
+
     //void OnTriggerEnter2D(Collider2D other)
     //{
     //    if (other.CompareTag("Player"))
@@ -18,8 +20,24 @@ public class ObjectsFalling : MonoBehaviour
     //    }
     //}
 
+    void Awake()
+    {
+        // Obtém o componente AudioSource do próprio objeto
+        audioSource = GetComponent<AudioSource>();
+
+        // Verifica se o AudioSource foi encontrado
+        if (audioSource != null)
+        {
+            // Inicia a reprodução, se necessário
+            audioSource.Play();
+        }
+    }
+
     void Update()
     {
+        audioSource.volume = VolumeControl.volumeEffect;
+
+
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0f, -fallSpeed);
 
