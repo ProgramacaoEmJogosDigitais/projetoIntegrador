@@ -6878,9 +6878,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1447308088}
-  - {fileID: 1576653986}
-  - {fileID: 1640988227}
   - {fileID: 1233864842}
+  - {fileID: 1640988227}
+  - {fileID: 1576653986}
   m_Father: {fileID: 1014966585}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7202,12 +7202,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233864841}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -522, y: 446.00003, z: -9719.999}
+  m_LocalPosition: {x: -751.6, y: 446.00003, z: -9719.999}
   m_LocalScale: {x: 29.72268, y: 29.72268, z: 29.72268}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1158394243}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1233864843
 SpriteRenderer:
@@ -8243,7 +8243,7 @@ Transform:
   m_GameObject: {fileID: 1447308087}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -864, y: 446.00003, z: -9719.999}
-  m_LocalScale: {x: 29.72268, y: 29.72268, z: 29.72268}
+  m_LocalScale: {x: 7.6547785, y: 7.6547785, z: 7.6547785}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1158394243}
@@ -8290,7 +8290,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: d8c95aa08b3dba4458e9e883d10c9c98, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ca5197cefa1ca8142ba84eed92b55f89, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.27450982}
   m_FlipX: 0
   m_FlipY: 0
@@ -10059,12 +10059,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576653985}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -747, y: 446, z: -9719.999}
+  m_LocalPosition: {x: -522.3, y: 446, z: -9719.999}
   m_LocalScale: {x: 29.72268, y: 29.72268, z: 29.72268}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1158394243}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1576653987
 SpriteRenderer:
