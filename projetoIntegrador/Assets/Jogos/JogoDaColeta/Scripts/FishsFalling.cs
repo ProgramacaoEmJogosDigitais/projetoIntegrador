@@ -7,6 +7,9 @@ public class FishsFalling : MonoBehaviour
     public float fallSpeed = 1f;
     public static int points = 0;
 
+    public AudioSystem audioSystem;
+    public AudioSource fishFall;
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -16,6 +19,11 @@ public class FishsFalling : MonoBehaviour
 
             // Aumentar a pontuação do jogador
             points ++;
+
+            fishFall.Play();
+            fishFall.volume = VolumeControl.volumeEffect;
+
+            Debug.Log("BATEU NO CORNO");
         }
     }
     void Update()
