@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9f41e26dd9403b44ab0125eeb1a162cb
+guid: 0cf9180f007cdb449bed51957b3784a6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,6 +102,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -117,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gibi Tutorial Corrida-01_0
+      name: gibiteca_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1674
-        height: 2509
+        y: 398
+        width: 719
+        height: 313
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25621e25b899b1143bbf5a28772e74f3
-      internalID: -1123320079
+      spriteID: d8ac2f63f7e636940b1aca59f4a2e555
+      internalID: -1799691047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gibi Tutorial Corrida-01_1
+      name: gibiteca_1
       rect:
         serializedVersion: 2
-        x: 1668
+        x: 0
         y: 0
-        width: 1674
-        height: 2509
+        width: 719
+        height: 398
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e01b07ad50794344b8c7b45ee3b8b1f
-      internalID: -1402277361
+      spriteID: 1a83ed0f3ed97f8499b930ce74fcb0b3
+      internalID: 132866148
       vertices: []
       indices: 
       edges: []
@@ -169,8 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gibi Tutorial Corrida-01_0: -1123320079
-      Gibi Tutorial Corrida-01_1: -1402277361
+      gibiteca_0: -1799691047
+      gibiteca_1: 132866148
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

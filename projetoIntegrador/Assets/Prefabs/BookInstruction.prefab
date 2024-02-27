@@ -691,10 +691,10 @@ MonoBehaviour:
   - {fileID: 7033362624597893090}
   - {fileID: 7033362624340482329}
   pagesSprite:
-  - {fileID: 21300000, guid: 48e68a7a1e9188f48bb7399de8154d34, type: 3}
-  - {fileID: 21300000, guid: 5e171cc1e13c9e1439f93e5dda3cafaf, type: 3}
+  - {fileID: 21300000, guid: 5b657cd4a7d117c48b2bb5e93292bd8b, type: 3}
+  - {fileID: 21300000, guid: faefb7489d86f6e448ec29e5c46473ca, type: 3}
   - {fileID: 21300000, guid: b1d846d0b0e8b6b488635307a51cfa6c, type: 3}
-  - {fileID: 21300000, guid: 78977b1c3b8e51a4498825270f53ef23, type: 3}
+  - {fileID: 21300000, guid: c648e8640658eec4d9b7f5c4e6e7103e, type: 3}
   forwardButton: {fileID: 7033362624752335541}
   goMapButton: {fileID: 6341123026064960159}
   jigsawManager: {fileID: 0}

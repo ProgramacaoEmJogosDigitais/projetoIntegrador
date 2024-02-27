@@ -25,6 +25,8 @@ public class PlayerColeta : MonoBehaviour
     private int idleLixoState;
     private int runLixoState;
 
+    public AudioSource fishFallAudio;
+
     private void Awake()
     {
         playerFlip = GetComponent<SpriteRenderer>();
@@ -42,6 +44,8 @@ public class PlayerColeta : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(horizontalInput, 0);
         transform.Translate(Time.deltaTime * playerSpeed * movement);
+
+        fishFallAudio.volume = VolumeControl.volumeEffect;
 
         DropLife();
 
@@ -109,6 +113,17 @@ public class PlayerColeta : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Fish"))
+        {
+            fishFallAudio.Play();
+
+            // Destruir o objeto pego
+            Destroy(other.gameObject);
+
+            // Aumentar a pontuação do jogador
+            FishsFalling.points++;
+        }
+
         if (other.CompareTag("Fish") && playerTrash)
         {
             Debug.Log("colidiu no player.");
@@ -121,6 +136,8 @@ public class PlayerColeta : MonoBehaviour
 
         if (other.CompareTag("lixo") && playerTrash)
         {
+            fishFallAudio.Play();
+
             Debug.Log("colidiu no player.");
             // Destruir o objeto pego
             Destroy(other.gameObject);

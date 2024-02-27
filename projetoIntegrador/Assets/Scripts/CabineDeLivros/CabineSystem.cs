@@ -37,10 +37,10 @@ public class CabineSystem : MonoBehaviour
     {
         playerScript = FindObjectOfType<VanMoviment>();
 
-        jQuebraCabeca = PlayerPrefs.GetInt("numBooks");
+        jQuebraCabeca = PlayerPrefs.GetInt("CollectedBooksJJigsaw");
         jQuiz = PlayerPrefs.GetInt("QuizBooks");
         jCorrida = PlayerPrefs.GetInt("CollectedBooksJCorrida");
-        jAquario = PlayerPrefs.GetInt("");
+        jAquario = PlayerPrefs.GetInt("CollectedBooksJColeta");
 
         FirstTime();
 
@@ -111,7 +111,7 @@ public class CabineSystem : MonoBehaviour
 
         CheckQuebraCabeca(colorBook);
         CheckQuiz(colorBook);
-        Checkorrida(colorBook);
+        CheckCorrida(colorBook);
         CheckAquario(colorBook);
     }
 
@@ -156,13 +156,13 @@ public class CabineSystem : MonoBehaviour
                 booksQuebraCabeca[2].GetComponent<SpriteRenderer>().color = colorBook;
                 booksQuebraCabeca[3].GetComponent<SpriteRenderer>().color = colorBook;
             }
-            //PINTA A QUANTIDADE QUE JA ESTAVA
-            else
+        }
+        //PINTA A QUANTIDADE QUE JA ESTAVA
+        else
+        {
+            for (int i = 0; i < PlayerPrefs.GetInt("QuebraCabecaCabin"); i++)
             {
-                for (int i = 0; i < PlayerPrefs.GetInt("QuebraCabecaCabin"); i++)
-                {
-                    booksQuiz[i].GetComponent<SpriteRenderer>().color = colorBook;
-                }
+                booksQuiz[i].GetComponent<SpriteRenderer>().color = colorBook;
             }
         }
     }
@@ -207,7 +207,7 @@ public class CabineSystem : MonoBehaviour
             }
         }
     }
-    private void Checkorrida(Color colorBook)
+    private void CheckCorrida(Color colorBook)
     {
         //corrida
         if (jCorrida > PlayerPrefs.GetInt("CorridaCabin"))
@@ -237,13 +237,13 @@ public class CabineSystem : MonoBehaviour
                 booksCorrida[2].GetComponent<SpriteRenderer>().color = colorBook;
                 booksCorrida[3].GetComponent<SpriteRenderer>().color = colorBook;
             }
-            //PINTA A QUANTIDADE QUE JA ESTAVA
-            else
+        }
+        //PINTA A QUANTIDADE QUE JA ESTAVA
+        else
+        {
+            for (int i = 0; i < PlayerPrefs.GetInt("CorridaCabin"); i++)
             {
-                for (int i = 0; i < PlayerPrefs.GetInt("CorridaCabin"); i++)
-                {
-                    booksQuiz[i].GetComponent<SpriteRenderer>().color = colorBook;
-                }
+                booksQuiz[i].GetComponent<SpriteRenderer>().color = colorBook;
             }
         }
     }
@@ -251,40 +251,40 @@ public class CabineSystem : MonoBehaviour
     {
 
         //aquario
-        //if (jAquario > PlayerPrefs.GetInt("AquarioCabin"))
-        //{
-        //    PlayerPrefs.SetInt("AquarioCabin", jAquario);
-        //      PlayerPrefs.Save();
-        //  if (jCorrida == 1)
-        //  {
-        //      booksAquario[0].GetComponent<Image>().color = colorBook;
-        //  }
-        //  else if (jCorrida == 2)
-        //  {
-        //      booksAquario[0].GetComponent<Image>().color = colorBook;
-        //      booksAquario[1].GetComponent<Image>().color = colorBook;
-        //  }
-        //  else if (jCorrida == 3)
-        //  {
-        //      booksAquario[0].GetComponent<Image>().color = colorBook;
-        //      booksAquario[1].GetComponent<Image>().color = colorBook;
-        //      booksAquario[2].GetComponent<Image>().color = colorBook;
-        //  }
-        //  else if (jCorrida == 4)
-        //  {
-        //      booksAquario[0].GetComponent<Image>().color = colorBook;
-        //      booksAquario[1].GetComponent<Image>().color = colorBook;
-        //      booksAquario[2].GetComponent<Image>().color = colorBook;
-        //      booksAquario[3].GetComponent<Image>().color = colorBook;
-        //  }
-        //}
+        if (jAquario > PlayerPrefs.GetInt("AquarioCabin"))
+        {
+            PlayerPrefs.SetInt("AquarioCabin", jAquario);
+            PlayerPrefs.Save();
+            if (jAquario == 1)
+            {
+                booksAquario[0].GetComponent<SpriteRenderer>().color = colorBook;
+            }
+            else if (jAquario == 2)
+            {
+                booksAquario[0].GetComponent<SpriteRenderer>().color = colorBook;
+                booksAquario[1].GetComponent<SpriteRenderer>().color = colorBook;
+            }
+            else if (jAquario == 3)
+            {
+                booksAquario[0].GetComponent<SpriteRenderer>().color = colorBook;
+                booksAquario[1].GetComponent<SpriteRenderer>().color = colorBook;
+                booksAquario[2].GetComponent<SpriteRenderer>().color = colorBook;
+            }
+            else if (jAquario == 4)
+            {
+                booksAquario[0].GetComponent<SpriteRenderer>().color = colorBook;
+                booksAquario[1].GetComponent<SpriteRenderer>().color = colorBook;
+                booksAquario[2].GetComponent<SpriteRenderer>().color = colorBook;
+                booksAquario[3].GetComponent<SpriteRenderer>().color = colorBook;
+            }
+        }
         //PINTA A QUANTIDADE QUE JA ESTAVA
-        //else
-        //{
-        //    for (int i = 0; i < PlayerPrefs.GetInt("AquarioCabin"); i++)
-        //    {
-        //        booksQuiz[i].GetComponent<SpriteRenderer>().color = colorBook;
-        //    }
-        //}
+        else
+        {
+            for (int i = 0; i < PlayerPrefs.GetInt("AquarioCabin"); i++)
+            {
+                booksAquario[i].GetComponent<SpriteRenderer>().color = colorBook;
+            }
+        }
     }
 }

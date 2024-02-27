@@ -16,7 +16,7 @@ public class AudioSystem : MonoBehaviour
 
     private AudioSource audioSource;
 
-    private void Start()
+    private void Awake()
     {
         // Obtém ou cria um objeto AudioSource para reprodução de áudio
         audioSource = GetComponent<AudioSource>();
@@ -24,6 +24,11 @@ public class AudioSystem : MonoBehaviour
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
+    }
+
+    private void Update()
+    {
+        audioSource.volume = VolumeControl.volume;
     }
 
     // Chame este método para reproduzir um som pelo nome da chave
@@ -37,6 +42,7 @@ public class AudioSystem : MonoBehaviour
         {
             audioSource.clip = soundEntry.audioClip;
             audioSource.Play();
+
         }
         else
         {
@@ -49,5 +55,10 @@ public class AudioSystem : MonoBehaviour
     public void SetLooping(bool loop)
     {
         audioSource.loop = loop;
+    }
+
+    public void StopSound()
+    {
+        audioSource?.Stop();
     }
 }

@@ -12,6 +12,7 @@ using UnityEngine.SceneManagement;
 public class MovimentPlayer : MonoBehaviour
 {
     public AudioSource jumpSound;
+    public AudioSource crashSound;
     public float speedPoints;
     public float increaseSpeedPoints;
     [SerializeField] private float jumpForce;
@@ -30,6 +31,7 @@ public class MovimentPlayer : MonoBehaviour
     private Animator animator;
     private PauseJCorrida pauseJCorridaScript;
 
+    public AudioSystem audioSystem;
 
     private void Awake()
     {
@@ -49,15 +51,15 @@ public class MovimentPlayer : MonoBehaviour
         pauseJCorridaScript = FindObjectOfType<PauseJCorrida>();
     }
 
-    private void OnEnable() // executado quando um objeto é ativado
-    {
-        input.Enable();
-    }
+    //private void OnEnable() // executado quando um objeto é ativado
+    //{
+    //    input.Enable();
+    //}
 
-    private void OnDisable() //quando desativado
-    {
-        input.Disable();
-    }
+    //private void OnDisable() //quando desativado
+    //{
+    //    input.Disable();
+    //}
 
     public void DisableInput()
     {
@@ -74,6 +76,7 @@ public class MovimentPlayer : MonoBehaviour
             jump = false;
             rb.AddForce(Vector2.up * jumpForce);   
             jumpSound.Play();
+            jumpSound.volume = VolumeControl.volumeEffect;
         }
     }
     void OnCollisionEnter2D(Collision2D collision) // verifica se ta no chao
@@ -88,6 +91,8 @@ public class MovimentPlayer : MonoBehaviour
         {
             gameController.gameOver = true;
             rb.velocity = Vector3.zero;
+            crashSound.Play();
+            crashSound.volume = VolumeControl.volumeEffect;
         }
     }
     void Update() //aumenta a velocidade da pontuacao quando atinge a meta

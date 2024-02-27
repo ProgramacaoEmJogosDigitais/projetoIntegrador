@@ -14,6 +14,7 @@ public class JigsawManager : MonoBehaviour
     public SpriteRenderer panel;
     public Comic comic;
     public List<DragEndDrop> dragEndDrop;
+    private bool instruction = false;
     private void Awake()
     {
         randon.pause = false;
@@ -28,7 +29,9 @@ public class JigsawManager : MonoBehaviour
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
         if (!PlayerPrefs.HasKey("InstructionsQuebraCabeca") || PlayerPrefs.GetInt("InstructionsQuebraCabeca") == 0)
         {
+            instruction = true;
             StartCoroutine(SpawnInstructions());
+
         }
         else
         {
@@ -56,6 +59,10 @@ public class JigsawManager : MonoBehaviour
         DisableParts();
         randon.pause = true;
     }
+    public void NoInstruction()
+    {
+        randon.pause = false;
+    }
     public void NoPause()
     {
         EnableParts();
@@ -66,9 +73,8 @@ public class JigsawManager : MonoBehaviour
         instructions.SetActive(false);
         panel.gameObject.SetActive(false);
         randon.saveIndex = true;
-        randon.StartCoroutine(randon.RandSpriteButton());
         comic.rotate = false;
-        comic.ResetComic(); 
+        comic.ResetComic();
     }
     public void DisableParts()
     {
@@ -81,7 +87,8 @@ public class JigsawManager : MonoBehaviour
     {
         for (int i = 0; i < dragEndDrop.Count; i++)
         {
-            dragEndDrop[i].blockMove = true;
+            if (!dragEndDrop[i].ok)
+                dragEndDrop[i].blockMove = true;
         }
     }
 }
