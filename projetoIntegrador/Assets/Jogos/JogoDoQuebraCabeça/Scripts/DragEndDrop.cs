@@ -5,7 +5,8 @@ using UnityEngine;
 public class DragEndDrop : MonoBehaviour
 {
     public Camera cam;
-   
+
+    public bool ok = false;
     public Rigidbody2D rb;
     public bool inPart,arrast ,blockMove;
     public Transform originalPosition;
@@ -42,8 +43,6 @@ public class DragEndDrop : MonoBehaviour
         {
             if (inPart)
                 arrast = true;
-
-
         }
     }
     private void OnMouseUp()
@@ -53,7 +52,6 @@ public class DragEndDrop : MonoBehaviour
             if (inPart)
                 arrast = false;
         }
-       
     }
 
     // Update is called once per frame
@@ -86,7 +84,8 @@ public class DragEndDrop : MonoBehaviour
         {
             this.transform.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 3;
             if (Vector2.Distance(rb.transform.position,originalPosition.position)<=distance)
-            {
+            { 
+                ok = true;  
                 rb.transform.position = originalPosition.position;
                 RandonPositions.okPieces++;
                 blockMove = false;
