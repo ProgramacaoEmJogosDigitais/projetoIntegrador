@@ -7,10 +7,9 @@ public class FishsFalling : MonoBehaviour
     public float fallSpeed = 1f;
     public static int points = 0;
 
-    public AudioSystem audioSystem;
-    public AudioSource fishFall;
+    private AudioSource audioSource;
 
-    void OnTriggerEnter2D(Collider2D other)
+    /*void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -18,16 +17,27 @@ public class FishsFalling : MonoBehaviour
             Destroy(gameObject);
 
             // Aumentar a pontuação do jogador
-            points ++;
+            points++;
+        }
+    }*/
 
-            fishFall.Play();
-            fishFall.volume = VolumeControl.volumeEffect;
+    void Awake()
+    {
+        // Obtém o componente AudioSource do próprio objeto
+        audioSource = GetComponent<AudioSource>();
 
-            Debug.Log("BATEU NO CORNO");
+        // Verifica se o AudioSource foi encontrado
+        if (audioSource != null)
+        {
+            // Inicia a reprodução, se necessário
+            audioSource.Play();
         }
     }
     void Update()
     {
+        // Ajusta o volume de acordo com o VolumeControl
+        audioSource.volume = VolumeControl.volumeEffect;
+
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0f, -fallSpeed);
 
@@ -40,6 +50,7 @@ public class FishsFalling : MonoBehaviour
             PlayerColeta.missingObjects--;
         }
     }
+
 
 }
 
