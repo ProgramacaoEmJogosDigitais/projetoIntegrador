@@ -75,6 +75,11 @@ public class JigsawManager : MonoBehaviour
         randon.saveIndex = true;
         comic.rotate = false;
         comic.ResetComic();
+        if (instruction)
+        {
+            randon.StartCoroutine(randon.RandSpriteButton());
+            instruction = false;
+        }
     }
     public void DisableParts()
     {
