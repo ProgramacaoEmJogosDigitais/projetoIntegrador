@@ -2871,13 +2871,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2b8982f11984b4fa3d23a5481fd311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaTakeBook: 300
-  increaseMetaTakeBook: 300
+  metaTakeBook1: 300
+  metaTakeBook2: 600
+  metaTakeBook3: 900
+  metaTakeBook4: 1200
   spriteBook:
   - {fileID: 1447308089}
-  - {fileID: 1576653987}
-  - {fileID: 1640988228}
   - {fileID: 1233864843}
+  - {fileID: 1640988228}
+  - {fileID: 1576653987}
   nBooksJCorrida: 0
 --- !u!1 &430905101
 GameObject:
