@@ -4,18 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class Instructions : MonoBehaviour
+public class InstructionsColeta : MonoBehaviour
 {
     public GameObject panelInstructions;
-    public GameObject panelPause;
-    private PauseJCorrida pauseJCorrida;
+    public GameObject btn_pause;
+    public GameObject btn_exit;
     void Start()
     {
-        pauseJCorrida = GetComponent<PauseJCorrida>();
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
-        if (!PlayerPrefs.HasKey("InstructionsCorrida") || PlayerPrefs.GetInt("InstructionsCorrida") == 0)
+        if (!PlayerPrefs.HasKey("InstructionsColeta") || PlayerPrefs.GetInt("InstructionsColeta") == 0)
         {
-            pauseJCorrida.bt_pause.gameObject.SetActive(false);
             StartCoroutine(SpawnInstructions());
         }
     }
@@ -24,24 +22,23 @@ public class Instructions : MonoBehaviour
     {
         yield return new WaitForSeconds(0.01f);
         panelInstructions.gameObject.SetActive(true);
-        PlayerPrefs.SetInt("InstructionsCorrida", 1); // Instruções exibidas.
-        pauseJCorrida.gamePaused = true;//Time.timeScale = 0.0f;
+        btn_exit.gameObject.SetActive(false);
+        btn_pause.gameObject.SetActive(false);
+        PlayerPrefs.SetInt("InstructionsColeta", 1); // Instruções exibidas.
     }
 
     public void GoGame()
     {
         panelInstructions.gameObject.SetActive(false);
         //Time.timeScale = 1.0f; MUDAR
-        pauseJCorrida.bt_pause.gameObject.SetActive(true);
-        pauseJCorrida.gamePaused = false;
 
     }
 
     public void OpenInstructions()
     {
         //Time.timeScale = 0.0f; MUDAR
-        panelPause.SetActive(false);
         panelInstructions.gameObject.SetActive(true);
-        pauseJCorrida.gamePaused = true;
+        btn_exit.gameObject.SetActive(false);
+        btn_pause.gameObject.SetActive(false);
     }
 }

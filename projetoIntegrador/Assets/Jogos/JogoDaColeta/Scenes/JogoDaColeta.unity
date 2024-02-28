@@ -36040,6 +36040,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2121952278}
     m_Modifications:
+    - target: {fileID: 759969823998483297, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
+      propertyPath: m_text
+      value: 'Iniciar
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 3317213911917560330, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -36171,7 +36177,7 @@ PrefabInstance:
     - target: {fileID: 8614599827439231054, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 4854573}
+      objectReference: {fileID: 1872915039}
     - target: {fileID: 8614599827439231054, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -36214,7 +36220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8614599827439231054, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8614599827439231054, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -61037,6 +61043,7 @@ GameObject:
   - component: {fileID: 1503362173}
   - component: {fileID: 1503362174}
   - component: {fileID: 1503362175}
+  - component: {fileID: 1503362176}
   m_Layer: 0
   m_Name: gameControllerJC
   m_TagString: Fish
@@ -61134,10 +61141,25 @@ MonoBehaviour:
   - {fileID: 1579770222}
   - {fileID: 553622573}
   - {fileID: 1203701434}
-  pontsBook1: 40
-  pontsBook2: 85
-  pontsBook3: 130
-  pontsBook4: 200
+  pontsBook1: 30
+  pontsBook2: 70
+  pontsBook3: 100
+  pontsBook4: 150
+--- !u!114 &1503362176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503362170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23a737136e9a5341aaf5c8f812dee9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInstructions: {fileID: 1433942034}
+  btn_pause: {fileID: 1847960935}
+  btn_exit: {fileID: 1872915039}
 --- !u!1 &1539931625
 GameObject:
   m_ObjectHideFlags: 0
