@@ -839,6 +839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 127222251}
   inPart: 0
   arrast: 0
@@ -1491,6 +1492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 360826214}
   inPart: 0
   arrast: 0
@@ -1812,6 +1814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 403226992}
   inPart: 0
   arrast: 0
@@ -1965,6 +1968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 410587611}
   inPart: 0
   arrast: 0
@@ -7224,6 +7228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 555180385}
   inPart: 0
   arrast: 0
@@ -12713,6 +12718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 764629537}
   inPart: 0
   arrast: 0
@@ -12866,6 +12872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 781861563}
   inPart: 0
   arrast: 0
@@ -13050,6 +13057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 794267859}
   inPart: 0
   arrast: 0
@@ -13265,6 +13273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 868148797}
   inPart: 0
   arrast: 0
@@ -13525,6 +13534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 902824437}
   inPart: 0
   arrast: 0
@@ -13713,6 +13723,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7ba80fe30fab4f344b851f0031a1f27b, type: 3}
   - {fileID: 21300000, guid: 5428ae66860b40c4e972df007354b5d7, type: 3}
   - {fileID: 21300000, guid: d4af0657897054848b1414fdacc8273f, type: 3}
+  - {fileID: 21300000, guid: 79da461938d48444b90b95b5733f6c47, type: 3}
   canvasWinGame: {fileID: 1442273738}
   canvasGameOver: {fileID: 309581968}
   spriteFullReserve: []
@@ -13870,6 +13881,31 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1b2c7b29119eb154dab70727fa620a46, type: 3}
   - {fileID: 21300000, guid: 59de195de14d23a4fa108131d2cf5929, type: 3}
   - {fileID: 21300000, guid: 9e79d3ed2316f6143b4b44344d0fe810, type: 3}
+  spritePieces4:
+  - {fileID: 21300000, guid: b94583e2462bd4c4188a0666a533e52b, type: 3}
+  - {fileID: 21300000, guid: 9fa54a96d4b520d408b693b3e9b31316, type: 3}
+  - {fileID: 21300000, guid: 492b91f321ab999488c7cf3b6f896682, type: 3}
+  - {fileID: 21300000, guid: fe41fec557fe5fe42b474a6ffbf130df, type: 3}
+  - {fileID: 21300000, guid: 7cbdf9d89e296c84a8257616c3969bb6, type: 3}
+  - {fileID: 21300000, guid: 15a1e1540a945ee46b1af9e087c2aa52, type: 3}
+  - {fileID: 21300000, guid: f64717299e7b0c244a42dafcff000135, type: 3}
+  - {fileID: 21300000, guid: 5a503037b9ccb4f40aeadb2485e69542, type: 3}
+  - {fileID: 21300000, guid: 36a6b2f7aaa59c34ca53a48935b66dab, type: 3}
+  - {fileID: 21300000, guid: bd8fd69de8567484580ced86d3dccbbf, type: 3}
+  - {fileID: 21300000, guid: eadccef77d6568e47a596114008ce59c, type: 3}
+  - {fileID: 21300000, guid: 8feccb69cc9d6334a80686c611f4f605, type: 3}
+  - {fileID: 21300000, guid: d4d7896493c7b6d4a92d873dbedeccfc, type: 3}
+  - {fileID: 21300000, guid: bf49dc35351a70947aa3de7c2133bfd0, type: 3}
+  - {fileID: 21300000, guid: 955c6da5ef92a1041a73e131554589d5, type: 3}
+  - {fileID: 21300000, guid: ded83824cd532f34a874beb13e37162e, type: 3}
+  - {fileID: 21300000, guid: 35a9c2716502a214dba79b63681a21d9, type: 3}
+  - {fileID: 21300000, guid: 1ee8ae4b7bf737c4e94106d7fc5eb85d, type: 3}
+  - {fileID: 21300000, guid: 062958903eabdb14baa1bb0f6575a887, type: 3}
+  - {fileID: 21300000, guid: 81380a6b88502fd408e2102db508ad64, type: 3}
+  - {fileID: 21300000, guid: 80669084583fccb43a47e0058cef60f9, type: 3}
+  - {fileID: 21300000, guid: 8538c2938957bed42b9031a9bc3f26c6, type: 3}
+  - {fileID: 21300000, guid: 73e9abb9a8c8bbf4d85d1c6bc6d7e41d, type: 3}
+  - {fileID: 21300000, guid: 572d5f855df2d2547829631f933f31f5, type: 3}
   secTime: {fileID: 397601340}
   minTime: {fileID: 266311421}
 --- !u!4 &996645503
@@ -14017,6 +14053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 1014964214}
   inPart: 0
   arrast: 0
@@ -14170,6 +14207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 1041525808}
   inPart: 0
   arrast: 0
@@ -14323,6 +14361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 1053912292}
   inPart: 0
   arrast: 0
@@ -14538,6 +14577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 1086191566}
   inPart: 0
   arrast: 0
@@ -14691,6 +14731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 1105841521}
   inPart: 0
   arrast: 0
@@ -15238,6 +15279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 1219466763}
   inPart: 0
   arrast: 0
@@ -15391,6 +15433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 1235444234}
   inPart: 0
   arrast: 0
@@ -15606,6 +15649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 1251533712}
   inPart: 0
   arrast: 0
@@ -15666,6 +15710,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1776712493}
     m_Modifications:
+    - target: {fileID: 759969823998483297, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
+      propertyPath: m_text
+      value: Iniciar
+      objectReference: {fileID: 0}
     - target: {fileID: 3317213911917560330, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -17048,6 +17096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 1506341852}
   inPart: 0
   arrast: 0
@@ -22334,6 +22383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 1734544443}
   inPart: 0
   arrast: 0
@@ -22654,6 +22704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 1796440788}
   inPart: 0
   arrast: 0
@@ -22838,6 +22889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 1850040641}
   inPart: 0
   arrast: 0
@@ -23439,6 +23491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 1974791056}
   inPart: 0
   arrast: 0
@@ -28580,6 +28633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 535694921}
+  ok: 0
   rb: {fileID: 2140872791}
   inPart: 0
   arrast: 0
