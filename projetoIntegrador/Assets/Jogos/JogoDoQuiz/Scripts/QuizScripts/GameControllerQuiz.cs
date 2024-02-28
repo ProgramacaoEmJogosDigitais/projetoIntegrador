@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class GameControllerQuiz : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class GameControllerQuiz : MonoBehaviour
     public GameObject painelGameOver;
     public GameObject paineloptions;
     public Image[] pontosTuristicos;
+    public AudioSystem audioSystem;
 
 
     public TMP_Text pergunta;
@@ -31,6 +33,9 @@ public class GameControllerQuiz : MonoBehaviour
     public TMP_Text pontuacao;
     public bool over;
     public List<SpriteRenderer> books;
+
+    public AudioSource audioSource;
+
 
     [TextArea]
     public string[] perguntas;
@@ -57,16 +62,16 @@ public class GameControllerQuiz : MonoBehaviour
 
     private void Awake()
     {
-        scoring  = PlayerPrefs.GetInt("QuizBooks");
+        scoring = PlayerPrefs.GetInt("QuizBooks");
         Books();
-       
+
 
     }
 
     void Start()
     {
         int n = PlayerPrefs.GetInt("QuizBooks");
-        Debug.Log("N de livro: "+ n);
+        Debug.Log("N de livro: " + n);
         over = false;
         gameOverQuiz.SetActive(false);
         idPergunta = 0;
@@ -76,19 +81,24 @@ public class GameControllerQuiz : MonoBehaviour
         ShuffleQuestions(); // Embaralha as perguntas no início do jogo
         ShowQuestion();
         FirstTime();
+        audioSystem.PlaySound("QuizMusic");
+        audioSystem.SetLooping(true);
     }
 
     void Update()
     {
+        ClickSound();
         GameOver();
-        Vida();       
+        Vida();
+        audioSource.volume = VolumeControl.volumeEffect;
+
     }
 
     void ShuffleQuestions()
     {
         for (int i = 0; i < perguntas.Length; i++)
         {
-            
+
             int temp = Random.Range(0, perguntas.Length);
             string tempPergunta = perguntas[temp];
             string tempAltA = alternativaA[temp];
@@ -110,9 +120,9 @@ public class GameControllerQuiz : MonoBehaviour
             alternativaC[i] = tempAltC;
             alternativaD[i] = tempAltD;
             corretas[i] = tempCorreta;
-           
+
         }
-    
+
     }
 
     void ShowQuestion()
@@ -130,7 +140,7 @@ public class GameControllerQuiz : MonoBehaviour
 
         int randomIndex = Random.Range(0, perguntas.Length);
 
-      
+
         while (indicesUtilizados.Contains(randomIndex))
         {
             randomIndex = Random.Range(0, perguntas.Length);
@@ -144,7 +154,7 @@ public class GameControllerQuiz : MonoBehaviour
         respostaB.text = alternativaB[idPergunta];
         respostaC.text = alternativaC[idPergunta];
         respostaD.text = alternativaD[idPergunta];
-        infoRespostas.text = "Pergunta: " + (indicesUtilizados.Count).ToString() + "/5" ;
+        infoRespostas.text = "Pergunta: " + (indicesUtilizados.Count).ToString() + "/5";
 
         verificacao_pergunta = true; // Reinicie a verificação da pergunta
     }
@@ -153,7 +163,7 @@ public class GameControllerQuiz : MonoBehaviour
     {
         if (verificacao_pergunta)
         {
-           
+
             StartCoroutine(Espera());
             verificacao_pergunta = false;
 
@@ -269,7 +279,7 @@ public class GameControllerQuiz : MonoBehaviour
         //{
         //    PlayerPrefs.SetInt("RodadaPassada", 3);
         //}
-        
+
         //Debug.Log("livros da rodada passada "+ scoring);
         ScoringSystem();
     }
@@ -277,7 +287,7 @@ public class GameControllerQuiz : MonoBehaviour
     {
         PontoP.sprite = personagens[Random.Range(0, 5)];
     }
-   
+
 
     void ProximaPergunta()
     {
@@ -291,8 +301,8 @@ public class GameControllerQuiz : MonoBehaviour
         {
 
             ShowQuestion();
-         
-           
+
+
         }
     }
 
@@ -301,6 +311,7 @@ public class GameControllerQuiz : MonoBehaviour
         botao.color = corPisca;
         yield return new WaitForSeconds(1);
         botao.color = corOriginal;
+
     }
 
     private IEnumerator Espera()
@@ -314,7 +325,7 @@ public class GameControllerQuiz : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         painelGameOver.SetActive(true);
         gameOverQuiz.SetActive(true);
-        
+
     }
 
     public int AchaCerta()
@@ -410,13 +421,21 @@ public class GameControllerQuiz : MonoBehaviour
             books[3].GetComponent<SpriteRenderer>().color = colorBook;
         }
     }
-   
+
     private void FirstTime()
     {
         if (!PlayerPrefs.HasKey("RodadaPassada"))
         {
             PlayerPrefs.SetInt("Rodadapassada", 0);
 
+        }
+    }
+
+    private void ClickSound()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            audioSource.Play();
         }
     }
 }
