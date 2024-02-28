@@ -8,13 +8,18 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class BookSystem : MonoBehaviour
 {
     //A cada 300 pontos ganha um livro
-    public float metaTakeBook;
-    public float increaseMetaTakeBook;
+    public float metaTakeBook1;
+    public float metaTakeBook2;
+    public float metaTakeBook3;
+    public float metaTakeBook4;
     public List<SpriteRenderer> spriteBook; //lista de livros/sprites da cena
     public int nBooksJCorrida;
     private MovimentPlayer movimentPlayerScript;
     private GameControllerJCorrida gameControllerJCorridaScript;
-
+    private bool takeBook1;
+    private bool takeBook2;
+    private bool takeBook3;
+    private bool takeBook4;
     private void Awake()
     {
         nBooksJCorrida = 0;
@@ -24,6 +29,10 @@ public class BookSystem : MonoBehaviour
     }
     private void Start()
     {
+        takeBook1 = false;
+        takeBook2 = false;
+        takeBook3 = false;
+        takeBook4 = false;
         movimentPlayerScript = FindObjectOfType<MovimentPlayer>();
         gameControllerJCorridaScript = FindObjectOfType<GameControllerJCorrida>();
     }
@@ -58,10 +67,27 @@ public class BookSystem : MonoBehaviour
     }
     void Update()
     {
-        if (movimentPlayerScript.distance >= metaTakeBook && nBooksJCorrida < 4)
+        Debug.Log(nBooksJCorrida);
+        Debug.Log("distania: "+ movimentPlayerScript.distance);
+        if (movimentPlayerScript.distance >= metaTakeBook1 && nBooksJCorrida < 4 && !takeBook1)
         {
+            takeBook1 = true;
             nBooksJCorrida++;
-            metaTakeBook += increaseMetaTakeBook;
+        }
+        if (movimentPlayerScript.distance >= metaTakeBook2 && nBooksJCorrida < 4 && !takeBook2)
+        {
+            takeBook2 = true;
+            nBooksJCorrida++;
+        }
+        if (movimentPlayerScript.distance >= metaTakeBook3 && nBooksJCorrida < 4 && !takeBook3)
+        {
+            takeBook3 = true;
+            nBooksJCorrida++;
+        }
+        if (movimentPlayerScript.distance >= metaTakeBook4 && nBooksJCorrida < 4 && !takeBook4)
+        {
+            takeBook4 = true;
+            nBooksJCorrida++;
         }
         if (gameControllerJCorridaScript.gameOver)
         {
