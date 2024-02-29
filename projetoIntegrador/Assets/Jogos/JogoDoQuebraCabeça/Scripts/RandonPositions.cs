@@ -25,7 +25,7 @@ public class RandonPositions : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Transform[] randonPositions, originalPosition;
     public GameObject bookPointsAnim, buttonPause;
-    public Sprite[] spritePieces1, spritePieces2, spritePieces3;
+    public Sprite[] spritePieces1, spritePieces2, spritePieces3, spritePieces4;
     public TextMeshProUGUI secTime, minTime;
 
     private string namePieces;
@@ -103,7 +103,7 @@ public class RandonPositions : MonoBehaviour
 
     public void BtnNumBook(string sceneName)
     {
-        if (indexBooks >= 0 && indexBooks <= 4)
+        if (indexBooks >= 0 && indexBooks < 4)
         {
             indexBooks++;
             PlayerPrefs.SetInt("numBooks", indexBooks);
@@ -210,6 +210,10 @@ public class RandonPositions : MonoBehaviour
             {
                 randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces3[i];
             }
+            else if (namePieces == spriteFullReserve[3].name)
+            {
+                randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces4[i];
+            }
         }
         startGame = true;
         RandonPiece();
@@ -314,6 +318,11 @@ public class RandonPositions : MonoBehaviour
             if (namePieces == spriteFullReserve[2].name)
             {
                 randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces3[i];
+
+            }
+            if (namePieces == spriteFullReserve[3].name)
+            {
+                randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces4[i];
 
             }
         }

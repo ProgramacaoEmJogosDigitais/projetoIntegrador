@@ -13,7 +13,7 @@ public class Instructions : MonoBehaviour
     {
         pauseJCorrida = GetComponent<PauseJCorrida>();
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
-        if (!PlayerPrefs.HasKey("InstructionsShown") || PlayerPrefs.GetInt("InstructionsShown") == 0)
+        if (!PlayerPrefs.HasKey("InstructionsCorrida") || PlayerPrefs.GetInt("InstructionsCorrida") == 0)
         {
             pauseJCorrida.bt_pause.gameObject.SetActive(false);
             StartCoroutine(SpawnInstructions());
@@ -24,7 +24,7 @@ public class Instructions : MonoBehaviour
     {
         yield return new WaitForSeconds(0.01f);
         panelInstructions.gameObject.SetActive(true);
-        PlayerPrefs.SetInt("InstructionsShown", 1); // Instruções exibidas.
+        PlayerPrefs.SetInt("InstructionsCorrida", 1); // Instruções exibidas.
         pauseJCorrida.gamePaused = true;//Time.timeScale = 0.0f;
     }
 
