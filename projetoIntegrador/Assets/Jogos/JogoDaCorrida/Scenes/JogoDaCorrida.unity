@@ -2927,6 +2927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelInstructions: {fileID: 1604566015}
   panelPause: {fileID: 1572889033}
+  score: {fileID: 232525767}
 --- !u!114 &349419362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6448,6 +6449,34 @@ PrefabInstance:
     - target: {fileID: 3642139534351658325, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 40.544
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642139534351658326, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642139534351658326, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642139534351658326, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 349419363}
+    - target: {fileID: 3642139534351658326, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642139534351658326, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SaveBooksToBack
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642139534351658326, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BookSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642139534351658326, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3642139534351658327, guid: b644b7cfb1bf57440a374c202d19af23, type: 3}
       propertyPath: m_PreserveAspect

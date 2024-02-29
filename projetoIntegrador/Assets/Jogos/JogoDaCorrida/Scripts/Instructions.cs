@@ -8,6 +8,7 @@ public class Instructions : MonoBehaviour
 {
     public GameObject panelInstructions;
     public GameObject panelPause;
+    public GameObject score;
     private PauseJCorrida pauseJCorrida;
     void Start()
     {
@@ -17,6 +18,10 @@ public class Instructions : MonoBehaviour
         {
             pauseJCorrida.bt_pause.gameObject.SetActive(false);
             StartCoroutine(SpawnInstructions());
+        }
+        else
+        {
+            score.SetActive(true);
         }
     }
 
