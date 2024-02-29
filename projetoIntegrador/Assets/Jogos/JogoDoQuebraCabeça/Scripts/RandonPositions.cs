@@ -75,7 +75,7 @@ public class RandonPositions : MonoBehaviour
         }
         else
         {
-            StartCoroutine(RandomSprite());
+            RandomSprite();
         }
     }
 
@@ -187,7 +187,7 @@ public class RandonPositions : MonoBehaviour
 
     public IEnumerator RandSpriteButton()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.02f);
         randomSprite = false;
         StartPiece(); // Iniciar peças imediatamente
         ShowSprite(); // Tornar a imagem transparente imediatamente
@@ -219,15 +219,9 @@ public class RandonPositions : MonoBehaviour
         RandonPiece();
     }
 
-    public IEnumerator RandomSprite()
+    public void RandomSprite()
     {
-        while (randomSprite)
-        {
-            indexReserve = UnityEngine.Random.Range(0, spriteFullReserve.Count);
-            spriteRenderer.sprite = spriteFullReserve[indexReserve];
-            index = UnityEngine.Random.Range(0, spriteFull.Count);
-            yield return new WaitForSeconds(0.1f);
-        }
+        index = UnityEngine.Random.Range(0, spriteFull.Count);
 
         UpdateParts();
     }

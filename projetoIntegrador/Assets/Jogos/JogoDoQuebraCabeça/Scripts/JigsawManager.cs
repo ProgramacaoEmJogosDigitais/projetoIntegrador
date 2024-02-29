@@ -31,6 +31,7 @@ public class JigsawManager : MonoBehaviour
         {
             instruction = true;
             StartCoroutine(SpawnInstructions());
+            Pause();
 
         }
         else
