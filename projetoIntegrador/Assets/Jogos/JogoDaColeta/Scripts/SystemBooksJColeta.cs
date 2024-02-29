@@ -31,29 +31,27 @@ public class SystemBooksJColeta : MonoBehaviour
     }
     public void BooksPoints()
     {
-            gameControllerJCScript.gameOver = false;
-
-            int points = 0;
-            if (int.TryParse(gameControllerJCScript.score.text, out points))
-            {
-                if (points >= pontsBook1 && points < pontsBook2) // 40 a 84 pontos = 1 livro 
-                {
-                    books = 1;
-                }
-                if (points >= pontsBook2 && points < pontsBook3)// 85 s 129 = 2 livros
-                {
-                    books = 2;
-                }
-                if (points >= pontsBook3 && points < pontsBook3)// 130 a 199 = 3 livros
-                {
-                    books = 3;
-                }
-                if (points > pontsBook4)// 200 ou mais = 4 livro
-                {
-                    books = 4;
-                }
-            SaveBooks();
+        //int points;
+        //if (int.TryParse(gameControllerJCScript.score.text, out points))
+        //{
+        if (FishsFalling.points >= pontsBook1 && FishsFalling.points < pontsBook2) // 40 a 84 pontos = 1 livro 
+        {
+            books = 1;
         }
+        if (FishsFalling.points >= pontsBook2 && FishsFalling.points < pontsBook3)// 85 s 129 = 2 livros
+        {
+            books = 2;
+        }
+        if (FishsFalling.points >= pontsBook3 && FishsFalling.points < pontsBook3)// 130 a 199 = 3 livros
+        {
+            books = 3;
+        }
+        if (FishsFalling.points > pontsBook4)// 200 ou mais = 4 livro
+        {
+            books = 4;
+        }
+        SaveBooks();
+        //}
     }
     private void FirstTime()
     {
@@ -130,5 +128,44 @@ public class SystemBooksJColeta : MonoBehaviour
             // Define o alpha para 1.0 (transparência de 100%)
             booksList[3].GetComponent<SpriteRenderer>().color = colorBook;
         }
+    }
+
+    public void SaveBooksToBackMap()
+    {
+        Debug.Log("NUMERO DE LIVROS QUANDO APERTA PARA VOLTAR PARA O MAPA; " + books);
+        if (books == 1)
+        {
+            if (books > PlayerPrefs.GetInt("PastRoundJColeta"))
+            {
+                PlayerPrefs.SetInt("CollectedBooksJColeta", books);
+                PlayerPrefs.SetInt("PastRoundJColeta", books);
+                PlayerPrefs.Save();
+            }
+        }
+        if (books == 2)
+        {
+            if (books > PlayerPrefs.GetInt("PastRoundJColeta"))
+            {
+                PlayerPrefs.SetInt("CollectedBooksJColeta", books);
+                PlayerPrefs.SetInt("PastRoundJColeta", books);
+                PlayerPrefs.Save();
+            }
+        }
+        if (books == 3)
+        {
+            if (books > PlayerPrefs.GetInt("PastRoundJColeta"))
+            {
+                PlayerPrefs.SetInt("CollectedBooksJColeta", books);
+                PlayerPrefs.SetInt("PastRoundJColeta", books);
+                PlayerPrefs.Save();
+            }
+        }
+        if (books == 4)
+        {
+            PlayerPrefs.SetInt("CollectedBooksJColeta", books);
+            PlayerPrefs.SetInt("PastRoundJColeta", books);
+            PlayerPrefs.Save();
+        }
+
     }
 }
