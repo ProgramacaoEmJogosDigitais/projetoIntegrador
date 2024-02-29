@@ -34,7 +34,8 @@ public class GameControllerQuiz : MonoBehaviour
     public bool over;
     public List<SpriteRenderer> books;
 
-    public AudioSource audioSource;
+    public AudioSource audioSourceAcerto;
+    public AudioSource audioSourceErro;
 
 
     [TextArea]
@@ -87,11 +88,11 @@ public class GameControllerQuiz : MonoBehaviour
 
     void Update()
     {
-        ClickSound();
+       
         GameOver();
         Vida();
-        audioSource.volume = VolumeControl.volumeEffect;
-
+        audioSourceAcerto.volume = VolumeControl.volumeEffect;
+        audioSourceErro.volume = VolumeControl.volumeEffect;
     }
 
     void ShuffleQuestions()
@@ -173,12 +174,14 @@ public class GameControllerQuiz : MonoBehaviour
                 {
                     StartCoroutine(PiscaBotao(Color.white, Color.green, botao[0]));
                     acertos++;
+                    audioSourceAcerto.Play();
                 }
                 else
                 {
                     StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
                     StartCoroutine(PiscaBotao(Color.white, Color.red, botao[0]));
                     erros++;
+                    audioSourceErro.Play();
                 }
             }
             else if (alternativa == "B")
@@ -187,12 +190,14 @@ public class GameControllerQuiz : MonoBehaviour
                 {
                     StartCoroutine(PiscaBotao(Color.white, Color.green, botao[1]));
                     acertos++;
+                    audioSourceAcerto.Play();
                 }
                 else
                 {
                     StartCoroutine(PiscaBotao(Color.white, Color.red, botao[1]));
                     StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
                     erros++;
+                    audioSourceErro.Play();
                 }
             }
             else if (alternativa == "C")
@@ -201,12 +206,14 @@ public class GameControllerQuiz : MonoBehaviour
                 {
                     StartCoroutine(PiscaBotao(Color.white, Color.green, botao[2]));
                     acertos++;
+                    audioSourceAcerto.Play();
                 }
                 else
                 {
                     StartCoroutine(PiscaBotao(Color.white, Color.red, botao[2]));
                     StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
                     erros++;
+                    audioSourceErro.Play();
                 }
             }
             else if (alternativa == "D")
@@ -215,12 +222,14 @@ public class GameControllerQuiz : MonoBehaviour
                 {
                     StartCoroutine(PiscaBotao(Color.white, Color.green, botao[3]));
                     acertos++;
+                    audioSourceAcerto.Play();
                 }
                 else
                 {
                     StartCoroutine(PiscaBotao(Color.white, Color.red, botao[3]));
                     StartCoroutine(PiscaBotao(Color.white, Color.green, botao[AchaCerta()]));
                     erros++;
+                    audioSourceErro.Play();
                 }
             }
         }
@@ -311,6 +320,7 @@ public class GameControllerQuiz : MonoBehaviour
         botao.color = corPisca;
         yield return new WaitForSeconds(1);
         botao.color = corOriginal;
+        
 
     }
 
@@ -428,14 +438,6 @@ public class GameControllerQuiz : MonoBehaviour
         {
             PlayerPrefs.SetInt("Rodadapassada", 0);
 
-        }
-    }
-
-    private void ClickSound()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            audioSource.Play();
         }
     }
 }
