@@ -136,4 +136,44 @@ public class BookSystem : MonoBehaviour
             spriteBook[3].GetComponent<SpriteRenderer>().color = colorBook;
         }
     }
+
+    public void SaveBooksToBack()
+    {
+        if (nBooksJCorrida == 1)
+        {
+            if (nBooksJCorrida > PlayerPrefs.GetInt("PastRoundJCorrida"))
+            {
+                PlayerPrefs.SetInt("CollectedBooksJCorrida", nBooksJCorrida);
+                PlayerPrefs.SetInt("PastRoundJCorrida", nBooksJCorrida);
+                PlayerPrefs.Save();
+            }
+
+        }
+        if (nBooksJCorrida == 2)
+        {
+            if (nBooksJCorrida > PlayerPrefs.GetInt("PastRoundJCorrida"))
+            {
+                PlayerPrefs.SetInt("CollectedBooksJCorrida", nBooksJCorrida);
+                PlayerPrefs.SetInt("PastRoundJCorrida", nBooksJCorrida);
+                PlayerPrefs.Save();
+            }
+        }
+        if(nBooksJCorrida == 3)
+        {
+            if (nBooksJCorrida > PlayerPrefs.GetInt("PastRoundJCorrida"))
+            {
+                PlayerPrefs.SetInt("CollectedBooksJCorrida", nBooksJCorrida);
+                PlayerPrefs.SetInt("PastRoundJCorrida", nBooksJCorrida);
+                PlayerPrefs.Save();
+            }
+        }
+        if(nBooksJCorrida == 4)
+        {
+           
+            PlayerPrefs.SetInt("CollectedBooksJCorrida", nBooksJCorrida);
+            PlayerPrefs.SetInt("PastRoundJCorrida", nBooksJCorrida);
+            PlayerPrefs.Save();
+            
+        }
+    }
 }
