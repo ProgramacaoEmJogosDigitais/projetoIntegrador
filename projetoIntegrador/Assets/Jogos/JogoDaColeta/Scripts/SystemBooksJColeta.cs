@@ -168,4 +168,41 @@ public class SystemBooksJColeta : MonoBehaviour
         }
 
     }
+
+    public void SaveBooksToBackMap()
+    {
+        if (FishsFalling.points >= pontsBook1 && FishsFalling.points < pontsBook2) // >=40 e <85 == 1 livro
+        {
+            if (1 > PlayerPrefs.GetInt("PastRoundJColeta"))
+            {
+                PlayerPrefs.SetInt("CollectedBooksJColeta", 1);
+                PlayerPrefs.SetInt("PastRoundJColeta", 1);
+                PlayerPrefs.Save();
+            }
+        }
+        if (FishsFalling.points >= pontsBook2 && FishsFalling.points < pontsBook3) // >=85 e <130 == 2 livros
+        {
+            if (2 > PlayerPrefs.GetInt("PastRoundJColeta"))
+            {
+                PlayerPrefs.SetInt("CollectedBooksJColeta", 2);
+                PlayerPrefs.SetInt("PastRoundJColeta", 2);
+                PlayerPrefs.Save();
+            }
+        }
+        if (FishsFalling.points >= pontsBook3 && FishsFalling.points < pontsBook4) // >=130 e <199 == 3 livros
+        {
+            if (3 > PlayerPrefs.GetInt("PastRoundJColeta"))
+            {
+                PlayerPrefs.SetInt("CollectedBooksJColeta", 3);
+                PlayerPrefs.SetInt("PastRoundJColeta", 3);
+                PlayerPrefs.Save();
+            }
+        }
+        if (FishsFalling.points >= pontsBook4) // 200 ou mais == 4 livros
+        {
+            PlayerPrefs.SetInt("CollectedBooksJColeta", 4);
+            PlayerPrefs.SetInt("PastRoundJColeta", 4);
+            PlayerPrefs.Save();
+        }
+    }
 }
