@@ -26,7 +26,7 @@ public class GameControllerJC : MonoBehaviour
 
     private int currentWave = 1;
     private int enemiesSpawned = 0;
-    private float nextSpawnTime = 0f;
+    public static float nextSpawnTime = 0f;
 
     public Canvas scrollViewInstructions;
 
