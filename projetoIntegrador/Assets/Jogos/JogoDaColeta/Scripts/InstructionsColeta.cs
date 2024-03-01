@@ -33,8 +33,6 @@ public class InstructionsColeta : MonoBehaviour
         btn_pause.gameObject.SetActive(false);
         PlayerPrefs.SetInt("InstructionsColeta", 1); // Instruções exibidas.
 
-        GameControllerJC.nextSpawnTime = float.MaxValue;
-
         //gameController.PauseGame();
         
     }
