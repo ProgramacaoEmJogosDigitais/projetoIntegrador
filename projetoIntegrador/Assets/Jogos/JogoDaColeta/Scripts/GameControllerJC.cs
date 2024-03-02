@@ -22,11 +22,11 @@ public class GameControllerJC : MonoBehaviour
     public int maxEnemiesPerWave = 10;
     public float initialSpawnDelay = 3f;
     public float spawnInterval = 3f;
-    public float spawnRateIncrease = 0.2f;
+    public float spawnNumberPerWave = 0.2f;
 
     private int currentWave = 1;
     private int enemiesSpawned = 0;
-    public static float nextSpawnTime = 0f;
+    public static float nextSpawnTime;
 
     public Canvas scrollViewInstructions;
 
@@ -59,6 +59,10 @@ public class GameControllerJC : MonoBehaviour
 
         audioSystem.PlaySound("MenuMusic");
         audioSystem.SetLooping(true);
+
+        nextSpawnTime = Time.time;
+
+        Debug.Log("Start spawn time: " + nextSpawnTime + " current time: " + Time.time);
 
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
         /*if (!PlayerPrefs.HasKey("InstructionsShown") || PlayerPrefs.GetInt("InstructionsShown") == 0)
@@ -177,14 +181,16 @@ public class GameControllerJC : MonoBehaviour
                 instantiatedPrefabs = Instantiate(prefabFishs[Random.Range(0, prefabFishs.Length)], spawnPosition, Quaternion.identity);
                 enemiesSpawned++;
                 nextSpawnTime = Time.time + spawnInterval;
+                Debug.Log("next spawn time de cima:" + nextSpawnTime);
             }
             if (enemiesSpawned >= maxEnemiesPerWave)
             {
                 currentWave++;
-                maxEnemiesPerWave += Mathf.RoundToInt(maxEnemiesPerWave * spawnRateIncrease);
+                maxEnemiesPerWave += Mathf.RoundToInt(maxEnemiesPerWave * spawnNumberPerWave);
                 enemiesSpawned = 0;
                 nextSpawnTime = Time.time + initialSpawnDelay;
                 spawnInterval -= 0.1f;
+                Debug.Log("next spawn time de baixo:" + nextSpawnTime);
             }
             waveInfoText.text = string.Format("Wave: {0}\nEnemies Spawned: {1}/{2}\nSpawn Interval: {3:F1}s", currentWave, enemiesSpawned, maxEnemiesPerWave, spawnInterval);
 
