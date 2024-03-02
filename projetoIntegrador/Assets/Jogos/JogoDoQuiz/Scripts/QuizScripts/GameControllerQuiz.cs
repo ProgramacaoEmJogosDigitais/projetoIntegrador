@@ -73,7 +73,6 @@ public class GameControllerQuiz : MonoBehaviour
     void Start()
     {
         int n = PlayerPrefs.GetInt("QuizBooks");
-        Debug.Log("N de livro: " + n);
         over = false;
         gameOverQuiz.SetActive(false);
         idPergunta = 0;
@@ -272,25 +271,6 @@ public class GameControllerQuiz : MonoBehaviour
             StartCoroutine(Espera2());
             pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/5";
         }
-
-        //if(scoring == 1)
-        //{
-        //    PlayerPrefs.SetInt("RodadaPassada", 0);
-        //}
-        //if (scoring == 2)
-        //{
-        //    PlayerPrefs.SetInt("RodadaPassada", 1);
-        //}
-        //if (scoring == 3)
-        //{
-        //    PlayerPrefs.SetInt("RodadaPassada", 2);
-        //}
-        //if (scoring == 4)
-        //{
-        //    PlayerPrefs.SetInt("RodadaPassada", 3);
-        //}
-
-        //Debug.Log("livros da rodada passada "+ scoring);
         ScoringSystem();
     }
     void TrocaDePersonagens()
