@@ -48,7 +48,7 @@ public class SaveAndLoadJigsaw : MonoBehaviour
             }
             randon.isPlay = true;
         }
-        else if (randon.saveIndex && PlayerPrefs.HasKey("Img0") && PlayerPrefs.HasKey("Img1"))
+        else if (randon.saveIndex && PlayerPrefs.HasKey("Img0") && PlayerPrefs.HasKey("Img1") && !PlayerPrefs.HasKey("Img2"))
         {
             PlayerPrefs.SetString("Img2", PlayerPrefs.GetString("randonName"));
 
@@ -75,6 +75,48 @@ public class SaveAndLoadJigsaw : MonoBehaviour
                 if (randon.spriteFull[i].name == PlayerPrefs.GetString("Img2"))
                 {
                     Debug.Log("Imagem 3 removida: " + randon.spriteFull[i].name);
+
+                    randon.spriteFull.RemoveAt(i);
+                }
+            }
+            randon.isPlay = true;
+        }
+        else if (randon.saveIndex && PlayerPrefs.HasKey("Img0") && PlayerPrefs.HasKey("Img1") && PlayerPrefs.HasKey("Img2"))
+        {
+            PlayerPrefs.SetString("Img3", PlayerPrefs.GetString("randonName"));
+
+            for (int i = 0; i < randon.spriteFull.Count; i++)
+            {
+                if (randon.spriteFull[i].name == PlayerPrefs.GetString("Img0"))
+                {
+                    Debug.Log("Imagem 1 removida: " + randon.spriteFull[i].name);
+
+                    randon.spriteFull.RemoveAt(i);
+                }
+            }
+            for (int i = 0; i < randon.spriteFull.Count; i++)
+            {
+                if (randon.spriteFull[i].name == PlayerPrefs.GetString("Img1"))
+                {
+                    Debug.Log("Imagem 2 removida: " + randon.spriteFull[i].name);
+
+                    randon.spriteFull.RemoveAt(i);
+                }
+            }
+            for (int i = 0; i < randon.spriteFull.Count; i++)
+            {
+                if (randon.spriteFull[i].name == PlayerPrefs.GetString("Img2"))
+                {
+                    Debug.Log("Imagem 3 removida: " + randon.spriteFull[i].name);
+
+                    randon.spriteFull.RemoveAt(i);
+                }
+            } 
+            for (int i = 0; i < randon.spriteFull.Count; i++)
+            {
+                if (randon.spriteFull[i].name == PlayerPrefs.GetString("Img3"))
+                {
+                    Debug.Log("Imagem 4 removida: " + randon.spriteFull[i].name);
 
                     randon.spriteFull.RemoveAt(i);
                 }

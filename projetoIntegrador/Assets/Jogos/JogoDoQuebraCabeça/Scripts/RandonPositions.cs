@@ -64,13 +64,19 @@ public class RandonPositions : MonoBehaviour
 
             UpdateParts();
         }
-        else if (reset != 1 && indexBooks != 4)
+        else if (indexBooks == 4)
         {
-            RandomSprite();
+            min = 0;
+
+            for (int i = 0; i < spriteFullReserve.Count; i++)
+            {
+                spriteFull.Add(spriteFullReserve[i]);
+            }
+            panelPieces.SetActive(true);
         }
         else
         {
-            panelPieces.SetActive(true);
+            RandomSprite();
         }
     }
 
@@ -97,9 +103,11 @@ public class RandonPositions : MonoBehaviour
 
     public void BtnNumBook(string sceneName)
     {
-        if (indexBooks >= 0 && indexBooks < 4)
+        if (indexBooks >= 0 && indexBooks <=3)
         {
+            Debug.Log("Antes: "+indexBooks);
             indexBooks++;
+            Debug.Log("Depois"+indexBooks);
             PlayerPrefs.SetInt("numBooks", indexBooks);
             PlayerPrefs.Save();
         }
@@ -210,9 +218,12 @@ public class RandonPositions : MonoBehaviour
     }
     public void BtnOptionPieces(int numImage)
     {
-        randonPositions[numImage].GetComponent<SpriteRenderer>().sprite = spritePieces1[numImage];
+        index = numImage;
+        namePieces = spriteFull[index].name;
         startGame = true;
         RandonPiece();
+        spriteRenderer.sprite = spriteFull[index];
+        ChangePieces(namePieces);
     }
 
     public void RandomSprite()
