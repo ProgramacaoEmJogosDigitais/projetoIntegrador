@@ -779,6 +779,7 @@ MonoBehaviour:
   - {fileID: 714022615}
   audioSourceAcerto: {fileID: 246697679}
   audioSourceErro: {fileID: 246697680}
+  audioSourceLivro: {fileID: 0}
   perguntas:
   - "Qual monumento foi erguido para celebrar o anivers\xE1rio da cidade?"
   - "Onde voc\xEA pode ver uma grande variedade de peixes e outras esp\xE9cies aqu\xE1ticas
@@ -792,12 +793,12 @@ MonoBehaviour:
   - "Quando foi constru\xEDdo o Obelisco?\r\n\n"
   - "O Bioparque Pantanal \xE9 o maior complexo de \xE1gua doce do mundo, sendo assim
     o aqu\xE1rio tem quantos litros de \xE1gua?\n"
-  - "A torre ind\xEDgena foi constru\xEDda com uma arquitetura que apresenta quais
-    elementos da cultura?\n"
+  - "O monumento ao \xEDndio foi constru\xEDdo com uma arquitetura que apresenta
+    quais elementos da cultura?\n"
   - "Em que ano ocorreu a inaugura\xE7\xE3o do Mercad\xE3o Municipal?\n"
-  - " O carro de boi promove um registro hist\xF3rico do in\xEDcio da ocupa\xE7\xE3o
-    urbana de Campo Grande por volta de qual ano?\n"
-  - " A casa do artes\xE3o vende quais tipos de coisas?\r\n\n"
+  - " O Monumento aos desbravadores promove um registro hist\xF3rico do in\xEDcio
+    da ocupa\xE7\xE3o urbana de Campo Grande por volta de qual ano?\n"
+  - "O que \xE9 vendido na Casa do Artes\xE3o?\n\n"
   - "Em quais anos ocorreram uma reforma na casa do artes\xE3o?\n"
   - "Em que ano a casa do artes\xE3o virou a \u201C Casa do Artes\xE3o \u201D?\n"
   - "Qual destes locais \xE9 um espa\xE7o cultural que oferece exposi\xE7\xF5es e
@@ -809,10 +810,10 @@ MonoBehaviour:
   - "Qual \xE9 o nome oficial do Carro de Boi?"
   - "O mercad\xE3o \xE9 conhecido por?"
   - "O obelisco foi constru\xEDdo em mem\xF3ria a quem?"
-  - "O aqu\xE1rio al\xE9m de ser uma atra\xE7\xE3o tur\xEDstica ela tamb\xE9m \xE9
-    um?\r\n"
+  - "O Bioparque Pantanal, al\xE9m de ser uma atra\xE7\xE3o tur\xEDstica ela tamb\xE9m
+    \xE9 um?\r\n"
   alternativaA:
-  - "Aqu\xE1rio do Pantanal "
+  - Bioparque Pantanal
   - 'Feira Central '
   - "Morada do Ba\xEDs "
   - "Casa do Artes\xE3o"
@@ -829,7 +830,7 @@ MonoBehaviour:
   - '1857
 
 '
-  - Quadros para pintura
+  - Alimentos
   - '1980 e 2022
 
 '
@@ -843,9 +844,9 @@ MonoBehaviour:
   - Fundadores da cidade
   - "Local s\xF3 para ver peixes"
   alternativaB:
-  - "Torre Ind\xEDgena "
-  - "Aqu\xE1rio do Pantanal"
-  - "Torre Ind\xEDgena"
+  - "Monumento ao \xEDndio"
+  - Bioparque Pantanal
+  - "Monumento ao \xEDndio"
   - "Mercad\xE3o"
   - "Morada do Ba\xEDs\r\n"
   - '13 de novembro 1995
@@ -861,7 +862,7 @@ MonoBehaviour:
   - '1869
 
 '
-  - "Coisas feitas por v\xE1rios trabalhadores e artes\xE3os"
+  - Artesanato
   - 1990 e 2023
   - '1 de setembro de 1976
 
@@ -885,14 +886,14 @@ MonoBehaviour:
   - Madeira e Pedra
   - 30 de setembro de 1975
   - 1872
-  - Itens para pintura
+  - Materiais para pintura
   - 1990 e 2021
   - 1 de setembro de 1980
   - "Morada do Ba\xEDs"
   - Palestras, shows e arte
   - "Palestras, Semin\xE1rio e Minerais"
   - No centro de Campo Grande
-  - Monumento aos desbravadores
+  - Monumento aos Desbravadores
   - Por oferecer produtos importados
   - 'Viajantes '
   - "Local para aprendizagem sobre a conserva\xE7\xE3o da natureza"
@@ -901,13 +902,13 @@ MonoBehaviour:
   - "Mercad\xE3o "
   - "Camel\xF3dromo "
   - "Camel\xF3dromo"
-  - Monumento dos Desbravadores
+  - Monumento aos Desbravadores
   - 30 de setembro de 1991
   - "5 milh\xF5es de litros"
   - 'Pedra e Argila '
   - 30 de setembro de 1980
   - 1880
-  - Tintas
+  - Materiais esportivos
   - 1990 e 2020
   - 1 de setembro de 1990
   - Monumento Carro de Boi
@@ -921,23 +922,23 @@ MonoBehaviour:
     da Biodiversidade do Pantanal"
   corretas:
   - Obelisco
-  - "Aqu\xE1rio do Pantanal"
-  - "Torre Ind\xEDgena"
+  - Bioparque Pantanal
+  - "Monumento ao \xEDndio"
   - "Mercad\xE3o"
-  - Monumento dos Desbravadores
+  - Monumento aos Desbravadores
   - 26 de agosto de 1993
   - "5 milh\xF5es de litros"
   - Madeira e Palha
   - 30 de setembro de 1958
   - 1872
-  - "Coisas feitas por v\xE1rios trabalhadores e artes\xE3os"
+  - Artesanato
   - 1990 e 2023
   - 1 de setembro de 1975
   - Museu Dom Bosco
   - "Palestras, semin\xE1rios e oficinas culturais"
   - "Minerais, F\xF3sseis, Insetos e objetos da Pr\xE9-hist\xF3ria"
   - No centro de Campo Grande
-  - Monumento aos desbravadores
+  - Monumento aos Desbravadores
   - "Por oferecer produtos t\xEDpicos de nossa de cultura"
   - Fundadores da cidade
   - "\xC9 um centro essencial para a educa\xE7\xE3o conserva\xE7\xE3o e avalia\xE7\xE3o
@@ -4097,7 +4098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEntries:
   - key: QuizMusic
-    audioClip: {fileID: 8300000, guid: 417231a5b228ae24daad4b6c4a79074c, type: 3}
+    audioClip: {fileID: 8300000, guid: 0cd8f9b8932ea0e45aadcd5e9a73b253, type: 3}
 --- !u!4 &1395444731
 Transform:
   m_ObjectHideFlags: 0
