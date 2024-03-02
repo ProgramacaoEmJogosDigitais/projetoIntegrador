@@ -122,4 +122,9 @@ public class VanMoviment : MonoBehaviour
             arrowObjects.Add(arrowObject);
         }
     }
+
+    public void OpenInstructionsMap(bool value)
+    {
+        isMoving = value;
+    }
 }
