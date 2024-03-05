@@ -23,15 +23,13 @@ public class JigsawManager : MonoBehaviour
         // Inicializar a lista com os objetos encontrados
         dragEndDrop = new List<DragEndDrop>(dragEndDropArray);
 
-    }
-    void Start()
-    {
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
         if (!PlayerPrefs.HasKey("InstructionsQuebraCabeca") || PlayerPrefs.GetInt("InstructionsQuebraCabeca") == 0)
         {
+
             instruction = true;
             StartCoroutine(SpawnInstructions());
-
+            Pause();
         }
         else
         {

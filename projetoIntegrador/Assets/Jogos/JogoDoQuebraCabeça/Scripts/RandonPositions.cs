@@ -24,7 +24,7 @@ public class RandonPositions : MonoBehaviour
     public List<int> randonIndiceList;
     public SpriteRenderer spriteRenderer;
     public Transform[] randonPositions, originalPosition;
-    public GameObject bookPointsAnim, buttonPause;
+    public GameObject bookPointsAnim, buttonPause, panelPieces;
     public Sprite[] spritePieces1, spritePieces2, spritePieces3, spritePieces4;
     public TextMeshProUGUI secTime, minTime;
 
@@ -32,20 +32,11 @@ public class RandonPositions : MonoBehaviour
     private int indexReserve, min, len;
     private bool startGame, randomSprite, gameOver, goToMapOk;
 
-    private void Awake()
+    void Start()
     {
         indexBooks = PlayerPrefs.GetInt("numBooks");
         Books();
-
-        for (int i = 0; i < spriteFull.Count; i++)
-        {
-            spriteFullReserve.Add(spriteFull[i]);
-        }
         FirstTime();
-    }
-
-    void Start()
-    {
         goToMapOk = true;
         okPieces = 0;
         randomSprite = true;
@@ -73,9 +64,19 @@ public class RandonPositions : MonoBehaviour
 
             UpdateParts();
         }
+        else if (indexBooks == 4)
+        {
+            min = 0;
+
+            for (int i = 0; i < spriteFullReserve.Count; i++)
+            {
+                spriteFull.Add(spriteFullReserve[i]);
+            }
+            panelPieces.SetActive(true);
+        }
         else
         {
-            StartCoroutine(RandomSprite());
+            RandomSprite();
         }
     }
 
@@ -90,7 +91,6 @@ public class RandonPositions : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(okPieces);
         if (okPieces >= 24)
         {
             WinGame();
@@ -103,15 +103,13 @@ public class RandonPositions : MonoBehaviour
 
     public void BtnNumBook(string sceneName)
     {
-        if (indexBooks >= 0 && indexBooks < 4)
+        if (indexBooks >= 0 && indexBooks <=3)
         {
+            Debug.Log("Antes: "+indexBooks);
             indexBooks++;
+            Debug.Log("Depois"+indexBooks);
             PlayerPrefs.SetInt("numBooks", indexBooks);
             PlayerPrefs.Save();
-        }
-        else
-        {
-            spriteFull = spriteFullReserve;
         }
         SceneManager.LoadScene(sceneName);
     }
@@ -187,7 +185,7 @@ public class RandonPositions : MonoBehaviour
 
     public IEnumerator RandSpriteButton()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.002f);
         randomSprite = false;
         StartPiece(); // Iniciar peças imediatamente
         ShowSprite(); // Tornar a imagem transparente imediatamente
@@ -218,17 +216,20 @@ public class RandonPositions : MonoBehaviour
         startGame = true;
         RandonPiece();
     }
-
-    public IEnumerator RandomSprite()
+    public void BtnOptionPieces(int numImage)
     {
-        while (randomSprite)
-        {
-            indexReserve = UnityEngine.Random.Range(0, spriteFullReserve.Count);
-            spriteRenderer.sprite = spriteFullReserve[indexReserve];
-            index = UnityEngine.Random.Range(0, spriteFull.Count);
-            yield return new WaitForSeconds(0.1f);
-        }
+        index = numImage;
+        namePieces = spriteFull[index].name;
+        startGame = true;
+        RandonPiece();
+        spriteRenderer.sprite = spriteFull[index];
+        ChangePieces(namePieces);
+    }
 
+    public void RandomSprite()
+    {
+        index = UnityEngine.Random.Range(0, spriteFull.Count);
+        Debug.Log("index" + index);
         UpdateParts();
     }
 
