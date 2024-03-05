@@ -48,9 +48,9 @@ public class RandonPositions : MonoBehaviour
         if (reset == 1)
         {
             namePieces = PlayerPrefs.GetString("nameSprite");
-            for (int i = 0; i < spriteFull.Count; i++)
+            for (int i = 0; i < spriteFullReserve.Count; i++)
             {
-                if (namePieces == spriteFull[i].name)
+                if (namePieces == spriteFullReserve[i].name)
                 {
                     index = i;
                 }
@@ -303,34 +303,6 @@ public class RandonPositions : MonoBehaviour
             books[3].GetComponent<SpriteRenderer>().color = colorBook;
         }
     }
-
-    void ChangePices(string namePieces)
-    {
-        for (int i = 0; i < randonPositions.Length; i++)
-        {
-            if (namePieces == spriteFullReserve[0].name)
-            {
-                randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces1[i];
-            }
-            if (namePieces == spriteFullReserve[1].name)
-            {
-                randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces2[i];
-            }
-            if (namePieces == spriteFullReserve[2].name)
-            {
-                randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces3[i];
-
-            }
-            if (namePieces == spriteFullReserve[3].name)
-            {
-                randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces4[i];
-
-            }
-        }
-        startGame = true;
-        RandonPiece();
-    }
-
     public void StartpPiece()
     {
         for (int i = 0; i < randonPositions.Length; i++)
