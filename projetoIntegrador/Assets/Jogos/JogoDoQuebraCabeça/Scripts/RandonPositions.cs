@@ -230,13 +230,12 @@ public class RandonPositions : MonoBehaviour
     {
         index = UnityEngine.Random.Range(0, spriteFull.Count);
         Debug.Log("index" + index);
+        namePieces = spriteFull[index].name;
         UpdateParts();
     }
 
     public void UpdateParts()
     {
-        namePieces = spriteFull[index].name;
-
         PlayerPrefs.SetString("nameSprite", namePieces);
         PlayerPrefs.Save();
 
