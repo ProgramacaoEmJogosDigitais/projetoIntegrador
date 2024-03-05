@@ -40,8 +40,17 @@ public class InstructionsColeta : MonoBehaviour
     public void GoGame()
     {
         panelInstructions.gameObject.SetActive(false);
+
         //Time.timeScale = 1.0f; MUDAR
-        GameControllerJC.nextSpawnTime = auxSpawnInterval;
+        if (Time.deltaTime == 0)
+        {
+            gameController.PauseAndUnpause();
+        }
+        else
+        {
+            GameControllerJC.nextSpawnTime = auxSpawnInterval;
+        }
+
     }
 
     public void OpenInstructions()

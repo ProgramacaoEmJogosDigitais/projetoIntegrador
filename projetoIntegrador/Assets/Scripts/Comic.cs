@@ -122,7 +122,7 @@ public class Comic : MonoBehaviour
         {
             rotate = true;
             Quaternion targetRotation = Quaternion.Euler(0f, angle, 0f);
-            value += Time.deltaTime * pageSpeed;
+            value += Time.fixedUnscaledDeltaTime * pageSpeed;
             pagesGameObject[index].transform.rotation = Quaternion.Slerp(pagesGameObject[index].transform.rotation, targetRotation, value);
             angle1 = Quaternion.Angle(pagesGameObject[index].transform.rotation, targetRotation);
 

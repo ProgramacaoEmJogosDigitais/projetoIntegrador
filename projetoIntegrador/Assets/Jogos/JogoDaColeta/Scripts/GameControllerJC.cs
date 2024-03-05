@@ -30,7 +30,7 @@ public class GameControllerJC : MonoBehaviour
 
     public Canvas scrollViewInstructions;
 
-    private bool isPaused = false;
+    public static bool isPaused = false;
     private bool isUnpauseDelayed = false;
     private float unpauseTimer = 3f;
     private bool isOptionsMenuActive = false;
@@ -60,9 +60,7 @@ public class GameControllerJC : MonoBehaviour
         audioSystem.PlaySound("MenuMusic");
         audioSystem.SetLooping(true);
 
-        nextSpawnTime = Time.time;
-
-        Debug.Log("Start spawn time: " + nextSpawnTime + " current time: " + Time.time);
+        nextSpawnTime = Time.deltaTime;
 
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
         /*if (!PlayerPrefs.HasKey("InstructionsShown") || PlayerPrefs.GetInt("InstructionsShown") == 0)
@@ -75,11 +73,6 @@ public class GameControllerJC : MonoBehaviour
     public void Update()
     {
         Score();
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            PauseAndUnpause();
-        }
 
 
         if (isUnpauseDelayed)
@@ -108,6 +101,8 @@ public class GameControllerJC : MonoBehaviour
 
                 unpauseCount.gameObject.SetActive(false);
 
+                btn_Exit.SetActive(true);
+                btn_Pause.SetActive(true);
             }
         }
 
@@ -146,6 +141,12 @@ public class GameControllerJC : MonoBehaviour
                 // Se o menu de opções estiver inativo, ative-o
                 optionsMenu.SetActive(true);
                 isOptionsMenuActive = true;
+
+                // Ativa os botões se necessário
+                btn_Exit.SetActive(true);
+                btn_Pause.SetActive(true);
+                box_Points.SetActive(true);
+                score_txt.gameObject.SetActive(true);
             }
         }
     }
@@ -181,7 +182,6 @@ public class GameControllerJC : MonoBehaviour
                 instantiatedPrefabs = Instantiate(prefabFishs[Random.Range(0, prefabFishs.Length)], spawnPosition, Quaternion.identity);
                 enemiesSpawned++;
                 nextSpawnTime = Time.time + spawnInterval;
-                Debug.Log("next spawn time de cima:" + nextSpawnTime);
             }
             if (enemiesSpawned >= maxEnemiesPerWave)
             {
@@ -190,7 +190,6 @@ public class GameControllerJC : MonoBehaviour
                 enemiesSpawned = 0;
                 nextSpawnTime = Time.time + initialSpawnDelay;
                 spawnInterval -= 0.1f;
-                Debug.Log("next spawn time de baixo:" + nextSpawnTime);
             }
             waveInfoText.text = string.Format("Wave: {0}\nEnemies Spawned: {1}/{2}\nSpawn Interval: {3:F1}s", currentWave, enemiesSpawned, maxEnemiesPerWave, spawnInterval);
 
