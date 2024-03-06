@@ -41,7 +41,6 @@ public class JigsawManager : MonoBehaviour
     {
         if (randon.reset != 1)
         {
-            randon.saveIndex = true;
             randon.StartCoroutine(randon.RandSpriteButton());
         }
     }
@@ -70,7 +69,6 @@ public class JigsawManager : MonoBehaviour
     {
         instructions.SetActive(false);
         panel.gameObject.SetActive(false);
-        randon.saveIndex = true;
         comic.rotate = false;
         comic.ResetComic();
         if (instruction)
