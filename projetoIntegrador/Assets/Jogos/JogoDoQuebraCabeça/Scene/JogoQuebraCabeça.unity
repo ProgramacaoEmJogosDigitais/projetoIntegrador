@@ -16284,6 +16284,10 @@ PrefabInstance:
       value: BookInstruction
       objectReference: {fileID: 0}
     - target: {fileID: 7033362623627441848, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
+      propertyPath: endPageLeft
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033362623627441848, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: pagesSprite.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: 5fda4bc569556ec4181a610f810d6041, type: 3}
