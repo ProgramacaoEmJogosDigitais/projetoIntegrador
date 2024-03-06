@@ -13,7 +13,6 @@ public class RandonPositions : MonoBehaviour
     public float time;
     public bool isPlay = false;
     public bool pause = false;
-    public JigsawManager jigsawManager;
     public Image bookScore;
     public ParticleSystem particle;
     public List<SpriteRenderer> books;
@@ -57,7 +56,7 @@ public class RandonPositions : MonoBehaviour
             }
 
             StartPiece(); // Iniciar peças imediatamente
-            ShowSprite(); // Tornar a imagem transparente imediatamente
+            ShowSprite(); 
             time = 60;
             PlayerPrefs.SetInt("reset", 2);
             PlayerPrefs.Save();
@@ -72,9 +71,7 @@ public class RandonPositions : MonoBehaviour
             }
             minTime.text = "00";
             secTime.text = "00";
-            Debug.Log(minTime.text);
-            Debug.Log(secTime.text);
-            jigsawManager.Pause();
+            StopPiece();
             panelPieces.SetActive(true);
         }
         else
@@ -110,14 +107,13 @@ public class RandonPositions : MonoBehaviour
         {
             PlayerPrefs.SetInt("saveIndex", 1);
             PlayerPrefs.Save();
-            Debug.Log("Antes: "+indexBooks);
             indexBooks++;
-            Debug.Log("Depois"+indexBooks);
             PlayerPrefs.SetInt("numBooks", indexBooks);
             PlayerPrefs.Save();
-            if(indexBooks == 3)
+            if(indexBooks == 2)
             {
-
+                PlayerPrefs.SetInt("panelOk", 1);
+                PlayerPrefs.Save();
             }
         }
         SceneManager.LoadScene(sceneName);
@@ -170,7 +166,6 @@ public class RandonPositions : MonoBehaviour
 
     void ShowSprite()
     {
-        spriteRenderer.color = new Color(1, 1, 1, 0.3f);
         min = 4;
         time = 60;
         minTime.text = min.ToString();
@@ -196,9 +191,12 @@ public class RandonPositions : MonoBehaviour
     {
         yield return new WaitForSeconds(0.002f);
         randomSprite = false;
-        StartPiece(); // Iniciar peças imediatamente
-        ShowSprite(); // Tornar a imagem transparente imediatamente
-        time = 60;
+        spriteRenderer.color = new Color(1, 1, 1, 0.3f);
+        if (PlayerPrefs.GetInt("panelOk") != 1)
+        {
+            StartPiece(); // Iniciar peças imediatamente
+            ShowSprite(); // Tornar a imagem transparente imediatamente
+        }
     }
 
     void ChangePieces(string namePieces)
@@ -233,7 +231,10 @@ public class RandonPositions : MonoBehaviour
         RandonPiece();
         spriteRenderer.sprite = spriteFull[index];
         ChangePieces(namePieces);
-        jigsawManager.NoPause();
+        StartPiece();
+        ShowSprite();
+        PlayerPrefs.SetString("randonName", namePieces);
+        PlayerPrefs.Save();
     }
 
     public void RandomSprite()
