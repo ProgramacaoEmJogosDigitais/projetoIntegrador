@@ -14041,8 +14041,8 @@ MonoBehaviour:
   reset: 0
   time: 0
   isPlay: 0
-  saveIndex: 0
   pause: 0
+  jigsawManager: {fileID: 996645504}
   bookScore: {fileID: 0}
   particle: {fileID: 2025075626}
   books:
