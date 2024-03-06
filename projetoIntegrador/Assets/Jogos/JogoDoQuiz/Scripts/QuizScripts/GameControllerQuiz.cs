@@ -36,6 +36,7 @@ public class GameControllerQuiz : MonoBehaviour
 
     public AudioSource audioSourceAcerto;
     public AudioSource audioSourceErro;
+    public AudioSource audioSourceLivro;
 
 
     [TextArea]
@@ -72,7 +73,6 @@ public class GameControllerQuiz : MonoBehaviour
     void Start()
     {
         int n = PlayerPrefs.GetInt("QuizBooks");
-        Debug.Log("N de livro: " + n);
         over = false;
         gameOverQuiz.SetActive(false);
         idPergunta = 0;
@@ -271,25 +271,6 @@ public class GameControllerQuiz : MonoBehaviour
             StartCoroutine(Espera2());
             pontuacao.text = "Perguntas Corretas : " + acertos.ToString() + "/5";
         }
-
-        //if(scoring == 1)
-        //{
-        //    PlayerPrefs.SetInt("RodadaPassada", 0);
-        //}
-        //if (scoring == 2)
-        //{
-        //    PlayerPrefs.SetInt("RodadaPassada", 1);
-        //}
-        //if (scoring == 3)
-        //{
-        //    PlayerPrefs.SetInt("RodadaPassada", 2);
-        //}
-        //if (scoring == 4)
-        //{
-        //    PlayerPrefs.SetInt("RodadaPassada", 3);
-        //}
-
-        //Debug.Log("livros da rodada passada "+ scoring);
         ScoringSystem();
     }
     void TrocaDePersonagens()
@@ -332,12 +313,12 @@ public class GameControllerQuiz : MonoBehaviour
 
     private IEnumerator Espera2()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         painelGameOver.SetActive(true);
         gameOverQuiz.SetActive(true);
 
     }
-
+    
     public int AchaCerta()
     {
         if (corretas[idPergunta] == alternativaA[idPergunta])
@@ -368,25 +349,28 @@ public class GameControllerQuiz : MonoBehaviour
         {
             scoring = 1;
             books[0].GetComponent<SpriteRenderer>().color = colorBook;
-
+           
         }
         if (acertos == 3)
         {
             scoring = 2;
             books[1].GetComponent<SpriteRenderer>().color = colorBook;
+        
+
 
         }
         if (acertos == 4)
         {
             scoring = 3;
             books[2].GetComponent<SpriteRenderer>().color = colorBook;
+          
 
         }
         if (acertos == 5)
         {
             scoring = 4;
             books[3].GetComponent<SpriteRenderer>().color = colorBook;
-
+          
 
         }
         if (scoring > PlayerPrefs.GetInt("RodadaPassada"))
@@ -411,17 +395,20 @@ public class GameControllerQuiz : MonoBehaviour
         if (scoring == 1)
         {
             books[0].GetComponent<SpriteRenderer>().color = colorBook;
+           
         }
         else if (scoring == 2)
         {
             books[0].GetComponent<SpriteRenderer>().color = colorBook;
             books[1].GetComponent<SpriteRenderer>().color = colorBook;
+           
         }
         else if (scoring == 3)
         {
             books[0].GetComponent<SpriteRenderer>().color = colorBook;
             books[1].GetComponent<SpriteRenderer>().color = colorBook;
             books[2].GetComponent<SpriteRenderer>().color = colorBook;
+          
         }
         else if (scoring == 4)
         {
@@ -429,6 +416,7 @@ public class GameControllerQuiz : MonoBehaviour
             books[1].GetComponent<SpriteRenderer>().color = colorBook;
             books[2].GetComponent<SpriteRenderer>().color = colorBook;
             books[3].GetComponent<SpriteRenderer>().color = colorBook;
+           
         }
     }
 

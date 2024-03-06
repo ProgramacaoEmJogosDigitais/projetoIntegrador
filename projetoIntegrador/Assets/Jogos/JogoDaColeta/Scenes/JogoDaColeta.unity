@@ -35825,6 +35825,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7033362623627441848, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
+      propertyPath: endPageLeft
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033362623627441848, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: pagesSprite.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: 4d258f18a330efd49b5f55ff0386ac52, type: 3}

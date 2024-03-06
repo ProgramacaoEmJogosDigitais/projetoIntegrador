@@ -18,7 +18,7 @@ public class Comic : MonoBehaviour
     public List<Sprite> pagesSprite;
     //[SerializeField] private List<Sprite> pagesSprite2;
     public GameObject forwardButton;
-    public GameObject goMapButton;
+    public GameObject goMapButtonEndPageLeft;
     public JigsawManager jigsawManager;
     public int index = -1;
     public bool rotate = false;
@@ -78,7 +78,7 @@ public class Comic : MonoBehaviour
         }
         else if (index + 1 == pagesGameObject.Count) //Última página
         {
-            comic.transform.position = posComicOnePage.position;
+            comic.transform.position = posComicTwoPages.position;
             forwardButton.SetActive(false);
             Invoke("ButtonGoMapForward", 0.35f);
         }
@@ -108,11 +108,17 @@ public class Comic : MonoBehaviour
     }
     public void ButtonGoMapForward()
     {
-        goMapButton.SetActive(true);
+        if (endPageLeft)
+        {
+            goMapButtonEndPageLeft.SetActive(true);
+        }
     }
     public void ButtonGoMapBack()
     {
-        goMapButton.SetActive(false);
+        if (endPageLeft)
+        {
+            goMapButtonEndPageLeft.SetActive(false);
+        }
     }
     IEnumerator Rotate(float angle, bool forward)
     {
@@ -122,7 +128,7 @@ public class Comic : MonoBehaviour
         {
             rotate = true;
             Quaternion targetRotation = Quaternion.Euler(0f, angle, 0f);
-            value += Time.fixedUnscaledDeltaTime * pageSpeed;
+            value += Time.deltaTime * pageSpeed;
             pagesGameObject[index].transform.rotation = Quaternion.Slerp(pagesGameObject[index].transform.rotation, targetRotation, value);
             angle1 = Quaternion.Angle(pagesGameObject[index].transform.rotation, targetRotation);
 
@@ -160,7 +166,11 @@ public class Comic : MonoBehaviour
         comic.transform.position = posComicOnePage.position;
         backButton.SetActive(false);
         forwardButton.SetActive(true);
-        //goMapButton.SetActive(false);
+
+        if (endPageLeft)
+        {
+            goMapButtonEndPageLeft.SetActive(false);
+        }
         pagesGameObject[0].transform.SetAsLastSibling();
 
         // Ative todas as imagens da página 1 e desative as imagens da página 2
