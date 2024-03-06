@@ -62,6 +62,10 @@ public class GameControllerJC : MonoBehaviour
 
         nextSpawnTime = Time.deltaTime;
 
+        isPaused = false;
+
+        Debug.Log(isPaused);
+
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
         /*if (!PlayerPrefs.HasKey("InstructionsShown") || PlayerPrefs.GetInt("InstructionsShown") == 0)
         {
@@ -145,8 +149,6 @@ public class GameControllerJC : MonoBehaviour
                 // Ativa os botões se necessário
                 btn_Exit.SetActive(true);
                 btn_Pause.SetActive(true);
-                box_Points.SetActive(true);
-                score_txt.gameObject.SetActive(true);
             }
         }
     }
