@@ -12,8 +12,8 @@ public class RandonPositions : MonoBehaviour
     public int index, indexBooks = 0, reset = 0;
     public float time;
     public bool isPlay = false;
-    public bool saveIndex = false;
     public bool pause = false;
+    public JigsawManager jigsawManager;
     public Image bookScore;
     public ParticleSystem particle;
     public List<SpriteRenderer> books;
@@ -47,10 +47,10 @@ public class RandonPositions : MonoBehaviour
         reset = PlayerPrefs.GetInt("reset");
         if (reset == 1)
         {
-            namePieces = PlayerPrefs.GetString("nameSprite");
-            for (int i = 0; i < spriteFullReserve.Count; i++)
+            namePieces = PlayerPrefs.GetString("randonName");
+            for (int i = 0; i < spriteFull.Count; i++)
             {
-                if (namePieces == spriteFullReserve[i].name)
+                if (namePieces == spriteFull[i].name)
                 {
                     index = i;
                 }
@@ -59,19 +59,22 @@ public class RandonPositions : MonoBehaviour
             StartPiece(); // Iniciar peças imediatamente
             ShowSprite(); // Tornar a imagem transparente imediatamente
             time = 60;
-            PlayerPrefs.SetInt("reset", 0);
+            PlayerPrefs.SetInt("reset", 2);
             PlayerPrefs.Save();
 
-            UpdateParts();
+            UpdateParts(namePieces);
         }
         else if (indexBooks == 4)
         {
-            min = 0;
-
             for (int i = 0; i < spriteFullReserve.Count; i++)
             {
                 spriteFull.Add(spriteFullReserve[i]);
             }
+            minTime.text = "00";
+            secTime.text = "00";
+            Debug.Log(minTime.text);
+            Debug.Log(secTime.text);
+            jigsawManager.Pause();
             panelPieces.SetActive(true);
         }
         else
@@ -105,11 +108,17 @@ public class RandonPositions : MonoBehaviour
     {
         if (indexBooks >= 0 && indexBooks <=3)
         {
+            PlayerPrefs.SetInt("saveIndex", 1);
+            PlayerPrefs.Save();
             Debug.Log("Antes: "+indexBooks);
             indexBooks++;
             Debug.Log("Depois"+indexBooks);
             PlayerPrefs.SetInt("numBooks", indexBooks);
             PlayerPrefs.Save();
+            if(indexBooks == 3)
+            {
+
+            }
         }
         SceneManager.LoadScene(sceneName);
     }
@@ -224,21 +233,20 @@ public class RandonPositions : MonoBehaviour
         RandonPiece();
         spriteRenderer.sprite = spriteFull[index];
         ChangePieces(namePieces);
+        jigsawManager.NoPause();
     }
 
     public void RandomSprite()
     {
         index = UnityEngine.Random.Range(0, spriteFull.Count);
-        Debug.Log("index" + index);
         namePieces = spriteFull[index].name;
-        UpdateParts();
+        UpdateParts(namePieces);
     }
 
-    public void UpdateParts()
+    public void UpdateParts(string namePieces)
     {
-        PlayerPrefs.SetString("nameSprite", namePieces);
+        PlayerPrefs.SetString("randonName", namePieces);
         PlayerPrefs.Save();
-
         spriteRenderer.sprite = spriteFull[index];
         ChangePieces(namePieces);
     }
