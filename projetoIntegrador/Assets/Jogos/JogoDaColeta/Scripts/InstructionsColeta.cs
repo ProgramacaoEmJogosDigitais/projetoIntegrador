@@ -9,13 +9,20 @@ public class InstructionsColeta : MonoBehaviour
     public GameObject panelInstructions;
     public GameObject btn_pause;
     public GameObject btn_exit;
+
+    private GameControllerJC gameController;
+    private float auxSpawnInterval;
     void Start()
     {
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControllerJC>();
+
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
         if (!PlayerPrefs.HasKey("InstructionsColeta") || PlayerPrefs.GetInt("InstructionsColeta") == 0)
         {
             StartCoroutine(SpawnInstructions());
         }
+
+
     }
 
     public IEnumerator SpawnInstructions()
@@ -25,12 +32,24 @@ public class InstructionsColeta : MonoBehaviour
         btn_exit.gameObject.SetActive(false);
         btn_pause.gameObject.SetActive(false);
         PlayerPrefs.SetInt("InstructionsColeta", 1); // Instruções exibidas.
-    }
 
+        auxSpawnInterval = GameControllerJC.nextSpawnTime;
+        GameControllerJC.nextSpawnTime = float.MaxValue;
+
+    }
     public void GoGame()
     {
         panelInstructions.gameObject.SetActive(false);
+
         //Time.timeScale = 1.0f; MUDAR
+        if (Time.deltaTime == 0)
+        {
+            gameController.PauseAndUnpause();
+        }
+        else
+        {
+            GameControllerJC.nextSpawnTime = auxSpawnInterval;
+        }
 
     }
 
