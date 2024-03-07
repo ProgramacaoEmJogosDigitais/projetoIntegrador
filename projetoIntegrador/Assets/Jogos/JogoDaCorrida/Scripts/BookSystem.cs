@@ -67,6 +67,8 @@ public class BookSystem : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log(nBooksJCorrida);
+        Debug.Log("distania: "+ movimentPlayerScript.distance);
         if (movimentPlayerScript.distance >= metaTakeBook1 && nBooksJCorrida < 4 && !takeBook1)
         {
             takeBook1 = true;
