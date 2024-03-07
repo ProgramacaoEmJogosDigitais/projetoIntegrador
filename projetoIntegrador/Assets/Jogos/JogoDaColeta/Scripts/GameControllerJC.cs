@@ -30,10 +30,10 @@ public class GameControllerJC : MonoBehaviour
 
     public Canvas scrollViewInstructions;
 
+    public bool isOptionsMenuActive = false;
     private bool isPaused = false;
     private bool isUnpauseDelayed = false;
     private float unpauseTimer = 3f;
-    private bool isOptionsMenuActive = false;
     public GameObject optionsMenu; // Arraste o prefab do menu de opções para este campo no Inspector
 
     [SerializeField] private TextMeshProUGUI unpauseCount;
@@ -94,7 +94,7 @@ public class GameControllerJC : MonoBehaviour
 
             if (unpauseTimer <= 0)
             {
-
+                btn_Pause.gameObject.SetActive(true);
                 Time.timeScale = 1;
                 isPaused = false;
                 isUnpauseDelayed = false;
@@ -146,6 +146,16 @@ public class GameControllerJC : MonoBehaviour
         }
     }
 
+    public void Pause()
+    {
+        if (!PlayerPrefs.HasKey("contPauseJC"))
+        {
+            Time.timeScale = 0;
+            isPaused = true;
+            unpauseTimer = 3;
+            PlayerPrefs.SetInt("contPauseJC", 1);
+        }
+    }
     public void PauseAndUnpause()
     {
         if (!isPaused && PlayerColeta.missingObjects > 0)
