@@ -12,7 +12,6 @@ public class RandonPositions : MonoBehaviour
     public int index, indexBooks = 0, reset = 0;
     public float time;
     public bool isPlay = false;
-    public bool saveIndex = false;
     public bool pause = false;
     public Image bookScore;
     public ParticleSystem particle;
@@ -24,7 +23,7 @@ public class RandonPositions : MonoBehaviour
     public List<int> randonIndiceList;
     public SpriteRenderer spriteRenderer;
     public Transform[] randonPositions, originalPosition;
-    public GameObject bookPointsAnim, buttonPause;
+    public GameObject bookPointsAnim, buttonPause, panelPieces;
     public Sprite[] spritePieces1, spritePieces2, spritePieces3, spritePieces4;
     public TextMeshProUGUI secTime, minTime;
 
@@ -32,20 +31,11 @@ public class RandonPositions : MonoBehaviour
     private int indexReserve, min, len;
     private bool startGame, randomSprite, gameOver, goToMapOk;
 
-    private void Awake()
+    void Start()
     {
         indexBooks = PlayerPrefs.GetInt("numBooks");
         Books();
-
-        for (int i = 0; i < spriteFull.Count; i++)
-        {
-            spriteFullReserve.Add(spriteFull[i]);
-        }
         FirstTime();
-    }
-
-    void Start()
-    {
         goToMapOk = true;
         okPieces = 0;
         randomSprite = true;
@@ -56,7 +46,7 @@ public class RandonPositions : MonoBehaviour
         reset = PlayerPrefs.GetInt("reset");
         if (reset == 1)
         {
-            namePieces = PlayerPrefs.GetString("nameSprite");
+            namePieces = PlayerPrefs.GetString("randonName");
             for (int i = 0; i < spriteFull.Count; i++)
             {
                 if (namePieces == spriteFull[i].name)
@@ -66,16 +56,27 @@ public class RandonPositions : MonoBehaviour
             }
 
             StartPiece(); // Iniciar peças imediatamente
-            ShowSprite(); // Tornar a imagem transparente imediatamente
+            ShowSprite(); 
             time = 60;
-            PlayerPrefs.SetInt("reset", 0);
+            PlayerPrefs.SetInt("reset", 2);
             PlayerPrefs.Save();
 
-            UpdateParts();
+            UpdateParts(namePieces);
+        }
+        else if (indexBooks == 4)
+        {
+            for (int i = 0; i < spriteFullReserve.Count; i++)
+            {
+                spriteFull.Add(spriteFullReserve[i]);
+            }
+            minTime.text = "00";
+            secTime.text = "00";
+            StopPiece();
+            panelPieces.SetActive(true);
         }
         else
         {
-            StartCoroutine(RandomSprite());
+            RandomSprite();
         }
     }
 
@@ -90,7 +91,6 @@ public class RandonPositions : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(okPieces);
         if (okPieces >= 24)
         {
             WinGame();
@@ -103,15 +103,18 @@ public class RandonPositions : MonoBehaviour
 
     public void BtnNumBook(string sceneName)
     {
-        if (indexBooks >= 0 && indexBooks < 4)
+        if (indexBooks >= 0 && indexBooks <=3)
         {
+            PlayerPrefs.SetInt("saveIndex", 1);
+            PlayerPrefs.Save();
             indexBooks++;
             PlayerPrefs.SetInt("numBooks", indexBooks);
             PlayerPrefs.Save();
-        }
-        else
-        {
-            spriteFull = spriteFullReserve;
+            if(indexBooks == 2)
+            {
+                PlayerPrefs.SetInt("panelOk", 1);
+                PlayerPrefs.Save();
+            }
         }
         SceneManager.LoadScene(sceneName);
     }
@@ -163,7 +166,6 @@ public class RandonPositions : MonoBehaviour
 
     void ShowSprite()
     {
-        spriteRenderer.color = new Color(1, 1, 1, 0.3f);
         min = 4;
         time = 60;
         minTime.text = min.ToString();
@@ -187,11 +189,14 @@ public class RandonPositions : MonoBehaviour
 
     public IEnumerator RandSpriteButton()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.002f);
         randomSprite = false;
-        StartPiece(); // Iniciar peças imediatamente
-        ShowSprite(); // Tornar a imagem transparente imediatamente
-        time = 60;
+        spriteRenderer.color = new Color(1, 1, 1, 0.3f);
+        if (PlayerPrefs.GetInt("panelOk") != 1)
+        {
+            StartPiece(); // Iniciar peças imediatamente
+            ShowSprite(); // Tornar a imagem transparente imediatamente
+        }
     }
 
     void ChangePieces(string namePieces)
@@ -218,27 +223,31 @@ public class RandonPositions : MonoBehaviour
         startGame = true;
         RandonPiece();
     }
-
-    public IEnumerator RandomSprite()
+    public void BtnOptionPieces(int numImage)
     {
-        while (randomSprite)
-        {
-            indexReserve = UnityEngine.Random.Range(0, spriteFullReserve.Count);
-            spriteRenderer.sprite = spriteFullReserve[indexReserve];
-            index = UnityEngine.Random.Range(0, spriteFull.Count);
-            yield return new WaitForSeconds(0.1f);
-        }
-
-        UpdateParts();
+        index = numImage;
+        namePieces = spriteFull[index].name;
+        startGame = true;
+        RandonPiece();
+        spriteRenderer.sprite = spriteFull[index];
+        ChangePieces(namePieces);
+        StartPiece();
+        ShowSprite();
+        PlayerPrefs.SetString("randonName", namePieces);
+        PlayerPrefs.Save();
     }
 
-    public void UpdateParts()
+    public void RandomSprite()
     {
+        index = UnityEngine.Random.Range(0, spriteFull.Count);
         namePieces = spriteFull[index].name;
+        UpdateParts(namePieces);
+    }
 
-        PlayerPrefs.SetString("nameSprite", namePieces);
+    public void UpdateParts(string namePieces)
+    {
+        PlayerPrefs.SetString("randonName", namePieces);
         PlayerPrefs.Save();
-
         spriteRenderer.sprite = spriteFull[index];
         ChangePieces(namePieces);
     }
@@ -302,34 +311,6 @@ public class RandonPositions : MonoBehaviour
             books[3].GetComponent<SpriteRenderer>().color = colorBook;
         }
     }
-
-    void ChangePices(string namePieces)
-    {
-        for (int i = 0; i < randonPositions.Length; i++)
-        {
-            if (namePieces == spriteFullReserve[0].name)
-            {
-                randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces1[i];
-            }
-            if (namePieces == spriteFullReserve[1].name)
-            {
-                randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces2[i];
-            }
-            if (namePieces == spriteFullReserve[2].name)
-            {
-                randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces3[i];
-
-            }
-            if (namePieces == spriteFullReserve[3].name)
-            {
-                randonPositions[i].GetComponent<SpriteRenderer>().sprite = spritePieces4[i];
-
-            }
-        }
-        startGame = true;
-        RandonPiece();
-    }
-
     public void StartpPiece()
     {
         for (int i = 0; i < randonPositions.Length; i++)
