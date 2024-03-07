@@ -2173,11 +2173,11 @@ PrefabInstance:
     - target: {fileID: 7033362623627441848, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: pagesSprite.Array.data[1]
       value: 
-      objectReference: {fileID: -1123320079, guid: 9f41e26dd9403b44ab0125eeb1a162cb, type: 3}
+      objectReference: {fileID: 21300000, guid: 266f14ec486031644ac6bd14036efb84, type: 3}
     - target: {fileID: 7033362623627441848, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: pagesSprite.Array.data[2]
       value: 
-      objectReference: {fileID: -1402277361, guid: 9f41e26dd9403b44ab0125eeb1a162cb, type: 3}
+      objectReference: {fileID: 21300000, guid: 7f66a0e3b3027eb49a0df7db0b8d3245, type: 3}
     - target: {fileID: 7033362623627441848, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: pagesSprite.Array.data[3]
       value: 
