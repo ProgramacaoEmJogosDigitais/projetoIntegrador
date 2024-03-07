@@ -13,6 +13,8 @@ TagManager:
   - PlayerLixo
   - lixo
   - SpawnNewObject
+  - Juliano
+  - Ana
   layers:
   - Default
   - TransparentFX
