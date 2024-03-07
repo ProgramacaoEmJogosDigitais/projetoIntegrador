@@ -126,6 +126,7 @@ public class PlayerColeta : MonoBehaviour
 
         if (other.CompareTag("Fish") && playerTrash)
         {
+            Debug.Log("colidiu no player.");
             // Destruir o objeto pego
             Destroy(other.gameObject);
 
@@ -137,6 +138,7 @@ public class PlayerColeta : MonoBehaviour
         {
             fishFallAudio.Play();
 
+            Debug.Log("colidiu no player.");
             // Destruir o objeto pego
             Destroy(other.gameObject);
 
@@ -146,6 +148,7 @@ public class PlayerColeta : MonoBehaviour
 
         if (other.CompareTag("lixo") && !playerTrash)
         {
+            Debug.Log("colidiu no player.");
             // Destruir o objeto pego
             Destroy(other.gameObject);
 

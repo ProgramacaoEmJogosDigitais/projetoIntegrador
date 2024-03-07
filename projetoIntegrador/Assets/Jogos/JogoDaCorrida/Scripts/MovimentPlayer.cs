@@ -75,8 +75,6 @@ public class MovimentPlayer : MonoBehaviour
             isGrounded = false;
             jump = false;
             rb.AddForce(Vector2.up * jumpForce);   
-            //rb.AddForce(new Vector2(transform.position.x, 0));   
-            //rb.velocity = Vector2.up * jumpForce;
             jumpSound.Play();
             jumpSound.volume = VolumeControl.volumeEffect;
         }
@@ -104,8 +102,7 @@ public class MovimentPlayer : MonoBehaviour
             distance += Time.deltaTime * speedPoints;
             RonilcoAnimator.speed = 1;
             distanceText.text = distance.ToString("F0");
-            //gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
 
         }
         if (progressionScript.atingiuAMeta)
