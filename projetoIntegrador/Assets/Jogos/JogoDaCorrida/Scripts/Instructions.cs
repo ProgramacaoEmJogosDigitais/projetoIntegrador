@@ -45,8 +45,6 @@ public class Instructions : MonoBehaviour
     public void OpenInstructions()
     {
         //Time.timeScale = 0.0f; MUDAR
-        panelPause.SetActive(false);
-        panelInstructions.gameObject.SetActive(true);
         pauseJCorrida.gamePaused = true;
     }
 }
