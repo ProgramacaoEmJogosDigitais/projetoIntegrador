@@ -25,8 +25,7 @@ public class PlayerColeta : MonoBehaviour
     private int idleLixoState;
     private int runLixoState;
 
-    public AudioSource objectGotAudio;
-    public AudioSource objectError;
+    public AudioSource fishFallAudio;
 
     private void Awake()
     {
@@ -46,8 +45,7 @@ public class PlayerColeta : MonoBehaviour
         Vector2 movement = new Vector2(horizontalInput, 0);
         transform.Translate(Time.deltaTime * playerSpeed * movement);
 
-        objectGotAudio.volume = VolumeControl.volumeEffect;
-        objectError.volume = VolumeControl.volumeEffect;
+        fishFallAudio.volume = VolumeControl.volumeEffect;
 
         DropLife();
 
@@ -115,9 +113,9 @@ public class PlayerColeta : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Fish") && !playerTrash)
+        if (other.CompareTag("Fish"))
         {
-            objectGotAudio.Play();
+            fishFallAudio.Play();
 
             // Destruir o objeto pego
             Destroy(other.gameObject);
@@ -126,20 +124,21 @@ public class PlayerColeta : MonoBehaviour
             FishsFalling.points++;
         }
 
-        else if (other.CompareTag("Fish") && playerTrash)
+        if (other.CompareTag("Fish") && playerTrash)
         {
-            objectError.Play();
-
+            Debug.Log("colidiu no player.");
             // Destruir o objeto pego
             Destroy(other.gameObject);
+
             // Aumentar os erros
-            missingObjects--;
+            PlayerColeta.missingObjects--;
         }
 
-        else if (other.CompareTag("lixo") && playerTrash)
+        if (other.CompareTag("lixo") && playerTrash)
         {
-            objectGotAudio.Play();
+            fishFallAudio.Play();
 
+            Debug.Log("colidiu no player.");
             // Destruir o objeto pego
             Destroy(other.gameObject);
 
@@ -147,15 +146,14 @@ public class PlayerColeta : MonoBehaviour
             FishsFalling.points++;
         }
 
-        else if (other.CompareTag("lixo") && !playerTrash)
+        if (other.CompareTag("lixo") && !playerTrash)
         {
-            objectError.Play();
-
+            Debug.Log("colidiu no player.");
             // Destruir o objeto pego
             Destroy(other.gameObject);
 
             // Aumentar os erros
-            missingObjects--;
+            PlayerColeta.missingObjects--;
         }
     }
 }

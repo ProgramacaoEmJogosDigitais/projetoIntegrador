@@ -18,7 +18,7 @@ public class Comic : MonoBehaviour
     public List<Sprite> pagesSprite;
     //[SerializeField] private List<Sprite> pagesSprite2;
     public GameObject forwardButton;
-    public GameObject goMapButtonEndPageLeft;
+    public GameObject goMapButton;
     public JigsawManager jigsawManager;
     public int index = -1;
     public bool rotate = false;
@@ -78,7 +78,7 @@ public class Comic : MonoBehaviour
         }
         else if (index + 1 == pagesGameObject.Count) //Última página
         {
-            comic.transform.position = posComicTwoPages.position;
+            comic.transform.position = posComicOnePage.position;
             forwardButton.SetActive(false);
             Invoke("ButtonGoMapForward", 0.35f);
         }
@@ -108,17 +108,11 @@ public class Comic : MonoBehaviour
     }
     public void ButtonGoMapForward()
     {
-        if (endPageLeft)
-        {
-            goMapButtonEndPageLeft.SetActive(true);
-        }
+        goMapButton.SetActive(true);
     }
     public void ButtonGoMapBack()
     {
-        if (endPageLeft)
-        {
-            goMapButtonEndPageLeft.SetActive(false);
-        }
+        goMapButton.SetActive(false);
     }
     IEnumerator Rotate(float angle, bool forward)
     {
@@ -166,11 +160,7 @@ public class Comic : MonoBehaviour
         comic.transform.position = posComicOnePage.position;
         backButton.SetActive(false);
         forwardButton.SetActive(true);
-
-        if (endPageLeft)
-        {
-            goMapButtonEndPageLeft.SetActive(false);
-        }
+        goMapButton.SetActive(false);
         pagesGameObject[0].transform.SetAsLastSibling();
 
         // Ative todas as imagens da página 1 e desative as imagens da página 2
