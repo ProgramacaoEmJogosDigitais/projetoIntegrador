@@ -13,7 +13,6 @@ public class Seletor : MonoBehaviour
 
     void OnMouseEnter()
     {
-        Debug.Log("Mouse está sobre: " + gameObject.name);
         photoGame.GetComponent<Image>().sprite = photos;
         description.text = name;
     }
