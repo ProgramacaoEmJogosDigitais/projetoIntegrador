@@ -6,7 +6,7 @@ public class ObjectsFalling : MonoBehaviour
 {
     public float fallSpeed = 1f;
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     //void OnTriggerEnter2D(Collider2D other)
     //{
@@ -20,29 +20,20 @@ public class ObjectsFalling : MonoBehaviour
     //    }
     //}
 
-    void Awake()
-    {
-        // Obtém o componente AudioSource do próprio objeto
-        audioSource = GetComponent<AudioSource>();
-
-        // Verifica se o AudioSource foi encontrado
-        if (audioSource != null)
-        {
-            // Inicia a reprodução, se necessário
-            audioSource.Play();
-        }
-    }
-
     void Update()
     {
-        audioSource.volume = VolumeControl.volumeEffect;
-
+        // Ajusta o volume de acordo com o VolumeControl
+        audioSource.volume = VolumeControl.volume;
 
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0f, -fallSpeed);
 
         if (transform.position.y < -4.5f)
         {
+            //audioSource.Play();
+            AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
+
+
             // Destruir o objeto que caiu no chão
             Destroy(gameObject);
 
