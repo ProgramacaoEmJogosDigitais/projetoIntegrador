@@ -25,7 +25,8 @@ public class PlayerColeta : MonoBehaviour
     private int idleLixoState;
     private int runLixoState;
 
-    public AudioSource fishFallAudio;
+    public AudioSource objectGotAudio;
+    public AudioSource objectError;
 
     private void Awake()
     {
@@ -45,7 +46,8 @@ public class PlayerColeta : MonoBehaviour
         Vector2 movement = new Vector2(horizontalInput, 0);
         transform.Translate(Time.deltaTime * playerSpeed * movement);
 
-        fishFallAudio.volume = VolumeControl.volumeEffect;
+        objectGotAudio.volume = VolumeControl.volumeEffect;
+        objectError.volume = VolumeControl.volumeEffect;
 
         DropLife();
 
@@ -113,9 +115,9 @@ public class PlayerColeta : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Fish"))
+        if (other.CompareTag("Fish") && !playerTrash)
         {
-            fishFallAudio.Play();
+            objectGotAudio.Play();
 
             // Destruir o objeto pego
             Destroy(other.gameObject);
@@ -124,18 +126,19 @@ public class PlayerColeta : MonoBehaviour
             FishsFalling.points++;
         }
 
-        if (other.CompareTag("Fish") && playerTrash)
+        else if (other.CompareTag("Fish") && playerTrash)
         {
+            objectError.Play();
+
             // Destruir o objeto pego
             Destroy(other.gameObject);
-
             // Aumentar os erros
-            PlayerColeta.missingObjects--;
+            missingObjects--;
         }
 
-        if (other.CompareTag("lixo") && playerTrash)
+        else if (other.CompareTag("lixo") && playerTrash)
         {
-            fishFallAudio.Play();
+            objectGotAudio.Play();
 
             // Destruir o objeto pego
             Destroy(other.gameObject);
@@ -144,13 +147,15 @@ public class PlayerColeta : MonoBehaviour
             FishsFalling.points++;
         }
 
-        if (other.CompareTag("lixo") && !playerTrash)
+        else if (other.CompareTag("lixo") && !playerTrash)
         {
+            objectError.Play();
+
             // Destruir o objeto pego
             Destroy(other.gameObject);
 
             // Aumentar os erros
-            PlayerColeta.missingObjects--;
+            missingObjects--;
         }
     }
 }
