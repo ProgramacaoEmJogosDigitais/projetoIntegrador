@@ -23,15 +23,13 @@ public class JigsawManager : MonoBehaviour
         // Inicializar a lista com os objetos encontrados
         dragEndDrop = new List<DragEndDrop>(dragEndDropArray);
 
-    }
-    void Start()
-    {
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
         if (!PlayerPrefs.HasKey("InstructionsQuebraCabeca") || PlayerPrefs.GetInt("InstructionsQuebraCabeca") == 0)
         {
+
             instruction = true;
             StartCoroutine(SpawnInstructions());
-
+            Pause();
         }
         else
         {
@@ -43,7 +41,6 @@ public class JigsawManager : MonoBehaviour
     {
         if (randon.reset != 1)
         {
-            randon.saveIndex = true;
             randon.StartCoroutine(randon.RandSpriteButton());
         }
     }
@@ -72,7 +69,6 @@ public class JigsawManager : MonoBehaviour
     {
         instructions.SetActive(false);
         panel.gameObject.SetActive(false);
-        randon.saveIndex = true;
         comic.rotate = false;
         comic.ResetComic();
         if (instruction)
