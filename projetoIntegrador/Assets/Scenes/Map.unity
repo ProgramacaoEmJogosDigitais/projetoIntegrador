@@ -891,7 +891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointUp: {fileID: 677525846}
   pointDown: {fileID: 332076640}
-  pointLeft: {fileID: 1285711620}
+  pointLeft: {fileID: 1490804725}
   pointRight: {fileID: 1511101774}
   boolUp: 1
   boolDown: 1
@@ -900,7 +900,7 @@ MonoBehaviour:
   player: {fileID: 1278933568}
   transitionDurationUp: 0.6
   transitionDurationDown: 0.55
-  transitionDurationLeft: 0.6
+  transitionDurationLeft: 0.45
   transitionDurationRight: 0.45
 --- !u!61 &82256936
 BoxCollider2D:
@@ -3119,7 +3119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &268491114
 Transform:
   m_ObjectHideFlags: 0
@@ -5719,6 +5719,373 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &484852194
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1490804725}
+    m_Modifications:
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 1247362328}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1278933568}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: startLeft
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: attractions
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: imageComponent
+      value: 
+      objectReference: {fileID: 484852197}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[0]
+      value: "Bem vindo a gibiteca Heitor, um lugar onde possui quase todas as hist\xF3rias
+        em quadrinhos que voc\xEA possa imaginar.  "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[1]
+      value: Uau! Que lugar maravilhoso!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[2]
+      value: "N\xE3o \xE9 mesmo? Aqui na gibiteca voc\xEA pode encontrar velhos amigos
+        e at\xE9 fazer novos, participar de oficinas de desenho, leitura, artesanato,
+        fazer empr\xE9stimos de livros, acessar a internet, tudo de gra\xE7a.  "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[3]
+      value: 'O Neto tinha me dito sobre esse lugar, ele vem aqui ler os seus gibis
+        favoritos.  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[4]
+      value: "Esse projeto foi criado pelo vereador Ronil\xE7o Guerreiro, para unir
+        as mais diversas hist\xF3rias de gibi que ele teve em sua inf\xE2ncia e gostaria
+        de compartilhar com as crian\xE7as essa parte da cultura do gibi.  "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[5]
+      value: "Que ideia genial, assim sempre ir\xE1 expandir e aproximar a gente
+        nessa cultura do gibi.  "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[6]
+      value: "A gibiteca \xE9 uma biblioteca especializada em hist\xF3rias em quadrinhos,
+        que possui um espa\xE7o apropriado para quem quer reunir os amigos para ler
+        gibis e participar de oficinas, como oficinas de arte.  "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[7]
+      value: 'E onde fica a Gibiteca? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[8]
+      value: "Voc\xEA encontra ela em Campo Grande - MS na rua Sacramento N\xBA 800
+        no bairro S\xE3o Francisco."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[9]
+      value: "Irei trazer todos os meus amigos para poder se divertir neste magn\xEDfico
+        espa\xE7o.  "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[10]
+      value: "Isso Neto convide os seus amigos, certeza que ir\xE3o gostar demais! "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 1247362328}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1278933568}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[0]
+      value: "Neto, aqui estamos diante do Monumento da Feira Central, um lugar repleto
+        de mem\xF3rias afetivas para os campo-grandenses."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[1]
+      value: "Uau, que interessante! Parece que este lugar \xE9 muito especial para
+        a comunidade local. O que torna a Feira Central t\xE3o querida por todos?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[2]
+      value: "Todo campo-grandense tem no fundo uma mem\xF3ria afetiva com esse lugar.
+        Desde os passeios na feira de rua quando crian\xE7a at\xE9 os encontros noturnos
+        da juventude. E n\xE3o podemos esquecer do \"fim de festa\" com um delicioso
+        Sob\xE1 ou espetinho nas madrugadas."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[3]
+      value: "Que incr\xEDvel! Minha m\xE3e j\xE1 comeu esse famoso Sob\xE1 ai, ela
+        disse que \xE9 um prato t\xEDpico muito apreciado. Ele tem suas ra\xEDzes
+        na culin\xE1ria de Okinawa, Jap\xE3o, e foi adaptado de forma \xFAnica aqui
+        em Campo Grande."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[4]
+      value: "Exatamente! Al\xE9m dos sabores \xFAnicos, mem\xF3rias afetivas e tradi\xE7\xF5es,
+        a Feira Central \xE9 um lugar que tem uma import\xE2ncia econ\xF4mica significativa
+        para a cidade. Muitos feirantes dependem deste espa\xE7o para sustentar suas
+        fam\xEDlias e manter viva a cultura local."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[5]
+      value: Show! Anahi me contou que a Feira tem uma arquitetura que mistura elementos
+        tradicionais com toques modernos. As barracas coloridas e os toldos lembram
+        as feiras de rua de antigamente, enquanto as estruturas mais modernas oferecem
+        conforto e comodidade para os visitantes.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[6]
+      value: "Sim! E uma parte interessante \xE9 que os feirantes passam por um processo
+        de sele\xE7\xE3o, que leva em conta a autenticidade e a qualidade dos produtos
+        que oferecem. Isso ajuda a manter a identidade da Feira e garantir que os
+        visitantes tenham acesso a produtos de alta qualidade."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[7]
+      value: "Incr\xEDvel! E existe alguma curiosidade hist\xF3rica sobre a Feira
+        Central?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[8]
+      value: "Claro, Neto! A Feira Central foi inaugurada em 1975 e desde ent\xE3o
+        se tornou um s\xEDmbolo da cultura campo-grandense. Ela foi constru\xEDda
+        no mesmo local onde antigamente havia um mercado ao ar livre, o que refor\xE7a
+        ainda mais a liga\xE7\xE3o do local com a hist\xF3ria da cidade."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[9]
+      value: "Que legal, Guerreirinho! \xC9 realmente um lugar cheio de hist\xF3ria
+        e significado para a comunidade."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: cac01addcba39534b9284e59f49c8a4d, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 10e222a805f6598459daee6282f17e85, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: cac01addcba39534b9284e59f49c8a4d, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 10e222a805f6598459daee6282f17e85, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: cac01addcba39534b9284e59f49c8a4d, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 10e222a805f6598459daee6282f17e85, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: cac01addcba39534b9284e59f49c8a4d, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 10e222a805f6598459daee6282f17e85, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: cac01addcba39534b9284e59f49c8a4d, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 10e222a805f6598459daee6282f17e85, type: 3}
+    - target: {fileID: 3435468172274889621, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 3435468172440170231, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_Name
+      value: canv_dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+--- !u!224 &484852195 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+  m_PrefabInstance: {fileID: 484852194}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &484852196 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 3435468172440170232, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+  m_PrefabInstance: {fileID: 484852194}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &484852197 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3435468172274889621, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+  m_PrefabInstance: {fileID: 484852194}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &490860369
 GameObject:
   m_ObjectHideFlags: 0
@@ -13584,7 +13951,7 @@ MonoBehaviour:
   pointUp: {fileID: 1557194700}
   pointDown: {fileID: 1833134160}
   pointLeft: {fileID: 895099003}
-  pointRight: {fileID: 82256934}
+  pointRight: {fileID: 1490804725}
   boolUp: 1
   boolDown: 1
   boolLeft: 1
@@ -13593,7 +13960,7 @@ MonoBehaviour:
   transitionDurationUp: 0.6
   transitionDurationDown: 0.5
   transitionDurationLeft: 0.45
-  transitionDurationRight: 0.6
+  transitionDurationRight: 0.45
 --- !u!61 &1285711622
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15776,6 +16143,109 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1490804724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1490804725}
+  - component: {fileID: 1490804728}
+  - component: {fileID: 1490804727}
+  - component: {fileID: 1490804726}
+  m_Layer: 0
+  m_Name: pos_gibiteca
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1490804725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490804724}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.8, y: -5.27, z: 0.2118043}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 484852195}
+  m_Father: {fileID: 1849864235}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1490804726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490804724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4055b8767c76cd64e91b7ae43df033cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasDialogue: {fileID: 484852196}
+  attraction0: {fileID: 0}
+  attraction1: {fileID: 0}
+  attraction2: {fileID: 0}
+  panel: {fileID: 1247362328}
+--- !u!61 &1490804727
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490804724}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1490804728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490804724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f574e01bab15c439bb30b4fe830760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointUp: {fileID: 0}
+  pointDown: {fileID: 0}
+  pointLeft: {fileID: 1285711620}
+  pointRight: {fileID: 82256934}
+  boolUp: 0
+  boolDown: 0
+  boolLeft: 1
+  boolRight: 1
+  player: {fileID: 1278933568}
+  transitionDurationUp: 0.5
+  transitionDurationDown: 0.5
+  transitionDurationLeft: 0.45
+  transitionDurationRight: 0.45
 --- !u!114 &1495183633 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3435468172274889621, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
@@ -20221,6 +20691,7 @@ Transform:
   - {fileID: 1750620176}
   - {fileID: 305150493}
   - {fileID: 332076640}
+  - {fileID: 1490804725}
   m_Father: {fileID: 1857568186}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
