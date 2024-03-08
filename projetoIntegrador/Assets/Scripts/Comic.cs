@@ -77,7 +77,6 @@ public class Comic : MonoBehaviour
         }
         else if (index + 1 == pagesGameObject.Count) //Última página
         {
-            Debug.Log("AAa");
             comic.transform.position = posComicTwoPages.position;
             forwardButton.SetActive(false);
         }
