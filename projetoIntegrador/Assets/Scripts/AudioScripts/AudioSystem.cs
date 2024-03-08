@@ -42,7 +42,6 @@ public class AudioSystem : MonoBehaviour
         {
             audioSource.clip = soundEntry.audioClip;
             audioSource.Play();
-
         }
         else
         {
