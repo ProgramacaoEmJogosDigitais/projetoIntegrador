@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Comic : MonoBehaviour
 {
+    public bool instructionAquarium = false;
     public bool endPageLeft = false;
     public GameObject backButton;
     public GameObject comic;
@@ -16,9 +17,8 @@ public class Comic : MonoBehaviour
     public List<Image> pagesImage1;
     public List<Image> pagesImage2;
     public List<Sprite> pagesSprite;
-    //[SerializeField] private List<Sprite> pagesSprite2;
     public GameObject forwardButton;
-    public GameObject goMapButtonEndPageLeft;
+    public GameObject goMapButton;
     public JigsawManager jigsawManager;
     public int index = -1;
     public bool rotate = false;
@@ -74,13 +74,13 @@ public class Comic : MonoBehaviour
         {
             comic.transform.position = posComicOnePageEndLeft.position;
             forwardButton.SetActive(false);
-            Invoke("ButtonGoMapForward", 0.35f);
+            StartCoroutine(ButtonGoMapForward());
         }
         else if (index + 1 == pagesGameObject.Count) //Última página
         {
-            comic.transform.position = posComicTwoPages.position;
+            comic.transform.position = posComicOnePage.position;
             forwardButton.SetActive(false);
-            Invoke("ButtonGoMapForward", 0.35f);
+            StartCoroutine(ButtonGoMapForward());
         }
     }
     public void RotateBack()
@@ -97,7 +97,7 @@ public class Comic : MonoBehaviour
         {
             comic.transform.position = posComicTwoPages.position;
             forwardButton.SetActive(true);
-            Invoke("ButtonGoMapBack", 0.45f);
+            StartCoroutine(ButtonGoMapBack());
         }
         if (index - 1 == -1) // Capa
         {
@@ -106,19 +106,13 @@ public class Comic : MonoBehaviour
         }
 
     }
-    public void ButtonGoMapForward()
+    IEnumerator ButtonGoMapForward()
     {
-        if (endPageLeft)
-        {
-            goMapButtonEndPageLeft.SetActive(true);
-        }
+        yield return new WaitForSeconds(0.35f);
     }
-    public void ButtonGoMapBack()
+    IEnumerator ButtonGoMapBack()
     {
-        if (endPageLeft)
-        {
-            goMapButtonEndPageLeft.SetActive(false);
-        }
+        yield return new WaitForSeconds(0.45f);
     }
     IEnumerator Rotate(float angle, bool forward)
     {
@@ -128,7 +122,14 @@ public class Comic : MonoBehaviour
         {
             rotate = true;
             Quaternion targetRotation = Quaternion.Euler(0f, angle, 0f);
-            value += Time.deltaTime * pageSpeed;
+            if (!instructionAquarium)
+            {
+                value += Time.deltaTime * pageSpeed;
+            }
+            else
+            {
+                value += Time.fixedDeltaTime * pageSpeed;
+            }
             pagesGameObject[index].transform.rotation = Quaternion.Slerp(pagesGameObject[index].transform.rotation, targetRotation, value);
             angle1 = Quaternion.Angle(pagesGameObject[index].transform.rotation, targetRotation);
 
@@ -166,11 +167,6 @@ public class Comic : MonoBehaviour
         comic.transform.position = posComicOnePage.position;
         backButton.SetActive(false);
         forwardButton.SetActive(true);
-
-        if (endPageLeft)
-        {
-            goMapButtonEndPageLeft.SetActive(false);
-        }
         pagesGameObject[0].transform.SetAsLastSibling();
 
         // Ative todas as imagens da página 1 e desative as imagens da página 2
