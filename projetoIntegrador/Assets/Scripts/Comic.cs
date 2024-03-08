@@ -74,13 +74,12 @@ public class Comic : MonoBehaviour
         {
             comic.transform.position = posComicOnePageEndLeft.position;
             forwardButton.SetActive(false);
-            StartCoroutine(ButtonGoMapForward());
         }
         else if (index + 1 == pagesGameObject.Count) //Última página
         {
-            comic.transform.position = posComicOnePage.position;
+            Debug.Log("AAa");
+            comic.transform.position = posComicTwoPages.position;
             forwardButton.SetActive(false);
-            StartCoroutine(ButtonGoMapForward());
         }
     }
     public void RotateBack()
@@ -97,7 +96,6 @@ public class Comic : MonoBehaviour
         {
             comic.transform.position = posComicTwoPages.position;
             forwardButton.SetActive(true);
-            StartCoroutine(ButtonGoMapBack());
         }
         if (index - 1 == -1) // Capa
         {
@@ -105,14 +103,6 @@ public class Comic : MonoBehaviour
             backButton.SetActive(false);
         }
 
-    }
-    IEnumerator ButtonGoMapForward()
-    {
-        yield return new WaitForSeconds(0.35f);
-    }
-    IEnumerator ButtonGoMapBack()
-    {
-        yield return new WaitForSeconds(0.45f);
     }
     IEnumerator Rotate(float angle, bool forward)
     {
