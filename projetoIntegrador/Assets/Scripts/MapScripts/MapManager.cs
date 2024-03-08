@@ -10,9 +10,6 @@ public class MapManager : MonoBehaviour
     public GameObject scrollViewInstructions;
     public GameObject player;
     public Image panel;
-    public Button btnInstruction;
-    public Button btnSound;
-
 
     void Start()
     {
@@ -20,8 +17,6 @@ public class MapManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("InstructionsShown") || PlayerPrefs.GetInt("InstructionsShown") == 0)
         {
             cameraMain.GetComponent<Animator>().enabled = true;
-            btnInstruction.enabled = false;
-            btnSound.enabled = false;
             StartCoroutine(SpawnInstructions());
         }
         else
@@ -58,8 +53,6 @@ public class MapManager : MonoBehaviour
         panelTransition.GetComponent<Animator>().SetBool("PanelTransitionFadeOut", true);
         yield return new WaitForSeconds(1.3f);
         cameraMain.GetComponent<Animator>().enabled = false;
-        btnInstruction.enabled = true;
-        btnSound.enabled = true;
         panelTransition.SetActive(false);
         panel.gameObject.SetActive(false);
     }

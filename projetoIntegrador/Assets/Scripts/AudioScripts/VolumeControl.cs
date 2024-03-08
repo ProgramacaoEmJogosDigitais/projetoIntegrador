@@ -7,7 +7,7 @@ using UnityEngine.Audio;
 public class VolumeControl : MonoBehaviour
 {
     // Volume configuração inicial
-    public static float volume = 0.5f, volumeEffect = 0.5f;
+    public static float volume, volumeEffect;
 
     // Referência ao slider no painel de controle de volume
     public Slider musicSlider, effectSlider;
@@ -24,7 +24,6 @@ public class VolumeControl : MonoBehaviour
     {
         volume = musicSlider.value;
         volumeEffect = effectSlider.value;
-     
     }
 
     public void SetVolume(float value, float effectValue)
