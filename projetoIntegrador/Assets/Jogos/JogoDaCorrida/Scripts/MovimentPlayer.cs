@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.XR;
 using UnityEngine.SceneManagement;
 
 public class MovimentPlayer : MonoBehaviour
