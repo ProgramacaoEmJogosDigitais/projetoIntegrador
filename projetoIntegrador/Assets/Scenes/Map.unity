@@ -891,7 +891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointUp: {fileID: 677525846}
   pointDown: {fileID: 332076640}
-  pointLeft: {fileID: 1285711620}
+  pointLeft: {fileID: 1490804725}
   pointRight: {fileID: 1511101774}
   boolUp: 1
   boolDown: 1
@@ -900,7 +900,7 @@ MonoBehaviour:
   player: {fileID: 1278933568}
   transitionDurationUp: 0.6
   transitionDurationDown: 0.55
-  transitionDurationLeft: 0.6
+  transitionDurationLeft: 0.45
   transitionDurationRight: 0.45
 --- !u!61 &82256936
 BoxCollider2D:
@@ -2583,7 +2583,7 @@ PrefabInstance:
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[6]
       value: "O camel\xF3dromo \xE9 realmente bacana. Depois vou passar l\xE1 para
-        comprar acess\xF3rios. "
+        conferir."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[0]
@@ -3119,7 +3119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &268491114
 Transform:
   m_ObjectHideFlags: 0
@@ -3497,13 +3497,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[4]
-      value: "Sim! E a Morada do Ba\xEDs \xE9 chamada assim porque homenageia o m\xFAsico
-        Manoel Martins Ba\xEDs, que foi muito importante na hist\xF3ria da m\xFAsica
-        em Campo Grande. Ele era conhecido por tocar viol\xE3o e cantar lindas can\xE7\xF5es."
+      value: "Sim! E a Morada do Ba\xEDs \xE9 chamada assim porque era da fam\xEDlia
+        de Bernardo Franco Ba\xEDs. A filha de, Lydia Ba\xEDs, foi uma artista importante
+        e pintou afrescos dentro do sobrado."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[5]
-      value: "Uau, que legal! Manoel Martins Ba\xEDs deve ter sido uma pessoa especial,
+      value: "Uau, que legal! A Lydia Ba\xEDs deve ter sido uma pessoa especial,
         assim como esse ponto tur\xEDstico. Vou visitar mais vezes."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
@@ -5719,6 +5719,373 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &484852194
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1490804725}
+    m_Modifications:
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 1247362328}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1278933568}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: startLeft
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: attractions
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: imageComponent
+      value: 
+      objectReference: {fileID: 484852197}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[0]
+      value: "Bem vindo a gibiteca Heitor, um lugar onde possui quase todas as hist\xF3rias
+        em quadrinhos que voc\xEA possa imaginar.  "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[1]
+      value: Uau! Que lugar maravilhoso!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[2]
+      value: "N\xE3o \xE9 mesmo? Aqui na gibiteca voc\xEA pode encontrar velhos amigos
+        e at\xE9 fazer novos, participar de oficinas de desenho, leitura, artesanato,
+        fazer empr\xE9stimos de livros, acessar a internet, tudo de gra\xE7a.  "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[3]
+      value: 'O Neto tinha me dito sobre esse lugar, ele vem aqui ler os seus gibis
+        favoritos.  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[4]
+      value: "Esse projeto foi criado pelo vereador Ronil\xE7o Guerreiro, para unir
+        as mais diversas hist\xF3rias de gibi que ele teve em sua inf\xE2ncia e gostaria
+        de compartilhar com as crian\xE7as essa parte da cultura do gibi.  "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[5]
+      value: "Que ideia genial, assim sempre ir\xE1 expandir e aproximar a gente
+        nessa cultura do gibi.  "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[6]
+      value: "A gibiteca \xE9 uma biblioteca especializada em hist\xF3rias em quadrinhos,
+        que possui um espa\xE7o apropriado para quem quer reunir os amigos para ler
+        gibis e participar de oficinas, como oficinas de arte.  "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[7]
+      value: 'E onde fica a Gibiteca? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[8]
+      value: "Voc\xEA encontra ela em Campo Grande - MS na rua Sacramento N\xBA 800
+        no bairro S\xE3o Francisco."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[9]
+      value: "Irei trazer todos os meus amigos para poder se divertir neste magn\xEDfico
+        espa\xE7o.  "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[10]
+      value: "Isso Neto convide os seus amigos, certeza que ir\xE3o gostar demais! "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 1247362328}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1278933568}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[0]
+      value: "Neto, aqui estamos diante do Monumento da Feira Central, um lugar repleto
+        de mem\xF3rias afetivas para os campo-grandenses."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[1]
+      value: "Uau, que interessante! Parece que este lugar \xE9 muito especial para
+        a comunidade local. O que torna a Feira Central t\xE3o querida por todos?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[2]
+      value: "Todo campo-grandense tem no fundo uma mem\xF3ria afetiva com esse lugar.
+        Desde os passeios na feira de rua quando crian\xE7a at\xE9 os encontros noturnos
+        da juventude. E n\xE3o podemos esquecer do \"fim de festa\" com um delicioso
+        Sob\xE1 ou espetinho nas madrugadas."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[3]
+      value: "Que incr\xEDvel! Minha m\xE3e j\xE1 comeu esse famoso Sob\xE1 ai, ela
+        disse que \xE9 um prato t\xEDpico muito apreciado. Ele tem suas ra\xEDzes
+        na culin\xE1ria de Okinawa, Jap\xE3o, e foi adaptado de forma \xFAnica aqui
+        em Campo Grande."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[4]
+      value: "Exatamente! Al\xE9m dos sabores \xFAnicos, mem\xF3rias afetivas e tradi\xE7\xF5es,
+        a Feira Central \xE9 um lugar que tem uma import\xE2ncia econ\xF4mica significativa
+        para a cidade. Muitos feirantes dependem deste espa\xE7o para sustentar suas
+        fam\xEDlias e manter viva a cultura local."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[5]
+      value: Show! Anahi me contou que a Feira tem uma arquitetura que mistura elementos
+        tradicionais com toques modernos. As barracas coloridas e os toldos lembram
+        as feiras de rua de antigamente, enquanto as estruturas mais modernas oferecem
+        conforto e comodidade para os visitantes.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[6]
+      value: "Sim! E uma parte interessante \xE9 que os feirantes passam por um processo
+        de sele\xE7\xE3o, que leva em conta a autenticidade e a qualidade dos produtos
+        que oferecem. Isso ajuda a manter a identidade da Feira e garantir que os
+        visitantes tenham acesso a produtos de alta qualidade."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[7]
+      value: "Incr\xEDvel! E existe alguma curiosidade hist\xF3rica sobre a Feira
+        Central?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[8]
+      value: "Claro, Neto! A Feira Central foi inaugurada em 1975 e desde ent\xE3o
+        se tornou um s\xEDmbolo da cultura campo-grandense. Ela foi constru\xEDda
+        no mesmo local onde antigamente havia um mercado ao ar livre, o que refor\xE7a
+        ainda mais a liga\xE7\xE3o do local com a hist\xF3ria da cidade."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: texts.Array.data[9]
+      value: "Que legal, Guerreirinho! \xC9 realmente um lugar cheio de hist\xF3ria
+        e significado para a comunidade."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: cac01addcba39534b9284e59f49c8a4d, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 10e222a805f6598459daee6282f17e85, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: cac01addcba39534b9284e59f49c8a4d, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 10e222a805f6598459daee6282f17e85, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: cac01addcba39534b9284e59f49c8a4d, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 10e222a805f6598459daee6282f17e85, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: cac01addcba39534b9284e59f49c8a4d, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 10e222a805f6598459daee6282f17e85, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: cac01addcba39534b9284e59f49c8a4d, type: 3}
+    - target: {fileID: 3435468172274889618, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: images.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 10e222a805f6598459daee6282f17e85, type: 3}
+    - target: {fileID: 3435468172274889621, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 547a89350b0d6d249b13e68f507c42a6, type: 3}
+    - target: {fileID: 3435468172440170231, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_Name
+      value: canv_dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+--- !u!224 &484852195 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3435468172440170235, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+  m_PrefabInstance: {fileID: 484852194}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &484852196 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 3435468172440170232, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+  m_PrefabInstance: {fileID: 484852194}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &484852197 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3435468172274889621, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+  m_PrefabInstance: {fileID: 484852194}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &490860369
 GameObject:
   m_ObjectHideFlags: 0
@@ -6616,7 +6983,7 @@ PrefabInstance:
       propertyPath: texts.Array.data[1]
       value: "Ah! Esse \xE9 o Obelisco. Ele foi constru\xEDdo em mem\xF3ria aos fundadores
         da cidade e inaugurado no dia 26 de agosto de 1933, anivers\xE1rio da cidade
-        de Campo Grande."
+        de Campo Grande"
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[2]
@@ -6636,7 +7003,7 @@ PrefabInstance:
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[5]
       value: "Muito bem! Isso ajuda as pessoas a se orientarem e tamb\xE9m \xE9 um
-        s\xEDmbolo de orgulho para os moradores."
+        s\xEDmbolo de orgulho para os moradores"
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[6]
@@ -11002,7 +11369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[2]
-      value: "Ent\xE3o\u2026eu s\xF3 o conhecia como Carro de Boi mesmo. Me disseram
+      value: "Ent\xE3o\u2026 eu s\xF3 o conhecia como Carro de Boi mesmo. Me disseram
         que ele promove um registro hist\xF3rico do in\xEDcio da ocupa\xE7\xE3o urbana
         de Campo Grande, por volta de 1872."
       objectReference: {fileID: 0}
@@ -11016,7 +11383,7 @@ PrefabInstance:
       propertyPath: texts.Array.data[4]
       value: "Outro fato interessante,\xE9 que ele foi inaugurado em 1996, na Pra\xE7a
         Nelly Martins, junto com a implanta\xE7\xE3o do Parque Florestal Ant\xF4nio
-        de Albuquerque. "
+        de Albuquerque."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[5]
@@ -11029,7 +11396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[7]
-      value: "Eu comprei um quebra-cabe\xE7a com a tem\xE1tica de pontos tur\xEDsticos
+      value: "Eu encontrei um quebra-cabe\xE7a com a tem\xE1tica de pontos tur\xEDsticos
         de Campo Grande. Voc\xEA quer me ajudar a mont\xE1-lo, Heitor?"
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
@@ -11778,35 +12145,35 @@ PrefabInstance:
       objectReference: {fileID: 1798757267}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.size
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.size
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[0]
-      value: "Olha, Guerreirinho! O monumento ao \xEDndio \xE9 um verdadeiro marco
-        cultural aqui em Campo Grande. "
+      value: "Olha, Guerreirinho! O Monumento ao \xCDndio \xE9 um verdadeiro marco
+        cultural aqui em Campo Grande."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[1]
-      value: "Sim, Anahi! Essa torre foi constru\xEDda em homenagem aos povos ind\xEDgenas
-        que t\xEAm uma presen\xE7a t\xE3o importante na hist\xF3ria e na cultura
-        do nosso estado. Ela representa a conex\xE3o profunda com as ra\xEDzes ind\xEDgenas."
+      value: "Sim, Anahi! Esse monumento foi constru\xEDdo em homenagem aos povos
+        ind\xEDgenas, que t\xEAm uma presen\xE7a t\xE3o importante na hist\xF3ria
+        e na cultura do nosso estado. Ela representa a conex\xE3o profunda com as
+        ra\xEDzes ind\xEDgenas."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[2]
       value: "\xC9 realmente incr\xEDvel como a cultura ind\xEDgena \xE9 valorizada
-        aqui. E essa vista panor\xE2mica deve proporcionar uma experi\xEAncia \xFAnica,
-        n\xE3o \xE9?"
+        aqui. E  a localiza\xE7\xE3o dentro do Parque das Na\xE7\xF5es Ind\xEDgenas
+        deve proporcionar uma experi\xEAncia \xFAnica, n\xE3o \xE9?"
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[3]
-      value: "Sem d\xFAvida, Anahi! Do alto da torre, voc\xEA tem uma vis\xE3o deslumbrante
-        do Parque das Na\xE7\xF5es e dos arredores. \xC9 poss\xEDvel apreciar a beleza
-        natural, al\xE9m de ter uma perspectiva \xFAnica da cidade. Muitos visitantes
-        se encantam com a sensa\xE7\xE3o de estar em contato direto com a natureza. "
+      value: "Sem d\xFAvida, Anahi! \xC9 poss\xEDvel apreciar a beleza natural, al\xE9m
+        de estar ao lado do Bioparque Pantanal. Muitos visitantes se encantam com
+        a sensa\xE7\xE3o de estar em contato direto com a natureza."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[4]
@@ -11815,14 +12182,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[5]
-      value: "Sim, Anahi! A Torre Ind\xEDgena foi constru\xEDda com uma arquitetura
-        que apresenta elementos da cultura ind\xEDgena, como a madeira e a palha.
-        Isso n\xE3o apenas a torna visualmente impressionante, mas tamb\xE9m refor\xE7a
-        o respeito e a admira\xE7\xE3o pela tradi\xE7\xE3o dos povos ind\xEDgenas."
+      value: "Sim, Anahi! O Monumento ao \xCDndio foi constru\xEDdo com uma arquitetura
+        que apresenta elementos da cultura ind\xEDgena, como a zarabatana. Isso n\xE3o
+        apenas a torna visualmente impressionante, mas tamb\xE9m refor\xE7a o respeito
+        e a admira\xE7\xE3o pela tradi\xE7\xE3o dos povos ind\xEDgenas."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[6]
-      value: "Que cuidado e respeito s\xE3o admir\xE1veis. \xC9 muito interessante
+      value: "Cuidado e respeito s\xE3o realmente admir\xE1veis. \xC9 muito interessante
         ver como a cultura ind\xEDgena \xE9 celebrada e compartilhada aqui. Imagino
         que essa torre seja um ponto de encontro para a comunidade local e para os
         turistas tamb\xE9m."
@@ -11836,9 +12203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[8]
-      value: "Me disseram que est\xE1 rolando um jogo de corrida de obst\xE1culos
-        aqui pelo Parque das Na\xE7\xF5es Ind\xEDgenas. Vamos nessa? Iremos correr,
-        saltar troncos e desviar de objetos. Vai ser uma aventura!  "
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[0]
@@ -12901,8 +13266,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[3]
-      value: "Exatamente! E o museu possui um rico acervo que inclui v\xE1rias cole\xE7\xF5es,
-        tais como Minerais, F\xF3sseis, Insetos e objetos da Pr\xE9-hist\xF3ria."
+      value: "Exatamente! E o museu possui um rico acervo que conta com cole\xE7\xF5es
+        de v\xE1rios itens como minerais, f\xF3sseis, insetos e objetos da Pr\xE9-hist\xF3ria."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[4]
@@ -13584,7 +13949,7 @@ MonoBehaviour:
   pointUp: {fileID: 1557194700}
   pointDown: {fileID: 1833134160}
   pointLeft: {fileID: 895099003}
-  pointRight: {fileID: 82256934}
+  pointRight: {fileID: 1490804725}
   boolUp: 1
   boolDown: 1
   boolLeft: 1
@@ -13593,7 +13958,7 @@ MonoBehaviour:
   transitionDurationUp: 0.6
   transitionDurationDown: 0.5
   transitionDurationLeft: 0.45
-  transitionDurationRight: 0.6
+  transitionDurationRight: 0.45
 --- !u!61 &1285711622
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15776,6 +16141,109 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1490804724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1490804725}
+  - component: {fileID: 1490804728}
+  - component: {fileID: 1490804727}
+  - component: {fileID: 1490804726}
+  m_Layer: 0
+  m_Name: pos_gibiteca
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1490804725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490804724}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.8, y: -5.27, z: 0.2118043}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 484852195}
+  m_Father: {fileID: 1849864235}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1490804726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490804724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4055b8767c76cd64e91b7ae43df033cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasDialogue: {fileID: 484852196}
+  attraction0: {fileID: 0}
+  attraction1: {fileID: 0}
+  attraction2: {fileID: 0}
+  panel: {fileID: 1247362328}
+--- !u!61 &1490804727
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490804724}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1490804728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490804724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f574e01bab15c439bb30b4fe830760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointUp: {fileID: 0}
+  pointDown: {fileID: 0}
+  pointLeft: {fileID: 1285711620}
+  pointRight: {fileID: 82256934}
+  boolUp: 0
+  boolDown: 0
+  boolLeft: 1
+  boolRight: 1
+  player: {fileID: 1278933568}
+  transitionDurationUp: 0.5
+  transitionDurationDown: 0.5
+  transitionDurationLeft: 0.45
+  transitionDurationRight: 0.45
 --- !u!114 &1495183633 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3435468172274889621, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
@@ -17019,9 +17487,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[8]
-      value: "Claro, Neto! A Feira Central foi inaugurada em 1975 e desde ent\xE3o
-        se tornou um s\xEDmbolo da cultura campo-grandense. Ela foi constru\xEDda
-        no mesmo local onde antigamente havia um mercado ao ar livre, o que refor\xE7a
+      value: "Claro, Neto! A Feira Central foi fundada em 1924 e desde ent\xE3o se
+        tornou um s\xEDmbolo da cultura campo-grandense. Ela foi constru\xEDda no
+        mesmo local onde antigamente havia um mercado ao ar livre, o que refor\xE7a
         ainda mais a liga\xE7\xE3o do local com a hist\xF3ria da cidade."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
@@ -17361,63 +17829,61 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[0]
-      value: "Manu, esse aqui \xE9 o Aqu\xE1rio do Pantanal, e estou animado para
-        te mostrar este lugar incr\xEDvel! "
+      value: "Manu, esse aqui \xE9 o Bioparque Pantanal, e estou animado para te
+        mostrar este lugar incr\xEDvel!"
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[1]
-      value: "Sim, eu vi umas fotos e parece ser um lugar muito atrativo. Mas o Aqu\xE1rio
-        do Pantanal n\xE3o \xE9 apenas um lugar para ver animais e plantas maravilhosas?"
+      value: "Sim, eu vi umas fotos e parece ser um lugar muito atrativo. Mas o Bioparque
+        Pantanal n\xE3o \xE9 apenas um lugar para ver animais e plantas maravilhosas?"
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[2]
-      value: "N\xE3o, o Aqu\xE1rio do Pantanal vai al\xE9m de ser uma atra\xE7\xE3o
-        tur\xEDstica. \xC9 um centro essencial para a educa\xE7\xE3o, conserva\xE7\xE3o
-        e avalia\xE7\xE3o da biodiversidade do Pantanal, promovendo a conscientiza\xE7\xE3o
-        ambiental."
+      value: "N\xE3o, o Bioparque Pantanal vai al\xE9m de ser uma atra\xE7\xE3o tur\xEDstica.
+        \xC9 um centro essencial para a educa\xE7\xE3o, conserva\xE7\xE3o e avalia\xE7\xE3o
+        da biodiversidade do Pantanal, promovendo a conscientiza\xE7\xE3o ambiental."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[3]
-      value: "Nossa! Eu n\xE3o sabia que ele tinha um papel t\xE3o fundamental na
-        preserva\xE7\xE3o do ecossistema."
+      value: "Nossa! \xC9 verdade que ele tem um papel importante na preserva\xE7\xE3o
+        do ecossistema do Pantanal?"
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[4]
-      value: "Ele tamb\xE9m \xE9 um centro educacional que ensina sobre a preserva\xE7\xE3o
+      value: "Sim Manu! Ele \xE9 um centro educacional que ensina sobre a preserva\xE7\xE3o
         ambiental e conserva\xE7\xE3o da natureza. Possui uma se\xE7\xE3o interativa
         para explorar o Pantanal de maneira divertida e educativa."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[5]
-      value: "No Aqu\xE1rio do Pantanal, as pessoas podem interagir com animais,
-        aprender sobre a natureza e contribuir para a conserva\xE7\xE3o. Tamb\xE9m
-        descobrem como pequenas a\xE7\xF5es di\xE1rias ajudam o meio ambiente. "
+      value: "Minha professora disse que no Bioparque Pantanal as pessoas podem interagir
+        com animais, aprender sobre a natureza e contribuir para a conserva\xE7\xE3o.
+        Tamb\xE9m descobrem como pequenas a\xE7\xF5es di\xE1rias ajudam o meio ambiente."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[6]
-      value: "Excelente! Voc\xEA realmente tem um bom conhecimento sobre o local.
-        Outro fato interessante \xE9 que o Aqu\xE1rio do Pantanal abriga uma grande
-        diversidade de peixinhos(cicl\xEDdeos), com pelo menos 300 esp\xE9cies, 98%
-        deles sendo dif\xEDceis de se encontrar(end\xEAmicas). "
+      value: "Exatamente, voc\xEA aprendeu bem! Outro fato interessante \xE9 que
+        o Bioparque Pantanal abriga uma grande diversidade de peixinhos(cicl\xEDdeos),
+        com pelo menos 300 esp\xE9cies, 98% deles sendo dif\xEDceis de se encontrar(end\xEAmicas)."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[7]
-      value: "E o Bioparque Pantanal, o maior complexo de \xE1gua doce do mundo,
+      value: "E o Bioparque Pantanal, \xE9 o maior complexo de \xE1gua doce do mundo,
         foi inaugurado em Mato Grosso do Sul, com quase 5 milh\xF5es de litros de
         \xE1gua."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[8]
-      value: "Isso mesmo! O Aqu\xE1rio do Pantanal \xE9 crucial para conscientizar
-        sobre a prote\xE7\xE3o do Pantanal, um dos ecossistemas mais amea\xE7ados
-        do planeta, vital para a sa\xFAde do nosso planeta."
+      value: "Isso mesmo! O Bioparque Pantanal \xE9 crucial para conscientizar sobre
+        a prote\xE7\xE3o do Pantanal, um dos ecossistemas mais amea\xE7ados do planeta,
+        vital para a sa\xFAde do nosso planeta."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[9]
       value: "\xC9 uma \xF3tima maneira de aprender enquanto se diverte e voc\xEA
-        est\xE1 ficando um expert no Aqu\xE1rio do Pantanal. Agora que tal jogarmos
-        um jogo no qual voc\xEA deve coletar os peixes que fugiram do aqu\xE1rio,
-        vamos jogar? "
+        est\xE1 ficando um expert no Bioparque Pantanal. Agora que tal jogarmos um
+        jogo no qual voc\xEA deve coletar os peixes que fugiram do aqu\xE1rio, vamos
+        jogar?"
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: images.Array.data[0]
@@ -19100,9 +19566,9 @@ PrefabInstance:
       propertyPath: texts.Array.data[1]
       value: "O mercad\xE3o \xE9 conhecido, principalmente, por oferecer produtos
         t\xEDpicos de nossa cultura: queijo caipira, peixes, ervas de terer\xE9 e
-        chimarr\xE3o, ervas medicinais, verduras, cereais, artesanato,produtos para
+        chimarr\xE3o, ervas medicinais, verduras, cereais, artesanato, produtos para
         lida do campo, pasteis e lanches em geral, al\xE9m de produtos comercializados
-        pelos ind\xEDgenas da regi\xE3o. "
+        pelos ind\xEDgenas da regi\xE3o."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[2]
@@ -20221,6 +20687,7 @@ Transform:
   - {fileID: 1750620176}
   - {fileID: 305150493}
   - {fileID: 332076640}
+  - {fileID: 1490804725}
   m_Father: {fileID: 1857568186}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
