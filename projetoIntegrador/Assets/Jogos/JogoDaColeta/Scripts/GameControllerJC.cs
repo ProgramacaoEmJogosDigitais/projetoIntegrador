@@ -22,18 +22,18 @@ public class GameControllerJC : MonoBehaviour
     public int maxEnemiesPerWave = 10;
     public float initialSpawnDelay = 3f;
     public float spawnInterval = 3f;
-    public float spawnNumberPerWave = 0.2f;
+    public float spawnRateIncrease = 0.2f;
 
     private int currentWave = 1;
     private int enemiesSpawned = 0;
-    public static float nextSpawnTime;
+    private float nextSpawnTime = 0f;
 
     public Canvas scrollViewInstructions;
 
-    public static bool isPaused = false;
+    public bool isOptionsMenuActive = false;
+    private bool isPaused = false;
     private bool isUnpauseDelayed = false;
     private float unpauseTimer = 3f;
-    private bool isOptionsMenuActive = false;
     public GameObject optionsMenu; // Arraste o prefab do menu de opções para este campo no Inspector
 
     [SerializeField] private TextMeshProUGUI unpauseCount;
@@ -60,12 +60,6 @@ public class GameControllerJC : MonoBehaviour
         audioSystem.PlaySound("MenuMusic");
         audioSystem.SetLooping(true);
 
-        nextSpawnTime = Time.deltaTime;
-
-        isPaused = false;
-
-        Debug.Log(isPaused);
-
         // Verifica se as instruções já foram exibidas antes de iniciá-las.
         /*if (!PlayerPrefs.HasKey("InstructionsShown") || PlayerPrefs.GetInt("InstructionsShown") == 0)
         {
@@ -77,6 +71,11 @@ public class GameControllerJC : MonoBehaviour
     public void Update()
     {
         Score();
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PauseAndUnpause();
+        }
 
 
         if (isUnpauseDelayed)
@@ -95,7 +94,7 @@ public class GameControllerJC : MonoBehaviour
 
             if (unpauseTimer <= 0)
             {
-
+                btn_Pause.gameObject.SetActive(true);
                 Time.timeScale = 1;
                 isPaused = false;
                 isUnpauseDelayed = false;
@@ -105,8 +104,6 @@ public class GameControllerJC : MonoBehaviour
 
                 unpauseCount.gameObject.SetActive(false);
 
-                btn_Exit.SetActive(true);
-                btn_Pause.SetActive(true);
             }
         }
 
@@ -145,14 +142,20 @@ public class GameControllerJC : MonoBehaviour
                 // Se o menu de opções estiver inativo, ative-o
                 optionsMenu.SetActive(true);
                 isOptionsMenuActive = true;
-
-                // Ativa os botões se necessário
-                btn_Exit.SetActive(true);
-                btn_Pause.SetActive(true);
             }
         }
     }
 
+    public void Pause()
+    {
+        if (!PlayerPrefs.HasKey("contPauseJC"))
+        {
+            Time.timeScale = 0;
+            isPaused = true;
+            unpauseTimer = 3;
+            PlayerPrefs.SetInt("contPauseJC", 1);
+        }
+    }
     public void PauseAndUnpause()
     {
         if (!isPaused && PlayerColeta.missingObjects > 0)
@@ -188,7 +191,7 @@ public class GameControllerJC : MonoBehaviour
             if (enemiesSpawned >= maxEnemiesPerWave)
             {
                 currentWave++;
-                maxEnemiesPerWave += Mathf.RoundToInt(maxEnemiesPerWave * spawnNumberPerWave);
+                maxEnemiesPerWave += Mathf.RoundToInt(maxEnemiesPerWave * spawnRateIncrease);
                 enemiesSpawned = 0;
                 nextSpawnTime = Time.time + initialSpawnDelay;
                 spawnInterval -= 0.1f;
