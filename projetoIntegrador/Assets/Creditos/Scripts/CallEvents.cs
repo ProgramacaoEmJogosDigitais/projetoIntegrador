@@ -1,3 +1,4 @@
+using System.Globalization;
 using UnityEngine;
 
 public class CallEvents : MonoBehaviour
@@ -6,7 +7,6 @@ public class CallEvents : MonoBehaviour
     private bool isActive = false;
     private float duration = 5.5f;
     private float timer = 0f;
-
     public void CallCloudFight()
     {
         cloudFight.SetActive(true);

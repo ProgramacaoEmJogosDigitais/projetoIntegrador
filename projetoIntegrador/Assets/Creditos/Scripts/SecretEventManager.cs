@@ -1,17 +1,26 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SecretEventManager : MonoBehaviour
 {
     private int clickCountObject1 = 0;
     private int clickCountObject2 = 0;
+    private int clickCountObject3 = 0;
     private bool fight = false;
     private bool fight2 = false;
+    private bool chama = false;
+
+    public string nomeDaCena;
     public GameObject juliano;
     public GameObject ana;
+    public GameObject mauricio;
+
     public Sprite julianoAngry;
     public Sprite anaAngry;
     public Sprite julianoPosFight;
     public Sprite anaPosFight;
+    public Sprite proMauricio;
+
     private float animationDuration = 8f;
     private float timer = 0f;
 
@@ -27,7 +36,7 @@ public class SecretEventManager : MonoBehaviour
                 if (hit.collider.gameObject.CompareTag("Ana"))
                 {
                     clickCountObject1++;
-                    if (clickCountObject1 == 10)
+                    if (clickCountObject1 == 15)
                     {
                         fight = true;
                         clickCountObject1 = 0;
@@ -36,10 +45,20 @@ public class SecretEventManager : MonoBehaviour
                 else if (hit.collider.gameObject.CompareTag("Juliano"))
                 {
                     clickCountObject2++;
-                    if (clickCountObject2 == 10)
+                    if (clickCountObject2 == 15)
                     {
                         fight2 = true;
                         clickCountObject2 = 0;
+                    }
+                }
+                if (hit.collider.gameObject.CompareTag("Mauricio"))
+                {
+                    clickCountObject3++;
+                    if (clickCountObject3 == 100)
+                    {
+                        Debug.Log("Mauricio");
+                        mauricio.GetComponent<SpriteRenderer>().sprite = proMauricio;
+                        clickCountObject3 = 0;
                     }
                 }
             }
@@ -51,9 +70,10 @@ public class SecretEventManager : MonoBehaviour
             fight = false;
             fight2 = false;
             timer = 0f;
+            
         }
 
-        if (timer >= animationDuration)
+        if (timer >= animationDuration && chama)
         {
             DisableAnimations();
         }
@@ -61,14 +81,23 @@ public class SecretEventManager : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-    }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TrocarParaNovaCena();
+        }
+    }
+    void TrocarParaNovaCena()
+    {
+        SceneManager.LoadScene(nomeDaCena);
+    }
     void CallAnimation()
     {
         juliano.GetComponent<Animator>().SetBool("FightAna", true);
         juliano.GetComponent<SpriteRenderer>().sprite = julianoAngry;
         ana.GetComponent<SpriteRenderer>().sprite = anaAngry;
         ana.GetComponent<Animator>().SetBool("FightJuliano", true);
+        chama = true;
     }
 
     void DisableAnimations()
