@@ -494,6 +494,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6422971248231032575, guid: 7aa400f9a06c7644299a11de763e5ddc, type: 3}
   m_PrefabInstance: {fileID: 41413332}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &41413335 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4183841391735551558, guid: 7aa400f9a06c7644299a11de763e5ddc, type: 3}
+  m_PrefabInstance: {fileID: 41413332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &41413336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 895953691270688510, guid: 7aa400f9a06c7644299a11de763e5ddc, type: 3}
+  m_PrefabInstance: {fileID: 41413332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &58164572
 GameObject:
   m_ObjectHideFlags: 0
@@ -14017,6 +14039,7 @@ GameObject:
   - component: {fileID: 996645504}
   - component: {fileID: 996645502}
   - component: {fileID: 996645505}
+  - component: {fileID: 996645506}
   m_Layer: 0
   m_Name: Controler
   m_TagString: Untagged
@@ -14042,7 +14065,6 @@ MonoBehaviour:
   time: 0
   isPlay: 0
   pause: 0
-  jigsawManager: {fileID: 996645504}
   bookScore: {fileID: 0}
   particle: {fileID: 2025075626}
   books:
@@ -14276,6 +14298,7 @@ MonoBehaviour:
   panel: {fileID: 58164573}
   comic: {fileID: 676374175}
   dragEndDrop: []
+  audioSystem: {fileID: 996645506}
 --- !u!114 &996645505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14289,6 +14312,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randon: {fileID: 996645502}
+--- !u!114 &996645506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996645501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c706c5e7a252e4ebf1919c01990ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEntries:
+  - key: JigsawSong
+    audioClip: {fileID: 8300000, guid: 474d75ded10b67441bd409fe2764ad64, type: 3}
 --- !u!1 &1014964210
 GameObject:
   m_ObjectHideFlags: 0
@@ -29252,6 +29290,71 @@ Transform:
   m_Father: {fileID: 1942077076}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2124872121
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8708043563841383843, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
+      propertyPath: m_Name
+      value: VolumeControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708043563841383868, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
+      propertyPath: musicSlider
+      value: 
+      objectReference: {fileID: 41413336}
+    - target: {fileID: 8708043563841383868, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
+      propertyPath: effectSlider
+      value: 
+      objectReference: {fileID: 41413335}
+    - target: {fileID: 8708043563841383869, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708043563841383869, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.7645068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708043563841383869, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.8117895
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708043563841383869, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 114.89949
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708043563841383869, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708043563841383869, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708043563841383869, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708043563841383869, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708043563841383869, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708043563841383869, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708043563841383869, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 852788b6ae6d23140a4a29e776f65bf0, type: 3}
 --- !u!1 &2140872787
 GameObject:
   m_ObjectHideFlags: 0

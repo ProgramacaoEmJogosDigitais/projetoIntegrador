@@ -15,8 +15,11 @@ public class JigsawManager : MonoBehaviour
     public Comic comic;
     public List<DragEndDrop> dragEndDrop;
     private bool instruction = false;
+
+    public AudioSystem audioSystem;
     private void Awake()
     {
+
         randon.pause = false;
         DragEndDrop[] dragEndDropArray = FindObjectsOfType<DragEndDrop>();
 
@@ -35,6 +38,12 @@ public class JigsawManager : MonoBehaviour
         {
             Play();
         }
+    }
+
+    private void Start()
+    {
+        audioSystem.PlaySound("JigsawSong");
+        audioSystem.SetLooping(true);
     }
 
     public void Play()
