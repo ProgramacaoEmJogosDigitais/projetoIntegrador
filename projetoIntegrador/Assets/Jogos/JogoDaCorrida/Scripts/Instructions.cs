@@ -6,7 +6,6 @@ using UnityEngine.UIElements;
 
 public class Instructions : MonoBehaviour
 {
-    public GameObject panelBackgroundInstruction;
     public GameObject panelInstructions;
     public GameObject panelPause;
     public GameObject score;
@@ -30,7 +29,6 @@ public class Instructions : MonoBehaviour
     {
         yield return new WaitForSeconds(0.01f);
         panelInstructions.gameObject.SetActive(true);
-        panelBackgroundInstruction.gameObject.SetActive(true);
         PlayerPrefs.SetInt("InstructionsCorrida", 1); // Instruções exibidas.
         pauseJCorrida.gamePaused = true;//Time.timeScale = 0.0f;
     }
@@ -47,9 +45,6 @@ public class Instructions : MonoBehaviour
     public void OpenInstructions()
     {
         //Time.timeScale = 0.0f; MUDAR
-        panelPause.SetActive(false);
-        panelInstructions.gameObject.SetActive(true);
-        panelBackgroundInstruction.gameObject.SetActive(true);
         pauseJCorrida.gamePaused = true;
     }
 }

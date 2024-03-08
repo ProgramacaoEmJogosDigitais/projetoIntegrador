@@ -31,7 +31,8 @@ public class Attractions : MonoBehaviour
             }
             else
             {
-                attraction0.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+                if (attraction0 != null)
+                    attraction0.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
             }
             isColliding = true;
         }
@@ -49,7 +50,8 @@ public class Attractions : MonoBehaviour
             }
             else
             {
-                attraction0.transform.localScale = new Vector3(1, 1, 1);
+                if (attraction0 != null)
+                    attraction0.transform.localScale = new Vector3(1, 1, 1);
             }
             isColliding = false;
         }
