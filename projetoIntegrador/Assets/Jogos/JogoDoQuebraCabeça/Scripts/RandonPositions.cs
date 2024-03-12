@@ -17,7 +17,7 @@ public class RandonPositions : MonoBehaviour
     public ParticleSystem particle;
     public List<SpriteRenderer> books;
     public List<Sprite> spriteFull;
-    public GameObject canvasWinGame, canvasGameOver;
+    public GameObject popUpWinGame, canvasWinGame, canvasGameOver;
     public List<Sprite> spriteFullReserve;
     public Vector3[] vectorPositions;
     public List<int> randonIndiceList;
@@ -58,8 +58,16 @@ public class RandonPositions : MonoBehaviour
             StartPiece(); // Iniciar peças imediatamente
             ShowSprite(); 
             time = 60;
-            PlayerPrefs.SetInt("reset", 2);
-            PlayerPrefs.Save();
+            if (!PlayerPrefs.HasKey("contAfterPopUp"))
+            {
+                PlayerPrefs.SetInt("contAfterPopUp", 1);
+                PlayerPrefs.Save();
+                popUpWinGame.SetActive(true);
+            }
+            else
+            {
+                panelPieces.SetActive(true);
+            }
 
             UpdateParts(namePieces);
         }
@@ -72,7 +80,9 @@ public class RandonPositions : MonoBehaviour
             minTime.text = "00";
             secTime.text = "00";
             StopPiece();
-            panelPieces.SetActive(true);
+            PlayerPrefs.SetInt("reset", 2);
+            PlayerPrefs.Save();
+            popUpWinGame.SetActive(true);
         }
         else
         {
