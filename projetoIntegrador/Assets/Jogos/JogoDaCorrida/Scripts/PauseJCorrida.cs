@@ -13,7 +13,8 @@ public class PauseJCorrida : MonoBehaviour
     public Button bt_pause;
     public int time;
     public TMP_Text txt_Countdown;
-   // public bool pauseWithP;
+    // public bool pauseWithP;
+
 
     private void Awake()
     {
@@ -98,9 +99,7 @@ public class PauseJCorrida : MonoBehaviour
     {
         for (int i = time; i >= 0; i--)
         {
-            Debug.Log("ENTROUUU, valor do time: " + time);
-            txt_Countdown.text = time.ToString("F0");
-            Debug.Log(txt_Countdown.text = time.ToString("F0"));
+            txt_Countdown.text = i.ToString();
             yield return new WaitForSeconds(1);
 
             if (i <= 0)
