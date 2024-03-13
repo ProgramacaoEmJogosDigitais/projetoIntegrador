@@ -1980,11 +1980,11 @@ RectTransform:
   m_Father: {fileID: 276036352}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -571, y: 292}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.01778125, y: 0.87000006}
+  m_AnchorMax: {x: 0.0754375, y: 0.9762223}
+  m_AnchoredPosition: {x: 0.51000977, y: 0.005004883}
+  m_SizeDelta: {x: -1.0200195, y: 0.13000488}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1066843610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3430,18 +3430,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968596423}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 90.00012}
   m_LocalScale: {x: 0.52520305, y: 0.21657859, z: 0.21657859}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 276036352}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.42965627, y: 0.24961112}
-  m_AnchorMax: {x: 0.5546563, y: 0.44966668}
-  m_AnchoredPosition: {x: 0.5, y: -1}
-  m_SizeDelta: {x: 142.91, y: 517.93}
+  m_AnchorMin: {x: 0.40878126, y: 0.245}
+  m_AnchorMax: {x: 0.57478124, y: 0.4474445}
+  m_AnchoredPosition: {x: 0.6473999, y: 1.0099792}
+  m_SizeDelta: {x: 194.55, y: 512.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1972732859
 GameObject:
@@ -3590,7 +3590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: {fileID: 2124177057}
-  name: Juliano Alves Monteir
+  name: Juliano Alves Monteiro
   photos: {fileID: 21300000, guid: 9a6bd320f0120374b840ac9d73b028fe, type: 3}
   photoGame: {fileID: 1968596424}
 --- !u!114 &1972732865
