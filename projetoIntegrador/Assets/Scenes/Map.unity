@@ -2603,7 +2603,7 @@ PrefabInstance:
       objectReference: {fileID: 1278933568}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: attractions
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: imageComponent
@@ -4522,7 +4522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: attractions
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: imageComponent
@@ -7009,7 +7009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: attractions
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: imageComponent
@@ -11016,7 +11016,7 @@ PrefabInstance:
       objectReference: {fileID: 1278933568}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: attractions
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: imageComponent
@@ -11813,7 +11813,7 @@ PrefabInstance:
       objectReference: {fileID: 1278933568}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: attractions
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: imageComponent
