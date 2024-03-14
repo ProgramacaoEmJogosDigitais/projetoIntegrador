@@ -106,14 +106,14 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -5703811230901148232}
+  m_DefaultState: {fileID: -4377742844441053893}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: img_boxText
+  m_Name: img_boxTextLeft
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: dialogueLeft

@@ -2589,6 +2589,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 895099003}
     m_Modifications:
+    - target: {fileID: 238826090931510026, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 70ee28dd12073734586a66ede43f2a14, type: 2}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: panel
       value: 
@@ -3478,8 +3482,8 @@ PrefabInstance:
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[4]
       value: "Sim! E a Morada do Ba\xEDs \xE9 chamada assim porque era da fam\xEDlia
-        de Bernardo Franco Ba\xEDs. A filha de, Lydia Ba\xEDs, foi uma artista importante
-        e pintou afrescos dentro do sobrado."
+        de Bernardo Franco Ba\xEDs. A filha dela, Lydia Ba\xEDs, foi uma artista
+        importante e pintou afrescos dentro do sobrado."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[5]
@@ -4500,6 +4504,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1750620176}
     m_Modifications:
+    - target: {fileID: 238826090931510026, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 70ee28dd12073734586a66ede43f2a14, type: 2}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: panel
       value: 
@@ -6983,6 +6991,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1478636760}
     m_Modifications:
+    - target: {fileID: 238826090931510026, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 70ee28dd12073734586a66ede43f2a14, type: 2}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: panel
       value: 
@@ -6991,6 +7003,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1278933568}
+    - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: startLeft
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: attractions
       value: 2
@@ -10263,7 +10279,7 @@ GameObject:
   - component: {fileID: 1043663228}
   - component: {fileID: 1043663229}
   m_Layer: 0
-  m_Name: pos_monumento
+  m_Name: pos_monumentoParque
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -10753,6 +10769,18 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3317213911917560330, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3317213911917560330, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3317213911917560330, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8163463
+      objectReference: {fileID: 0}
+    - target: {fileID: 3317213911917560330, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -10970,6 +10998,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 208010383}
     m_Modifications:
+    - target: {fileID: 238826090931510026, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 70ee28dd12073734586a66ede43f2a14, type: 2}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: panel
       value: 
@@ -11763,6 +11795,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1043663226}
     m_Modifications:
+    - target: {fileID: 238826090931510026, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 70ee28dd12073734586a66ede43f2a14, type: 2}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: panel
       value: 
@@ -12859,6 +12895,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 691624654}
     m_Modifications:
+    - target: {fileID: 238826090931510026, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 70ee28dd12073734586a66ede43f2a14, type: 2}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: panel
       value: 
