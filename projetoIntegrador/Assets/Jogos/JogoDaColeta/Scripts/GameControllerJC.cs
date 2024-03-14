@@ -72,12 +72,6 @@ public class GameControllerJC : MonoBehaviour
     {
         Score();
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            PauseAndUnpause();
-        }
-
-
         if (isUnpauseDelayed)
         {
 
