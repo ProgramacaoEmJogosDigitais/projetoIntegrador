@@ -15,16 +15,7 @@ public class AlternarObjeto : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            if (Time.timeScale != 0)
-            {
-                ativarObjeto1 = !ativarObjeto1;
-                AtivarObjetos();
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
             if (Time.timeScale != 0)
             {
