@@ -13,11 +13,11 @@ public class Dialogue : MonoBehaviour
     public GameObject player;
     public GameObject space;
     public Canvas canvas;
-    public List<Sprite> images; 
-    public List<string> texts; 
+    public List<Sprite> images;
+    public List<string> texts;
     public TextMeshProUGUI textComponent;
     public int currentCharIndex = 0;
-    public int currentIndex = 0; 
+    public int currentIndex = 0;
     public GameObject button;
     public bool completedText = false, startLeft = false;
     public Image panel;
@@ -127,25 +127,22 @@ public class Dialogue : MonoBehaviour
     {
         if (currentBubble == Bubble.Left)
         {
-            if (attractions == Attractions.Museu && currentIndex == 4)
+            if (attractions == Attractions.Museu && currentIndex == 4 || attractions == Attractions.Aquario && currentIndex == 9)
             {
+                Debug.Log("11111111111");
                 LeftBubble();
-            }
-            else 
-            {
-                RightBubble();
-            }
-        }
-        else
-        {
-            if (attractions == Attractions.Aquario && currentIndex == 9)
-            {
-                RightBubble();
             }
             else
             {
-                LeftBubble();
+                Debug.Log("222222222");
+                RightBubble();
             }
+        }
+        else if(currentBubble == Bubble.Right)
+        {
+            Debug.Log("33333333");
+
+            LeftBubble();
         }
     }
     public void CloseDialogue()
@@ -163,11 +160,16 @@ public class Dialogue : MonoBehaviour
             button.SetActive(false);
             withBtn = false;
         }
+        if (attractions == Attractions.Aquario || attractions == Attractions.Morada)
+            currentBubble = Bubble.Left;
+        else
+            currentBubble = Bubble.Right;
     }
     public enum Attractions
     {
         Aquario,
         Museu,
+        Morada,
         Default
     }
 
