@@ -455,7 +455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3317213911917560330
 RectTransform:
   m_ObjectHideFlags: 0
@@ -955,6 +955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d343af774a56e4ea300d7cdf5ce8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instructionAquarium: 0
   endPageLeft: 0
   backButton: {fileID: 7033362623035576980}
   comic: {fileID: 7033362623859231947}
@@ -977,7 +978,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b1d846d0b0e8b6b488635307a51cfa6c, type: 3}
   - {fileID: 21300000, guid: 1c5351589791c8f42964f330b1f70cf7, type: 3}
   forwardButton: {fileID: 7033362624752335541}
-  goMapButtonEndPageLeft: {fileID: 6341123026064960159}
+  goMapButton: {fileID: 0}
   jigsawManager: {fileID: 0}
   index: -1
   rotate: 0
