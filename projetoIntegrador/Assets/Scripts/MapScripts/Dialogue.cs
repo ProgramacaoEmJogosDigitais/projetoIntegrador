@@ -54,11 +54,11 @@ public class Dialogue : MonoBehaviour
             player.GetComponent<VanMoviment>().enabled = false;
         }
 
-        if (!withBtn)
+        if (!withBtn && currentIndex < images.Count)
         {
-            GetComponent<Image>().sprite = images[currentIndex]; //Atualiza a imagem atual
-
-            if (textComponent.text == texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
+                GetComponent<Image>().sprite = images[currentIndex]; //Atualiza a imagem atual
+            
+            if (textComponent.text == texts[currentIndex] && Input.GetKeyDown(KeyCode.Space) )
             {
                 currentCharIndex = 0;
                 currentIndex++;
@@ -74,9 +74,9 @@ public class Dialogue : MonoBehaviour
                     withBtn = true;
                 }
                 else if (currentIndex >= images.Count)
-                {
-                    CloseDialogue();
-                }
+                 {
+                     CloseDialogue();
+                 }
             }
             else if (textComponent.text != texts[currentIndex] && Input.GetKeyDown(KeyCode.Space))
             {
@@ -84,7 +84,7 @@ public class Dialogue : MonoBehaviour
                 textComponent.text = texts[currentIndex];
             }
 
-            if (texts.Count != 0 && !completedText && !withBtn)
+            if (texts.Count != 0 && !completedText && !withBtn && currentIndex < images.Count)
             {
                 //Se ainda houver caracteres do texto para serem exibidos
                 if (currentCharIndex < texts[currentIndex].Length)
@@ -98,13 +98,6 @@ public class Dialogue : MonoBehaviour
                         textComponent.text = texts[currentIndex].Substring(0, currentCharIndex); //Exibe o texto a partir do primeiro caractere at� o caractere atual
                     }
                 }
-            }
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                CloseDialogue();
             }
         }
     }
@@ -136,7 +129,7 @@ public class Dialogue : MonoBehaviour
                 RightBubble();
             }
         }
-        else if(currentBubble == Bubble.Right)
+        else if (currentBubble == Bubble.Right)
         {
             LeftBubble();
         }
