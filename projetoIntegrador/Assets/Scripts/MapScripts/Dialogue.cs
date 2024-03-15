@@ -129,19 +129,15 @@ public class Dialogue : MonoBehaviour
         {
             if (attractions == Attractions.Museu && currentIndex == 4 || attractions == Attractions.Aquario && currentIndex == 9)
             {
-                Debug.Log("11111111111");
                 LeftBubble();
             }
             else
             {
-                Debug.Log("222222222");
                 RightBubble();
             }
         }
         else if(currentBubble == Bubble.Right)
         {
-            Debug.Log("33333333");
-
             LeftBubble();
         }
     }

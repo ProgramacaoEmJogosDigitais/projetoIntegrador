@@ -8585,7 +8585,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2039834904}
-  - {fileID: 879598606}
   - {fileID: 1800557809}
   - {fileID: 1678161117}
   - {fileID: 1488356593}
@@ -8953,90 +8952,6 @@ MonoBehaviour:
   pointPositionDestiny: {fileID: 1233778186}
   pointPositionMap: {fileID: 267971352}
   transitionDuration: 0.5
---- !u!1 &879598605
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 879598606}
-  - component: {fileID: 879598608}
-  - component: {fileID: 879598607}
-  m_Layer: 0
-  m_Name: point00
-  m_TagString: Untagged
-  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &879598606
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 879598605}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.34, y: 4.49, z: 0.21180433}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 803026059}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &879598607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 879598605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f574e01bab15c439bb30b4fe830760, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointUp: {fileID: 0}
-  pointDown: {fileID: 0}
-  pointLeft: {fileID: 2039834904}
-  pointRight: {fileID: 1800557809}
-  boolUp: 0
-  boolDown: 0
-  boolLeft: 1
-  boolRight: 1
-  player: {fileID: 1278933568}
-  transitionDurationUp: 0.5
-  transitionDurationDown: 0.5
-  transitionDurationLeft: 0.5
-  transitionDurationRight: 0.5
---- !u!61 &879598608
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 879598605}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &881310713
 GameObject:
   m_ObjectHideFlags: 0
@@ -13278,7 +13193,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 803026059}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1267675733
 GameObject:
@@ -15672,7 +15587,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 803026059}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1488356594
 MonoBehaviour:
@@ -18228,7 +18143,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 803026059}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1678606377
 GameObject:
@@ -19703,7 +19618,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 803026059}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1788419694
 MonoBehaviour:
@@ -19877,7 +19792,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 803026059}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1800557810
 MonoBehaviour:
@@ -19893,7 +19808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointUp: {fileID: 0}
   pointDown: {fileID: 47055748}
-  pointLeft: {fileID: 879598606}
+  pointLeft: {fileID: 2039834904}
   pointRight: {fileID: 1313509484}
   boolUp: 0
   boolDown: 1
@@ -21914,7 +21829,7 @@ MonoBehaviour:
   boolRight: 1
   player: {fileID: 1278933568}
   pointPositionDestiny: {fileID: 764531203}
-  pointPositionMap: {fileID: 879598606}
+  pointPositionMap: {fileID: 1800557809}
   transitionDuration: 0.5
 --- !u!1 &2045675225
 GameObject:
