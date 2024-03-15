@@ -53,6 +53,17 @@ public class Comic : MonoBehaviour
         }
         pagesImage1.ForEach(image => image.gameObject.SetActive(true));
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && index - 1 >= -1)
+        {
+            RotateBack();
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && index < pagesGameObject.Count - 1 )
+        {
+            RotateForward();
+        }
+    }
     public void RotateForward()
     {
         if (rotate == true) { return; }
@@ -75,7 +86,7 @@ public class Comic : MonoBehaviour
             comic.transform.position = posComicOnePageEndLeft.position;
             forwardButton.SetActive(false);
         }
-        else if (index + 1 == pagesGameObject.Count) //Última página
+        else if (index == pagesGameObject.Count - 1) //Última página
         {
             comic.transform.position = posComicTwoPages.position;
             forwardButton.SetActive(false);
