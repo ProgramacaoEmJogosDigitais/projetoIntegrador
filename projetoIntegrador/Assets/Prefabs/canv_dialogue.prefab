@@ -669,8 +669,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b90eb5a04a6b2c24386939aeaaf7e9bb, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: e266fcd38e85a644aa9b54fcfd5d59b3, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -838,6 +838,7 @@ MonoBehaviour:
   currentIndex: 0
   button: {fileID: 0}
   completedText: 0
+  startLeft: 0
   panel: {fileID: 0}
   attractions: 0
 --- !u!95 &238826090931510026
