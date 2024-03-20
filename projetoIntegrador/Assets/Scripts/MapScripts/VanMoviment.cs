@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class VanMoviment : MonoBehaviour
 {
-    public CustomImput input = null; // Variável para receber o input do jogador
+    public CustomImput input = null; // Variï¿½vel para receber o input do jogador
     public float moveSpeed;
     public Vector2 moveVector = Vector2.zero;
     public Sprite spriteVanUpAndDown;
@@ -54,37 +54,49 @@ public class VanMoviment : MonoBehaviour
     {
         moveVector = context.ReadValue<Vector2>();
     }
-
-    void Update()
+    private void StopMoving(InputAction.CallbackContext context)
     {
-        if (arrowObject != null)
-        {
-            if (GetComponent<SpriteRenderer>().sprite.name == "Vanteca_Sprite_Cima")
-            {
-                offset = new Vector3(0f, 1.1f, 0f);
-            }
-            else if (GetComponent<SpriteRenderer>().sprite.name == "Vanteca_Sprite_LadoEsquerdo")
-            {
-                offset = new Vector3(-0.5f, 1.1f, 0f);
-            }
-            else if (GetComponent<SpriteRenderer>().sprite.name == "Vanteca_Sprite_LadoDireito")
-            {
-                offset = new Vector3(0.5f, 1.1f, 0f);
-            }
-
-            arrowObject.transform.position = gameObject.transform.position + offset;
-        }
-
-
-        if (arrowObjects.Count >= arrowPrefabs.Count)
-        {
-            foreach (GameObject arrowObject in arrowObjects)
-            {
-                Destroy(arrowObject);
-            }
-            arrowObjects.Clear();
-        }
+        isMoving = false;
     }
+    void Update(){
+      if (isMoving) 
+        {
+            float horizontalInput = moveVector.x;
+            float verticalInput = moveVector.y;
+            Vector3 movement = new Vector3(horizontalInput, verticalInput, 0f).normalized * moveSpeed * Time.deltaTime;
+
+            transform.Translate(movement);
+
+            
+            if (movement != Vector3.zero)
+            {
+                float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            }
+
+            UpdateArrowPosition();
+        }
+}
+void UpdateArrowPosition()
+{
+    if (arrowObject != null)
+    {
+        if (GetComponent<SpriteRenderer>().sprite.name == "Vanteca_Sprite_Cima")
+        {
+            offset = new Vector3(0f, 1.1f, 0f);
+        }
+        else if (GetComponent<SpriteRenderer>().sprite.name == "Vanteca_Sprite_LadoEsquerdo")
+        {
+            offset = new Vector3(-0.5f, 1.1f, 0f);
+        }
+        else if (GetComponent<SpriteRenderer>().sprite.name == "Vanteca_Sprite_LadoDireito")
+        {
+            offset = new Vector3(0.5f, 1.1f, 0f);
+        }
+
+        arrowObject.transform.position = gameObject.transform.position + offset;
+    }
+}
 
     IEnumerator SpawnArrowRoutine()
     {
