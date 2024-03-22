@@ -5220,7 +5220,6 @@ GameObject:
   m_Component:
   - component: {fileID: 157999493}
   - component: {fileID: 157999495}
-  - component: {fileID: 157999494}
   m_Layer: 0
   m_Name: "Livro-base-quebracabe\xE7a"
   m_TagString: Untagged
@@ -5243,20 +5242,6 @@ Transform:
   m_Father: {fileID: 710577737}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &157999494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157999492}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a78a292d051cd65409df546a669e4610, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pontuacao: 0
-  limiteDePontuacao: 4
 --- !u!212 &157999495
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25647,7 +25632,6 @@ GameObject:
   m_Component:
   - component: {fileID: 553622574}
   - component: {fileID: 553622576}
-  - component: {fileID: 553622575}
   m_Layer: 0
   m_Name: livro-base-Aquario
   m_TagString: Untagged
@@ -25670,20 +25654,6 @@ Transform:
   m_Father: {fileID: 710577737}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &553622575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 553622573}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a78a292d051cd65409df546a669e4610, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pontuacao: 0
-  limiteDePontuacao: 8
 --- !u!212 &553622576
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -51065,7 +51035,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1203701435}
   - component: {fileID: 1203701437}
-  - component: {fileID: 1203701436}
   m_Layer: 0
   m_Name: Livro-base-quiz-vermelho
   m_TagString: Untagged
@@ -51088,20 +51057,6 @@ Transform:
   m_Father: {fileID: 710577737}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1203701436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203701434}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a78a292d051cd65409df546a669e4610, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pontuacao: 0
-  limiteDePontuacao: 2
 --- !u!212 &1203701437
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -66349,7 +66304,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1579770223}
   - component: {fileID: 1579770225}
-  - component: {fileID: 1579770224}
   m_Layer: 0
   m_Name: Livro-base-corrida
   m_TagString: Untagged
@@ -66372,20 +66326,6 @@ Transform:
   m_Father: {fileID: 710577737}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1579770224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579770222}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a78a292d051cd65409df546a669e4610, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pontuacao: 0
-  limiteDePontuacao: 6
 --- !u!212 &1579770225
 SpriteRenderer:
   m_ObjectHideFlags: 0
