@@ -3417,7 +3417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5954198183234991020, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6341123026064960159, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: m_IsActive
@@ -3434,11 +3434,11 @@ PrefabInstance:
     - target: {fileID: 7033362623627441848, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: pagesSprite.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: d6e12eca597a93c4eb54c865ee4df9a8, type: 3}
+      objectReference: {fileID: 21300000, guid: 7c3b7161903c5854c94b2dbfc049e4a1, type: 3}
     - target: {fileID: 7033362623627441848, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: pagesSprite.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: 7d7dc723f481cc8409080789693c9ce1, type: 3}
+      objectReference: {fileID: 21300000, guid: 505d322d00d8e1f479cf4aca0e1ef61a, type: 3}
     - target: {fileID: 7033362623627441848, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: pagesSprite.Array.data[3]
       value: 
