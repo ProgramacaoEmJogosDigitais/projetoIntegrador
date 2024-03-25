@@ -10839,6 +10839,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7033362623627441848, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
+      propertyPath: pagesSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 47a1a03e127771a40aa3d3029119d72c, type: 3}
+    - target: {fileID: 7033362623627441848, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
+      propertyPath: pagesSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 129a4174ca3237a4c83dd5cad00f63b3, type: 3}
+    - target: {fileID: 7033362623627441848, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
+      propertyPath: pagesSprite.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1b72d06970945054e953fc4afb12dbf6, type: 3}
     - target: {fileID: 7033362624111148364, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: m_IsActive
       value: 1
