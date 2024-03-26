@@ -15557,7 +15557,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1456585744}
-  - component: {fileID: 1456585745}
   - component: {fileID: 1456585746}
   - component: {fileID: 1456585747}
   - component: {fileID: 1456585748}
@@ -15586,38 +15585,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1456585745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456585742}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f77436acba048409e3b0ad1261c435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  airplanePrefab: {fileID: 2484440202757524334, guid: ae07bf12ef43e704290b10c832d8a0e9, type: 3}
-  ExitRightPositions:
-  - {fileID: 126514301}
-  - {fileID: 160857420}
-  - {fileID: 1209560929}
-  ExitLeftPositions:
-  - {fileID: 495088144}
-  - {fileID: 82355437}
-  - {fileID: 1604178172}
-  ArrivedRightPositions:
-  - {fileID: 1922923996}
-  - {fileID: 1692920102}
-  - {fileID: 30434575}
-  ArrivedLeftPositions:
-  - {fileID: 1355338887}
-  - {fileID: 1155806944}
-  - {fileID: 1089138504}
-  speed: 5
-  spawnInterval: 5
-  spawn: 1
 --- !u!114 &1456585746
 MonoBehaviour:
   m_ObjectHideFlags: 0
