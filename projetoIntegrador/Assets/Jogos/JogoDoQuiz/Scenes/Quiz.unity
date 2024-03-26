@@ -812,6 +812,16 @@ MonoBehaviour:
   - "O obelisco foi constru\xEDdo em mem\xF3ria a quem?"
   - "O Bioparque Pantanal, al\xE9m de ser uma atra\xE7\xE3o tur\xEDstica ela tamb\xE9m
     \xE9 um?\r\n"
+  - "O Monumento ao \xCDndio foi constru\xEDdo em homenagem a quem?"
+  - "Qual destes lugares \xE9 conhecido por realizar eventos e atividades art\xEDsticas?"
+  - "Qual era o nome da artista que viveu e pintou afrescos na Morada dos Ba\xEDs?"
+  - Em que ano foi inaugurada a Feira Central?
+  - "O t\xE3o conhecido Sob\xE1 tem suas ra\xEDzes em qual culin\xE1ria?"
+  - "Al\xE9m dos sabores \xFAnicos, mem\xF3rias afetivas e tradi\xE7\xF5es, o que
+    mais a feira central tem?"
+  - "Qual \xE9 o nome oficial do camel\xF3dromo?"
+  - "Quando foi inaugurado o camel\xF3dromo?"
+  - "O Camel\xF3dromo foi criado com a inten\xE7\xE3o de resolver qual problema?"
   alternativaA:
   - Bioparque Pantanal
   - 'Feira Central '
@@ -843,6 +853,15 @@ MonoBehaviour:
   - "Por oferecer produtos t\xEDpicos de nossa de cultura"
   - Fundadores da cidade
   - "Local s\xF3 para ver peixes"
+  - Aos Mineiros
+  - Museu Dom Bosco
+  - Teresa
+  - 1960
+  - Chinesa
+  - "Import\xE2ncia econ\xF4mica significativa para a cidade"
+  - Centro Comercial Popular Marcelo Fonseca Barbosa
+  - 5 de novembro de 1992
+  - "A falta de restaurantes na regi\xE3o central"
   alternativaB:
   - "Monumento ao \xEDndio"
   - Bioparque Pantanal
@@ -875,6 +894,15 @@ MonoBehaviour:
   - "Por oferecer produtos t\xEDpicos de outras culturas"
   - "Aos Ind\xEDgenas"
   - "Um local s\xF3 para aprender sobre a natureza"
+  - "Aos Ind\xEDgenas"
+  - "Casa do Artes\xE3o"
+  - Lydia
+  - 1975
+  - Europeia
+  - Comida italiana
+  - Centro Comercial Popular Jurandir Rocha
+  - 5 de novembro de 1994
+  - "O com\xE9rcio informal nas ruas do Centro"
   alternativaC:
   - Obelisco
   - Monumento dos Desbravadores
@@ -897,6 +925,15 @@ MonoBehaviour:
   - Por oferecer produtos importados
   - 'Viajantes '
   - "Local para aprendizagem sobre a conserva\xE7\xE3o da natureza"
+  - Moradores Locais
+  - "Morada do Ba\xEDs"
+  - Fernanda
+  - 1984
+  - Japonesa
+  - "Exibi\xE7\xE3o frequente de filmes"
+  - Centro Comercial Popular Marcos Barbosa Silva
+  - 5 de novembro de 1998
+  - "A falta de espa\xE7os de lazer no Centro"
   alternativaD:
   - 'Museu Dom Bosco '
   - "Mercad\xE3o "
@@ -920,6 +957,15 @@ MonoBehaviour:
   - Nenhuma das alternativas
   - "\xC9 um centro essencial para a educa\xE7\xE3o conserva\xE7\xE3o e avalia\xE7\xE3o
     da Biodiversidade do Pantanal"
+  - Nenhuma das alternativas
+  - "Camel\xF3dromo"
+  - Maria
+  - 1990
+  - Brasileira
+  - "Aulas de culin\xE1ria semanais"
+  - Centro Comercial Popular Marcelo Barbosa Fonseca
+  - 5 de novembro de 2000
+  - "O excesso de escrit\xF3rios na regi\xE3o"
   corretas:
   - Obelisco
   - Bioparque Pantanal
@@ -943,6 +989,15 @@ MonoBehaviour:
   - Fundadores da cidade
   - "\xC9 um centro essencial para a educa\xE7\xE3o conserva\xE7\xE3o e avalia\xE7\xE3o
     da Biodiversidade do Pantanal"
+  - "Aos Ind\xEDgenas"
+  - "Morada do Ba\xEDs"
+  - Lydia
+  - 1975
+  - Japonesa
+  - "Import\xE2ncia econ\xF4mica significativa para a cidade"
+  - Centro Comercial Popular Marcelo Fonseca Barbosa
+  - 5 de novembro de 1998
+  - "O com\xE9rcio informal nas ruas do Centro"
 --- !u!4 &246697676
 Transform:
   m_ObjectHideFlags: 0
@@ -3417,7 +3472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5954198183234991020, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6341123026064960159, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: m_IsActive
