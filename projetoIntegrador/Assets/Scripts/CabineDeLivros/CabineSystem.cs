@@ -28,6 +28,8 @@ public class CabineSystem : MonoBehaviour
     public List<Image> booksCorrida;
     public List<Image> booksAquario;
 
+    private GameObject completedCabine;
+
     private int jQuebraCabeca;
     private int jQuiz;
     private int jCorrida;
@@ -113,6 +115,8 @@ public class CabineSystem : MonoBehaviour
         CheckQuiz(colorBook);
         CheckCorrida(colorBook);
         CheckAquario(colorBook);
+
+        CheckCompleteCabine();
     }
 
     private void FirstTime()
@@ -283,6 +287,18 @@ public class CabineSystem : MonoBehaviour
             for (int i = 0; i < PlayerPrefs.GetInt("AquarioCabin"); i++)
             {
                 booksAquario[i].GetComponent<Image>().color = colorBook;
+            }
+        }
+    }
+
+    private void CheckCompleteCabine()
+    {
+        if(jQuebraCabeca == 4 && jQuiz == 4 && jCorrida == 4 && jAquario == 4)
+        {
+            if (!PlayerPrefs.HasKey("CollectedCabine"))
+            {
+                completedCabine.SetActive(true);
+                PlayerPrefs.setInt("CollectedCabine", 1);
             }
         }
     }
