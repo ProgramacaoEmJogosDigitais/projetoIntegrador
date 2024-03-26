@@ -58,6 +58,7 @@ public class NpcCapybara : MonoBehaviour
         if (Vector3.Distance(transform.position, target.position) < 0.1f)
         {
             movingToTarget =false;
+            animator.SetTrigger("Idle");
             StartDelay();
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
@@ -71,6 +72,7 @@ public class NpcCapybara : MonoBehaviour
         if (Vector3.Distance(transform.position, initialPosition) < 0.1f)
         {
             movingToTarget = true;
+            animator.SetTrigger("Idle");
             StartDelay();
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
