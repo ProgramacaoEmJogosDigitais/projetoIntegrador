@@ -793,10 +793,10 @@ MonoBehaviour:
   - "Quando foi constru\xEDdo o Obelisco?\r\n\n"
   - "O Bioparque Pantanal \xE9 o maior complexo de \xE1gua doce do mundo, sendo assim
     o aqu\xE1rio tem quantos litros de \xE1gua?\n"
-  - "O monumento ao \xEDndio foi constru\xEDdo com uma arquitetura que apresenta
+  - "O Monumento ao \xCDndio foi constru\xEDdo com uma arquitetura que apresenta
     quais elementos da cultura?\n"
   - "Em que ano ocorreu a inaugura\xE7\xE3o do Mercad\xE3o Municipal?\n"
-  - " O Monumento aos desbravadores promove um registro hist\xF3rico do in\xEDcio
+  - "O Monumento aos Desbravadores promove um registro hist\xF3rico do in\xEDcio
     da ocupa\xE7\xE3o urbana de Campo Grande por volta de qual ano?\n"
   - "O que \xE9 vendido na Casa do Artes\xE3o?\n\n"
   - "Em quais anos ocorreram uma reforma na casa do artes\xE3o?\n"
@@ -806,12 +806,12 @@ MonoBehaviour:
   - "Al\xE9m das exposi\xE7\xF5es, o museu oferece quais outras atividades?"
   - "O museu Dom Bosco possui um rico acervo que conta com v\xE1rias cole\xE7\xF5es
     sendo elas?\r\n"
-  - "A Morada dos Ba\xEDs \xE9 um pr\xE9dio antigo que se localiza a onde ?\r\n"
+  - "A Morada dos Ba\xEDs \xE9 um pr\xE9dio antigo localizado onde ?\r\n"
   - "Qual \xE9 o nome oficial do Carro de Boi?"
-  - "O mercad\xE3o \xE9 conhecido por?"
+  - "Por qual raz\xE3o o Mercad\xE3o Municipal \xE9 conhecido?"
   - "O obelisco foi constru\xEDdo em mem\xF3ria a quem?"
-  - "O Bioparque Pantanal, al\xE9m de ser uma atra\xE7\xE3o tur\xEDstica ela tamb\xE9m
-    \xE9 um?\r\n"
+  - "O Bioparque Pantanal, al\xE9m de ser uma atra\xE7\xE3o tur\xEDstica,  tamb\xE9m
+    \xE9?\r\n"
   - "O Monumento ao \xCDndio foi constru\xEDdo em homenagem a quem?"
   - "Qual destes lugares \xE9 conhecido por realizar eventos e atividades art\xEDsticas?"
   - "Qual era o nome da artista que viveu e pintou afrescos na Morada dos Ba\xEDs?"
@@ -835,7 +835,7 @@ MonoBehaviour:
 
 '
   - "2 milh\xF5es de litros\n"
-  - Madeira e Palha
+  - Cocar
   - 30 de setembro de 1958
   - '1857
 
@@ -852,7 +852,7 @@ MonoBehaviour:
   - 'Monumento aos exploradores '
   - "Por oferecer produtos t\xEDpicos de nossa de cultura"
   - Fundadores da cidade
-  - "Local s\xF3 para ver peixes"
+  - "Um local s\xF3 para ver peixes"
   - Aos Mineiros
   - Museu Dom Bosco
   - Teresa
@@ -872,9 +872,7 @@ MonoBehaviour:
 
 '
   - "3 milh\xF5es de litros\n"
-  - 'Palha e Barro
-
-'
+  - Oca
   - '30 de setembro de 1960
 
 '
@@ -911,7 +909,7 @@ MonoBehaviour:
   - Obelisco
   - 26 de agosto de 1993
   - "7 milh\xF5es de litros"
-  - Madeira e Pedra
+  - Zarabatana
   - 30 de setembro de 1975
   - 1872
   - Materiais para pintura
@@ -919,12 +917,12 @@ MonoBehaviour:
   - 1 de setembro de 1980
   - "Morada do Ba\xEDs"
   - Palestras, esportes e arte
-  - "Palestras, Semin\xE1rio e Minerais"
+  - "Palestras, Semin\xE1rios e Minerais"
   - No centro de Campo Grande
   - Monumento aos Desbravadores
   - Por oferecer produtos importados
   - 'Viajantes '
-  - "Local para aprendizagem sobre a conserva\xE7\xE3o da natureza"
+  - "Um local para aprendizagem sobre a conserva\xE7\xE3o da natureza"
   - Moradores Locais
   - "Morada do Ba\xEDs"
   - Fernanda
@@ -942,7 +940,7 @@ MonoBehaviour:
   - Monumento aos Desbravadores
   - 30 de setembro de 1991
   - "5 milh\xF5es de litros"
-  - 'Pedra e Argila '
+  - Vaso
   - 30 de setembro de 1980
   - 1880
   - Materiais esportivos
@@ -955,7 +953,7 @@ MonoBehaviour:
   - Monumento ao povoamento
   - Nenhuma das alternativas
   - Nenhuma das alternativas
-  - "\xC9 um centro essencial para a educa\xE7\xE3o conserva\xE7\xE3o e avalia\xE7\xE3o
+  - "Um centro essencial para a educa\xE7\xE3o conserva\xE7\xE3o e avalia\xE7\xE3o
     da Biodiversidade do Pantanal"
   - Nenhuma das alternativas
   - "Camel\xF3dromo"
@@ -974,7 +972,7 @@ MonoBehaviour:
   - Monumento aos Desbravadores
   - 26 de agosto de 1993
   - "5 milh\xF5es de litros"
-  - Madeira e Palha
+  - Zarabatana
   - 30 de setembro de 1958
   - 1872
   - Artesanato
@@ -987,7 +985,7 @@ MonoBehaviour:
   - Monumento aos Desbravadores
   - "Por oferecer produtos t\xEDpicos de nossa de cultura"
   - Fundadores da cidade
-  - "\xC9 um centro essencial para a educa\xE7\xE3o conserva\xE7\xE3o e avalia\xE7\xE3o
+  - "Um centro essencial para a educa\xE7\xE3o conserva\xE7\xE3o e avalia\xE7\xE3o
     da Biodiversidade do Pantanal"
   - "Aos Ind\xEDgenas"
   - "Morada do Ba\xEDs"
