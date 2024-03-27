@@ -28,7 +28,7 @@ public class CabineSystem : MonoBehaviour
     public List<Image> booksCorrida;
     public List<Image> booksAquario;
 
-    private GameObject completedCabine;
+    public GameObject completedCabine;
 
     private int jQuebraCabeca;
     private int jQuiz;
@@ -298,7 +298,7 @@ public class CabineSystem : MonoBehaviour
             if (!PlayerPrefs.HasKey("CollectedCabine"))
             {
                 completedCabine.SetActive(true);
-                PlayerPrefs.setInt("CollectedCabine", 1);
+                PlayerPrefs.SetInt("CollectedCabine", 1);
             }
         }
     }
