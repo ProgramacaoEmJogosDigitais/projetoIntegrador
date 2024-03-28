@@ -33,6 +33,7 @@ public class CabineSystem : MonoBehaviour
     private int jCorrida;
     private int jAquario;
 
+
     private void Start()
     {
         playerScript = FindObjectOfType<VanMoviment>();
