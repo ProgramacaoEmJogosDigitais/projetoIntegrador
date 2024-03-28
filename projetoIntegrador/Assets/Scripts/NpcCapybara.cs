@@ -15,6 +15,8 @@ public class NpcCapybara : MonoBehaviour
     private float delayTimer = 0f;
 
     private Animator animator;
+    
+
 
     // Start is called before the first frame update
     void Start()
