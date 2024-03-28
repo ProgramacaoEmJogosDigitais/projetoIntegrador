@@ -270,7 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: {fileID: 2124177057}
   name: Augusto Anguita Arrizabalaga
-  photos: {fileID: 0}
+  photos: {fileID: 21300000, guid: 01073d8a4525b0f46acb8edbb6120bee, type: 3}
   photoGame: {fileID: 1968596424}
 --- !u!1 &227444177
 GameObject:
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: {fileID: 2124177057}
   name: Josias Matheus Mendes
-  photos: {fileID: 0}
+  photos: {fileID: 21300000, guid: cb242fbcc6b5ce64a87b971ea8b68305, type: 3}
   photoGame: {fileID: 1968596424}
 --- !u!1 &276036348
 GameObject:
@@ -671,7 +671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: {fileID: 2124177057}
   name: Tatiana Oshiro Kobayashi
-  photos: {fileID: 0}
+  photos: {fileID: 21300000, guid: 341aa64b448e8f649874e7a176c1c0b7, type: 3}
   photoGame: {fileID: 1968596424}
 --- !u!1001 &299827684
 PrefabInstance:
@@ -911,6 +911,7 @@ Transform:
   - {fileID: 1103704860}
   - {fileID: 1948335997}
   - {fileID: 308814158}
+  - {fileID: 1786340142}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1241,7 +1242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: {fileID: 2124177057}
   name: Kaiki Hiraga Higa
-  photos: {fileID: 21300000, guid: d7e07015392fc534782fb92b90d62f2e, type: 3}
+  photos: {fileID: 21300000, guid: dfba13a0733b7f24d91ad8ff2f0d2bcf, type: 3}
   photoGame: {fileID: 1968596424}
 --- !u!1 &599326011
 GameObject:
@@ -1804,7 +1805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: {fileID: 2124177057}
   name: Thiago de Almeida
-  photos: {fileID: 21300000, guid: c28175c89fbc28343a63b3e3d78c227c, type: 3}
+  photos: {fileID: 21300000, guid: 20edbb5d34c03554e8cbf3e8b5d4af61, type: 3}
   photoGame: {fileID: 1968596424}
 --- !u!1 &1032478394
 GameObject:
@@ -1831,7 +1832,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032478394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.22, y: -1.84, z: 0}
+  m_LocalPosition: {x: 1.14, y: -1.84, z: 0}
   m_LocalScale: {x: 0.6684027, y: 0.6607626, z: 0.6607626}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2170,7 +2171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: {fileID: 2124177057}
   name: Leon Moraes Cruz
-  photos: {fileID: 0}
+  photos: {fileID: 21300000, guid: eb72a3d92640feb4483eeff60d86211e, type: 3}
   photoGame: {fileID: 1968596424}
 --- !u!1 &1103704859
 GameObject:
@@ -2319,7 +2320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: {fileID: 2124177057}
   name: Mauricio de Souza Estevam
-  photos: {fileID: 21300000, guid: f60de7e6e83ea1940b675f5b32950222, type: 3}
+  photos: {fileID: 21300000, guid: 46ad94a679a2acb4b8810045b425cdfa, type: 3}
   photoGame: {fileID: 1968596424}
 --- !u!1 &1106126872
 GameObject:
@@ -2509,7 +2510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: {fileID: 2124177057}
   name: Melly Sabrina Araujo Miranda
-  photos: {fileID: 21300000, guid: ebe1e7ccc39facd45ac8532b5c8c7fd9, type: 3}
+  photos: {fileID: 21300000, guid: 54bbe63acfa3702499b27047646763cc, type: 3}
   photoGame: {fileID: 1968596424}
 --- !u!1 &1303999711
 GameObject:
@@ -2658,7 +2659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: {fileID: 2124177057}
   name: Guilherme Barros de Deus
-  photos: {fileID: 21300000, guid: 4795aa46cd6aab54ab5dbda72d6e990b, type: 3}
+  photos: {fileID: 21300000, guid: 3bf32249ec2874848aaff01b7bf84b9b, type: 3}
   photoGame: {fileID: 1968596424}
 --- !u!1 &1338298126
 GameObject:
@@ -2807,7 +2808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: {fileID: 2124177057}
   name: Filipe de Lima
-  photos: {fileID: 0}
+  photos: {fileID: 21300000, guid: 28f6a898812739e46be9ff952a1294a0, type: 3}
   photoGame: {fileID: 1968596424}
 --- !u!1001 &1374959940
 PrefabInstance:
@@ -3132,8 +3133,157 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: {fileID: 2124177057}
   name: Ana Graziela Monteiro dos Santos
-  photos: {fileID: 21300000, guid: a0f8eaf5439dc2b4cb31d73e21f7f5b8, type: 3}
+  photos: {fileID: 21300000, guid: 830d10fb17cb7e2489b0eeb5bbe9bec7, type: 3}
   photoGame: {fileID: 1968596424}
+--- !u!1 &1786340141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1786340142}
+  - component: {fileID: 1786340146}
+  - component: {fileID: 1786340145}
+  - component: {fileID: 1786340143}
+  - component: {fileID: 1786340147}
+  m_Layer: 0
+  m_Name: alexandre
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1786340142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786340141}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 44.18, y: -6.65, z: -0.1016865}
+  m_LocalScale: {x: 0.66108847, y: 0.66108847, z: 0.66108847}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 423402411}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1786340143
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786340141}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 12.8, y: 12.8}
+    newSize: {x: 12.8, y: 12.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.17, y: 9.52}
+  m_EdgeRadius: 0
+--- !u!212 &1786340145
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786340141}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 21300000, guid: 11edeff2917343a429492615ced4599b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12.8, y: 12.8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &1786340146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786340141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f113778e1196c51478c666509878dd1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: {fileID: 2124177057}
+  name: Alexandre Oliveira
+  photos: {fileID: 21300000, guid: 93e752dc6cf1aa74abeaccc3a25612f7, type: 3}
+  photoGame: {fileID: 1968596424}
+--- !u!95 &1786340147
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786340141}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ef394ecdaeb172c4cbf957079da291e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1946489157
 GameObject:
   m_ObjectHideFlags: 0
@@ -3365,7 +3515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: {fileID: 2124177057}
   name: Ederson Costa
-  photos: {fileID: 21300000, guid: 6b5a8ceac4c0a9843835cef93f943d73, type: 3}
+  photos: {fileID: 21300000, guid: 8d9c9e63757382844ba694f3a9e937c7, type: 3}
   photoGame: {fileID: 1968596424}
 --- !u!1 &1968596423
 GameObject:
@@ -3440,8 +3590,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.40878126, y: 0.245}
   m_AnchorMax: {x: 0.57478124, y: 0.4474445}
-  m_AnchoredPosition: {x: 0.6473999, y: 1.0099792}
-  m_SizeDelta: {x: 194.55, y: 512.22}
+  m_AnchoredPosition: {x: -0.00022125244, y: 1.3188934}
+  m_SizeDelta: {x: 192.09, y: 515.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1972732859
 GameObject:
@@ -3591,7 +3741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: {fileID: 2124177057}
   name: Juliano Alves Monteiro
-  photos: {fileID: 21300000, guid: 9a6bd320f0120374b840ac9d73b028fe, type: 3}
+  photos: {fileID: 21300000, guid: 05925cdd7c50e5c409e37ddf8dc6dfc7, type: 3}
   photoGame: {fileID: 1968596424}
 --- !u!114 &1972732865
 MonoBehaviour:
