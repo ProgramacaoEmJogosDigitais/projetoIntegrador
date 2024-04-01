@@ -167,6 +167,7 @@ public class Comic : MonoBehaviour
         comic.transform.position = posComicOnePage.position;
         backButton.SetActive(false);
         forwardButton.SetActive(true);
+        pagesGameObject[1].transform.SetAsLastSibling();
         pagesGameObject[0].transform.SetAsLastSibling();
 
         // Ative todas as imagens da página 1 e desative as imagens da página 2
