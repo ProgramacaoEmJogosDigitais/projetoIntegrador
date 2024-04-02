@@ -8,21 +8,20 @@ public class DragEndDrop : MonoBehaviour
 
     public bool ok = false;
     public Rigidbody2D rb;
-    public bool inPart,arrast ,blockMove;
+    public bool inPart, arrast, blockMove;
     public Transform originalPosition;
     public float distance;
     public static DragEndDrop Instance;
 
     private void Awake()
     {
-        Instance = this;    
-        blockMove = true;
+        Instance = this;
     }
 
     void OnMouseEnter()
     {
         inPart = true;
-      
+
     }
     private void OnMouseExit()
     {
@@ -32,10 +31,10 @@ public class DragEndDrop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = this.gameObject.GetComponent<Rigidbody2D>();   
+        rb = this.gameObject.GetComponent<Rigidbody2D>();
         arrast = false;
 
-        
+
     }
     private void OnMouseDown()
     {
@@ -66,32 +65,40 @@ public class DragEndDrop : MonoBehaviour
 
         //    }
         //}
-        if(blockMove)
+        if (blockMove)
         {
             ArrastPart();
         }
-       
+
     }
 
     public void ArrastPart()
     {
-        if(arrast)
+        if (arrast)
         {
             this.transform.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 4;
             rb.MovePosition(cam.ScreenToWorldPoint(Input.mousePosition));
+            if (ok)
+            {
+                RandonPositions.okPieces--;
+                ok = false;
+            }
         }
         else
         {
             this.transform.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 3;
-            if (Vector2.Distance(rb.transform.position,originalPosition.position)<=distance)
-            { 
-                ok = true;  
+            if (Vector2.Distance(rb.transform.position, originalPosition.position) <= distance && !ok)
+            {
+                ok = true;
                 rb.transform.position = originalPosition.position;
-                RandonPositions.okPieces++;
-                blockMove = false;
+                if (ok)
+                {
+                    RandonPositions.okPieces++;
+                    //blockMove = false;
+                }
             }
         }
-       
+
     }
 
 }
