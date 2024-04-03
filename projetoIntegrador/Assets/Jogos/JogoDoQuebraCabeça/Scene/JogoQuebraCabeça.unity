@@ -14692,6 +14692,7 @@ MonoBehaviour:
   time: 0
   isPlay: 0
   pause: 0
+  startGame: 0
   bookScore: {fileID: 0}
   particle: {fileID: 2025075626}
   books:
@@ -17147,7 +17148,7 @@ PrefabInstance:
     - target: {fileID: 7033362623627441848, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: pagesSprite.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: e09d39820c124304e90ac29f1787edf0, type: 3}
+      objectReference: {fileID: 21300000, guid: 596ea63c39673864c970d3aff06ddef0, type: 3}
     - target: {fileID: 7033362623627441848, guid: 6677389ca55aed04d93de6db6018910e, type: 3}
       propertyPath: pagesSprite.Array.data[2]
       value: 
