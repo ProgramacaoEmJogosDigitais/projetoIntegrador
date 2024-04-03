@@ -30,7 +30,7 @@ public class RandonPositions : MonoBehaviour
 
     private string namePieces;
     private int indexReserve, min, len;
-    private bool startGame, randomSprite, gameOver, goToMapOk;
+    private bool startGame, randomSprite, gameOver, goToMapOk, winGameOk = false;
 
     void Start()
     {
@@ -106,19 +106,6 @@ public class RandonPositions : MonoBehaviour
 
     public void BtnNumBook(string sceneName)
     {
-        if (indexBooks >= 0 && indexBooks <=3)
-        {
-            PlayerPrefs.SetInt("saveIndex", 1);
-            PlayerPrefs.Save();
-            indexBooks++;
-            PlayerPrefs.SetInt("numBooks", indexBooks);
-            PlayerPrefs.Save();
-            if(indexBooks == 2)
-            {
-                PlayerPrefs.SetInt("panelOk", 1);
-                PlayerPrefs.Save();
-            }
-        }
         SceneManager.LoadScene(sceneName);
     }
 
@@ -265,6 +252,25 @@ public class RandonPositions : MonoBehaviour
 
     void WinGame()
     {
+        StopPiece();
+        if (!winGameOk)
+        {
+            if (indexBooks >= 0 && indexBooks <= 3)
+            {
+                PlayerPrefs.SetInt("saveIndex", 1);
+                PlayerPrefs.Save();
+                indexBooks++;
+                PlayerPrefs.SetInt("numBooks", indexBooks);
+                PlayerPrefs.Save();
+                if (indexBooks == 2)
+                {
+                    PlayerPrefs.SetInt("panelOk", 1);
+                    PlayerPrefs.Save();
+                }
+                winGameOk = true;
+                Books();
+            }
+        }
         canvasWinGame.SetActive(true);
         pause = true;
         StartPiece();
