@@ -252,7 +252,6 @@ public class RandonPositions : MonoBehaviour
 
     void WinGame()
     {
-        StopPiece();
         if (!winGameOk)
         {
             if (indexBooks >= 0 && indexBooks <= 3)
@@ -273,7 +272,7 @@ public class RandonPositions : MonoBehaviour
         }
         canvasWinGame.SetActive(true);
         pause = true;
-        StartPiece();
+        StopPiece();
         buttonPause.SetActive(false);
     }
 
