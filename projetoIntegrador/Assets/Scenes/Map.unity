@@ -17584,9 +17584,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[7]
-      value: "E o Bioparque Pantanal, \xE9 o maior complexo de \xE1gua doce do mundo,
-        foi inaugurado em Mato Grosso do Sul, com quase 5 milh\xF5es de litros de
-        \xE1gua."
+      value: "E o Bioparque Pantanal \xE9 um dos maiores complexos de \xE1gua doce
+        do mundo. Foi inaugurado em Mato Grosso do Sul, com quase 5 milh\xF5es de
+        litros de \xE1gua."
       objectReference: {fileID: 0}
     - target: {fileID: 1170202823454082031, guid: 50a76ec680947514482317bc29b4ff1c, type: 3}
       propertyPath: texts.Array.data[8]
